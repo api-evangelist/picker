@@ -1,0 +1,2002 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting user API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: user
+paths:
+  /{param*}:
+    get:
+      summary: for front end static rendering
+      operationId: getParam
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /angular4-docs/{param*}:
+    get:
+      summary: for angular 4 docs
+      operationId: getAngular4docsParam
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookings/getAllBookingsDashBoard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBookingsGetallbookingsdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: page
+        in: query
+        required: false
+      - type: string
+        name: status
+        in: query
+        required: false
+      - type: string
+        name: from
+        in: query
+        required: false
+      - type: string
+        name: to
+        in: query
+        required: false
+      - type: string
+        name: orderBy
+        in: query
+        required: false
+      - type: boolean
+        name: onlyPast
+        in: query
+        required: false
+      - type: boolean
+        name: onlyActives
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookings/getCoportatesAllBookings:
+    get:
+      summary: Get General info about businesses
+      operationId: getBookingsGetcoportatesallbookings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: page
+        in: query
+        required: false
+      - type: string
+        name: status
+        in: query
+        required: false
+      - type: string
+        name: from
+        in: query
+        required: false
+      - type: string
+        name: to
+        in: query
+        required: false
+      - type: string
+        name: orderBy
+        in: query
+        required: false
+      - type: boolean
+        name: onlyPast
+        in: query
+        required: false
+      - type: boolean
+        name: onlyActives
+        in: query
+        required: false
+      - type: string
+        description: ID of the selected user to filter its bookings
+        name: userID
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookings/getCorporateBookingsByUserId:
+    get:
+      summary: Get coportates orders by businessId
+      operationId: getBookingsGetcorporatebookingsbyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: page
+        in: query
+        required: false
+      - type: string
+        name: userId
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/categories:
+    get:
+      summary: Get all the products from a business
+      operationId: getBusinessCategories
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/categoriesByUserId:
+    get:
+      summary: Get all the products from a business
+      operationId: getBusinessCategoriesbyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/checkAvailableNames:
+    get:
+      summary: Check if the name of the business is available
+      operationId: getBusinessCheckavailablenames
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: name
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getAccountInfoIntegrationDashboard:
+    get:
+      summary: Get General info about specific business
+      operationId: getBusinessGetaccountinfointegrationdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userId
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getAssociatedBusiness:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetassociatedbusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: storeType
+        in: query
+        required: false
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        name: search
+        in: query
+        required: false
+      - type: string
+        name: sortField
+        in: query
+        required: false
+      - type: string
+        name: sortOrder
+        in: query
+        required: false
+      - type: boolean
+        name: status
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBookingsDataByDatesDashboard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbookingsdatabydatesdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: fromDate
+        in: query
+        required: true
+      - type: string
+        name: toDate
+        in: query
+        required: true
+      - type: boolean
+        name: isSemester
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBookingsIntegrationDashboard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbookingsintegrationdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userID
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessCategories:
+    get:
+      summary: Get the business categories in order
+      operationId: getBusinessGetbusinesscategories
+      parameters:
+      - type: string
+        enum:
+        - VISIBLE
+        - NOT_VISIBLE
+        - ALL
+        name: visibility
+        in: query
+        required: false
+      - type: number
+        description: The number of catgeories that will be returned for each page
+        name: limit
+        in: query
+        required: false
+      - type: number
+        description: For pagination effect. On first page it is 0, then for each next page is (page x limit) so it can return the next X categories
+        name: skip
+        in: query
+        required: false
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessInfo:
+    get:
+      summary: Get the business info and its products grouped by category
+      operationId: getBusinessGetbusinessinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business
+        minLength: 24
+        maxLength: 24
+        name: businessID
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessInfoByUserId:
+    get:
+      summary: Get the business info and its products grouped by category
+      operationId: getBusinessGetbusinessinfobyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the user
+        minLength: 24
+        maxLength: 24
+        name: userId
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessesByDistance:
+    get:
+      summary: Get the business categories in order
+      operationId: getBusinessGetbusinessesbydistance
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      - type: string
+        description: ID of the business category
+        minLength: 24
+        maxLength: 24
+        name: category
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessesBySubcategory:
+    get:
+      summary: Get the business of the subcategory ordered by distance to user location
+      operationId: getBusinessGetbusinessesbysubcategory
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: latitude
+        in: query
+        required: true
+      - type: number
+        name: longitude
+        in: query
+        required: true
+      - type: string
+        description: ID of the business category
+        minLength: 24
+        maxLength: 24
+        name: category
+        in: query
+        required: true
+      - type: string
+        description: Name of the subcategory
+        name: subcategory
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessesGeneralInfo:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbusinessesgeneralinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getStats:
+    get:
+      summary: Get the business dashboard information
+      operationId: getBusinessGetstats
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: dateTo
+        in: query
+        required: true
+      - type: string
+        name: dateFrom
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/products:
+    get:
+      summary: Get all the products from a business
+      operationId: getBusinessProducts
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: ID of the category of the product
+        minLength: 24
+        maxLength: 24
+        name: categoryID
+        in: query
+        required: false
+      - type: string
+        description: ID of the business
+        minLength: 24
+        maxLength: 24
+        name: businessID
+        in: query
+        required: false
+      - type: string
+        description: Status of the products to show
+        name: status
+        in: query
+        required: true
+      - type: string
+        description: Object path to populate
+        name: populates
+        in: query
+        required: false
+      - type: string
+        description: Order of the products DESC or ASC
+        name: updatedAt
+        in: query
+        required: false
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/sendSundayReports:
+    get:
+      summary: Ping Server
+      operationId: getBusinessSendsundayreports
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/turnOffOnBusinessById:
+    get:
+      summary: Get General info about specific business
+      operationId: getBusinessTurnoffonbusinessbyid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        name: businessId
+        in: query
+        required: true
+      - type: string
+        name: currentStatus
+        in: query
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/forgotPasswordMobile:
+    get:
+      summary: Sends Reset Password Token To User
+      operationId: getUserForgotpasswordmobile
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: countryCode
+        in: query
+        required: true
+      - type: string
+        name: mobile
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/getReferralBenifitsHistory:
+    get:
+      summary: Get referral benifits history
+      operationId: getUserGetreferralbenifitshistory
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/getReferralCode:
+    get:
+      summary: Get referral code for user
+      operationId: getUserGetreferralcode
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/getResetPasswordToken:
+    get:
+      summary: Sends Reset Password Token To User
+      operationId: getUserGetresetpasswordtoken
+      parameters:
+      - type: string
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: query
+        required: true
+      - type: string
+        description: Role of user who forgot password
+        enum:
+        - customer
+        - driver
+        - admin
+        - business
+        name: role
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/getUserFromIP:
+    get:
+      summary: Get User from device token
+      operationId: getUserGetuserfromip
+      parameters:
+      - type: string
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: remoteIP
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/getWallet:
+    get:
+      summary: Get wallet data for user
+      operationId: getUserGetwallet
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/pingMe:
+    get:
+      summary: Ping Server
+      operationId: getUserPingme
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/addPhoneNumber:
+    put:
+      summary: Add Phone Number
+      operationId: putUserAddphonenumber
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 38'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/addToWallet:
+    put:
+      summary: Add money to user wallet
+      operationId: putUserAddtowallet
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: bookingNumericId
+        in: formData
+        required: true
+      - type: number
+        minimum: 0
+        name: amount
+        in: formData
+        required: true
+      - type: string
+        name: description
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/changePassword:
+    put:
+      summary: Change Password
+      operationId: putUserChangepassword
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: oldPassword
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: newPassword
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/contactUs:
+    put:
+      summary: Contact Us
+      operationId: putUserContactus
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: true
+      - type: string
+        name: query
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/preferenceSettings:
+    put:
+      summary: Add Preference Settings
+      operationId: putUserPreferencesettings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ' BIKE or LITE or NONE '
+        enum:
+        - BIKE
+        - LITE
+        - NONE
+        name: carName
+        in: formData
+        required: true
+      - type: string
+        description: ' CARD or CASH or NONE'
+        enum:
+        - CARD
+        - CASH
+        - NONE
+        name: paymentMethod
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/resendEmail:
+    put:
+      summary: Resend email verify link
+      operationId: putUserResendemail
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/resendOTP:
+    put:
+      summary: Resend OTP for Driver
+      operationId: putUserResendotp
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 39'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/resetPassword:
+    put:
+      summary: Reset Password
+      operationId: putUserResetpassword
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: passwordResetToken
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: newPassword
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/setPassword:
+    put:
+      summary: set Password
+      operationId: putUserSetpassword
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: emailVerificationToken
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/setPrimaryNumber:
+    put:
+      summary: set primary number
+      operationId: putUserSetprimarynumber
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 40'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/updateDeviceToken:
+    put:
+      summary: update device token
+      operationId: putUserUpdatedevicetoken
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 41'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/updatePhoneNumber:
+    put:
+      summary: Update Phone Number
+      operationId: putUserUpdatephonenumber
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 42'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/updateUTCoffset:
+    put:
+      summary: update UTC offset
+      operationId: putUserUpdateutcoffset
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/verifyForgotPasswordOTP:
+    put:
+      summary: Sends Reset Password Token To User
+      operationId: putUserVerifyforgotpasswordotp
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        name: mobile
+        in: formData
+        required: true
+      - type: number
+        name: OTP
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/verifyEmail:
+    post:
+      summary: Verify registration email for business
+      operationId: postBusinessVerifyemail
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 69'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/accessTokenLogin:
+    post:
+      summary: get details with token
+      operationId: postServiceproviderAccesstokenlogin
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+      - type: string
+        description: type of the device currently using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        description: Unique ID of the device
+        name: deviceID
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/login:
+    post:
+      summary: Login Via Email & Password For  User
+      operationId: postServiceproviderLogin
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        x-convert:
+          lowercase: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        description: role of user
+        enum:
+        - serviceProvider
+        name: role
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+      - type: string
+        description: type of the device current using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        description: Unique ID of the device
+        name: deviceID
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/logout:
+    post:
+      summary: Logout user
+      operationId: postServiceproviderLogout
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/accessTokenLogin:
+    post:
+      summary: Get details of the user associated with the token
+      operationId: postUserAccesstokenlogin
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+      - type: string
+        description: Type of the device currently using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+        - HUAWEI
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        description: Unique ID of the device
+        name: deviceID
+        in: formData
+        required: false
+      - type: string
+        name: geoSparkToken
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/login:
+    post:
+      summary: Email/Password login for users
+      operationId: postUserLogin
+      parameters:
+      - type: string
+        description: en/ar/es
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        x-convert:
+          lowercase: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        description: Role of the user who is logging in
+        enum:
+        - customer
+        - driver
+        - serviceProvider
+        - admin
+        - business
+        name: role
+        in: formData
+        required: true
+      - type: string
+        description: User's password
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+      - type: boolean
+        name: rememberMe
+        in: formData
+        required: false
+      - type: string
+        description: Type of the device currently using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+        - HUAWEI
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        description: Unique ID of the device
+        name: deviceID
+        in: formData
+        required: false
+      - type: string
+        name: geoSparkToken
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/logout:
+    post:
+      summary: Logout user
+      operationId: postUserLogout
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/mobileLogin:
+    post:
+      summary: Login via mobile phone
+      operationId: postUserMobilelogin
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: primaryMobile
+        in: formData
+        required: false
+      - type: string
+        description: role of user
+        enum:
+        - customer
+        - business
+        name: role
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+      - type: string
+        description: type of the device current using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        description: Unique ID of the device
+        name: deviceID
+        in: formData
+        required: false
+      - type: string
+        description: ID from firebase after SMS send
+        name: firebaseID
+        in: formData
+        required: false
+      - type: string
+        description: social media type
+        enum:
+        - Facebook
+        - Google
+        - GoogleApp
+        name: socialType
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: socialID
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/uploadFile:
+    post:
+      summary: Upload File
+      operationId: postUserUploadfile
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: file
+        description: image file
+        x-meta:
+          swaggerType: file
+        in: formData
+        name: image
+        required: true
+      - type: string
+        description: If the image is for MARKETPLACE
+        name: type
+        in: formData
+        required: false
+      consumes:
+      - multipart/form-data
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/verifyEmail:
+    post:
+      summary: Resend email verify link
+      operationId: postUserVerifyemail
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 77'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/verifyMobileOTP:
+    post:
+      summary: Verify OTP sent to mobile
+      operationId: postUserVerifymobileotp
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 78'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/deletePhoneNumber:
+    delete:
+      summary: delete Phone Number
+      operationId: deleteUserDeletephonenumber
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 39'
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/deleteUser/{lang}/{email}:
+    delete:
+      summary: Hard Delete User for tester only
+      operationId: deleteUserDeleteuserLangEmail
+      parameters:
+      - type: string
+        description: en/ar
+        name: lang
+        in: path
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: path
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - user
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  Model 78:
+    type: object
+    properties:
+      mobile:
+        type: string
+        description: Phone number to validate
+      OTPCode:
+        type: number
+        description: OTP sent via SMS to the user
+        maximum: 999999
+      isDevice:
+        type: boolean
+        description: Whether the device that made the request is the same as the one the OTP was sent to
+      deviceType:
+        type: string
+        description: Type of the device current using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+      role:
+        type: string
+        description: Role of the user who made the request
+        enum:
+        - customer
+        - business
+      firebaseID:
+        type: string
+        description: ID from firebase after SMS send
+    required:
+    - mobile
+    - isDevice
+    - deviceType
+    - role
+  Model 69:
+    type: object
+    properties:
+      emailVerificationToken:
+        type: number
+        minimum: 1000
+        maximum: 9999
+    required:
+    - emailVerificationToken
+  Model 41:
+    type: object
+    properties:
+      deviceToken:
+        type: string
+        description: android/ios device token
+        x-convert:
+          trim: true
+      role:
+        type: string
+        description: role of user
+        enum:
+        - customer
+        - driver
+        - serviceProvider
+    required:
+    - deviceToken
+    - role
+  Model 42:
+    type: object
+    properties:
+      oldMobile:
+        type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+      countryCode:
+        type: string
+        description: '+91'
+        maxLength: 4
+        x-convert:
+          trim: true
+      newMobile:
+        type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+    required:
+    - oldMobile
+    - countryCode
+    - newMobile
+  Model 39:
+    type: object
+    properties:
+      mobile:
+        type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+    required:
+    - mobile
+  Model 77:
+    type: object
+    properties:
+      emailVerificationToken:
+        type: number
+        minimum: 100000
+        maximum: 999999
+    required:
+    - emailVerificationToken
+  Model 38:
+    type: object
+    properties:
+      countryCode:
+        type: string
+        description: '+91'
+        maxLength: 4
+        x-convert:
+          trim: true
+      mobile:
+        type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+    required:
+    - countryCode
+    - mobile
+  Model 40:
+    type: object
+    properties:
+      countryCode:
+        type: string
+        maxLength: 4
+        x-convert:
+          trim: true
+      mobile:
+        type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+    required:
+    - countryCode
+    - mobile

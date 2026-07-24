@@ -1,0 +1,27 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting health-check API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: health-check
+paths:
+  /health-check:
+    get:
+      summary: Get health check
+      operationId: getHealthcheck
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - health-check
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

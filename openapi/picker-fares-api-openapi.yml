@@ -1,0 +1,160 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting fares API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: fares
+paths:
+  /admin/fares/pricing:
+    put:
+      summary: Update selected fare
+      operationId: putAdminFaresPricing
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: array
+        items:
+          type: number
+        collectionFormat: multi
+        name: carType
+        in: formData
+        required: true
+      - type: string
+        name: carName
+        in: formData
+        required: false
+      - type: string
+        name: cancellationPolicy
+        in: formData
+        required: false
+      - type: number
+        name: minimumCancellationFee
+        in: formData
+        required: false
+      - type: number
+        name: commissionCharge
+        in: formData
+        required: false
+      - type: number
+        name: baseFarebelow3
+        in: formData
+        required: false
+      - type: number
+        name: baseFare
+        in: formData
+        required: false
+      - type: number
+        name: perKmCharge
+        in: formData
+        required: false
+      - type: number
+        name: perMinuteCharge
+        in: formData
+        required: false
+      - type: string
+        description: region ID is required
+        minLength: 24
+        maxLength: 24
+        name: regionID
+        in: formData
+        required: false
+      - type: string
+        description: super region ID is required
+        minLength: 24
+        maxLength: 24
+        name: superRegionID
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        name: freeTime
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        name: baseDistance
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: object
+          properties:
+            min:
+              type: number
+              minimum: 0
+              maximum: 1000
+            max:
+              type: number
+              minimum: 0
+              maximum: 1000
+            amount:
+              type: number
+              minimum: 0
+          required:
+          - min
+          - max
+          - amount
+        collectionFormat: multi
+        name: kmRanges
+        in: formData
+      - type: number
+        description: Amount to charge to the customer for a NOT SHOW
+        minimum: 0
+        name: notShowTimeLimit
+        in: formData
+        required: false
+      - type: number
+        description: Amount to charge to the customer for a NOT SHOW
+        minimum: 0
+        name: notShowCustomerCharge
+        in: formData
+        required: false
+      - type: number
+        description: Amount to pay to the driver for a NOT SHOW
+        minimum: 0
+        name: notShowDriverCommission
+        in: formData
+        required: false
+      - type: number
+        description: Amount to charge when region indicates it is raining
+        minimum: 0
+        maximum: 1000
+        name: rainCharge
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - PERCENTAGE
+        - FIXED
+        name: rushHourIncreaseType
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        name: rushHourIncreaseCoefficient
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - fares
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

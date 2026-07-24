@@ -1,0 +1,25 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting datil API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: datil
+paths:
+  /datil/receiptIssued:
+    post:
+      summary: Webhook for receipt-issued notification of Datil
+      operationId: postDatilReceiptissued
+      tags:
+      - datil
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

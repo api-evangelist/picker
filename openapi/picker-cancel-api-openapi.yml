@@ -1,0 +1,42 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting cancel API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: cancel
+paths:
+  /cancel:
+    get:
+      summary: Get All Cancel Request
+      operationId: getCancel
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: bookingId
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - cancel
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

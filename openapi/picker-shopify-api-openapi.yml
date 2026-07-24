@@ -1,0 +1,36 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting shopify API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: shopify
+paths:
+  /api/pushShopifyOrder:
+    post:
+      summary: Handle shopify integration with push system
+      operationId: postApiPushshopifyorder
+      tags:
+      - shopify
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/saveShopifyConfig:
+    post:
+      summary: Handle shopify integration with push system
+      operationId: postApiSaveshopifyconfig
+      tags:
+      - shopify
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

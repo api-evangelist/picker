@@ -1,0 +1,1134 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting customer API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: customer
+paths:
+  /booking/getAmountlogs:
+    get:
+      summary: get order amount logs
+      operationId: getBookingGetamountlogs
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/availableServiceProvider:
+    get:
+      summary: Round settings for booking floating
+      operationId: getCustomerAvailableserviceprovider
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: serviceID
+        in: query
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: pickupLongitude
+        in: query
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: pickupLatitude
+        in: query
+        required: true
+      - type: number
+        description: distance range to float booking
+        name: radius
+        in: query
+      - type: number
+        description: Limit number of records
+        name: limit
+        in: query
+      - type: number
+        description: Skip number of records
+        name: skip
+        in: query
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/bookingAddresses:
+    get:
+      summary: Sends Reset Password Token To User
+      operationId: getCustomerBookingaddresses
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        enum:
+        - DELIVERY
+        - PICKUP
+        name: addressType
+        in: query
+        required: true
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/getFavorites:
+    get:
+      summary: Get list favorite products and businesses from user.
+      operationId: getCustomerGetfavorites
+      parameters:
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/listServiceLocation:
+    get:
+      summary: Get list Of all service location
+      operationId: getCustomerListservicelocation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: array
+        description: 'DELIVERY PICKUP '
+        items:
+          type: string
+          enum:
+          - DELIVERY
+          - PICKUP
+        collectionFormat: multi
+        name: addressType
+        in: query
+        required: false
+      - type: string
+        description: ' HOME OFFICE'
+        enum:
+        - HOME
+        - OFFICE
+        name: type
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/search:
+    get:
+      summary: Search businesses and products by searchText.
+      operationId: getCustomerSearch
+      parameters:
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        minLength: 3
+        name: searchText
+        in: query
+        required: true
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /userMarketingData/getAllUserMarketingData:
+    get:
+      summary: Returns the list of all User Marketing Questions available
+      operationId: getUsermarketingdataGetallusermarketingdata
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addFavoritePicker:
+    put:
+      summary: Add favorite pickers of a customer
+      operationId: putAdminAddfavoritepicker
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the customer
+        minLength: 24
+        maxLength: 24
+        name: customerID
+        in: formData
+        required: true
+      - type: array
+        description: Array of IDs of the drivers selected as favorite
+        enum:
+        - isJoi: true
+          _type: string
+          _settings: null
+          _valids:
+            _set: []
+          _invalids:
+            _set:
+            - ''
+          _tests:
+          - name: min
+            arg: 24
+          - name: max
+            arg: 24
+          _refs: []
+          _flags:
+            presence: required
+          _description: null
+          _unit: null
+          _notes: []
+          _tags: []
+          _examples: []
+          _meta: []
+          _inner: {}
+        items:
+          type: string
+        collectionFormat: multi
+        name: pickerIDs
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/addReferralCode:
+    put:
+      summary: Add usage of referral code by customer
+      operationId: putCustomerAddreferralcode
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: referralCode
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/driverSearch:
+    put:
+      summary: Search Driver Near Address
+      operationId: putCustomerDriversearch
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 34'
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/orderReceived:
+    put:
+      summary: orderReceived key update
+      operationId: putCustomerOrderreceived
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 35'
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/updateProfile:
+    put:
+      summary: Customer can Update his/her Profile
+      operationId: putCustomerUpdateprofile
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: string
+        name: dateOfBirth
+        in: formData
+        required: false
+      - type: string
+        name: identityNumber
+        in: formData
+        required: false
+      - type: object
+        optional:
+        - original
+        - thumbnail
+        name: image
+        in: formData
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: false
+      - type: string
+        default: '+593'
+        name: countryCode
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /user/confirmInformation:
+    put:
+      summary: Customer can Update his/her Profile
+      operationId: putUserConfirminformation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: string
+        name: dateOfBirth
+        in: formData
+        required: false
+      - type: string
+        name: identityNumber
+        in: formData
+        required: false
+      - type: object
+        optional:
+        - original
+        - thumbnail
+        name: image
+        in: formData
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: false
+      - type: string
+        default: '+593'
+        name: countryCode
+        in: formData
+        required: false
+      - type: string
+        name: role
+        in: formData
+        required: true
+      - type: string
+        name: password
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /update/customer/service/location:
+    put:
+      summary: Customer can update his favourite service location
+      operationId: putUpdateCustomerServiceLocation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 46'
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/addQueryToAdmin:
+    post:
+      summary: Add query to admin
+      operationId: postCustomerAddquerytoadmin
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 71'
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/addRemoveFavorite:
+    post:
+      summary: Customer can add or remove his favourite business or product
+      operationId: postCustomerAddremovefavorite
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the product or business selected
+        minLength: 24
+        maxLength: 24
+        name: favoriteID
+        in: formData
+        required: true
+      - type: string
+        description: If the selected favorite is product or business
+        enum:
+        - PRODUCT
+        - BUSINESS
+        name: type
+        in: formData
+        required: true
+      - type: boolean
+        name: isFavorite
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/registerFromEmail:
+    post:
+      summary: Register a new customer via Email
+      operationId: postCustomerRegisterfromemail
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 characters
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        name: countryCode
+        in: formData
+        required: true
+      - type: number
+        name: appVersion
+        in: formData
+        required: true
+      - type: string
+        name: dateOfBirth
+        in: formData
+        required: false
+      - type: string
+        name: identityNumber
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: object
+        description: image url
+        required: false
+        name: image
+        in: formData
+      - type: string
+        default: customer
+        enum:
+        - customer
+        - business
+        - deliveryPartner
+        name: role
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /userMarketingData/registerUserMarketingData:
+    post:
+      summary: create User Marketing Data
+      operationId: postUsermarketingdataRegisterusermarketingdata
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: categoryCompany
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: monthlyDeliveries
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: employeesCompany
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/service/location:
+    post:
+      summary: Customer can add his favourite service location
+      operationId: postCustomerServiceLocation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        x-convert:
+          trim: true
+        name: placeID
+        in: formData
+      - type: string
+        x-convert:
+          trim: true
+        name: title
+        in: formData
+      - type: string
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: city
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: state
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: zipCode
+        in: formData
+      - type: string
+        description: ' DELIVERY PICKUP '
+        enum:
+        - DELIVERY
+        - PICKUP
+        name: addressType
+        in: formData
+        required: true
+      - type: string
+        description: ' HOME OFFICE OTHERS'
+        enum:
+        - HOME
+        - OFFICE
+        - OTHERS
+        name: type
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/remove/service/location:
+    delete:
+      summary: delete service  location of customer
+      operationId: deleteCustomerRemoveServiceLocation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: string
+          minLength: 24
+          maxLength: 24
+        collectionFormat: multi
+        name: locationId
+        in: query
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - customer
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  locationDetails:
+    type: object
+    description: It is an object having different keys
+    properties:
+      latitude:
+        type: number
+        minimum: -90
+        maximum: 90
+      longitude:
+        type: number
+        minimum: -180
+        maximum: 180
+      addressLine1:
+        type: string
+        x-convert:
+          trim: true
+      addressLine2:
+        type: string
+        x-convert:
+          trim: true
+      city:
+        type: string
+        x-convert:
+          uppercase: true
+          trim: true
+      state:
+        type: string
+        x-convert:
+          uppercase: true
+          trim: true
+      country:
+        type: string
+        x-convert:
+          uppercase: true
+          trim: true
+      zipCode:
+        type: string
+        x-convert:
+          trim: true
+    required:
+    - latitude
+    - longitude
+    - addressLine1
+    - city
+    - state
+    - zipCode
+  Model 71:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        minLength: 24
+        maxLength: 24
+      query:
+        type: string
+      role:
+        type: string
+        description: role of user
+        enum:
+        - customer
+        - driver
+    required:
+    - role
+  Model 35:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        minLength: 24
+        maxLength: 24
+      orderReceived:
+        type: boolean
+        default: false
+    required:
+    - bookingID
+    - orderReceived
+  Model 46:
+    type: object
+    properties:
+      locationId:
+        type: string
+        description: required if location id update
+        minLength: 24
+        maxLength: 24
+      companyName:
+        type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+      companyAddress:
+        type: string
+        minLength: 2
+        x-convert:
+          trim: true
+      city:
+        type: string
+        minLength: 2
+        x-convert:
+          trim: true
+      state:
+        type: string
+        minLength: 2
+        x-convert:
+          trim: true
+      zipCode:
+        type: string
+        minLength: 2
+        x-convert:
+          trim: true
+      addressType:
+        type: string
+        description: '  DELIVERY PICKUP'
+        enum:
+        - DELIVERY
+        - PICKUP
+      type:
+        type: string
+        description: ' HOME OFFICE'
+        enum:
+        - HOME
+        - OFFICE
+      latitude:
+        type: number
+      longitude:
+        type: number
+    required:
+    - addressType
+    - latitude
+    - longitude
+  Model 34:
+    type: object
+    properties:
+      locationDetails:
+        $ref: '#/definitions/locationDetails'
+    required:
+    - locationDetails

@@ -1,0 +1,77 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting list API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: list
+paths:
+  /customer/list/card:
+    get:
+      summary: list of cards
+      operationId: getCustomerListCard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - list
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/list/service/location:
+    get:
+      summary: Get List Of all service loation
+      operationId: getCustomerListServiceLocation
+      parameters:
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: array
+        description: 'DELIVERY PICKUP '
+        items:
+          type: string
+          enum:
+          - DELIVERY
+          - PICKUP
+        collectionFormat: multi
+        name: addressType
+        in: query
+        required: false
+      - type: string
+        description: ' HOME OFFICE'
+        enum:
+        - HOME
+        - OFFICE
+        name: type
+        in: query
+        required: false
+      tags:
+      - list
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

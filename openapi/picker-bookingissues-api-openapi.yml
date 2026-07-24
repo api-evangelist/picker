@@ -1,0 +1,85 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting BookingIssues API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: BookingIssues
+paths:
+  /bookingIssues/getBookingIssues:
+    get:
+      summary: get all booking issues
+      operationId: getBookingissuesGetbookingissues
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - BookingIssues
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookingIssues/registerBookingIssue:
+    post:
+      summary: add a new booking issue
+      operationId: postBookingissuesRegisterbookingissue
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: details
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: key
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - BookingIssues
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

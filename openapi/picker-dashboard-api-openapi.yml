@@ -1,0 +1,361 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting dashboard API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: dashboard
+paths:
+  /bookings/getAllBookingsDashBoard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBookingsGetallbookingsdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: page
+        in: query
+        required: false
+      - type: string
+        name: status
+        in: query
+        required: false
+      - type: string
+        name: from
+        in: query
+        required: false
+      - type: string
+        name: to
+        in: query
+        required: false
+      - type: string
+        name: orderBy
+        in: query
+        required: false
+      - type: boolean
+        name: onlyPast
+        in: query
+        required: false
+      - type: boolean
+        name: onlyActives
+        in: query
+        required: false
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookings/getCoportatesAllBookings:
+    get:
+      summary: Get General info about businesses
+      operationId: getBookingsGetcoportatesallbookings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: page
+        in: query
+        required: false
+      - type: string
+        name: status
+        in: query
+        required: false
+      - type: string
+        name: from
+        in: query
+        required: false
+      - type: string
+        name: to
+        in: query
+        required: false
+      - type: string
+        name: orderBy
+        in: query
+        required: false
+      - type: boolean
+        name: onlyPast
+        in: query
+        required: false
+      - type: boolean
+        name: onlyActives
+        in: query
+        required: false
+      - type: string
+        description: ID of the selected user to filter its bookings
+        name: userID
+        in: query
+        required: false
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookings/getCorporateBookingsByUserId:
+    get:
+      summary: Get coportates orders by businessId
+      operationId: getBookingsGetcorporatebookingsbyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: page
+        in: query
+        required: false
+      - type: string
+        name: userId
+        in: query
+        required: true
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getAccountInfoIntegrationDashboard:
+    get:
+      summary: Get General info about specific business
+      operationId: getBusinessGetaccountinfointegrationdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userId
+        in: query
+        required: false
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getAssociatedBusiness:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetassociatedbusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: storeType
+        in: query
+        required: false
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        name: search
+        in: query
+        required: false
+      - type: string
+        name: sortField
+        in: query
+        required: false
+      - type: string
+        name: sortOrder
+        in: query
+        required: false
+      - type: boolean
+        name: status
+        in: query
+        required: false
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBookingsDataByDatesDashboard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbookingsdatabydatesdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: fromDate
+        in: query
+        required: true
+      - type: string
+        name: toDate
+        in: query
+        required: true
+      - type: boolean
+        name: isSemester
+        in: query
+        required: false
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBookingsIntegrationDashboard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbookingsintegrationdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userID
+        in: query
+        required: false
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessesGeneralInfo:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbusinessesgeneralinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/turnOffOnBusinessById:
+    get:
+      summary: Get General info about specific business
+      operationId: getBusinessTurnoffonbusinessbyid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        name: businessId
+        in: query
+        required: true
+      - type: string
+        name: currentStatus
+        in: query
+        required: true
+      tags:
+      - dashboard
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

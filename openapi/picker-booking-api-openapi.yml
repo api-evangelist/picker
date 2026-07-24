@@ -1,0 +1,2855 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting booking API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: booking
+paths:
+  /admin/bookings:
+    get:
+      summary: Get list of bookings
+      operationId: getAdminBookings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        default: 12
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        default: 0
+        name: skip
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: false
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 7
+          - 6
+          - 8
+          - 11
+          - 12
+          - 13
+          - 20
+          - 21
+          - 22
+          - 10
+          - 25
+          - 23
+          - 27
+          - 28
+          - 32
+          - 34
+          - 33
+          - 29
+          - 31
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      - type: string
+        enum:
+        - PICKUP_AND_DELIVER
+        - BUY_AND_DELIVER
+        - MARKETPLACE
+        - SHOP_ORDER
+        - CORPORATE
+        - WHITE_LABEL
+        name: typeText
+        in: query
+        required: false
+      - type: string
+        name: sortField
+        in: query
+        required: false
+      - type: string
+        name: sortOrder
+        in: query
+        required: false
+      - type: string
+        name: searchBooking
+        in: query
+        required: false
+      - type: string
+        name: customer
+        in: query
+        required: false
+      - type: string
+        name: driver
+        in: query
+        required: false
+      - type: string
+        name: business
+        in: query
+        required: false
+      - type: string
+        name: superRegionID
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/userBookings:
+    get:
+      summary: Get list of bookings from an user
+      operationId: getAdminUserbookings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        default: 12
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        default: 0
+        name: skip
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        name: customer
+        in: query
+        required: false
+      - type: string
+        name: driver
+        in: query
+        required: false
+      - type: string
+        name: business
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/warningBookings:
+    get:
+      summary: Get list of bookings
+      operationId: getAdminWarningbookings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        default: 12
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        default: 0
+        name: skip
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        name: sortField
+        in: query
+        required: false
+      - type: string
+        name: sortOrder
+        in: query
+        required: false
+      - type: string
+        name: adminResponsableID
+        in: query
+        required: false
+      - type: string
+        name: superRegionID
+        in: query
+        required: false
+      - type: string
+        name: currency
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/getBookingDetails:
+    get:
+      summary: Get all details from a selected booking
+      operationId: getApiGetbookingdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: bookingID
+        in: query
+        required: false
+      - type: string
+        name: id
+        in: query
+        required: false
+      - type: string
+        name: externalID
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/getChatbotBooking:
+    get:
+      summary: Get all details from a selected booking using chatbot
+      operationId: getApiGetchatbotbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Field bookingNumericId
+        name: bookingID
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/getDriver:
+    get:
+      summary: Get drivers registered by the user
+      operationId: getApiGetdriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: email
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/getDriverById:
+    get:
+      summary: Get driver by id
+      operationId: getApiGetdriverbyid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: id
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/getDrivers:
+    get:
+      summary: Get drivers registered by the user
+      operationId: getApiGetdrivers
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/getPastBooking:
+    get:
+      summary: Get Past Booking For User
+      operationId: getApiGetpastbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: false
+      - type: array
+        description: 0-Pending, 1-Accepted, 2-Arrived, 3-WAY_TO_DELIVER, 4-Arrived At Delivery, 5-Completed6-Cancelled By Admin, 7-Cancelled
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 7
+          - 6
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getAllAvailabeBooking:
+    get:
+      summary: Get All Availabe Booking For serviceProvider and Driver
+      operationId: getBookingGetallavailabebooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getAllBids:
+    get:
+      summary: Get All Bid Request
+      operationId: getBookingGetallbids
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Booking id for the bids
+        name: bookingID
+        in: query
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getAllBookingDetails:
+    get:
+      summary: Get All Deatils of Particular Booking For serviceProvider and Driver
+      operationId: getBookingGetallbookingdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: id
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getBookingDetails:
+    get:
+      summary: Get All Deatils of Particular Booking For serviceProvider and Driver
+      operationId: getBookingGetbookingdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: id
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getBookingReport:
+    get:
+      summary: Get booking report data for user
+      operationId: getBookingGetbookingreport
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: _id of the booking selected
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getBookingRoute:
+    get:
+      summary: Get path for specific booking
+      operationId: getBookingGetbookingroute
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Booking ID to fetch the track history
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+        required: true
+      - type: boolean
+        name: objectId
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getOngoingBooking:
+    get:
+      summary: Get Ongoing Booking For User
+      operationId: getBookingGetongoingbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getPastBooking:
+    get:
+      summary: Get Past Booking For User
+      operationId: getBookingGetpastbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: dateFrom
+        in: query
+        required: false
+      - type: string
+        enum:
+        - DESC
+        - ASC
+        name: orderDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: dateTo
+        in: query
+        required: false
+      - type: array
+        description: 0-Pending, 1-Accepted, 2-Arrived, 3-WAY_TO_DELIVER, 4-Arrived At Delivery, 5-Completed, 7-Cancelled, 8-Cancelled By Driver, 10-Cancelled Request, 11-Rejected By Customer, 12-Not Found, 20-On Hold, 21-On Deck, 22-Ready for pickup
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 7
+          - 6
+          - 8
+          - 11
+          - 12
+          - 13
+          - 20
+          - 21
+          - 22
+          - 10
+          - 25
+          - 23
+          - 27
+          - 28
+          - 29
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      - type: string
+        enum:
+        - PICKUP_AND_DELIVER
+        - BUY_AND_DELIVER
+        - MARKETPLACE
+        - SHOP_ORDER
+        name: typeText
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getProductList:
+    get:
+      summary: Get list of products from the booking
+      operationId: getBookingGetproductlist
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: _id of the booking selected
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/preCheckout:
+    get:
+      summary: Get deliveryFee and details for checkout screen
+      operationId: getBookingPrecheckout
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Distance between pickup & delivery location
+        minimum: 0
+        name: distance
+        in: query
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: pickupLongitude
+        in: query
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: pickupLatitude
+        in: query
+        required: true
+      - type: array
+        description: Array of products the customer will buy
+        items:
+          type: string
+        collectionFormat: multi
+        name: products
+        in: query
+        required: true
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+    post:
+      summary: Get delivery details for pre checkout view
+      operationId: postBookingPrecheckout
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 63'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/getPastBooking:
+    get:
+      summary: Get Past Booking For Customer
+      operationId: getCustomerGetpastbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        enum:
+        - DESC
+        - ASC
+        name: orderDate
+        in: query
+        required: false
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 7
+          - 6
+          - 8
+          - 11
+          - 12
+          - 13
+          - 20
+          - 21
+          - 22
+          - 10
+          - 25
+          - 23
+          - 27
+          - 28
+          - 29
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/workspace/getBookingDetails:
+    get:
+      summary: Get all details from a selected booking
+      operationId: getApiWorkspaceGetbookingdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: bookingID
+        in: query
+        required: false
+      - type: string
+        name: id
+        in: query
+        required: false
+      - type: string
+        name: externalID
+        in: query
+        required: false
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/assignResponsable:
+    put:
+      summary: Assign user as responsable for a booking
+      operationId: putAdminAssignresponsable
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 5'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/changeBookingDriver:
+    put:
+      summary: Change the driver of a selected booking
+      operationId: putAdminChangebookingdriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 7'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/rateChatbotBooking:
+    put:
+      summary: Rate a booking from chatbot
+      operationId: putApiRatechatbotbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 13'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/addProofOfDelivery:
+    put:
+      summary: When a booking it's completed the delivery send a picture that should save in the booking
+      operationId: putBookingAddproofofdelivery
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 16'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/assignBookingManually:
+    put:
+      summary: Send booking notification manually to sp/driver
+      operationId: putBookingAssignbookingmanually
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: User id of service provider
+        x-constraint:
+          length: 24
+        name: userID
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - driver
+        - serviceProvider
+        name: role
+        in: formData
+        required: true
+      - type: string
+        description: Booking ID
+        x-constraint:
+          length: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: boolean
+        description: If booking was check for have provider assign
+        name: assignConfirm
+        in: formData
+        required: true
+      - type: string
+        description: Reason of the assign
+        name: manualAssignReason
+        in: formData
+        required: true
+      - type: boolean
+        name: isAdmin
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/assignBookingRandomly:
+    put:
+      summary: Remove driver from booking and start new driver search
+      operationId: putBookingAssignbookingrandomly
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        x-constraint:
+          length: 24
+        name: bookingID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/assignManualRequest:
+    put:
+      summary: Send booking notification request manually to driver
+      operationId: putBookingAssignmanualrequest
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: User ID of driver
+        x-constraint:
+          length: 24
+        name: userID
+        in: formData
+        required: true
+      - type: string
+        description: Booking ID
+        x-constraint:
+          length: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: string
+        description: Reason of the manual request assign
+        name: manualRequestReason
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/bookingAcceptReject:
+    put:
+      summary: Accept-Reject Booking
+      operationId: putBookingBookingacceptreject
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: number
+        enum:
+        - 1
+        - 9
+        name: bookingCurrentStatus
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - ACCEPTED
+        - REJECTED_BY_DRIVER
+        name: bookingCurrentStatusText
+        in: formData
+        required: true
+      - type: number
+        description: Driver's current location
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        description: Driver's current location
+        name: longitude
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/cancelBooking:
+    put:
+      summary: Cancel Booking
+      operationId: putBookingCancelbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 17'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/cancelBookingFromBusiness:
+    put:
+      summary: Cancel Booking From Business
+      operationId: putBookingCancelbookingfrombusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 18'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/cancelBookingRequest:
+    put:
+      summary: Cancel Booking
+      operationId: putBookingCancelbookingrequest
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 19'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/changePaymentMethod:
+    put:
+      summary: Change payment method of the selected booking
+      operationId: putBookingChangepaymentmethod
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 20'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/editOrderRequest:
+    put:
+      summary: Edit the selected order request and send notification to customer
+      operationId: putBookingEditorderrequest
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 21'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/getCancellationChargeInfo:
+    put:
+      summary: Cancel Booking
+      operationId: putBookingGetcancellationchargeinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 19'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/makeDonation:
+    put:
+      summary: Make a donation after the booking
+      operationId: putBookingMakedonation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 22'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/notDelivered:
+    put:
+      summary: Mark a booking as not delivered to the customer
+      operationId: putBookingNotdelivered
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 23'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/notShow:
+    put:
+      summary: Validate && set booking as a Not Show
+      operationId: putBookingNotshow
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 24'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/rejectBooking:
+    put:
+      summary: When a booking is in ON HOLD, the business and admin can reject it. All charges made to the customer's card are refunded.
+      operationId: putBookingRejectbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 25'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/restartSearchAutomaticAccept:
+    put:
+      summary: Restarts the driver search after driver doesnt login in automatic acceptation
+      operationId: putBookingRestartsearchautomaticaccept
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 26'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/restartTime:
+    put:
+      summary: Restart time of the selected booking
+      operationId: putBookingRestarttime
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Booking ID
+        x-constraint:
+          length: 24
+        name: bookingID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/selectBidByCustomer:
+    put:
+      summary: Select Bid
+      operationId: putBookingSelectbidbycustomer
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 27'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/setBookingIssue:
+    put:
+      summary: Set issue for a booking
+      operationId: putBookingSetbookingissue
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 28'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/setCancellationReason:
+    put:
+      summary: Set reason of cancellation for a booking
+      operationId: putBookingSetcancellationreason
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 29'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/validateCodeOfProof:
+    put:
+      summary: Validate the code that driver send
+      operationId: putBookingValidatecodeofproof
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 30'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/play/pause:
+    put:
+      summary: start time and pause time
+      operationId: putBookingPlayPause
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 44'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/shareMyRide:
+    post:
+      summary: Get SMR for selected booking
+      operationId: postAdminSharemyride
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 19'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/pushShopifyOrder:
+    post:
+      summary: Handle shopify integration with push system
+      operationId: postApiPushshopifyorder
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/pushSpoonityOrder:
+    post:
+      summary: Handle spoonity integration with push system
+      operationId: postApiPushspoonityorder
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/pushVtexOrder:
+    post:
+      summary: Handle vtex integration with push system
+      operationId: postApiPushvtexorder
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/saveShopifyConfig:
+    post:
+      summary: Handle shopify integration with push system
+      operationId: postApiSaveshopifyconfig
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/sendChatbotBookingRate:
+    post:
+      summary: Rating a booking from chatbot
+      operationId: postApiSendchatbotbookingrate
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 59'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/createBooking:
+    post:
+      summary: Create a new booking
+      operationId: postBookingCreatebooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        maxLength: 50
+        x-convert:
+          trim: true
+        name: deliveryCity
+        in: formData
+        required: true
+      - type: string
+        default: N/A
+        minLength: 3
+        maxLength: 50
+        x-convert:
+          trim: true
+        name: deliveryState
+        in: formData
+      - type: string
+        default: N/A
+        maxLength: 20
+        name: deliveryZipCode
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: deliveryAddress
+        in: formData
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: deliveryLongitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: deliveryLatitude
+        in: formData
+        required: true
+      - type: string
+        name: deliveryReferences
+        in: formData
+        required: false
+      - type: boolean
+        default: false
+        name: saveDeliveryAddress
+        in: formData
+        required: false
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: pickupLongitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: pickupLatitude
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        maxLength: 50
+        x-convert:
+          trim: true
+        name: pickupCity
+        in: formData
+        required: true
+      - type: string
+        default: N/A
+        minLength: 3
+        maxLength: 50
+        x-convert:
+          trim: true
+        name: pickupState
+        in: formData
+      - type: string
+        default: N/A
+        maxLength: 20
+        name: pickupZipCode
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: pickupAddress
+        in: formData
+        required: true
+      - type: string
+        name: pickupReferences
+        in: formData
+        required: false
+      - type: boolean
+        default: false
+        name: savePickupAddress
+        in: formData
+        required: false
+      - type: string
+        default: '2026-07-13T16:15:38.356Z'
+        name: pickupDateTimeFrom
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: bookingNotes
+        in: formData
+        required: false
+      - type: boolean
+        default: false
+        name: isLaterBooking
+        in: formData
+        required: false
+      - type: number
+        description: 'Type of vehicle for this booking. Bike: 1, Lite: 0'
+        name: carType
+        in: formData
+        required: true
+      - type: string
+        description: Type of vehicle for this booking
+        enum:
+        - BIKE
+        - LITE
+        name: carName
+        in: formData
+        required: true
+      - type: string
+        description: Payment method for the booking. CARD or CASH
+        enum:
+        - CARD
+        - CASH
+        name: paymentMethod
+        in: formData
+        required: true
+      - type: number
+        enum:
+        - 0
+        - 1
+        name: bookingType
+        in: formData
+        required: true
+      - type: string
+        description: Promo to be used for this booking
+        minLength: 24
+        maxLength: 24
+        name: promoAliasID
+        in: formData
+        required: false
+      - type: string
+        description: Region this booking belongs to
+        minLength: 24
+        maxLength: 24
+        name: regionID
+        in: formData
+        required: false
+      - type: number
+        description: Total distance from pickup to delivery location
+        minimum: 0
+        name: billedDistance
+        in: formData
+        required: true
+      - type: string
+        description: Customer's id from oneSignal
+        name: oneSignalId
+        in: formData
+        required: false
+      - type: string
+        name: realPhone
+        in: formData
+        required: false
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: realPositionLatitude
+        in: formData
+        required: false
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: realPositionLongitude
+        in: formData
+        required: false
+      - type: number
+        description: Minimum amount the driver has to have to accept this booking
+        minimum: 0
+        maximum: 200
+        name: minimumDriverCash
+        in: formData
+        required: false
+      - type: array
+        description: Image reference array for products
+        items:
+          type: object
+          properties:
+            original:
+              type: string
+            thumbnail:
+              type: string
+          optional:
+          - original
+          - thumbnail
+        collectionFormat: multi
+        name: productReferencesImages
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - SHOP
+        - PICKUP
+        - DELIVER
+        - BUSINESS_SHOP
+        - BUSINESS_DELIVER
+        - PICKUP_AND_DELIVER
+        name: subtype
+        in: formData
+        required: false
+      - type: object
+        description: Information for the booking's contact
+        required: false
+        name: contact
+        in: formData
+      - type: number
+        description: Tip for the driver
+        minimum: 0
+        name: tipBusiness
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/createMarketPlaceBooking:
+    post:
+      summary: Create Booking Request for Market Place
+      operationId: postBookingCreatemarketplacebooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business the order is for
+        x-constraint:
+          length: 24
+        name: businessID
+        in: formData
+        required: true
+      - type: array
+        description: Array of the products selected for the order
+        items:
+          type: object
+          properties:
+            productID:
+              type: string
+              description: ID of the product selected
+            quantity:
+              type: number
+              description: Amount of that product selected
+            details:
+              type: array
+              description: Array of the details the user selected for this product
+              items:
+                type: object
+                properties:
+                  _id:
+                    type: string
+                    description: ID of the product detail selected
+                  options:
+                    type: array
+                    description: Array of options selected for this product detail
+                    items:
+                      type: string
+                    collectionFormat: multi
+                    name: options
+                  text:
+                    type: string
+                    description: Product-detail text shown to the user
+                  additionalInformation:
+                    type: string
+                    description: Additional information for the product
+                required:
+                - _id
+                optional:
+                - options
+                - text
+                - additionalInformation
+              collectionFormat: multi
+              name: details
+          required:
+          - productID
+          - quantity
+          optional:
+          - details
+        collectionFormat: multi
+        name: products
+        in: formData
+        required: true
+      - type: array
+        description: Image reference array for products
+        items:
+          type: object
+          properties:
+            original:
+              type: string
+            thumbnail:
+              type: string
+          optional:
+          - original
+          - thumbnail
+        collectionFormat: multi
+        name: productReferencesImages
+        in: formData
+        required: false
+      - type: string
+        default: '2026-07-13T16:15:38.360Z'
+        name: pickupDateTimeFrom
+        in: formData
+        required: false
+      - type: string
+        default: N/A
+        minLength: 3
+        maxLength: 50
+        x-convert:
+          trim: true
+        name: deliveryCity
+        in: formData
+      - type: string
+        default: N/A
+        minLength: 3
+        maxLength: 50
+        x-convert:
+          trim: true
+        name: deliveryState
+        in: formData
+      - type: string
+        default: N/A
+        maxLength: 20
+        pattern: /^[a-zA-Z0-9 ]+$/
+        name: deliveryZipCode
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: deliveryAddress
+        in: formData
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: deliveryLongitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: deliveryLatitude
+        in: formData
+        required: true
+      - type: string
+        name: deliveryReferences
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: bookingNotes
+        in: formData
+        required: false
+      - type: number
+        enum:
+        - 2
+        name: bookingType
+        in: formData
+        required: true
+      - type: number
+        description: Distance between point A and point B
+        minimum: 0
+        name: billedDistance
+        in: formData
+        required: false
+      - type: string
+        description: Id from One Signal
+        name: oneSignalId
+        in: formData
+        required: false
+      - type: string
+        name: realPhone
+        in: formData
+        required: false
+      - type: number
+        description: Customer's real position.
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: realPositionLatitude
+        in: formData
+        required: false
+      - type: number
+        description: Customer's real position.
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: realPositionLongitude
+        in: formData
+        required: false
+      - type: string
+        description: Payment method for booking selected by the customer
+        default: CASH
+        enum:
+        - CASH
+        - CARD
+        name: paymentMethod
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/makeBidByDriver:
+    post:
+      summary: Make an order request for a booking
+      operationId: postBookingMakebidbydriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 62'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/restartSearch:
+    post:
+      summary: Restarts the driver search for the selected booking
+      operationId: postBookingRestartsearch
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 26'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/sendOrderRequestNotification:
+    post:
+      summary: Send the notification of the selected order request from the booking to the customer
+      operationId: postBookingSendorderrequestnotification
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 64'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/validateBooking:
+    post:
+      summary: Check if a booking can create in Picker
+      operationId: postBookingValidatebooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+        required: true
+      - type: number
+        description: Delivery longitude coordinate.
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: longitude
+        in: formData
+        required: true
+      - type: number
+        description: Delivery latitude coordinate.
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: latitude
+        in: formData
+        required: true
+      - type: string
+        default: N/A
+        minLength: 3
+        maxLength: 50
+        x-convert:
+          trim: true
+        name: city
+        in: formData
+      - type: string
+        name: country
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: address
+        in: formData
+        required: true
+      - type: string
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        name: customerName
+        in: formData
+        required: false
+      - type: string
+        name: customerLastName
+        in: formData
+        required: false
+      - type: string
+        name: customerEmail
+        in: formData
+        required: false
+      - type: string
+        name: customerMobile
+        in: formData
+        required: false
+      - type: string
+        default: '+593'
+        name: customerCountryCode
+        in: formData
+        required: false
+      - type: string
+        default: N/A
+        minLength: 3
+        name: reference
+        in: formData
+        required: false
+      - type: boolean
+        default: false
+        name: sendSMR
+        in: formData
+        required: false
+      - type: number
+        default: 0
+        minimum: 0
+        name: orderAmount
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /public/sentReportToUser:
+    post:
+      summary: Sent Booking Reports
+      operationId: postPublicSentreporttouser
+      parameters:
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: usersIds
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/deleteOrderRequest:
+    delete:
+      summary: Delete the selected order request from the booking
+      operationId: deleteBookingDeleteorderrequest
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 82'
+      tags:
+      - booking
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  Model 62:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking this order request belongs to
+      bidValue:
+        type: number
+      latitude:
+        type: number
+        description: Driver's current location
+      longitude:
+        type: number
+        description: Driver's current location
+    required:
+    - bookingID
+    - bidValue
+  Model 16:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking to add.
+      proofOfDelivery:
+        type: string
+        description: URL or code of the photo
+    required:
+    - bookingID
+    - proofOfDelivery
+  Model 26:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking to restart the search
+        x-constraint:
+          length: 24
+    required:
+    - bookingID
+  Model 18:
+    type: object
+    properties:
+      bookingID:
+        type: string
+      reasonForRejection:
+        type: string
+      cancelLongitude:
+        type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+      cancelLatitude:
+        type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+      cancelReason:
+        type: string
+    required:
+    - bookingID
+  Model 28:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: _id of the booking selected
+        minLength: 24
+        maxLength: 24
+      bookingIssuesIds:
+        $ref: '#/definitions/bookingIssuesIds'
+        type: array
+    required:
+    - bookingID
+    - bookingIssuesIds
+  Model 29:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking to set the cancel reason
+      reasonForRejection:
+        type: string
+        description: Cancel reason
+    required:
+    - bookingID
+  Model 82:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking the order request belongs to
+      orderID:
+        type: string
+        description: ID of the order request to delete
+    required:
+    - bookingID
+    - orderID
+  Model 27:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking this order request belongs to
+      status:
+        type: number
+        enum:
+        - 1
+        - 2
+    required:
+    - bookingID
+    - status
+  Model 23:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking to update.
+      notDeliveredReason:
+        type: string
+        enum:
+        - LOCATION_NOT_FOUND
+        - PICKUP_NOT_RECEIVED
+        - NOT_ANSWER
+        - WRONG_LOCATION
+    required:
+    - bookingID
+    - notDeliveredReason
+  Model 21:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking the order request belongs to
+      amount:
+        type: number
+        description: New order amount
+        minimum: 0
+    required:
+    - bookingID
+    - amount
+  Model 5:
+    type: object
+    properties:
+      bookingID:
+        type: string
+      userID:
+        type: string
+    required:
+    - bookingID
+    - userID
+  Model 13:
+    type: object
+    properties:
+      bookingID:
+        type: string
+      rating:
+        $ref: '#/definitions/rating'
+    required:
+    - bookingID
+    - rating
+  Model 7:
+    type: object
+    properties:
+      bookingID:
+        type: string
+      driverID:
+        type: string
+    required:
+    - bookingID
+    - driverID
+  Model 64:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking the order request belongs to
+      orderID:
+        type: string
+        description: ID of the order request to send the notification
+    required:
+    - bookingID
+    - orderID
+  rating:
+    type: object
+    properties:
+      driver:
+        type: number
+      business:
+        type: number
+    required:
+    - driver
+    - business
+  Model 25:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking to reject.
+    required:
+    - bookingID
+  Model 20:
+    type: object
+    properties:
+      paymentMethod:
+        type: string
+        enum:
+        - CARD
+        - CASH
+      bookingID:
+        type: string
+        description: Booking ID
+        x-constraint:
+          length: 24
+    required:
+    - paymentMethod
+    - bookingID
+  Model 30:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking to add.
+      proofOfDelivery:
+        type: string
+        description: Code of proof
+    required:
+    - bookingID
+    - proofOfDelivery
+  Model 17:
+    type: object
+    properties:
+      bookingID:
+        type: string
+      reasonForRejection:
+        type: string
+      cancelLongitude:
+        type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+      cancelLatitude:
+        type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+      cancelReason:
+        type: string
+      isAdmin:
+        type: boolean
+    required:
+    - bookingID
+  Model 19:
+    type: object
+    properties:
+      bookingID:
+        type: string
+    required:
+    - bookingID
+  Model 63:
+    type: object
+    properties:
+      distance:
+        type: number
+        description: Distance between pickup & delivery location
+        minimum: 0
+      pickupLongitude:
+        type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+      pickupLatitude:
+        type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+    required:
+    - distance
+    - pickupLongitude
+    - pickupLatitude
+  Model 24:
+    type: object
+    properties:
+      bookingID:
+        type: string
+      latitude:
+        type: number
+        description: Driver's current location
+      longitude:
+        type: number
+        description: Driver's current location
+    required:
+    - bookingID
+  Model 44:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: enter booking ID for which play pause going on is to be made
+      startTime:
+        type: boolean
+    required:
+    - bookingID
+    - startTime
+  bookingIssuesIds:
+    type: array
+    description: Array of booking issue ids
+    items:
+      type: string
+      minLength: 24
+      maxLength: 24
+  Model 22:
+    type: object
+    properties:
+      amount:
+        type: number
+        description: Amount to donate
+        enum:
+        - 1
+        - 2
+        - 3
+      bookingID:
+        type: string
+        description: Booking ID
+        x-constraint:
+          length: 24
+    required:
+    - amount
+    - bookingID
+  Model 59:
+    type: object
+    properties:
+      title:
+        type: string
+      bookingID:
+        type: string
+      rating:
+        type: string
+      comment:
+        type: string
+      workspaceName:
+        type: string
+      businessName:
+        type: string
+      customerName:
+        type: string
+    required:
+    - bookingID
+    - rating
+    - comment

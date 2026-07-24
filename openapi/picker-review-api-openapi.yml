@@ -1,0 +1,207 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting review API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: review
+paths:
+  /review/listAverageRating:
+    get:
+      summary: Review and Rating for Driver
+      operationId: getReviewListaveragerating
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: list average reviews of single user only
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: query
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - review
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /review/listDetailedReview:
+    get:
+      summary: Review and Rating for Driver
+      operationId: getReviewListdetailedreview
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: userID of user to list reviews
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: query
+      - type: string
+        description: booking ID to which booking belongs
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+      - type: boolean
+        description: true to list only reviews done by user else all the reviews based on booking or other users
+        default: false
+        name: showOnlyMyReviws
+        in: query
+        required: true
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - review
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /review/giveReviewAndRating:
+    post:
+      summary: Review and Rating for Driver & Business
+      operationId: postReviewGivereviewandrating
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: booking ID to which booking belongs
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: string
+        description: ID of driver
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: formData
+        required: false
+      - type: string
+        description: Review for driver
+        x-convert:
+          trim: true
+        name: review
+        in: formData
+        required: false
+      - type: number
+        description: Rating for driver
+        minimum: 0
+        maximum: 10
+        name: rating
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+          enum:
+          - RUDE
+          - LATE
+          - INEFFICIENT
+          - KIND
+          - FAST
+          - EFFICIENT
+        collectionFormat: multi
+        name: califications
+        in: formData
+        required: false
+      - type: number
+        description: Tip for driver
+        minimum: 0
+        maximum: 3
+        name: driverTip
+        in: formData
+        required: false
+      - type: string
+        description: Review for business
+        x-convert:
+          trim: true
+        name: businessReview
+        in: formData
+        required: false
+      - type: number
+        description: Rating for business
+        minimum: 0
+        maximum: 10
+        name: businessRating
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: string
+          enum:
+          - RUDE
+          - LATE
+          - INEFFICIENT
+          - KIND
+          - FAST
+          - EFFICIENT
+        collectionFormat: multi
+        name: businessCalifications
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - review
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

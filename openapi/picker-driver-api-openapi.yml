@@ -1,0 +1,1149 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting driver API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: driver
+paths:
+  /driver/getAllAvailableDriver:
+    get:
+      summary: Returns a list of drivers that match the criteria selected
+      operationId: getDriverGetallavailabledriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: regionID
+        in: query
+        required: false
+      - type: string
+        description: User's email or name
+        name: searchBooking
+        in: query
+        required: false
+      - type: string
+        name: searchText
+        in: query
+        required: false
+      - type: number
+        enum:
+        - 1
+        - 0
+        name: carType
+        in: query
+        required: true
+      - type: number
+        description: Search for drivers near this latitude
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        description: Search for drivers near this longitude
+        name: longitude
+        in: query
+        required: false
+      - type: number
+        minimum: 0
+        name: minimumDriverCash
+        in: query
+        required: false
+      - type: string
+        name: bookingID
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/getAllAvailableDriverMyFleet:
+    get:
+      summary: Returns a list of drivers that match the criteria selected
+      operationId: getDriverGetallavailabledrivermyfleet
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: regionID
+        in: query
+        required: false
+      - type: string
+        description: User's email or name
+        name: searchBooking
+        in: query
+        required: false
+      - type: string
+        name: searchText
+        in: query
+        required: false
+      - type: number
+        enum:
+        - 1
+        - 0
+        name: carType
+        in: query
+        required: true
+      - type: number
+        description: Search for drivers near this latitude
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        description: Search for drivers near this longitude
+        name: longitude
+        in: query
+        required: false
+      - type: number
+        minimum: 0
+        name: minimumDriverCash
+        in: query
+        required: false
+      - type: string
+        name: bookingID
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/getAllDriver:
+    get:
+      summary: get all Driver
+      operationId: getDriverGetalldriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/getDriverBalances:
+    get:
+      summary: Returns the drivers work balance and total pay
+      operationId: getDriverGetdriverbalances
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/getDriverTracking:
+    get:
+      summary: get all Driver
+      operationId: getDriverGetdrivertracking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        enum:
+        - 1
+        - 0
+        - 3
+        name: carType
+        in: query
+        required: true
+      - type: number
+        enum:
+        - 1
+        - 2
+        - 3
+        name: status
+        in: query
+        required: true
+      - type: string
+        name: superRegionID
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/getVehicleDetails:
+    get:
+      summary: get vehicle details
+      operationId: getDriverGetvehicledetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        name: isDeleted
+        in: query
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/listVehicleTypeAndCompany:
+    get:
+      summary: get vehicle type and company
+      operationId: getDriverListvehicletypeandcompany
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        name: isDeleted
+        in: query
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/getAllAvailableDriver:
+    get:
+      summary: Returns a list of drivers that match the criteria selected
+      operationId: getServiceproviderGetallavailabledriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: region ID is optional
+        minLength: 24
+        maxLength: 24
+        name: regionID
+        in: query
+        required: false
+      - type: number
+        enum:
+        - 1
+        - 0
+        name: carType
+        in: query
+        required: true
+      - type: number
+        description: Search for drivers near this latitude
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        description: Search for drivers near this longitude
+        name: longitude
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /booking/notificationInteraction:
+    put:
+      summary: Save notification interaction for booking assign
+      operationId: putBookingNotificationinteraction
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Booking ID
+        x-constraint:
+          length: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: boolean
+        description: If notification was read by user
+        name: wasRead
+        in: formData
+        required: false
+      - type: boolean
+        description: If notification was accepted by user
+        name: wasAccepted
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/amountCollected:
+    put:
+      summary: Update Booking
+      operationId: putDriverAmountcollected
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 36'
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/clearDriver:
+    put:
+      summary: To unstuck driver
+      operationId: putDriverCleardriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Driver user id
+        name: userID
+        in: query
+        required: true
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/duty:
+    put:
+      summary: Driver Update on duty off duty
+      operationId: putDriverDuty
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        description: go online and offline duty
+        name: onDutyFlag
+        in: query
+        required: true
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/updateAutoAcceptation:
+    put:
+      summary: update the driver Automatic acceptation
+      operationId: putDriverUpdateautoacceptation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        description: Update the driver automatic acceptation
+        name: autoAcceptation
+        in: query
+        required: true
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/updateBookingStatus:
+    put:
+      summary: Update status of the selected booking
+      operationId: putDriverUpdatebookingstatus
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the selected booking
+        name: bookingID
+        in: formData
+        required: true
+      - type: number
+        enum:
+        - 11
+        - 5
+        - 2
+        - 3
+        - 4
+        - 21
+        - 22
+        - 1
+        - 32
+        - 34
+        - 33
+        - 31
+        - 35
+        name: bookingCurrentStatus
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - NOT_DELIVERED
+        - COMPLETED
+        - ARRIVED_AT_PICKUP
+        - WAY_TO_DELIVER
+        - ARRIVED_AT_DELIVERY
+        - ON_DECK
+        - READY_FOR_PICKUP
+        - ACCEPTED
+        - RETURNING
+        - RETURNED_TO_PICKUP
+        - RETURNED
+        - PROVIDER_NOT_FOUND
+        - IN_TRANSIT
+        name: bookingCurrentStatusText
+        in: formData
+        required: true
+      - type: number
+        description: Driver's current location
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        description: Driver's current location
+        name: longitude
+        in: formData
+        required: false
+      - type: string
+        name: reason
+        in: formData
+        required: false
+      - type: boolean
+        name: isAdmin
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - DASHBOARD_UPDATE
+        - ADMIN_UPDATE
+        name: updateReason
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/updateLocation:
+    put:
+      summary: Driver Location Update
+      operationId: putDriverUpdatelocation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 37'
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/updateProfile:
+    put:
+      summary: Driver Update profile
+      operationId: putDriverUpdateprofile
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+      - type: string
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: number
+        minimum: -90
+        maximum: 90
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        minimum: -180
+        maximum: 180
+        name: longitude
+        in: formData
+        required: false
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: object
+        description: thumbImage,fullImage(OBJECT KEYS)
+        required: false
+        name: image
+        in: formData
+      - type: string
+        name: email
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/updateWallet:
+    put:
+      summary: Update the amount of cash that the driver has with him/her
+      operationId: putDriverUpdatewallet
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Amount of cash the driver has with him/her in that instance
+        minimum: 0
+        maximum: 200
+        name: amount
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/validateOTP:
+    put:
+      summary: Verify driver's OTP
+      operationId: putDriverValidateotp
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        name: validated
+        in: query
+        required: true
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/addVehicle:
+    post:
+      summary: Driver Update vehicle
+      operationId: postDriverAddvehicle
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: vehicleType
+        in: formData
+        required: true
+      - type: string
+        name: vehicleCompany
+        in: formData
+        required: true
+      - type: number
+        minimum: 1000
+        maximum: 9999
+        name: vehicleYear
+        in: formData
+        required: true
+      - type: string
+        description: Image url of licence
+        name: licenceNumber
+        in: formData
+        required: true
+      - type: string
+        name: vehicleNumber
+        in: formData
+        required: true
+      - type: array
+        description: 'insert array of images for vehicle [{ ''original'': ''string'', ''thumbnail'': ''string'' }]'
+        items:
+          type: object
+          properties:
+            original:
+              type: string
+              x-convert:
+                trim: true
+            thumbnail:
+              type: string
+              x-convert:
+                trim: true
+          required:
+          - original
+          - thumbnail
+        collectionFormat: multi
+        name: vehicleImages
+        in: formData
+        required: false
+      - type: boolean
+        name: isPrimary
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/registerFromEmail:
+    post:
+      summary: Register new Driver via Email
+      operationId: postDriverRegisterfromemail
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        x-convert:
+          lowercase: true
+        name: email
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: string
+        description: android/ios device token
+        x-convert:
+          trim: true
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+        required: false
+      - type: number
+        minimum: -90
+        maximum: 90
+        name: latitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        name: longitude
+        in: formData
+        required: true
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        minLength: 7
+        maxLength: 14
+        name: referralCode
+        in: formData
+        required: false
+      - type: string
+        name: vehicleModelName
+        in: formData
+        required: true
+      - type: string
+        minLength: 4
+        x-convert:
+          trim: true
+        name: licenceNumber
+        in: formData
+      - type: string
+        x-convert:
+          trim: true
+        name: MCNumber
+        in: formData
+        required: true
+      - type: string
+        description: Vehicle Type 1-BIKE, 0-LITE
+        enum:
+        - BIKE
+        - LITE
+        name: vehicleType
+        in: formData
+        required: true
+      - type: number
+        description: Vehicle Type 1-BIKE, 0-LITE
+        name: carType
+        in: formData
+        required: true
+      - type: string
+        name: vehicleColor
+        in: formData
+        required: true
+      - type: number
+        name: vehicleYear
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        required: false
+        name: image
+        in: formData
+      - type: string
+        description: Name of the bank of the picker. For Accounting
+        name: bankName
+        in: formData
+        required: false
+      - type: string
+        name: accountNumber
+        in: formData
+        required: false
+      - type: string
+        description: Name of the person who owns the account
+        name: accountOwnerName
+        in: formData
+        required: false
+      - type: string
+        description: Driver's identity number
+        name: identityNumber
+        in: formData
+        required: false
+      - type: string
+        name: accountType
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/deleteVehicle:
+    delete:
+      summary: soft delete vehicle data
+      operationId: deleteDriverDeletevehicle
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: vehicle Number which is to be deleted
+        name: vehicleNumber
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driver
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  Model 37:
+    type: object
+    properties:
+      isTrackingOn:
+        type: string
+        enum:
+        - true
+        - false
+      currentLocation:
+        $ref: '#/definitions/currentLocation'
+    required:
+    - isTrackingOn
+  Model 36:
+    type: object
+    properties:
+      moneyAccepted:
+        type: boolean
+        default: true
+      bookingID:
+        type: string
+        minLength: 24
+        maxLength: 24
+    required:
+    - moneyAccepted
+    - bookingID
+  currentLocation:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - Point
+      longitude:
+        type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+      latitude:
+        type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+    required:
+    - type
+    - longitude
+    - latitude

@@ -1,0 +1,84 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting UsermarketingData API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: UsermarketingData
+paths:
+  /userMarketingData/getAllUserMarketingData:
+    get:
+      summary: Returns the list of all User Marketing Questions available
+      operationId: getUsermarketingdataGetallusermarketingdata
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - UsermarketingData
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /userMarketingData/registerUserMarketingData:
+    post:
+      summary: create User Marketing Data
+      operationId: postUsermarketingdataRegisterusermarketingdata
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: categoryCompany
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: monthlyDeliveries
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: employeesCompany
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - UsermarketingData
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

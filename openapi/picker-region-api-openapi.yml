@@ -1,0 +1,488 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting region API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: region
+paths:
+  /region/listAllRegion:
+    get:
+      summary: get region by admin
+      operationId: getRegionListallregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: boolean
+        default: false
+        name: isBlocked
+        in: query
+        required: true
+      - type: boolean
+        default: false
+        name: isDeleted
+        in: query
+        required: true
+      - type: string
+        name: superRegionID
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/listAllSuperRegion:
+    get:
+      summary: Get all Super Regions available
+      operationId: getRegionListallsuperregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: boolean
+        default: true
+        name: isActive
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/regionDetails:
+    get:
+      summary: get region details
+      operationId: getRegionRegiondetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: region_id
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/blockRegion:
+    put:
+      summary: block region
+      operationId: putRegionBlockregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: region_id
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/editRegion:
+    put:
+      summary: block region
+      operationId: putRegionEditregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: region_id
+        in: formData
+        required: true
+      - type: string
+        description: name of region to be used
+        name: regionName
+        in: formData
+        required: true
+      - type: array
+        description: '[[0,0],[1,1],[2,2],[0,0]]'
+        minItems: 4
+        items:
+          type: array
+          items:
+            type: number
+          collectionFormat: multi
+        collectionFormat: multi
+        name: coordinates
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - admin
+        name: role
+        in: formData
+        required: true
+      - type: number
+        description: ' 1-Bike 0-Lite 3-BOTH'
+        name: carType
+        in: formData
+        required: true
+      - type: number
+        description: ' 1-CARD 2-CASH 4-BOTH'
+        name: paymentType
+        in: formData
+        required: true
+      - type: number
+        description: ' 1-NOW 2-LATER 3-BOTH'
+        name: rideType
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: specialFeesActive
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        name: highDemandThreshold
+        in: formData
+        required: false
+      - type: string
+        name: regionStatus
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/unblockRegion:
+    put:
+      summary: block region
+      operationId: putRegionUnblockregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: region_id
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/checkRegion:
+    post:
+      summary: Returns the region data corresponding to the selected location
+      operationId: postApiCheckregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: pickupLongitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: pickupLatitude
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/addRegion:
+    post:
+      summary: 'set region '
+      operationId: postRegionAddregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: name of region to be used
+        name: regionName
+        in: formData
+        required: true
+      - type: array
+        description: '[[0,0],[1,1],[2,2],[0,0]]'
+        minItems: 4
+        items:
+          type: array
+          items:
+            type: number
+          collectionFormat: multi
+        collectionFormat: multi
+        name: coordinates
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - admin
+        name: role
+        in: formData
+        required: true
+      - type: number
+        description: ' 1-Bike 0-Lite 3-BOTH'
+        name: carType
+        in: formData
+        required: true
+      - type: number
+        description: ' 1-CARD 2-CASH 4-BOTH'
+        name: paymentType
+        in: formData
+        required: true
+      - type: number
+        description: ' 1-NOW 2-LATER 3-BOTH'
+        name: rideType
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/checkRegion:
+    post:
+      summary: Returns the region data corresponding to the selected location
+      operationId: postRegionCheckregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: pickupLongitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: pickupLatitude
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/setAllRegionStatusGreen:
+    post:
+      summary: block region
+      operationId: postRegionSetallregionstatusgreen
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/updateRegionsOnAllBusiness:
+    post:
+      summary: Update Regions on all businesses
+      operationId: postRegionUpdateregionsonallbusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /region/deleteRegion:
+    delete:
+      summary: delete region by admin
+      operationId: deleteRegionDeleteregion
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Region id to delete
+        name: region_id
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - admin
+        name: role
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - region
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

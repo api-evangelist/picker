@@ -1,0 +1,219 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting referral API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: referral
+paths:
+  /referral/listAllReferral:
+    get:
+      summary: delete referral scheme by admin
+      operationId: getReferralListallreferral
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: userID of the user to fetch referral created by that user only
+        minLength: 24
+        maxLength: 24
+        name: createdByUser
+        in: query
+      - type: boolean
+        name: isDeleted
+        in: query
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - referral
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /referral/addReferralScheme:
+    post:
+      summary: set referral scheme
+      operationId: postReferralAddreferralscheme
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        description: false if wait for certain number of bookings before referral applied, else true
+        name: instant
+        in: formData
+        required: true
+      - type: boolean
+        description: 'true if to be applied after booking is completed, else true '
+        default: 'false'
+        name: isAfterBooking
+        in: formData
+      - type: number
+        description: if instant if false, bookings wait, before referral applied
+        default: 0
+        name: waitBookingNumber
+        in: formData
+        required: false
+      - type: number
+        description: Minimum price of booking on which referral will be applied
+        default: 0
+        name: minimumBookingPrice
+        in: formData
+        required: true
+      - type: number
+        description: cashback for user who created referral
+        name: cashbackForOwner
+        in: formData
+        required: false
+      - type: number
+        description: cashback for user who used referral
+        name: cashbackForUser
+        in: formData
+        required: false
+      - type: number
+        description: '% off for user who created referral'
+        name: percentageForOwner
+        in: formData
+        required: false
+      - type: number
+        description: '% off for user who used referral'
+        name: percentageForUser
+        in: formData
+        required: false
+      - type: number
+        description: operatable upto bookings for user who created referral
+        name: operatableBookingsForOwner
+        in: formData
+        required: true
+      - type: number
+        description: operatable upto bookings for user who used referral
+        name: operatableBookingsForUser
+        in: formData
+        required: true
+      - type: string
+        description: role of user order is  customer/driver/serviceProvider/admin
+        enum:
+        - customer
+        - driver
+        - serviceProvider
+        name: role
+        in: formData
+      - type: array
+        description: '[[0,0],[1,1],[2,2],[0,0]]'
+        minItems: 4
+        items:
+          type: array
+          items:
+            type: number
+          collectionFormat: multi
+        collectionFormat: multi
+        name: coordinates
+        in: formData
+      - type: string
+        description: name for coordinates
+        name: regionName
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - referral
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /referral/addReferralSchemeType:
+    post:
+      summary: set referral scheme type
+      operationId: postReferralAddreferralschemetype
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: type of referral scheme to be used
+        enum:
+        - One Referral for whole App
+        - Role Specific referrals
+        - Region Specific referrals
+        - Role and Region Specific referrals
+        name: referralSchemeType
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - referral
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /referral/deleteScheme:
+    delete:
+      summary: delete referral scheme by admin
+      operationId: deleteReferralDeletescheme
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Referral pattern to delete
+        name: referralPattern
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - referral
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

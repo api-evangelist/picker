@@ -1,0 +1,66 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting driverTag API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: driverTag
+paths:
+  /admin/getAllDriverTags:
+    get:
+      summary: Returns the list of all Driver Tags available
+      operationId: getAdminGetalldrivertags
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driverTag
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addDriverTag:
+    post:
+      summary: Adds new driver tag to db
+      operationId: postAdminAdddrivertag
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: text
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - driverTag
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

@@ -1,0 +1,41 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting busy API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: busy
+paths:
+  /driver/clearDriver:
+    put:
+      summary: To unstuck driver
+      operationId: putDriverCleardriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Driver user id
+        name: userID
+        in: query
+        required: true
+      tags:
+      - busy
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

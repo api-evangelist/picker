@@ -1,0 +1,174 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting social API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: social
+paths:
+  /social/login:
+    post:
+      summary: Login via facebook1/google or other social media account
+      operationId: postSocialLogin
+      parameters:
+      - type: string
+        description: en/ar/es
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: true
+      - type: string
+        description: role of user
+        enum:
+        - customer
+        - business
+        name: role
+        in: formData
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        minimum: -180
+        maximum: 180
+        name: longitude
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        description: type of the device current using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        description: social media type
+        enum:
+        - Facebook
+        - Apple
+        - Google
+        - GoogleApp
+        name: socialType
+        in: formData
+        required: true
+      - type: string
+        x-convert:
+          trim: true
+        name: socialID
+        in: formData
+        required: true
+      - type: string
+        description: access token to verify the user
+        name: accessToken
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        required: false
+        name: image
+        in: formData
+      - type: string
+        description: Unique ID of the device
+        name: deviceID
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - social
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /social/verify:
+    post:
+      summary: Add the user's social login credentials
+      operationId: postSocialVerify
+      parameters:
+      - type: string
+        description: en/ar/es
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: true
+      - type: string
+        description: social media type
+        enum:
+        - Facebook
+        name: socialType
+        in: formData
+        required: true
+      - type: string
+        x-convert:
+          trim: true
+        name: socialID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - social
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

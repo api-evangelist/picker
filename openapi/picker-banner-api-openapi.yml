@@ -1,0 +1,280 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting banner API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: banner
+paths:
+  /admin/getBanners:
+    get:
+      summary: Returns the banners that match the query
+      operationId: getAdminGetbanners
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Status of the banners to query
+        default: ACTIVE
+        enum:
+        - ACTIVE
+        - INACTIVE
+        - ALL
+        name: status
+        in: query
+        required: false
+      - type: string
+        description: Type of the banners to query
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to return
+        name: limit
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to skip from the search
+        name: skip
+        in: query
+        required: false
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - banner
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getDriverBanners:
+    get:
+      summary: Returns the banners that match the query
+      operationId: getAdminGetdriverbanners
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Status of the banners to query
+        default: ACTIVE
+        enum:
+        - ACTIVE
+        - INACTIVE
+        - ALL
+        name: status
+        in: query
+        required: false
+      - type: string
+        description: Type of the banners to query
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to return
+        name: limit
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to skip from the search
+        name: skip
+        in: query
+        required: false
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - banner
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /client/getMessage:
+    get:
+      summary: Returns a message for a text banner
+      operationId: getClientGetmessage
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: messageId
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - banner
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/editBanner:
+    put:
+      summary: Creates a banner in the db
+      operationId: putAdminEditbanner
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the banner to edit
+        minLength: 24
+        maxLength: 24
+        name: bannerID
+        in: formData
+        required: false
+      - type: string
+        description: Type of banner to create
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: formData
+        required: false
+      - type: string
+        description: Type of banner to create
+        enum:
+        - ACTIVE
+        - INACTIVE
+        name: status
+        in: formData
+        required: false
+      - type: string
+        name: description
+        in: formData
+        required: false
+      - type: string
+        description: Name of the banner
+        name: name
+        in: formData
+        required: false
+      - type: object
+        description: Image to show in the banner
+        required: false
+        name: image
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - banner
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/createBanner:
+    post:
+      summary: Creates a banner in the db
+      operationId: postAdminCreatebanner
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Type of banner to create
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: formData
+        required: true
+      - type: string
+        description: UserID of the business this banner belongs to
+        minLength: 24
+        maxLength: 24
+        name: businessID
+        in: formData
+        required: false
+      - type: string
+        description: ID of the category this banner belongs to
+        minLength: 24
+        maxLength: 24
+        name: categoryID
+        in: formData
+        required: false
+      - type: string
+        description: Description of banner to create
+        maxLength: 35
+        name: description
+        in: formData
+        required: true
+      - type: object
+        description: Image to show in the banner
+        required: true
+        name: image
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - banner
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

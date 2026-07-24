@@ -1,0 +1,213 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting bookingAssignment API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: bookingAssignment
+paths:
+  /bookingAssignment/listBookingFloatSetting:
+    get:
+      summary: Round settings for booking floating
+      operationId: getBookingassignmentListbookingfloatsetting
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        enum:
+        - Manual
+        - Broadcast
+        - Round Robin
+        name: typeOfAlgo
+        in: query
+        required: false
+      - type: string
+        enum:
+        - serviceProvider
+        - driver
+        name: forWhom
+        in: query
+        required: false
+      - type: string
+        description: for booking float methods of specific serviceProvider
+        minLength: 24
+        maxLength: 24
+        name: serviceProviderID
+        in: query
+      - type: number
+        description: Limit number of records
+        name: limit
+        in: query
+      - type: number
+        description: Skip number of records
+        name: skip
+        in: query
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - bookingAssignment
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookingAssignment/updateBookingFloatSetting:
+    put:
+      summary: Update Round settings for booking floating
+      operationId: putBookingassignmentUpdatebookingfloatsetting
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        enum:
+        - Manual
+        - Broadcast
+        - Round Robin
+        name: typeOfAlgo
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - serviceProvider
+        - driver
+        name: forWhom
+        in: formData
+        required: true
+      - type: string
+        description: Booking float setting for particular serviceProvider once he accepts bookings and forward booking to drivers
+        minLength: 24
+        maxLength: 24
+        name: serviceProviderID
+        in: formData
+      - type: number
+        description: should be in meters, will be visible
+        name: distanceRange
+        in: formData
+        required: true
+      - type: number
+        description: waiting time for request expires
+        name: requestExpiresIn
+        in: formData
+        required: true
+      - type: number
+        description: Total re attempts if not accepted within time expires
+        name: reAttempt
+        in: formData
+        required: true
+      - type: number
+        description: If reattempts are more than 0, for Broadcast, then it is required
+        name: increaseDistanceBy
+        in: formData
+        required: false
+      - type: number
+        description: Price hike of booking if failed at first round not for 0th round
+        name: percentageHikeInBookingPrice
+        in: formData
+      - type: number
+        description: Admin percentage cut on booking before floating to service providers
+        name: adminCutFromBooking
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - bookingAssignment
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookingAssignment/bookingFloatSetting:
+    post:
+      summary: Round settings for booking floating
+      operationId: postBookingassignmentBookingfloatsetting
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        enum:
+        - Manual
+        - Broadcast
+        - Round Robin
+        name: typeOfAlgo
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - serviceProvider
+        - driver
+        name: forWhom
+        in: formData
+        required: true
+      - type: string
+        description: Booking float setting for particular serviceProvider once he accepts bookings and forward booking to drivers
+        minLength: 24
+        maxLength: 24
+        name: serviceProviderID
+        in: formData
+      - type: number
+        description: should be in meters, will be visible
+        name: distanceRange
+        in: formData
+        required: true
+      - type: number
+        description: waiting time for request expires
+        name: requestExpiresIn
+        in: formData
+        required: true
+      - type: number
+        description: Total re attempts if not accepted within time expires
+        name: reAttempt
+        in: formData
+        required: true
+      - type: number
+        description: If reattempts are more than 0, for Broadcast, then it is required
+        name: increaseDistanceBy
+        in: formData
+        required: false
+      - type: number
+        description: Price hike of booking if failed at first round not for 0th round
+        name: percentageHikeInBookingPrice
+        in: formData
+      - type: number
+        description: Admin percentage cut on booking before floating to service providers
+        name: adminCutFromBooking
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - bookingAssignment
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

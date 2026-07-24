@@ -1,0 +1,151 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting notification API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: notification
+paths:
+  /notification/getAllNotification:
+    get:
+      summary: Get All Notification Of Admin
+      operationId: getNotificationGetallnotification
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        description: Required only if markAllAsRead is true
+        name: isAdminNotification
+        in: query
+        required: false
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - notification
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /notification/clearNotification:
+    put:
+      summary: Clear Admin Notification
+      operationId: putNotificationClearnotification
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        description: True if notifications are for admin
+        name: isAdminNotification
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - notification
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /notification/readNotification:
+    put:
+      summary: Read Admin Notification
+      operationId: putNotificationReadnotification
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: array
+        description: Array of notification IDs
+        items:
+          type: string
+        collectionFormat: multi
+        name: notificationID
+        in: formData
+      - type: boolean
+        default: false
+        name: markAllAsRead
+        in: formData
+        required: true
+      - type: boolean
+        description: Required only if markAllAsRead is true
+        name: isAdminNotification
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - notification
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /notification/receivedNotification:
+    put:
+      summary: Mark booking notification as received
+      operationId: putNotificationReceivednotification
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - notification
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

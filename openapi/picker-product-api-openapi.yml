@@ -1,0 +1,57 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting product API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: product
+paths:
+  /customer/addRemoveFavorite:
+    post:
+      summary: Customer can add or remove his favourite business or product
+      operationId: postCustomerAddremovefavorite
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the product or business selected
+        minLength: 24
+        maxLength: 24
+        name: favoriteID
+        in: formData
+        required: true
+      - type: string
+        description: If the selected favorite is product or business
+        enum:
+        - PRODUCT
+        - BUSINESS
+        name: type
+        in: formData
+        required: true
+      - type: boolean
+        name: isFavorite
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - product
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

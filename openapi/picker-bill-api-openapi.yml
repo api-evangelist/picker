@@ -1,0 +1,43 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting bill API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: bill
+paths:
+  /billing/getBillDetails:
+    get:
+      summary: Get details related to the bill
+      operationId: getBillingGetbilldetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the bill to check its details
+        minLength: 24
+        maxLength: 24
+        name: billID
+        in: query
+        required: true
+      tags:
+      - bill
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

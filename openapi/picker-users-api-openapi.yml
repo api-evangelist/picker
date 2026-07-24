@@ -1,0 +1,25 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting users API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: users
+paths:
+  /user/integrationUsers:
+    get:
+      summary: Get API users with external integrations
+      operationId: getUserIntegrationusers
+      tags:
+      - users
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

@@ -1,0 +1,296 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting promo API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: promo
+paths:
+  /promo/getAllUserPromo:
+    get:
+      summary: delete referral scheme by admin
+      operationId: getPromoGetalluserpromo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: role of user order is  customer/driver
+        enum:
+        - customer
+        - driver
+        name: role
+        in: query
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - promo
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /promo/listAllPromo:
+    get:
+      summary: delete referral scheme by admin
+      operationId: getPromoListallpromo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: role of user order is  customer/driver
+        enum:
+        - customer
+        - driver
+        name: role
+        in: query
+      - type: string
+        enum:
+        - PAST
+        - ACTIVE
+        name: status
+        in: query
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - promo
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /promo/promoDetails:
+    get:
+      summary: delete referral scheme by admin
+      operationId: getPromoPromodetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: alias
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - promo
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /promo/addPromo:
+    post:
+      summary: set referral scheme
+      operationId: postPromoAddpromo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: type of promo scheme to be used
+        enum:
+        - Promo for all users
+        - Role Specific Promo
+        - Region Specific Promo
+        - Role and Region Specific promo
+        - Not valid for commerce
+        - Workspace Promo
+        name: promoSchemeType
+        in: formData
+        required: true
+      - type: number
+        description: total number of times promo can be used, infinite in case of empty
+        name: noOfPromoUsers
+        in: formData
+        required: false
+      - type: string
+        description: Promo that should be displayed to user
+        name: alias
+        in: formData
+        required: true
+      - type: number
+        description: total number of times promo can be used by single user, infinite in case of empty
+        name: individualUserPromoAttempt
+        in: formData
+        required: false
+      - type: number
+        description: Minimum price of booking on which promo will be applied
+        default: 0
+        name: minimumBookingPrice
+        in: formData
+        required: true
+      - type: number
+        description: cashback for user who used promo
+        name: cashback
+        in: formData
+        required: false
+      - type: number
+        description: '% off for user who used promo'
+        name: percentage
+        in: formData
+        required: false
+      - type: string
+        description: Expiry Date of the promo
+        name: expirePromoDate
+        in: formData
+        required: false
+      - type: string
+        description: Expiry hours of the promo
+        name: hoursToExpire
+        in: formData
+        required: false
+      - type: string
+        description: role of user order is  customer/driver
+        enum:
+        - customer
+        - driver
+        name: role
+        in: formData
+      - type: array
+        items:
+          type: string
+          description: region ID is optional
+          minLength: 24
+          maxLength: 24
+        collectionFormat: multi
+        name: regionID
+        in: formData
+        required: true
+      - type: number
+        description: Maximum price to which this promo is applicable
+        minimum: 0
+        name: maximumDeliveryFee
+        in: formData
+      - type: boolean
+        description: Indicates if the promo is available for all regions
+        name: availableAllRegions
+        in: formData
+        required: true
+      - type: object
+        description: Notification to send to customer segment
+        required: false
+        name: message
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - promo
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /promo/checkPromo:
+    post:
+      summary: check promo availability
+      operationId: postPromoCheckpromo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: alias
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - promo
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /promo/deletePromo:
+    delete:
+      summary: delete referral scheme by admin
+      operationId: deletePromoDeletepromo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Referral pattern to delete
+        name: alias
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - promo
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

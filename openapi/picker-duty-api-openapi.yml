@@ -1,0 +1,41 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting duty API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: duty
+paths:
+  /driver/duty:
+    put:
+      summary: Driver Update on duty off duty
+      operationId: putDriverDuty
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        description: go online and offline duty
+        name: onDutyFlag
+        in: query
+        required: true
+      tags:
+      - duty
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

@@ -1,0 +1,80 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting chat API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: chat
+paths:
+  /chat/getChatForBooking:
+    get:
+      summary: get all chat for booking
+      operationId: getChatGetchatforbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+      - type: number
+        name: limit
+        in: query
+      - type: number
+        name: skip
+        in: query
+      tags:
+      - chat
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /chat/getChatForBookingByComeChat:
+    get:
+      summary: get all chat for booking
+      operationId: getChatGetchatforbookingbycomechat
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+      - type: number
+        name: limit
+        in: query
+      - type: number
+        name: skip
+        in: query
+      tags:
+      - chat
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

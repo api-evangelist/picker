@@ -1,0 +1,87 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting antiFraud API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: antiFraud
+paths:
+  /admin/getTransactionFraudInformation:
+    get:
+      summary: Returns all the booking and customer's information of a transaction
+      operationId: getAdminGettransactionfraudinformation
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID from the paymenteztransactions collection
+        name: transactionID
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - antiFraud
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/setBookingFraud:
+    put:
+      summary: Saves fraud information for a booking
+      operationId: putAdminSetbookingfraud
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the booking to set its fraud information
+        name: bookingID
+        in: formData
+        required: true
+      - type: boolean
+        description: If the booking is marked as fraud or not
+        name: isFraud
+        in: formData
+        required: true
+      - type: string
+        name: reason
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: transactions
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - antiFraud
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

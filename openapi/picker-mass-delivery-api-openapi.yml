@@ -1,0 +1,70 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting Mass Delivery API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: Mass Delivery
+paths:
+  /mass-delivery:
+    get:
+      summary: Get all mass delivery registers
+      operationId: getMassdelivery
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: skip
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: false
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 5
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      - type: number
+        name: massDeliveryID
+        in: query
+        required: false
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+      tags:
+      - Mass Delivery

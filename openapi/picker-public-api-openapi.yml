@@ -1,0 +1,48 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting public API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: public
+paths:
+  /public/reports:
+    get:
+      summary: Get Past Booking For Business public
+      operationId: getPublicReports
+      parameters:
+      - type: integer
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        name: page
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: true
+      - type: string
+        name: token
+        in: query
+        required: true
+      tags:
+      - public
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

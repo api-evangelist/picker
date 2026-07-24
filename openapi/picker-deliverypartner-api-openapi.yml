@@ -1,0 +1,71 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting deliveryPartner API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: deliveryPartner
+paths:
+  /deliveryPartnerMarketingData/registerMarketingData:
+    post:
+      summary: Create delivery partner marketing data
+      operationId: postDeliverypartnermarketingdataRegistermarketingdata
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: deliveriesNumber
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: makeSendAndCollect
+        in: formData
+        required: true
+      - type: string
+        name: coverageDistance
+        in: formData
+        required: true
+      - type: number
+        name: baseFare
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: coverageCities
+        in: formData
+        required: false
+      - type: string
+        name: country
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - deliveryPartner
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

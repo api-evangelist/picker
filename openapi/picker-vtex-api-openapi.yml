@@ -1,0 +1,25 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting vtex API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: vtex
+paths:
+  /api/pushVtexOrder:
+    post:
+      summary: Handle vtex integration with push system
+      operationId: postApiPushvtexorder
+      tags:
+      - vtex
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting cancelReason API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: cancelReason
+paths:
+  /admin/getAllCancelReasons:
+    get:
+      summary: Returns the list of all Cancel Reasons available
+      operationId: getAdminGetallcancelreasons
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - cancelReason
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

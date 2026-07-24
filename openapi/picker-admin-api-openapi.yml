@@ -1,0 +1,6370 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting Admin API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: Admin
+paths:
+  /admin/sendEmailTo:
+    post:
+      summary: Send email to user
+      operationId: postAdminSendemailto
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 52'
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+      tags:
+      - Admin
+  /admin/sendInvoiceEmail:
+    post:
+      summary: Send booking's invoice to email
+      operationId: postAdminSendinvoiceemail
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 53'
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+      tags:
+      - Admin
+  /accounting/getAPICharges:
+    get:
+      summary: Return the amount to charge all API users
+      operationId: getAccountingGetapicharges
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        name: endDate
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getAllBusinessesBalanceTransactionDetails:
+    get:
+      summary: Get all the marketplace transactions in a date range
+      operationId: getAccountingGetallbusinessesbalancetransactiondetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      - type: boolean
+        name: download
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getAllBusinessesTransactions:
+    get:
+      summary: Get businesses transactions grouped by business
+      operationId: getAccountingGetallbusinessestransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: false
+      - type: integer
+        description: Limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: Skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: Name of the business
+        name: searchUser
+        in: query
+        required: false
+      - type: boolean
+        name: download
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getAllBusinessesTransactionsSummary:
+    get:
+      summary: Get summary of all business transactions
+      operationId: getAccountingGetallbusinessestransactionssummary
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        description: Name of the business
+        name: searchUser
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getAllDriversBonusTransactions:
+    get:
+      summary: Get the order amount of all pickers CC transactions in the date range requested.
+      operationId: getAccountingGetalldriversbonustransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        description: Limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: Skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: Name of picker
+        name: searchUser
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getAllDriversDeliveryTransactions:
+    get:
+      operationId: getAccountingGetalldriversdeliverytransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      - type: boolean
+        name: download
+        in: query
+        required: false
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: Name of picker
+        name: searchUser
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getAllDriversDeliveryTransactionsSummary:
+    get:
+      summary: Get summary of all driver's delivery transactions
+      operationId: getAccountingGetalldriversdeliverytransactionssummary
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        description: Name of the business
+        name: searchUser
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getCompanyTransactions:
+    get:
+      summary: Get all company transactions in a date range
+      operationId: getAccountingGetcompanytransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      - type: boolean
+        name: download
+        in: query
+        required: false
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getDriverDeliveryTransactionsDetails:
+    get:
+      summary: Get all delivery transactions of the driver selected
+      operationId: getAccountingGetdriverdeliverytransactionsdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the driver to filter transactions
+        name: pickerID
+        in: query
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/getPickerBonusTransactionsDetails:
+    get:
+      summary: Get the order amount of all pickers CC transactions in the date range requested.
+      operationId: getAccountingGetpickerbonustransactionsdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        description: ID of the driver to filter transactions
+        name: pickerID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addBusinessAccessToUser:
+    get:
+      summary: Get Business By ID
+      operationId: getAdminAddbusinessaccesstouser
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business
+        name: businessID
+        in: query
+        required: true
+      - type: string
+        description: ID of the user
+        name: userID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/assignReasons:
+    get:
+      summary: Returns the list of all Cancel Reasons
+      operationId: getAdminAssignreasons
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/cancelBookingReasons:
+    get:
+      summary: Returns the list of all Cancel Reasons
+      operationId: getAdminCancelbookingreasons
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/deleteBusinessAccessToUser:
+    get:
+      summary: Get Business By ID
+      operationId: getAdminDeletebusinessaccesstouser
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business
+        name: businessID
+        in: query
+        required: true
+      - type: string
+        description: ID of the user
+        name: userID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/driversWorkBalance:
+    get:
+      summary: Get drivers work balance information
+      operationId: getAdminDriversworkbalance
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        minimum: 0
+        name: skip
+        in: query
+        required: false
+      - type: number
+        minimum: 0
+        name: limit
+        in: query
+        required: false
+      - type: string
+        minLength: 3
+        name: searchUser
+        in: query
+        required: false
+      - type: string
+        name: superRegionID
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllAvailabeBooking:
+    get:
+      summary: Get All Availabe Booking
+      operationId: getAdminGetallavailabebooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: skip data from response
+        name: skip
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllBusinesses:
+    get:
+      summary: Get users registered as business
+      operationId: getAdminGetallbusinesses
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: status
+        in: query
+        required: true
+      - type: string
+        description: Business' name, email or company name
+        name: searchUser
+        in: query
+        required: false
+      - type: string
+        description: Field to order the results
+        name: orderBy
+        in: query
+        required: false
+      - type: string
+        description: 'Order criteria: ASC | DESC'
+        name: sort
+        in: query
+        required: false
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllBusinessesTransactions:
+    get:
+      operationId: getAdminGetallbusinessestransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: false
+      - type: integer
+        description: Limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: Skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: Name of the business
+        name: searchUser
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllCancelReasons:
+    get:
+      summary: Returns the list of all Cancel Reasons available
+      operationId: getAdminGetallcancelreasons
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllDriverTags:
+    get:
+      summary: Returns the list of all Driver Tags available
+      operationId: getAdminGetalldrivertags
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllPickersBalanceTransactions:
+    get:
+      summary: Get total of all balance transactions of the pickers
+      operationId: getAdminGetallpickersbalancetransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      - type: integer
+        description: Limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: Skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: user email or name
+        name: searchUser
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllPickersOrderTransactions:
+    get:
+      summary: Get the order amount of all pickers CC transactions in the date range requested.
+      operationId: getAdminGetallpickersordertransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: false
+      - type: integer
+        description: Limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: Skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: Name of picker
+        name: searchUser
+        in: query
+        required: false
+      - type: boolean
+        name: download
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getAllUsers:
+    get:
+      summary: Get List Of All Customers by Role[serviceProvider, customer, driver, business]
+      operationId: getAdminGetallusers
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: role of user order is  customer/driver/serviceProvider/admin/business
+        enum:
+        - all
+        - customer
+        - driver
+        - serviceProvider
+        - admin
+        - business
+        name: role
+        in: query
+        required: true
+      - type: string
+        enum:
+        - all
+        - true
+        - false
+        name: isBlocked
+        in: query
+        required: true
+      - type: string
+        enum:
+        - all
+        - true
+        - false
+        name: isDeleted
+        in: query
+        required: true
+      - type: string
+        enum:
+        - all
+        - true
+        - false
+        name: isAdminVerified
+        in: query
+        required: true
+      - type: boolean
+        description: list only users created by self if true else all
+        name: createdBySelf
+        in: query
+        required: false
+      - type: string
+        description: user email or name
+        name: searchUser
+        in: query
+        required: false
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: Filter users that belong to this Super Region
+        name: superRegionID
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBanners:
+    get:
+      summary: Returns the banners that match the query
+      operationId: getAdminGetbanners
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Status of the banners to query
+        default: ACTIVE
+        enum:
+        - ACTIVE
+        - INACTIVE
+        - ALL
+        name: status
+        in: query
+        required: false
+      - type: string
+        description: Type of the banners to query
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to return
+        name: limit
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to skip from the search
+        name: skip
+        in: query
+        required: false
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBookingDetails:
+    get:
+      summary: Get All Deatils of a Particular Booking
+      operationId: getAdminGetbookingdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: booking id
+        minLength: 24
+        maxLength: 24
+        name: id
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBookingInfo:
+    get:
+      summary: Get info of Booking & Review
+      operationId: getAdminGetbookinginfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBookingTransactions:
+    get:
+      summary: Get all the transactions related to the booking
+      operationId: getAdminGetbookingtransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the booking
+        name: bookingID
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBookingsStats:
+    get:
+      summary: Get Dashboard Count
+      operationId: getAdminGetbookingsstats
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        name: endDate
+        in: query
+        required: true
+      - type: number
+        name: utcOffset
+        in: query
+        required: true
+      - type: string
+        description: Filter users that belong to this Super Region
+        name: superRegionID
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBusinessBalanceTransactionDetails:
+    get:
+      summary: Get all the marketplace transactions of a selected business in a date range
+      operationId: getAdminGetbusinessbalancetransactiondetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: User ID of the business
+        name: businessID
+        in: query
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBusinessByName:
+    get:
+      summary: Get Business By Name
+      operationId: getAdminGetbusinessbyname
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Name of the business
+        name: businessName
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBusinessInfo:
+    get:
+      summary: Get all business info by its ID
+      operationId: getAdminGetbusinessinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getBusinessesByIds:
+    get:
+      summary: Get Business By ID
+      operationId: getAdminGetbusinessesbyids
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business
+        name: businessIDS
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getCSVDataForAdmin:
+    get:
+      summary: Get CSV report data
+      operationId: getAdminGetcsvdataforadmin
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        enum:
+        - seviceRequest
+        - completedRequest
+        - paymentReceived
+        - newPicker
+        - newCustomer
+        - activeInactiveCustomers
+        - promosUsed
+        - pickupDetails
+        - paymentezTCTransactions
+        - ignoredPickers
+        - customerSatisfaction
+        - newServiceRequestReport
+        - newCompletedRequestReport
+        - inactiveDrivers
+        - bonusReport
+        - blockedUsersReport
+        - rechargesReport
+        - fraudReport
+        - corporateUsersReport
+        - mrrReport
+        - walletTransactionsReport
+        - notCompletedReport
+        - financeTSR
+        - workspacesReport
+        - businessDeliveryProvidersReport
+        name: CSVtype
+        in: query
+        required: true
+      - type: number
+        name: amount
+        in: query
+        required: false
+      - type: string
+        name: unit
+        in: query
+        required: false
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getDashboardCount:
+    get:
+      summary: Get Dashboard Count
+      operationId: getAdminGetdashboardcount
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        name: endDate
+        in: query
+        required: true
+      - type: string
+        description: Filter users that belong to this Super Region
+        name: superRegionID
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getDriverBanners:
+    get:
+      summary: Returns the banners that match the query
+      operationId: getAdminGetdriverbanners
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Status of the banners to query
+        default: ACTIVE
+        enum:
+        - ACTIVE
+        - INACTIVE
+        - ALL
+        name: status
+        in: query
+        required: false
+      - type: string
+        description: Type of the banners to query
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to return
+        name: limit
+        in: query
+        required: false
+      - type: number
+        description: Amount of results to skip from the search
+        name: skip
+        in: query
+        required: false
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getOngoingBooking:
+    get:
+      summary: Get Ongoing Booking
+      operationId: getAdminGetongoingbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: skip data from response
+        name: skip
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getPastBooking:
+    get:
+      summary: Get Past Booking
+      operationId: getAdminGetpastbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: dateFrom
+        in: query
+        required: false
+      - type: string
+        enum:
+        - DESC
+        - ASC
+        name: orderDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: dateTo
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: customer
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: driver
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: business
+        in: query
+        required: false
+      - type: string
+        description: user email or name
+        name: searchBooking
+        in: query
+        required: false
+      - type: string
+        description: Type of bookings to filter
+        name: typeText
+        in: query
+        required: false
+      - type: array
+        description: 0 pending,  1-accepted, 2- Arrived , 3-WAY_TO_DELIVER, 4- arrived at delivery, 7-cancelled, 8 - cancelled by driver, 11- rejected by customer, 12- not foudn 5-completed
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 10
+          - 11
+          - 12
+          - 13
+          - 19
+          - 20
+          - 21
+          - 22
+          - 25
+          - 23
+          - 27
+          - 28
+          - 29
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      - type: array
+        description: Numeric type of booking
+        items:
+          type: number
+          enum:
+          - 0
+          - 2
+          - 3
+          - 4
+          - 5
+        collectionFormat: multi
+        name: bookingType
+        in: query
+        required: false
+      - type: string
+        description: Filter bookings that belong to this Super Region
+        name: superRegionID
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getPickerBalanceTransactionsDetails:
+    get:
+      summary: Get total of all balance transactions of the pickers
+      operationId: getAdminGetpickerbalancetransactionsdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the picekr to give the bonus/penalty
+        name: pickerID
+        in: query
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      - type: string
+        enum:
+        - ITEM
+        - DELIVERY
+        - ALL
+        name: type
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getPickerDetails:
+    get:
+      summary: Get Picker details. Average rating, bookings stats
+      operationId: getAdminGetpickerdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: pickerID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getPickerOrderTransactionDetails:
+    get:
+      summary: Get all ITEM transactions from the selected driver
+      operationId: getAdminGetpickerordertransactiondetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        description: ID of the driver to get his transactions
+        name: pickerID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getPickerPay:
+    get:
+      summary: Get Picker Pay
+      operationId: getAdminGetpickerpay
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Start date of the search on ISO format
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        description: End date of the search on ISO format
+        name: endDate
+        in: query
+        required: true
+      - type: string
+        description: ID of the driver whose transactions are to be shown
+        name: pickerID
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getServiceProviderInfo:
+    get:
+      summary: Get all information from service provider
+      operationId: getAdminGetserviceproviderinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: serviceProviderID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getTransactionsByCode:
+    get:
+      summary: Returns the transaction and booking information of the matching transaction
+      operationId: getAdminGettransactionsbycode
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Transaction's authentication code
+        name: code
+        in: query
+        required: true
+      - type: number
+        description: Amount of transactions to return
+        name: limit
+        in: query
+        required: false
+      - type: number
+        description: Amount of transactions to skip from the search
+        name: skip
+        in: query
+        required: false
+      - type: string
+        description: Search transactions from this date
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        description: Search transactions until this date
+        name: endDate
+        in: query
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getUserCardInfo:
+    get:
+      summary: Get user card info
+      operationId: getAdminGetusercardinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: _id
+        in: query
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getUserHistory:
+    get:
+      summary: Get history of user
+      operationId: getAdminGetuserhistory
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: user id
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/listDefaultSettings:
+    get:
+      summary: set admin default settings
+      operationId: getAdminListdefaultsettings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/searchAuthorizationCode:
+    get:
+      summary: Get Transaction by Authorization Code]
+      operationId: getAdminSearchauthorizationcode
+      parameters:
+      - type: string
+        name: authCode
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/userDetails:
+    get:
+      summary: Get List Of All Customers by Role[serviceProvider, customer, driver]
+      operationId: getAdminUserdetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/driversBills:
+    get:
+      summary: Get bills created for drivers
+      operationId: getBillingDriversbills
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        name: endDate
+        in: query
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: driver
+        in: query
+        required: false
+      - type: number
+        minimum: 0
+        name: limit
+        in: query
+        required: false
+      - type: number
+        minimum: 0
+        name: skip
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/getAllUsersName:
+    get:
+      summary: Get names of all users in DB
+      operationId: getBillingGetallusersname
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Role of the users for the search
+        name: role
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/getBillDetails:
+    get:
+      summary: Get details related to the bill
+      operationId: getBillingGetbilldetails
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the bill to check its details
+        minLength: 24
+        maxLength: 24
+        name: billID
+        in: query
+        required: true
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookingIssues/getBookingIssues:
+    get:
+      summary: get all booking issues
+      operationId: getBookingissuesGetbookingissues
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBookings:
+    get:
+      summary: Get Past Booking
+      operationId: getBusinessGetbookings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: dateFrom
+        in: query
+        required: false
+      - type: string
+        enum:
+        - DESC
+        - ASC
+        name: orderDate
+        in: query
+        required: false
+      - type: string
+        format: date
+        name: dateTo
+        in: query
+        required: false
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessArray
+        in: query
+        required: true
+      - type: string
+        description: user email or name
+        name: searchBooking
+        in: query
+        required: false
+      - type: string
+        description: Type of bookings to filter
+        name: typeText
+        in: query
+        required: false
+      - type: array
+        description: 0 pending,  1-accepted, 2- Arrived , 3-WAY_TO_DELIVER, 4- arrived at delivery, 7-cancelled, 8 - cancelled by driver, 11- rejected by customer, 12- not foudn 5-completed
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 10
+          - 11
+          - 12
+          - 13
+          - 19
+          - 20
+          - 21
+          - 22
+          - 25
+          - 23
+          - 27
+          - 28
+          - 29
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      - type: array
+        description: Numeric type of booking
+        items:
+          type: number
+          enum:
+          - 0
+          - 2
+          - 3
+          - 4
+          - 5
+        collectionFormat: multi
+        name: bookingType
+        in: query
+        required: false
+      - type: string
+        description: Filter bookings that belong to this Super Region
+        name: superRegionID
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /client/getMessage:
+    get:
+      summary: Returns a message for a text banner
+      operationId: getClientGetmessage
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: messageId
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/getAllDrivers:
+    get:
+      summary: Get List Of All Customers by Role[serviceProvider, customer, driver, business]
+      operationId: getServiceproviderGetalldrivers
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        enum:
+        - all
+        - true
+        - false
+        name: isBlocked
+        in: query
+        required: true
+      - type: string
+        enum:
+        - all
+        - true
+        - false
+        name: isDeleted
+        in: query
+        required: true
+      - type: string
+        enum:
+        - all
+        - true
+        - false
+        name: isAdminVerified
+        in: query
+        required: true
+      - type: boolean
+        description: list only users created by self if true else all
+        name: createdBySelf
+        in: query
+        required: false
+      - type: string
+        description: user email or name
+        name: searchUser
+        in: query
+        required: false
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: limit data from response
+        name: skip
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/getPastBooking:
+    get:
+      summary: Get Past Booking
+      operationId: getServiceproviderGetpastbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: integer
+        description: limit data in response
+        name: limit
+        in: query
+        required: false
+      - type: integer
+        description: skip data from response
+        name: skip
+        in: query
+        required: false
+      - type: string
+        name: startDate
+        in: query
+        required: false
+      - type: string
+        name: endDate
+        in: query
+        required: false
+      - type: string
+        enum:
+        - DESC
+        - ASC
+        name: orderDate
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: customer
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: driver
+        in: query
+        required: false
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: business
+        in: query
+        required: false
+      - type: string
+        description: user email or name
+        name: searchBooking
+        in: query
+        required: false
+      - type: string
+        description: Type of bookings to filter
+        name: typeText
+        in: query
+        required: false
+      - type: array
+        description: 0 pending,  1-accepted, 2- Arrived , 3-WAY_TO_DELIVER, 4- arrived at delivery, 7-cancelled, 8 - cancelled by driver, 11- rejected by customer, 12- not foudn 5-completed
+        x-constraint:
+          single: true
+        items:
+          type: number
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 10
+          - 11
+          - 12
+          - 13
+          - 19
+          - 20
+          - 21
+          - 22
+          - 25
+          - 23
+          - 27
+          - 28
+          - 29
+        collectionFormat: multi
+        name: currentStatus
+        in: query
+        required: false
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/aproveRejectTransaction:
+    put:
+      summary: Approve or reject a list of transactions
+      operationId: putAccountingAproverejecttransaction
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 1'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/refundBalanceTransactions:
+    put:
+      summary: Registers transaction refund for the selected balance transactions
+      operationId: putAccountingRefundbalancetransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 2'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addDriverToBusiness:
+    put:
+      summary: Add driver to business
+      operationId: putAdminAdddrivertobusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 3'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/approveProduct:
+    put:
+      summary: Admin approves the edition of a product by the business
+      operationId: putAdminApproveproduct
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 4'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/assignDriverToServiceProvider:
+    put:
+      summary: Block Users
+      operationId: putAdminAssigndrivertoserviceprovider
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: user id
+        minLength: 24
+        maxLength: 24
+        name: serviceProviderID
+        in: formData
+        required: true
+      - type: string
+        description: user id
+        minLength: 24
+        maxLength: 24
+        name: driverID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/blockOption:
+    put:
+      summary: Block Users
+      operationId: putAdminBlockoption
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: user id
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: formData
+        required: true
+      - type: boolean
+        name: isBlocked
+        in: formData
+        required: true
+      - type: string
+        description: Reason for block-unblock
+        name: reason
+        in: formData
+        required: true
+      - type: boolean
+        description: If true, add customer's last booking's real position to danger zone
+        name: isFraud
+        in: formData
+        required: false
+      - type: string
+        description: Set a reason between the choises
+        name: reasonOption
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/cancelBooking:
+    put:
+      summary: Cancel Booking
+      operationId: putAdminCancelbooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 6'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/changeDriverPaymentType:
+    put:
+      summary: Change the way the drivers are going to get paid for a booking
+      operationId: putAdminChangedriverpaymenttype
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Payment type of the drivers
+        enum:
+        - PERCENTAGE
+        - ABSOLUTE
+        - OVER_MINIMUM
+        name: paymentType
+        in: formData
+        required: true
+      - type: number
+        description: Payment value of the drivers
+        minimum: 0
+        name: paymentValue
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/changeTransactionStatus:
+    put:
+      summary: Change the status of the transactions selected
+      operationId: putAdminChangetransactionstatus
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 9'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/deactivateAPI:
+    put:
+      summary: Deactivate API usage for the selected user
+      operationId: putAdminDeactivateapi
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID from the business to update. UserID
+        name: userID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/editBanner:
+    put:
+      summary: Creates a banner in the db
+      operationId: putAdminEditbanner
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the banner to edit
+        minLength: 24
+        maxLength: 24
+        name: bannerID
+        in: formData
+        required: false
+      - type: string
+        description: Type of banner to create
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: formData
+        required: false
+      - type: string
+        description: Type of banner to create
+        enum:
+        - ACTIVE
+        - INACTIVE
+        name: status
+        in: formData
+        required: false
+      - type: string
+        name: description
+        in: formData
+        required: false
+      - type: string
+        description: Name of the banner
+        name: name
+        in: formData
+        required: false
+      - type: object
+        description: Image to show in the banner
+        required: false
+        name: image
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/penaltyToWorkBalance:
+    put:
+      summary: Add penalty to Work Balance
+      operationId: putAdminPenaltytoworkbalance
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 10'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/rejectProduct:
+    put:
+      summary: Admin rejects the edition or the creation of a product by the business
+      operationId: putAdminRejectproduct
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 4'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/removeDriverFromBusiness:
+    put:
+      summary: Remove driver from business
+      operationId: putAdminRemovedriverfrombusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 3'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/setProviderData:
+    put:
+      summary: Set delivery provider data to selected booking
+      operationId: putAdminSetproviderdata
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: string
+        description: Name of the selected delivery provider
+        name: selectedProvider
+        in: formData
+        required: true
+      - type: number
+        description: Delivery fee without markup
+        minimum: 0
+        name: deliveryFee
+        in: formData
+        required: true
+      - type: string
+        name: driverName
+        in: formData
+        required: true
+      - type: string
+        name: driverTag
+        in: formData
+        required: false
+      - type: string
+        name: driverID
+        in: formData
+        required: false
+      - type: string
+        default: ''
+        name: trackingLink
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/updateBusiness:
+    put:
+      summary: Business Update profile
+      operationId: putAdminUpdatebusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 11'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/updateBusinessStatus:
+    put:
+      summary: Update the status of the business
+      operationId: putAdminUpdatebusinessstatus
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID from the business to update. UserID
+        name: userID
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - APPROVED
+        - REJECTED
+        - ACTIVE
+        name: status
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/updateCustomer:
+    put:
+      summary: Customer can Update his/her Profile
+      operationId: putAdminUpdatecustomer
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Customer userID to be updated
+        name: _id
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: object
+        optional:
+        - original
+        - thumbnail
+        name: image
+        in: formData
+      - type: string
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: false
+      - type: string
+        name: countryCode
+        in: formData
+        required: false
+      - type: string
+        name: tag
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: object
+          properties:
+            carType:
+              type: number
+            carName:
+              type: string
+            cancellationPolicy:
+              type: string
+            minimumCancellationFee:
+              type: number
+            commissionCharge:
+              type: number
+            baseFare:
+              type: number
+              minimum: 0
+            perKmCharge:
+              type: number
+              minimum: 0
+            perMinuteCharge:
+              type: number
+              minimum: 0
+            freeTime:
+              type: number
+              minimum: 0
+            baseDistance:
+              type: number
+              minimum: 0
+            cancellationFreeTimeInSecond:
+              type: number
+              minimum: 0
+            averageTime:
+              type: number
+              minimum: 0
+            notShowTimeLimit:
+              type: number
+              description: Amount to charge to the customer for a NOT SHOW
+              minimum: 0
+            notShowCustomerCharge:
+              type: number
+              description: Amount to charge to the customer for a NOT SHOW
+              minimum: 0
+            notShowDriverCommission:
+              type: number
+              description: Amount to pay to the driver for a NOT SHOW
+              minimum: 0
+            kmRanges:
+              type: array
+              items:
+                type: object
+                properties:
+                  min:
+                    type: number
+                    minimum: 0
+                    maximum: 1000
+                  max:
+                    type: number
+                    minimum: 0
+                    maximum: 1000
+                  amount:
+                    type: number
+                    minimum: 0
+                required:
+                - min
+                - max
+                - amount
+              collectionFormat: multi
+              name: kmRanges
+          required:
+          - carType
+          optional:
+          - carName
+          - cancellationPolicy
+          - minimumCancellationFee
+          - commissionCharge
+          - baseFare
+          - perKmCharge
+          - perMinuteCharge
+          - freeTime
+          - baseDistance
+          - cancellationFreeTimeInSecond
+          - averageTime
+          - notShowTimeLimit
+          - notShowCustomerCharge
+          - notShowDriverCommission
+        collectionFormat: multi
+        name: fareSettings
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/updateDriver:
+    put:
+      summary: Driver Update profile
+      operationId: putAdminUpdatedriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Customer userID to be updated
+        name: _id
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+      - type: string
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: object
+        optional:
+        - original
+        - thumbnail
+        name: image
+        in: formData
+      - type: string
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: false
+      - type: string
+        name: countryCode
+        in: formData
+        required: false
+      - type: string
+        name: tag
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - PERCENTAGE
+        - ABSOLUTE
+        - OVER_MINIMUM
+        - PERCENTAGE_MINIMUM
+        name: paymentType
+        in: formData
+        required: false
+      - type: number
+        name: paymentValue
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/updatePicker:
+    put:
+      summary: Update driver information
+      operationId: putAdminUpdatepicker
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the driver to be updated
+        name: _id
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: boolean
+        description: Flag about is the driver ready for work
+        name: onDutyFlag
+        in: formData
+        required: false
+      - type: object
+        optional:
+        - original
+        - thumbnail
+        name: image
+        in: formData
+      - type: string
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: false
+      - type: string
+        name: countryCode
+        in: formData
+        required: false
+      - type: string
+        name: vehicleColor
+        in: formData
+        required: false
+      - type: string
+        description: 'Vehicle type: 1->BIKE, 0->LITE'
+        enum:
+        - BIKE
+        - LITE
+        name: vehicleType
+        in: formData
+        required: false
+      - type: string
+        name: vehicleModelName
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: MCNumber
+        in: formData
+        required: false
+      - type: number
+        name: vehicleYear
+        in: formData
+        required: false
+      - type: string
+        name: tag
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - STARTER
+        - SENIOR
+        - MCGYVER
+        - PREMIUM
+        name: type
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - PERCENTAGE
+        - ABSOLUTE
+        - OVER_MINIMUM
+        - PERCENTAGE_MINIMUM
+        name: paymentType
+        in: formData
+        required: false
+      - type: number
+        name: paymentValue
+        in: formData
+        required: false
+      - type: string
+        description: Name of the bank of the picker. For Accounting
+        name: bankName
+        in: formData
+        required: false
+      - type: string
+        name: accountNumber
+        in: formData
+        required: false
+      - type: string
+        description: Name of the person who owns the account
+        name: accountOwnerName
+        in: formData
+        required: false
+      - type: string
+        description: Driver's identity number
+        name: identityNumber
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - OLD
+        - NEW
+        name: accountingType
+        in: formData
+        required: false
+      - type: string
+        name: superRegionID
+        in: formData
+        required: false
+      - type: boolean
+        description: Select if the driver is part of a small fleet
+        name: isSmallFleetsDriver
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/updateServiceProvider:
+    put:
+      summary: Service Provider Update profile
+      operationId: putAdminUpdateserviceprovider
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Customer userID to be updated
+        name: _id
+        in: formData
+        required: true
+      - type: string
+        description: Individual or Company
+        name: registrationType
+        in: formData
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z0-9 ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+        required: false
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        description: image url
+        name: image
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/verifyUser:
+    put:
+      summary: Verify Users
+      operationId: putAdminVerifyuser
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: user id
+        minLength: 24
+        maxLength: 24
+        name: _id
+        in: formData
+        required: true
+      - type: number
+        description: Initial work balance of the driver
+        minimum: 0
+        maximum: 100
+        name: workBalance
+        in: formData
+        required: false
+      - type: string
+        description: Identification of the user
+        name: identityNumber
+        in: formData
+        required: true
+      - type: string
+        description: Name of the bank
+        name: bankName
+        in: formData
+        required: false
+      - type: string
+        description: Number of the transaction
+        name: bankTransactionID
+        in: formData
+        required: false
+      - type: string
+        description: Method selected to make the charges
+        enum:
+        - DEPOSIT
+        name: paymentMethod
+        in: formData
+        required: false
+      - type: object
+        optional:
+        - original
+        - thumbnail
+        name: rechargeImage
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: object
+          properties:
+            type:
+              type: string
+            amount:
+              type: number
+              minimum: 0
+              maximum: 100
+          required:
+          - type
+          - amount
+        collectionFormat: multi
+        name: selectedCharges
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/reissueBillToDatil:
+    put:
+      summary: Manually reissue a bill to Datil
+      operationId: putBillingReissuebilltodatil
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 14'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/sendBillToDatil:
+    put:
+      summary: Manually send a bill to Datil
+      operationId: putBillingSendbilltodatil
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 15'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updateBusinessCategory:
+    put:
+      summary: Update the data of a business category
+      operationId: putBusinessUpdatebusinesscategory
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 33'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/updatePaymentMethod:
+    put:
+      summary: Update driver's payment method
+      operationId: putDriverUpdatepaymentmethod
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: New driver's payment method
+        enum:
+        - CARD
+        - EARNINGS
+        name: paymentMethod
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/addToServiceProvider:
+    put:
+      summary: Add user to service provider
+      operationId: putServiceproviderAddtoserviceprovider
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userID
+        in: formData
+        required: true
+      - type: string
+        name: serviceProviderID
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - driver
+        - business
+        name: role
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/removeFromServiceProvider:
+    put:
+      summary: Add user to service provider
+      operationId: putServiceproviderRemovefromserviceprovider
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userID
+        in: formData
+        required: true
+      - type: string
+        name: serviceProviderID
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - driver
+        - business
+        name: role
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/support/updateContact:
+    put:
+      summary: update Contacts support]
+      operationId: putAdminSupportUpdatecontact
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 43'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/generateBusinessPayment:
+    post:
+      summary: Return the amount to charge all API users
+      operationId: postAccountingGeneratebusinesspayment
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: UserID
+        name: businessID
+        in: formData
+        required: true
+      - type: number
+        minimum: 0
+        maximum: 1000
+        name: amount
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/generateBusinessPaymentBulk:
+    post:
+      summary: Return the amount to charge all API users
+      operationId: postAccountingGeneratebusinesspaymentbulk
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: array
+        description: UserID
+        items:
+          type: string
+        collectionFormat: multi
+        name: businesses
+        in: formData
+        required: true
+      - type: string
+        name: startDate
+        in: formData
+        required: true
+      - type: string
+        name: endDate
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /accounting/generateWeeklyDriverPayment:
+    post:
+      summary: Registers payments and bills for all pickers who worked in the selected date range
+      operationId: postAccountingGenerateweeklydriverpayment
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 47'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addBalanceTransaction:
+    post:
+      summary: Register a balance transaction for a picker
+      operationId: postAdminAddbalancetransaction
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the picker to give the balance transaction
+        name: pickerID
+        in: formData
+        required: true
+      - type: number
+        description: Amount to give
+        minimum: 0.1
+        maximum: 200
+        name: amount
+        in: formData
+        required: true
+      - type: string
+        description: BONUS | PENALTY | DEPOSIT
+        enum:
+        - BONUS
+        - PENALTY
+        - DEPOSIT
+        - ADVANCE_PAYMENT
+        name: type
+        in: formData
+        required: true
+      - type: string
+        name: date
+        in: formData
+        required: true
+      - type: string
+        name: description
+        in: formData
+        required: true
+      - type: array
+        description: Transactions a deposit is linked to
+        items:
+          type: string
+        collectionFormat: multi
+        name: linkedTo
+        in: formData
+        required: false
+      - type: string
+        description: ID of the deposit transaction from the bank.
+        name: bankTransactionID
+        in: formData
+      - type: string
+        enum:
+        - MANUAL_BOOKING
+        - PAYMENT_ERROR
+        - SPECIAL_BOOKING
+        - BAD_ORDER_CHARGE
+        - FRAUD
+        - THEFT
+        - BAD_SERVICE
+        name: reason
+        in: formData
+        required: false
+      - type: boolean
+        name: isBillable
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        name: amountToBill
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        name: bookingCount
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addBonusToBooking:
+    post:
+      summary: Add a bonus to a booking
+      operationId: postAdminAddbonustobooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the booking to add the bonus
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: number
+        description: Amount of bonus to be added
+        minimum: 0
+        name: amount
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addBusinessesTransactions:
+    post:
+      operationId: postAdminAddbusinessestransactions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 48'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addCustomer:
+    post:
+      summary: Register a new customer via Email
+      operationId: postAdminAddcustomer
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        x-convert:
+          lowercase: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+      - type: string
+        minLength: 3
+        pattern: /^[0-9,+]+$/
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: number
+        name: appVersion
+        in: formData
+      - type: number
+        minimum: -90
+        maximum: 90
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        minimum: -180
+        maximum: 180
+        name: longitude
+        in: formData
+        required: false
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        description: image url
+        name: image
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addDangerPoint:
+    post:
+      summary: Creates a new Danger Point to check bookings positions with
+      operationId: postAdminAdddangerpoint
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Longitude of the point
+        minimum: -180
+        maximum: 180
+        x-constraint:
+          precision: 6
+        name: longitude
+        in: formData
+        required: true
+      - type: number
+        description: Latitude of the point
+        minimum: -90
+        maximum: 90
+        x-constraint:
+          precision: 6
+        name: latitude
+        in: formData
+        required: true
+      - type: string
+        name: description
+        in: formData
+        required: false
+      - type: number
+        description: Range to check positions with this point
+        minimum: 0
+        name: rangeInKm
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addDriver:
+    post:
+      summary: Register new Driver via Email
+      operationId: postAdminAdddriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: string
+        description: android/ios device token
+        x-convert:
+          trim: true
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: appVersion
+        in: formData
+        required: false
+      - type: number
+        minimum: -90
+        maximum: 90
+        name: latitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        name: longitude
+        in: formData
+        required: true
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        name: vehicleModelName
+        in: formData
+        required: true
+      - type: string
+        x-convert:
+          trim: true
+        name: MCNumber
+        in: formData
+        required: true
+      - type: string
+        description: Vehicle Type 0-BIKE, 1-LITE
+        enum:
+        - BIKE
+        - LITE
+        name: vehicleType
+        in: formData
+        required: true
+      - type: number
+        description: Vehicle Type 0-BIKE, 1-LITE
+        name: carType
+        in: formData
+        required: true
+      - type: string
+        name: vehicleColor
+        in: formData
+        required: true
+      - type: number
+        minimum: 1900
+        maximum: 2200
+        name: vehicleYear
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        description: image url
+        name: image
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addDriverTag:
+    post:
+      summary: Adds new driver tag to db
+      operationId: postAdminAdddrivertag
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: text
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addPromoToCustomer:
+    post:
+      summary: Add a promo to a customer
+      operationId: postAdminAddpromotocustomer
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the promo to add to the customer
+        minLength: 24
+        maxLength: 24
+        name: promoID
+        in: formData
+        required: true
+      - type: string
+        description: ID of the customer to add the promo to
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addServiceProvider:
+    post:
+      summary: Register a new service Provider
+      operationId: postAdminAddserviceprovider
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Individual or Company
+        name: registrationType
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        description: vehicle number
+        name: vehicleNumber
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+        required: true
+      - type: number
+        minimum: -90
+        maximum: 90
+        name: latitude
+        in: formData
+        required: true
+      - type: number
+        minimum: -180
+        maximum: 180
+        name: longitude
+        in: formData
+        required: true
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        description: android/ios device token
+        x-convert:
+          trim: true
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        description: image url
+        name: image
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addToBlacklist:
+    post:
+      summary: Adds the user to the blacklist
+      operationId: postAdminAddtoblacklist
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Email of the user to block
+        name: email
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addToWallet:
+    post:
+      summary: Add to wallet
+      operationId: postAdminAddtowallet
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Amount
+        minimum: 0
+        maximum: 5
+        name: amount
+        in: formData
+        required: true
+      - type: number
+        description: BookingID
+        name: bookingID
+        in: formData
+        required: true
+      - type: string
+        description: Motive to add to wallet
+        name: motiveWallet
+        in: formData
+        required: true
+      - type: string
+        description: User
+        name: userID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/addWorkBalance:
+    post:
+      summary: Add driver's work balance
+      operationId: postAdminAddworkbalance
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Amount to add to the driver's work balance
+        minimum: 0
+        maximum: 100
+        name: amount
+        in: formData
+        required: true
+      - type: string
+        description: Method selected to make the charges
+        enum:
+        - EARNINGS
+        - CARD
+        - DEPOSIT
+        - RECHARGE_BONUS
+        name: paymentMethod
+        in: formData
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: driverID
+        in: formData
+        required: true
+      - type: string
+        name: bankName
+        in: formData
+        required: false
+      - type: string
+        name: bankTransactionID
+        in: formData
+        required: false
+      - type: object
+        optional:
+        - original
+        - thumbnail
+        name: rechargeImage
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/cloneBusiness:
+    post:
+      summary: Create a new business based on another one
+      operationId: postAdminClonebusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID from the users collection of the business to clone from
+        name: userID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/cloneBusinessProducts:
+    post:
+      summary: Copies the approved products from one business to another
+      operationId: postAdminClonebusinessproducts
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business to copy from
+        name: from
+        in: formData
+        required: true
+      - type: string
+        description: ID of the business to copy to
+        name: to
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/createBanner:
+    post:
+      summary: Creates a banner in the db
+      operationId: postAdminCreatebanner
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Type of banner to create
+        enum:
+        - BUSINESS
+        - CATEGORY
+        name: type
+        in: formData
+        required: true
+      - type: string
+        description: UserID of the business this banner belongs to
+        minLength: 24
+        maxLength: 24
+        name: businessID
+        in: formData
+        required: false
+      - type: string
+        description: ID of the category this banner belongs to
+        minLength: 24
+        maxLength: 24
+        name: categoryID
+        in: formData
+        required: false
+      - type: string
+        description: Description of banner to create
+        maxLength: 35
+        name: description
+        in: formData
+        required: true
+      - type: object
+        description: Image to show in the banner
+        required: true
+        name: image
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/createBooking:
+    post:
+      summary: Create a past booking for driver
+      operationId: postAdminCreatebooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: driver
+        in: formData
+        required: true
+      - type: string
+        name: customer
+        in: formData
+        required: false
+      - type: string
+        name: business
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        maximum: 1000
+        name: orderAmount
+        in: formData
+        required: false
+      - type: number
+        minimum: 0
+        maximum: 100
+        name: deliveryFee
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - CORPORATE
+        - PICKUP_AND_DELIVER
+        name: bookingType
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - CARD
+        - CASH
+        - BILLING_CARD
+        - BILLING_TRANSFER
+        - LINK_TO_PAY
+        name: paymentMethod
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - BIKE
+        - LITE
+        name: carName
+        in: formData
+        required: true
+      - type: string
+        name: customerName
+        in: formData
+        required: false
+      - type: string
+        name: customerLastName
+        in: formData
+        required: false
+      - type: string
+        name: customerEmail
+        in: formData
+        required: false
+      - type: string
+        name: customerMobile
+        in: formData
+        required: false
+      - type: string
+        name: customerCountryCode
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/editFare:
+    post:
+      summary: Edit Fare settings
+      operationId: postAdminEditfare
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 49'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/endSearch:
+    post:
+      summary: End driver search for corporate bookings
+      operationId: postAdminEndsearch
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: boolean
+        name: isAdmin
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getFares:
+    post:
+      summary: Get Fares by optional filters
+      operationId: postAdminGetfares
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 50'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getMarketPlaceToken:
+    post:
+      summary: Creates a token so the admin can check the business page
+      operationId: postAdminGetmarketplacetoken
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Id of the business
+        name: businessID
+        in: formData
+        required: false
+      - type: string
+        description: Id of the business, real business. @Edison
+        name: businessIDBusiness
+        in: formData
+        required: false
+      - type: string
+        description: type of the device current using
+        enum:
+        - WEB
+        - IOS
+        - ANDROID
+        name: deviceType
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/getRegions:
+    post:
+      summary: Get the region or the superRegion
+      operationId: postAdminGetregions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 51'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/makeChargesToBooking:
+    post:
+      summary: Make a charge to the customer's card for a booking transaction
+      operationId: postAdminMakechargestobooking
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the booking
+        name: bookingID
+        in: formData
+        required: true
+      - type: string
+        description: 'Type of transaction: DELIVERY_CHARGE, ITEM_CHARGE'
+        enum:
+        - ITEM_CHARGE
+        - DELIVERY_CHARGE
+        name: type
+        in: formData
+        required: true
+      - type: number
+        description: Amount to charge to the customer's card
+        minimum: 0
+        maximum: 100
+        name: amount
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/makeRefund:
+    post:
+      summary: Refunds transactions and sends email to customer
+      operationId: postAdminMakerefund
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the booking
+        name: bookingID
+        in: formData
+        required: true
+      - type: array
+        description: Array of the trxId of the transactions to refund
+        items:
+          type: string
+        collectionFormat: multi
+        name: transactions
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/reactivateDriverSearch:
+    post:
+      summary: Reactivates the search of an active booking
+      operationId: postAdminReactivatedriversearch
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: bookingID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/restartSearch:
+    post:
+      summary: Restart driver search of selected booking
+      operationId: postAdminRestartsearch
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: preSelectedProviders
+        in: formData
+        required: false
+      - type: number
+        name: tip
+        in: formData
+        required: false
+      - type: boolean
+        name: cancelOnlySelectedProviders
+        in: formData
+        required: false
+      - type: boolean
+        name: isAdmin
+        in: formData
+        required: false
+      - type: boolean
+        name: isBusiness
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/sendPushToUsers:
+    post:
+      summary: Send push notification to selected users
+      operationId: postAdminSendpushtousers
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: EmailArray
+        in: formData
+        required: true
+      - type: string
+        name: message
+        in: formData
+      - type: string
+        name: title
+        in: formData
+      - type: boolean
+        default: false
+        name: allUsers
+        in: formData
+        required: false
+      - type: string
+        name: regionID
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/sendWeeklyPaymentEmail:
+    post:
+      summary: Send the weekly payment email to all drivers who were active in the selected week
+      operationId: postAdminSendweeklypaymentemail
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 54'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/sendWeeklyPaymentMail:
+    post:
+      summary: Send Weekly Payment Mail from the selected dates
+      operationId: postAdminSendweeklypaymentmail
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 55'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/setDefaultSettings:
+    post:
+      summary: set admin default settings
+      operationId: postAdminSetdefaultsettings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: should be in seconds minimum 60 seconds
+        minimum: 60
+        name: otpExpiresIn
+        in: formData
+      - type: number
+        description: should be in seconds minimum 60 seconds
+        minimum: 60
+        name: linkExpiresIn
+        in: formData
+      - type: number
+        description: should be in days
+        minimum: 1
+        maximum: 24
+        name: deleteTrackingData
+        in: formData
+      - type: string
+        description: contact us email for app
+        x-format:
+          email: true
+        name: contactUsEmail
+        in: formData
+      - type: boolean
+        description: multi session for web panel
+        name: webMultiSession
+        in: formData
+        required: true
+      - type: boolean
+        description: multi session for device panel
+        name: deviceMultiSession
+        in: formData
+        required: true
+      - type: number
+        description: admin token expire time
+        minimum: 1
+        name: adminTokenExpireTime
+        in: formData
+      - type: number
+        description: user token expire time
+        minimum: 1
+        name: userTokenExpireTime
+        in: formData
+      - type: number
+        description: referral percentage given to owner
+        name: referralPercentageForOwner
+        in: formData
+      - type: number
+        description: referral percentage given to user
+        name: referralPercentageForUser
+        in: formData
+      - type: boolean
+        name: isSpecial
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/setHack:
+    post:
+      summary: Mark a booking as hack
+      operationId: postAdminSethack
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/totalOrderRequests:
+    post:
+      summary: Get Orders report data
+      operationId: postAdminTotalorderrequests
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 56'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/updateAllDriversPaymentBalance:
+    post:
+      summary: Update payment balance
+      operationId: postAdminUpdatealldriverspaymentbalance
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/vehicleTypeAndCompany:
+    post:
+      summary: add vehicle type and company
+      operationId: postAdminVehicletypeandcompany
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: add type of vehicle
+        name: vehicleType
+        in: formData
+        required: true
+      - type: string
+        description: add type of vehicle company
+        name: vehicleCompany
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/reissueAllBills:
+    post:
+      summary: Manually reissue all bills to Datil
+      operationId: postBillingReissueallbills
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 48'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/sendBillsToDatil:
+    post:
+      summary: Manually send a bill to Datil
+      operationId: postBillingSendbillstodatil
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 48'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /billing/updateBillsWithDatil:
+    post:
+      summary: Manually update all bills with Datil
+      operationId: postBillingUpdatebillswithdatil
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 48'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /bookingIssues/registerBookingIssue:
+    post:
+      summary: add a new booking issue
+      operationId: postBookingissuesRegisterbookingissue
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: details
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: key
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/createBusinessCategory:
+    post:
+      summary: Register a new business category
+      operationId: postBusinessCreatebusinesscategory
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 65'
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/addWorkBalance:
+    post:
+      summary: Add driver's work balance
+      operationId: postDriverAddworkbalance
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Amount to add to the driver's work balance
+        minimum: 0
+        maximum: 100
+        name: amount
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/freeBusyDrivers:
+    post:
+      summary: Free Busy drivers
+      operationId: postDriverFreebusydrivers
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/deleteUser:
+    delete:
+      summary: Soft Delete a user
+      operationId: deleteAdminDeleteuser
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: userID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/deleteVehicleTypeAndCompany:
+    delete:
+      summary: soft delete vehicle type and company
+      operationId: deleteAdminDeletevehicletypeandcompany
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: type of vehicle
+        name: vehicleType
+        in: formData
+        required: true
+      - type: string
+        description: type of vehicle company
+        name: vehicleCompany
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - Admin
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  transactions:
+    type: array
+    items:
+      type: string
+  Model 53:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: ID of the booking
+      email:
+        type: string
+        description: Email to send the invoice to
+    required:
+    - bookingID
+    - email
+  Model 47:
+    type: object
+    properties:
+      startDate:
+        type: string
+        description: Date range start date
+      endDate:
+        type: string
+        description: Date range end date
+    required:
+    - startDate
+    - endDate
+  Model 9:
+    type: object
+    properties:
+      transactions:
+        $ref: '#/definitions/Model 8'
+        type: array
+      newStatus:
+        type: string
+    required:
+    - transactions
+    - newStatus
+  Model 10:
+    type: object
+    properties:
+      userID:
+        type: string
+        description: ID of the driver to add the penalty
+        minLength: 24
+        maxLength: 24
+      amount:
+        type: number
+        description: Amount of penalty
+    required:
+    - userID
+    - amount
+  tags:
+    type: array
+    items:
+      type: string
+      minLength: 3
+      pattern: /^[a-zA-ZáéíóúÁÉÍÓÚ0-9 ]+$/
+      x-convert:
+        trim: true
+  Model 33:
+    type: object
+    properties:
+      categoryID:
+        type: string
+        description: ID of the business category
+        minLength: 24
+        maxLength: 24
+      name:
+        type: string
+        minLength: 3
+        pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚ ]+$/
+        x-convert:
+          trim: true
+      image:
+        $ref: '#/definitions/image'
+      tag:
+        type: string
+      productTypes:
+        $ref: '#/definitions/Model 31'
+        type: array
+      commission:
+        type: number
+        description: Commission charged to products of this category
+        minimum: 0
+        maximum: 100
+      names:
+        $ref: '#/definitions/names'
+        type: array
+    required:
+    - categoryID
+    - name
+    - tag
+    - commission
+    - names
+  Model 2:
+    type: object
+    properties:
+      transactions:
+        $ref: '#/definitions/transactions'
+        type: array
+    required:
+    - transactions
+  Model 43:
+    type: object
+    properties:
+      _id:
+        type: string
+        minLength: 24
+        maxLength: 24
+        x-convert:
+          trim: true
+      phone:
+        $ref: '#/definitions/phone'
+      contactMail:
+        $ref: '#/definitions/contactMail'
+      webAddress:
+        $ref: '#/definitions/webAddress'
+      reachUs:
+        $ref: '#/definitions/webAddress'
+      isAvailable:
+        type: boolean
+    required:
+    - _id
+  Model 8:
+    type: array
+    description: Array of the transaction ids
+    items:
+      type: string
+  Model 1:
+    type: object
+    properties:
+      transactions:
+        $ref: '#/definitions/transactions'
+        type: array
+      status:
+        type: string
+        enum:
+        - APPROVED
+        - REJECTED
+    required:
+    - transactions
+    - status
+  webAddress:
+    type: object
+    properties:
+      address:
+        type: string
+      isAvailable:
+        type: boolean
+  Model 65:
+    type: object
+    properties:
+      name:
+        type: string
+        minLength: 3
+        pattern: /^[a-zA-Z0-9áéíóúÁÉÍÓÚ ]+$/
+        x-convert:
+          trim: true
+      image:
+        $ref: '#/definitions/image'
+      tag:
+        type: string
+      productTypes:
+        $ref: '#/definitions/Model 31'
+        type: array
+      commission:
+        type: number
+        description: Commission charged to products of this category
+        minimum: 0
+        maximum: 100
+      names:
+        $ref: '#/definitions/names'
+        type: array
+    required:
+    - name
+    - tag
+    - commission
+    - names
+  names:
+    type: array
+    items:
+      $ref: '#/definitions/Model 32'
+  Model 49:
+    type: object
+    properties:
+      _id:
+        type: string
+      regionID:
+        type: string
+      superRegionID:
+        type: string
+      baseDistance:
+        type: number
+      baseFare:
+        type: number
+      kmRanges:
+        $ref: '#/definitions/transactions'
+        type: array
+    required:
+    - _id
+  Model 51:
+    type: object
+    properties:
+      superRegion:
+        type: boolean
+  Model 11:
+    type: object
+    properties:
+      _id:
+        type: string
+        description: userID to be updated
+      name:
+        type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+      lastName:
+        type: string
+      email:
+        type: string
+      mobile:
+        type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+      countryCode:
+        type: string
+      companyName:
+        type: string
+        description: Business company name
+        minLength: 2
+        x-convert:
+          trim: true
+      tags:
+        $ref: '#/definitions/tags'
+        type: array
+      fullAddress:
+        type: string
+        description: Business address
+        minLength: 2
+        x-convert:
+          trim: true
+      commission:
+        type: number
+        description: Commission from products
+        minimum: 0
+        maximum: 100
+      category:
+        type: string
+        description: ID of the new category
+        minLength: 24
+        maxLength: 24
+      businessCategories:
+        $ref: '#/definitions/businessCategories'
+        type: array
+      productTypes:
+        $ref: '#/definitions/productTypes'
+        type: array
+      aditionalInfo:
+        type: string
+      storeType:
+        type: string
+        description: 'ID of the new store Type '
+        enum:
+        - MARKETPLACE
+        - SHOP_ORDER
+      subCategoryName:
+        type: string
+      settings:
+        $ref: '#/definitions/settings'
+      smrVia:
+        $ref: '#/definitions/transactions'
+        type: array
+      fareSettings:
+        $ref: '#/definitions/transactions'
+        type: array
+      businessTag:
+        type: string
+    required:
+    - _id
+  phone:
+    type: object
+    properties:
+      countryCode:
+        type: string
+      phoneNumber:
+        type: string
+      isAvailable:
+        type: boolean
+  Model 3:
+    type: object
+    properties:
+      userID:
+        type: string
+        description: ID of the business
+        minLength: 24
+        maxLength: 24
+      driverID:
+        type: string
+    required:
+    - userID
+    - driverID
+  Model 31:
+    type: array
+    description: Array of the productTypes of the category
+    items:
+      type: string
+  Model 52:
+    type: object
+    properties:
+      type:
+        type: string
+        description: Type of email to send
+      email:
+        type: string
+        description: Email to send the invoice
+    required:
+    - type
+    - email
+  Model 4:
+    type: object
+    properties:
+      productID:
+        type: string
+        description: ID of the product edited
+    required:
+    - productID
+  contactMail:
+    type: object
+    properties:
+      email:
+        type: string
+      isAvailable:
+        type: boolean
+  Model 50:
+    type: object
+    properties:
+      currency:
+        type: string
+      country:
+        type: string
+      regionID:
+        type: string
+      superRegionID:
+        type: string
+  Model 48:
+    type: object
+    properties:
+      startDate:
+        type: string
+      endDate:
+        type: string
+    required:
+    - startDate
+    - endDate
+  Model 32:
+    type: object
+    properties:
+      text:
+        type: string
+      lang:
+        type: string
+    required:
+    - text
+    - lang
+  Model 56:
+    type: object
+    properties:
+      startDate:
+        type: string
+      endDate:
+        type: string
+      status:
+        type: string
+      providerName:
+        type: string
+      bookingNumericId:
+        type: string
+  productTypes:
+    type: array
+    items:
+      type: string
+      description: add sub category business
+  settings:
+    type: object
+  Model 15:
+    type: object
+    properties:
+      billID:
+        type: string
+        description: ID of the bill to send to Datil
+        minLength: 24
+        maxLength: 24
+  image:
+    type: object
+    description: image url
+    properties:
+      thumbnail:
+        type: string
+      original:
+        type: string
+    required:
+    - thumbnail
+    - original
+  Model 54:
+    type: object
+    properties:
+      startDate:
+        type: string
+      endDate:
+        type: string
+      pickerID:
+        type: string
+      pickerEmail:
+        type: string
+    required:
+    - startDate
+    - endDate
+    - pickerID
+    - pickerEmail
+  Model 55:
+    type: object
+    properties:
+      startDate:
+        type: string
+      endDate:
+        type: string
+      pickerID:
+        type: string
+        minLength: 24
+        maxLength: 24
+      pickerEmail:
+        type: string
+    required:
+    - startDate
+    - endDate
+    - pickerID
+    - pickerEmail
+  Model 6:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        minLength: 24
+        maxLength: 24
+    required:
+    - bookingID
+  businessCategories:
+    type: array
+    items:
+      type: string
+      description: ID of the new category
+      minLength: 24
+      maxLength: 24
+  Model 14:
+    type: object
+    properties:
+      billID:
+        type: string
+        description: ID of the bill to reissue to Datil
+        minLength: 24
+        maxLength: 24

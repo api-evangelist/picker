@@ -1,0 +1,2267 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting business API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: business
+paths:
+  /api/webhooks:
+    get:
+      summary: Return the webhooks that the user is subscribed to
+      operationId: getApiWebhooks
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+    post:
+      summary: Add a webhook to subscribe to an event
+      operationId: postApiWebhooks
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 61'
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+    delete:
+      summary: Delete a webhook the user is subscribed to
+      operationId: deleteApiWebhooks
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 81'
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getAccountInfoIntegrationDashboard:
+    get:
+      summary: Get General info about specific business
+      operationId: getBusinessGetaccountinfointegrationdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userId
+        in: query
+        required: false
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getAssociatedBusiness:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetassociatedbusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: storeType
+        in: query
+        required: false
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        name: search
+        in: query
+        required: false
+      - type: string
+        name: sortField
+        in: query
+        required: false
+      - type: string
+        name: sortOrder
+        in: query
+        required: false
+      - type: boolean
+        name: status
+        in: query
+        required: false
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBookingsDataByDatesDashboard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbookingsdatabydatesdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: fromDate
+        in: query
+        required: true
+      - type: string
+        name: toDate
+        in: query
+        required: true
+      - type: boolean
+        name: isSemester
+        in: query
+        required: false
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBookingsIntegrationDashboard:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbookingsintegrationdashboard
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: userID
+        in: query
+        required: false
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessInfoAfterLanding:
+    get:
+      summary: Get business info for landing
+      operationId: getBusinessGetbusinessinfoafterlanding
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessID
+        in: query
+        required: true
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/getBusinessesGeneralInfo:
+    get:
+      summary: Get General info about businesses
+      operationId: getBusinessGetbusinessesgeneralinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/landing:
+    get:
+      summary: Get business info for landing
+      operationId: getBusinessLanding
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessId
+        in: query
+        required: true
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/reports:
+    get:
+      summary: Get business booking reports
+      operationId: getBusinessReports
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        name: endDate
+        in: query
+        required: true
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/turnOffOnBusinessById:
+    get:
+      summary: Get General info about specific business
+      operationId: getBusinessTurnoffonbusinessbyid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        name: businessId
+        in: query
+        required: true
+      - type: string
+        name: currentStatus
+        in: query
+        required: true
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/addCategoryToBusiness:
+    put:
+      summary: Adds a businessCategory to the business
+      operationId: putBusinessAddcategorytobusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business category
+        minLength: 24
+        maxLength: 24
+        name: businessCategoryID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/changeProductStatus:
+    put:
+      summary: Change product status to active or inactive
+      operationId: putBusinessChangeproductstatus
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: status
+        in: formData
+        required: true
+      - type: string
+        description: ID of the product
+        minLength: 24
+        maxLength: 24
+        name: productID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/confirmInformation:
+    put:
+      summary: Fill information of the business after creation.
+      operationId: putBusinessConfirminformation
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        required: false
+        name: imageLogo
+        in: formData
+      - type: object
+        description: image url
+        required: false
+        name: imageFront
+        in: formData
+      - type: array
+        description: Categories that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessCategories
+        in: formData
+        required: false
+      - type: array
+        description: Product types that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: productTypes
+        in: formData
+        required: false
+      - type: string
+        description: Full address of the business' location.
+        minLength: 2
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+        required: true
+      - type: number
+        description: Latitude of the business' location.
+        name: latitude
+        in: formData
+        required: true
+      - type: number
+        description: Longitude of the business' location.
+        name: longitude
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: object
+          properties:
+            day:
+              type: number
+              minimum: 0
+              maximum: 6
+            open:
+              type: string
+              description: Hour the business opens HH:mm
+            close:
+              type: string
+              description: Hour the business closes HH:mm
+            isOpen:
+              type: boolean
+          required:
+          - day
+          - isOpen
+          optional:
+          - open
+          - close
+        collectionFormat: multi
+        name: schedule
+        in: formData
+        required: true
+      - type: string
+        name: role
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/editProduct:
+    put:
+      summary: Edits the information of a product
+      operationId: putBusinessEditproduct
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: false
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        optional:
+        - thumbnail
+        - original
+        name: image
+        in: formData
+        required: false
+      - type: number
+        name: timeToPrepare
+        in: formData
+        required: true
+      - type: boolean
+        name: isActive
+        in: formData
+        required: false
+      - type: number
+        name: price
+        in: formData
+        required: true
+      - type: string
+        name: description
+        in: formData
+        required: true
+      - type: string
+        description: ID of the category of the product
+        minLength: 24
+        maxLength: 24
+        name: category
+        in: formData
+        required: true
+      - type: string
+        description: ID of the product
+        minLength: 24
+        maxLength: 24
+        name: _id
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: details
+        in: formData
+        required: false
+      - type: boolean
+        name: isDeleted
+        in: formData
+        required: false
+      - type: string
+        description: Type of product. Related to the categories that the business belongs to.
+        name: productType
+        in: formData
+        required: false
+      - type: number
+        description: Commission charged to the product
+        minimum: 0
+        maximum: 100
+        name: commission
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: object
+          properties:
+            image:
+              type: object
+              description: Image object with original and thumbnail
+              properties:
+                thumbnail:
+                  type: string
+                original:
+                  type: string
+              required:
+              - thumbnail
+              - original
+              name: image
+            isDefault:
+              type: boolean
+              description: If the image is the default product's image
+          required:
+          - image
+          - isDefault
+        collectionFormat: multi
+        name: images
+        in: formData
+        required: true
+      - type: array
+        description: Tags to find the product
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/editProductDetail:
+    put:
+      summary: Edit the details of a product
+      operationId: putBusinessEditproductdetail
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the product detail
+        minLength: 24
+        maxLength: 24
+        name: detailID
+        in: formData
+        required: true
+      - type: string
+        description: 'Type of detail: SIMPLE | MULTIPLE | TEXT'
+        enum:
+        - SIMPLE
+        - MULTIPLE
+        - TEXT
+        name: type
+        in: formData
+        required: true
+      - type: string
+        description: ID of the option that is selected as default
+        name: default
+        in: formData
+        required: false
+      - type: boolean
+        description: Indicates if the detail is obligatory
+        name: isObligatory
+        in: formData
+        required: true
+      - type: array
+        description: Options to show to the customer
+        items:
+          type: string
+        collectionFormat: multi
+        name: options
+        in: formData
+        required: false
+      - type: string
+        description: Description of the detail
+        name: text
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/goOnOffDuty:
+    put:
+      summary: Go on or off duty
+      operationId: putBusinessGoonoffduty
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: boolean
+        description: New value of onDutyFlag
+        name: onDutyFlag
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/setNewPassword:
+    put:
+      summary: Set New Password
+      operationId: putBusinessSetnewpassword
+      parameters:
+      - type: string
+        description: Phone number that is being verified
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updateProductCategory:
+    put:
+      summary: Update a product category
+      operationId: putBusinessUpdateproductcategory
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        description: ID of the product category
+        minLength: 24
+        maxLength: 24
+        name: _id
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /admin/restartSearch:
+    post:
+      summary: Restart driver search of selected booking
+      operationId: postAdminRestartsearch
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: bookingID
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: preSelectedProviders
+        in: formData
+        required: false
+      - type: number
+        name: tip
+        in: formData
+        required: false
+      - type: boolean
+        name: cancelOnlySelectedProviders
+        in: formData
+        required: false
+      - type: boolean
+        name: isAdmin
+        in: formData
+        required: false
+      - type: boolean
+        name: isBusiness
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /api/validateApiPickup:
+    post:
+      operationId: postApiValidateapipickup
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 60'
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/addBusiness:
+    post:
+      summary: Register a new business via Email
+      operationId: postBusinessAddbusiness
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        description: '+593'
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        required: false
+        name: imageLogo
+        in: formData
+      - type: object
+        description: image url
+        required: false
+        name: imageFront
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+        required: true
+      - type: string
+        x-convert:
+          trim: true
+        name: addressReference
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: exterior
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: interior
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: country
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: city
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: array
+        description: Categories that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessCategories
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: object
+          properties:
+            day:
+              type: number
+              minimum: 0
+              maximum: 6
+            open:
+              type: string
+            close:
+              type: string
+            isOpen:
+              type: boolean
+          required:
+          - day
+          - isOpen
+          optional:
+          - open
+          - close
+        collectionFormat: multi
+        name: schedule
+        in: formData
+        required: false
+      - type: array
+        description: Tags to find the business
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/addProductDetail:
+    post:
+      summary: Add a new detail to a product
+      operationId: postBusinessAddproductdetail
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the product this detail belongs to
+        minLength: 24
+        maxLength: 24
+        name: productID
+        in: formData
+        required: true
+      - type: string
+        description: 'Type of detail: SIMPLE | MULTIPLE | TEXT'
+        enum:
+        - SIMPLE
+        - MULTIPLE
+        - TEXT
+        name: type
+        in: formData
+        required: true
+      - type: string
+        description: ID of the option that is selected as default
+        name: default
+        in: formData
+        required: false
+      - type: boolean
+        description: Indicates if the detail is obligatory
+        name: isObligatory
+        in: formData
+        required: true
+      - type: array
+        description: Options to show to the customer
+        items:
+          type: string
+        collectionFormat: multi
+        name: options
+        in: formData
+        required: false
+      - type: string
+        description: Description of the detail
+        name: text
+        in: formData
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/createBusinessForUser:
+    post:
+      summary: Create a business for a user and assign to it
+      operationId: postBusinessCreatebusinessforuser
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: country
+        in: formData
+        required: true
+      - type: string
+        name: currency
+        in: formData
+        required: true
+      - type: array
+        description: Options for business
+        items:
+          type: string
+        collectionFormat: multi
+        name: options
+        in: formData
+        required: false
+      - type: string
+        name: storeType
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/createProduct:
+    post:
+      summary: Register a new product of a business
+      operationId: postBusinessCreateproduct
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        optional:
+        - thumbnail
+        - original
+        name: image
+        in: formData
+        required: false
+      - type: number
+        name: timeToPrepare
+        in: formData
+        required: true
+      - type: boolean
+        name: isActive
+        in: formData
+        required: true
+      - type: number
+        name: price
+        in: formData
+        required: true
+      - type: string
+        name: description
+        in: formData
+        required: false
+      - type: string
+        description: ID of the category of the product
+        minLength: 24
+        maxLength: 24
+        name: categoryID
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: details
+        in: formData
+        required: false
+      - type: string
+        description: Type of product. Related to the categories that the business belongs to.
+        name: productType
+        in: formData
+        required: false
+      - type: number
+        description: Commission charged to the product
+        minimum: 0
+        maximum: 100
+        name: commission
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: object
+          properties:
+            image:
+              type: object
+              description: Image object with original and thumbnail
+              properties:
+                thumbnail:
+                  type: string
+                original:
+                  type: string
+              required:
+              - thumbnail
+              - original
+              name: image
+            isDefault:
+              type: boolean
+              description: If the image is the default product's image
+          required:
+          - image
+          - isDefault
+        collectionFormat: multi
+        name: images
+        in: formData
+        required: true
+      - type: array
+        description: Tags to find the product
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/createProductByUserId:
+    post:
+      summary: Register a new product of a business
+      operationId: postBusinessCreateproductbyuserid
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        optional:
+        - thumbnail
+        - original
+        name: image
+        in: formData
+        required: false
+      - type: number
+        name: timeToPrepare
+        in: formData
+        required: true
+      - type: boolean
+        name: isActive
+        in: formData
+        required: true
+      - type: number
+        name: price
+        in: formData
+        required: true
+      - type: string
+        name: description
+        in: formData
+        required: false
+      - type: string
+        description: ID of the category of the product
+        minLength: 24
+        maxLength: 24
+        name: categoryID
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: string
+        collectionFormat: multi
+        name: details
+        in: formData
+        required: false
+      - type: string
+        description: Type of product. Related to the categories that the business belongs to.
+        name: productType
+        in: formData
+        required: false
+      - type: number
+        description: Commission charged to the product
+        minimum: 0
+        maximum: 100
+        name: commission
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: object
+          properties:
+            image:
+              type: object
+              description: Image object with original and thumbnail
+              properties:
+                thumbnail:
+                  type: string
+                original:
+                  type: string
+              required:
+              - thumbnail
+              - original
+              name: image
+            isDefault:
+              type: boolean
+              description: If the image is the default product's image
+          required:
+          - image
+          - isDefault
+        collectionFormat: multi
+        name: images
+        in: formData
+        required: true
+      - type: array
+        description: Tags to find the product
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/createProductCategory:
+    post:
+      summary: Register a new product category
+      operationId: postBusinessCreateproductcategory
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/createProductCategoryByUserId:
+    post:
+      summary: Register a new product category
+      operationId: postBusinessCreateproductcategorybyuserid
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/forgotPassword:
+    post:
+      summary: Sets the deleted flag of the product to true
+      operationId: postBusinessForgotpassword
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: false
+      - type: string
+        name: mobile
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/generateDynamicLink:
+    post:
+      summary: Generate a dynamic link for business
+      operationId: postBusinessGeneratedynamiclink
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 66'
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/registerFromEmail:
+    post:
+      summary: Register a new business via Email
+      operationId: postBusinessRegisterfromemail
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        description: '+593'
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: true
+      - type: object
+        description: image url
+        required: false
+        name: imageLogo
+        in: formData
+      - type: object
+        description: image url
+        required: false
+        name: imageFront
+        in: formData
+      - type: array
+        description: Categories that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessCategories
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+        required: true
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: object
+          properties:
+            day:
+              type: number
+              minimum: 0
+              maximum: 6
+            open:
+              type: string
+            close:
+              type: string
+            isOpen:
+              type: boolean
+          required:
+          - day
+          - isOpen
+          optional:
+          - open
+          - close
+        collectionFormat: multi
+        name: schedule
+        in: formData
+        required: true
+      - type: array
+        description: Tags to find the business
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/setProductAndCategoriesOrder:
+    post:
+      summary: Generate a dynamic link for business
+      operationId: postBusinessSetproductandcategoriesorder
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 68'
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updateBusiness:
+    post:
+      summary: Update business data
+      operationId: postBusinessUpdatebusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        name: countryCode
+        in: formData
+        required: false
+      - type: object
+        description: image url
+        required: false
+        name: imageLogo
+        in: formData
+      - type: object
+        description: image url
+        optional:
+        - thumbnail
+        - original
+        name: imageFront
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+          description: add sub category business
+        collectionFormat: multi
+        name: productTypes
+        in: formData
+      - type: array
+        items:
+          type: object
+          properties:
+            day:
+              type: number
+              minimum: 0
+              maximum: 6
+            open:
+              type: string
+            close:
+              type: string
+            isOpen:
+              type: boolean
+          required:
+          - day
+          - isOpen
+          optional:
+          - open
+          - close
+        collectionFormat: multi
+        name: schedule
+        in: formData
+        required: false
+      - type: string
+        description: Name of the address of the business' location
+        minLength: 2
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: array
+        description: Categories that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessCategories
+        in: formData
+        required: false
+      - type: array
+        description: Tags to find the business
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      - type: string
+        default: business
+        name: role
+        in: formData
+      - type: string
+        name: paymentMethod
+        in: formData
+        required: false
+      - type: string
+        name: country
+        in: formData
+        required: false
+      - type: string
+        name: currency
+        in: formData
+        required: false
+      - type: array
+        description: Options for business
+        items:
+          type: string
+        collectionFormat: multi
+        name: options
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updateBusinessByUserId:
+    post:
+      summary: Update business data
+      operationId: postBusinessUpdatebusinessbyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: false
+      - type: string
+        name: countryCode
+        in: formData
+        required: false
+      - type: object
+        description: image url
+        required: false
+        name: imageLogo
+        in: formData
+      - type: object
+        description: image url
+        optional:
+        - thumbnail
+        - original
+        name: frontImage
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: array
+        description: Tags to find the business
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: object
+          properties:
+            day:
+              type: number
+              minimum: 0
+              maximum: 6
+            open:
+              type: string
+            close:
+              type: string
+            isOpen:
+              type: boolean
+          required:
+          - day
+          - isOpen
+          optional:
+          - open
+          - close
+        collectionFormat: multi
+        name: schedule
+        in: formData
+        required: false
+      - type: string
+        description: Name of the address of the business' location
+        minLength: 2
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: addressReference
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: country
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: city
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: exterior
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: interior
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: zipCode
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: array
+        description: Categories that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessCategories
+        in: formData
+        required: false
+      - type: string
+        name: paymentMethod
+        in: formData
+        required: false
+      - type: string
+        name: currency
+        in: formData
+        required: false
+      - type: array
+        description: Options for business
+        items:
+          type: string
+        collectionFormat: multi
+        name: options
+        in: formData
+        required: false
+      - type: object
+        description: Billing data
+        optional:
+        - name
+        - identification
+        - email
+        - accountNumber
+        - accountType
+        - bank
+        - accountHolderName
+        - accountIdentification
+        name: billingData
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: description
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updatePaymentMethodByUserId:
+    post:
+      summary: Update business payment method
+      operationId: postBusinessUpdatepaymentmethodbyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        enum:
+        - BILLING_CARD
+        - BILLING_TRANSFER
+        name: paymentMethod
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/verifyOTP:
+    post:
+      summary: Verify OTP for mobile
+      operationId: postBusinessVerifyotp
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 70'
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/addRemoveFavorite:
+    post:
+      summary: Customer can add or remove his favourite business or product
+      operationId: postCustomerAddremovefavorite
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the product or business selected
+        minLength: 24
+        maxLength: 24
+        name: favoriteID
+        in: formData
+        required: true
+      - type: string
+        description: If the selected favorite is product or business
+        enum:
+        - PRODUCT
+        - BUSINESS
+        name: type
+        in: formData
+        required: true
+      - type: boolean
+        name: isFavorite
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/deleteCategory:
+    delete:
+      summary: Delete a category and all its products
+      operationId: deleteBusinessDeletecategory
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the product
+        minLength: 24
+        maxLength: 24
+        name: categoryID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/deleteProduct:
+    delete:
+      summary: Sets the deleted flag of the product to true
+      operationId: deleteBusinessDeleteproduct
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: false
+      - type: string
+        description: ID of the product
+        minLength: 24
+        maxLength: 24
+        name: _id
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/deleteProductDetail:
+    delete:
+      summary: Deletes the detail of a product
+      operationId: deleteBusinessDeleteproductdetail
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the product detail
+        minLength: 24
+        maxLength: 24
+        name: detailID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/removeCategoryFromBusiness:
+    delete:
+      summary: Removes a category from the business businessCategories array
+      operationId: deleteBusinessRemovecategoryfrombusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business category
+        minLength: 24
+        maxLength: 24
+        name: businessCategoryID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - business
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  Model 60:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+        - PICKUP
+        - DELIVERY
+    required:
+    - type
+  Model 70:
+    type: object
+    properties:
+      mobile:
+        type: string
+        description: Phone number that is being verified
+      OTPCode:
+        type: number
+        description: OTP sent via SMS to the user
+        minimum: 1000
+        maximum: 9999
+    required:
+    - mobile
+    - OTPCode
+  Model 67:
+    type: object
+    properties:
+      id:
+        type: string
+      order:
+        type: number
+    required:
+    - id
+    - order
+  Model 81:
+    type: object
+    properties:
+      type:
+        type: string
+        description: Type of event to delete
+    required:
+    - type
+  Model 61:
+    type: object
+    properties:
+      type:
+        type: string
+        description: Type of event to subscribe to
+      url:
+        type: string
+      header:
+        type: string
+    required:
+    - type
+    - url
+  Model 68:
+    type: object
+    properties:
+      products:
+        $ref: '#/definitions/products'
+        type: array
+      categories:
+        $ref: '#/definitions/products'
+        type: array
+    required:
+    - products
+    - categories
+  Model 66:
+    type: object
+    properties:
+      businessID:
+        type: string
+        description: UserID of the business
+    required:
+    - businessID
+  products:
+    type: array
+    items:
+      $ref: '#/definitions/Model 67'

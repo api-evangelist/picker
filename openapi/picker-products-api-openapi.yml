@@ -1,0 +1,118 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting products API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: products
+paths:
+  /customer/getFavorites:
+    get:
+      summary: Get list favorite products and businesses from user.
+      operationId: getCustomerGetfavorites
+      parameters:
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      tags:
+      - products
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /customer/search:
+    get:
+      summary: Search businesses and products by searchText.
+      operationId: getCustomerSearch
+      parameters:
+      - type: number
+        name: limit
+        in: query
+        required: false
+      - type: number
+        name: skip
+        in: query
+        required: false
+      - type: string
+        minLength: 3
+        name: searchText
+        in: query
+        required: true
+      - type: number
+        name: latitude
+        in: query
+        required: false
+      - type: number
+        name: longitude
+        in: query
+        required: false
+      tags:
+      - products
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/setProductAndCategoriesOrder:
+    post:
+      summary: Generate a dynamic link for business
+      operationId: postBusinessSetproductandcategoriesorder
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 68'
+      tags:
+      - products
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  Model 68:
+    type: object
+    properties:
+      products:
+        $ref: '#/definitions/products'
+        type: array
+      categories:
+        $ref: '#/definitions/products'
+        type: array
+    required:
+    - products
+    - categories
+  Model 67:
+    type: object
+    properties:
+      id:
+        type: string
+      order:
+        type: number
+    required:
+    - id
+    - order
+  products:
+    type: array
+    items:
+      $ref: '#/definitions/Model 67'

@@ -1,0 +1,401 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting serviceProvider API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: serviceProvider
+paths:
+  /admin/getServiceProviderInfo:
+    get:
+      summary: Get all information from service provider
+      operationId: getAdminGetserviceproviderinfo
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 24
+        maxLength: 24
+        name: serviceProviderID
+        in: query
+        required: true
+      tags:
+      - serviceProvider
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /driver/getEarnings:
+    get:
+      summary: Driver get Earnings
+      operationId: getDriverGetearnings
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        name: endDate
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - serviceProvider
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/getDashboardCount:
+    get:
+      summary: Get Dashboard Count
+      operationId: getServiceproviderGetdashboardcount
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        name: endDate
+        in: query
+        required: true
+      tags:
+      - serviceProvider
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/updateDriver:
+    put:
+      summary: Driver Update profile
+      operationId: putServiceproviderUpdatedriver
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Customer userID to be updated
+        name: _id
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+      - type: string
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        description: image url
+        name: image
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - serviceProvider
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/updateProfile:
+    put:
+      summary: Service Provider Update profile
+      operationId: putServiceproviderUpdateprofile
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Individual or Company
+        name: registrationType
+        in: formData
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+        required: false
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        description: image url
+        name: image
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - serviceProvider
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /serviceProvider/register:
+    post:
+      summary: Register a new service Provider
+      operationId: postServiceproviderRegister
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+      - type: string
+        description: Individual or Company
+        name: registrationType
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z0-9 ]+$/
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: countryCode
+        in: formData
+        required: true
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        description: password must contains minimum 6 character
+        minLength: 6
+        name: password
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 3
+        pattern: /^[a-zA-Z ]+$/
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        description: vehicle number
+        name: vehicleNumber
+        in: formData
+        required: false
+      - type: string
+        minLength: 3
+        x-convert:
+          trim: true
+        name: companyAddress
+        in: formData
+        required: true
+      - type: number
+        description: range from -90 to 90
+        minimum: -90
+        maximum: 90
+        name: latitude
+        in: formData
+        required: true
+      - type: number
+        description: range from -180 to 180
+        minimum: -180
+        maximum: 180
+        name: longitude
+        in: formData
+        required: true
+      - type: string
+        description: user address city
+        name: city
+        in: formData
+        required: false
+      - type: string
+        description: user address state
+        name: state
+        in: formData
+        required: false
+      - type: string
+        description: zipcode of user address
+        name: zipCode
+        in: formData
+        required: false
+      - type: string
+        minLength: 7
+        maxLength: 14
+        name: referralCode
+        in: formData
+        required: false
+      - type: string
+        description: android/ios device token
+        x-convert:
+          trim: true
+        name: deviceToken
+        in: formData
+        required: false
+      - type: string
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      - type: string
+        description: image url
+        name: image
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - serviceProvider
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

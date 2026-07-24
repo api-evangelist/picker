@@ -1,0 +1,171 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting appVersion API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: appVersion
+paths:
+  /appVersion/getCurrentVersions:
+    get:
+      summary: get current versions of app
+      operationId: getAppversionGetcurrentversions
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - appVersion
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /appVersion/checkCriticalAppVersions:
+    post:
+      summary: Check criticality of app
+      operationId: postAppversionCheckcriticalappversions
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: Current Version of App
+        x-convert:
+          trim: true
+        name: currentVersion
+        in: formData
+        required: true
+      - type: string
+        description: Type of the Device
+        enum:
+        - WEB
+        - ANDROID
+        - IOS
+        name: deviceType
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - appVersion
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /appVersion/setAppVersions:
+    post:
+      summary: set current and critical versions for apps
+      operationId: postAppversionSetappversions
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: number
+        description: Latest IOS version
+        name: latestIOSVersion
+        in: formData
+        required: false
+      - type: number
+        description: Latest Android Version
+        name: latestAndroidVersion
+        in: formData
+        required: false
+      - type: number
+        name: latestWebID
+        in: formData
+        required: false
+      - type: number
+        description: Critical Android Version
+        name: criticalAndroidVersion
+        in: formData
+        required: false
+      - type: number
+        description: Critical IOS Version
+        name: criticalIOSVersion
+        in: formData
+        required: false
+      - type: number
+        description: Critical Web Id
+        name: criticalWebID
+        in: formData
+        required: false
+      - type: string
+        description: Update message to be shown in Popup
+        name: updateMessageAtPopup
+        in: formData
+        required: false
+      - type: string
+        description: Email of the person
+        name: updateTitleAtPopup
+        in: formData
+        required: false
+      - type: number
+        description: Latest IOS version
+        name: latestIOSCPVersion
+        in: formData
+        required: false
+      - type: number
+        description: Latest Android Version
+        name: latestAndroidCPVersion
+        in: formData
+        required: false
+      - type: number
+        description: Critical Android Version
+        name: criticalAndroidCPVersion
+        in: formData
+        required: false
+      - type: number
+        description: Critical IOS Version
+        name: criticalIOSCPVersion
+        in: formData
+        required: false
+      - type: number
+        description: Latest IOS version
+        name: latestIOSSPVersion
+        in: formData
+        required: false
+      - type: number
+        description: Latest Android Version
+        name: latestAndroidSPVersion
+        in: formData
+        required: false
+      - type: number
+        description: Critical Android Version
+        name: criticalAndroidSPVersion
+        in: formData
+        required: false
+      - type: number
+        description: Critical IOS Version
+        name: criticalIOSSPVersion
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - appVersion
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

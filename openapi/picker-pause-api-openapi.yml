@@ -1,0 +1,52 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting pause API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: pause
+paths:
+  /booking/play/pause:
+    put:
+      summary: start time and pause time
+      operationId: putBookingPlayPause
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 44'
+      tags:
+      - pause
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  Model 44:
+    type: object
+    properties:
+      bookingID:
+        type: string
+        description: enter booking ID for which play pause going on is to be made
+      startTime:
+        type: boolean
+    required:
+    - bookingID
+    - startTime

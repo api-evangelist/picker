@@ -1,0 +1,481 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting update API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: update
+paths:
+  /business/addCategoryToBusiness:
+    put:
+      summary: Adds a businessCategory to the business
+      operationId: putBusinessAddcategorytobusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business category
+        minLength: 24
+        maxLength: 24
+        name: businessCategoryID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - update
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updateBusiness:
+    post:
+      summary: Update business data
+      operationId: postBusinessUpdatebusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: true
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: true
+      - type: string
+        name: countryCode
+        in: formData
+        required: false
+      - type: object
+        description: image url
+        required: false
+        name: imageLogo
+        in: formData
+      - type: object
+        description: image url
+        optional:
+        - thumbnail
+        - original
+        name: imageFront
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: true
+      - type: array
+        items:
+          type: string
+          description: add sub category business
+        collectionFormat: multi
+        name: productTypes
+        in: formData
+      - type: array
+        items:
+          type: object
+          properties:
+            day:
+              type: number
+              minimum: 0
+              maximum: 6
+            open:
+              type: string
+            close:
+              type: string
+            isOpen:
+              type: boolean
+          required:
+          - day
+          - isOpen
+          optional:
+          - open
+          - close
+        collectionFormat: multi
+        name: schedule
+        in: formData
+        required: false
+      - type: string
+        description: Name of the address of the business' location
+        minLength: 2
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: array
+        description: Categories that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessCategories
+        in: formData
+        required: false
+      - type: array
+        description: Tags to find the business
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      - type: string
+        default: business
+        name: role
+        in: formData
+      - type: string
+        name: paymentMethod
+        in: formData
+        required: false
+      - type: string
+        name: country
+        in: formData
+        required: false
+      - type: string
+        name: currency
+        in: formData
+        required: false
+      - type: array
+        description: Options for business
+        items:
+          type: string
+        collectionFormat: multi
+        name: options
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - update
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updateBusinessByUserId:
+    post:
+      summary: Update business data
+      operationId: postBusinessUpdatebusinessbyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: name
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: lastName
+        in: formData
+        required: false
+      - type: string
+        x-format:
+          email: true
+        name: email
+        in: formData
+        required: false
+      - type: string
+        minLength: 5
+        pattern: /^[0-9]+$/
+        name: mobile
+        in: formData
+        required: false
+      - type: string
+        name: countryCode
+        in: formData
+        required: false
+      - type: object
+        description: image url
+        required: false
+        name: imageLogo
+        in: formData
+      - type: object
+        description: image url
+        optional:
+        - thumbnail
+        - original
+        name: frontImage
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: companyName
+        in: formData
+        required: false
+      - type: array
+        description: Tags to find the business
+        items:
+          type: string
+        collectionFormat: multi
+        name: tags
+        in: formData
+        required: false
+      - type: array
+        items:
+          type: object
+          properties:
+            day:
+              type: number
+              minimum: 0
+              maximum: 6
+            open:
+              type: string
+            close:
+              type: string
+            isOpen:
+              type: boolean
+          required:
+          - day
+          - isOpen
+          optional:
+          - open
+          - close
+        collectionFormat: multi
+        name: schedule
+        in: formData
+        required: false
+      - type: string
+        description: Name of the address of the business' location
+        minLength: 2
+        x-convert:
+          trim: true
+        name: fullAddress
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: addressReference
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: country
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: city
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: exterior
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: interior
+        in: formData
+        required: false
+      - type: string
+        x-convert:
+          trim: true
+        name: zipCode
+        in: formData
+        required: false
+      - type: number
+        name: latitude
+        in: formData
+        required: false
+      - type: number
+        name: longitude
+        in: formData
+        required: false
+      - type: array
+        description: Categories that the business is part of. Just the ID
+        maxItems: 3
+        items:
+          type: string
+        collectionFormat: multi
+        name: businessCategories
+        in: formData
+        required: false
+      - type: string
+        name: paymentMethod
+        in: formData
+        required: false
+      - type: string
+        name: currency
+        in: formData
+        required: false
+      - type: array
+        description: Options for business
+        items:
+          type: string
+        collectionFormat: multi
+        name: options
+        in: formData
+        required: false
+      - type: object
+        description: Billing data
+        optional:
+        - name
+        - identification
+        - email
+        - accountNumber
+        - accountType
+        - bank
+        - accountHolderName
+        - accountIdentification
+        name: billingData
+        in: formData
+        required: false
+      - type: string
+        minLength: 2
+        x-convert:
+          trim: true
+        name: description
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - update
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/updatePaymentMethodByUserId:
+    post:
+      summary: Update business payment method
+      operationId: postBusinessUpdatepaymentmethodbyuserid
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: businessUserId
+        in: query
+        required: true
+      - type: string
+        enum:
+        - BILLING_CARD
+        - BILLING_TRANSFER
+        name: paymentMethod
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - update
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /business/removeCategoryFromBusiness:
+    delete:
+      summary: Removes a category from the business businessCategories array
+      operationId: deleteBusinessRemovecategoryfrombusiness
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        description: ID of the business category
+        minLength: 24
+        maxLength: 24
+        name: businessCategoryID
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - update
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful

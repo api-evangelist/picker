@@ -1,0 +1,301 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting stripePay API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: stripePay
+paths:
+  /stripe/checkUniqueCard:
+    get:
+      summary: Check Unique Card For Customer
+      operationId: getStripeCheckuniquecard
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: cardToken
+        in: query
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/fullyRefundAmount:
+    put:
+      summary: Refund Full Amount
+      operationId: putStripeFullyrefundamount
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: chargeId
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/makeChargeForHoldPayment:
+    put:
+      summary: Make charge for hold payment
+      operationId: putStripeMakechargeforholdpayment
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: chargeId
+        in: formData
+        required: true
+      - type: string
+        name: amount
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/makeHoldPayment:
+    put:
+      summary: 'Make Hold Payment '
+      operationId: putStripeMakeholdpayment
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: description
+        in: formData
+        required: true
+      - type: string
+        name: amountToCharge
+        in: formData
+        required: true
+      - type: string
+        name: stripeCustomerId
+        in: formData
+        required: true
+      - type: string
+        name: cardId
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/partialRefundAmount:
+    put:
+      summary: Refund Partial Amount
+      operationId: putStripePartialrefundamount
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: chargeId
+        in: formData
+        required: true
+      - type: string
+        name: amount
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/updateDefaultCard:
+    put:
+      summary: Update Default Card For Customer
+      operationId: putStripeUpdatedefaultcard
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: stripeCustomerId
+        in: formData
+        required: true
+      - type: string
+        name: cardId
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/chargeCreditCard:
+    post:
+      summary: Charge Amount From Card
+      operationId: postStripeChargecreditcard
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/Model 74'
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/createStripeCustomer:
+    post:
+      summary: Create Customer For Stripe
+      operationId: postStripeCreatestripecustomer
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: cardTokenToCharge
+        in: formData
+        required: true
+      - type: string
+        name: email
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/makePayment:
+    post:
+      summary: Make Payment From Stripe
+      operationId: postStripeMakepayment
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: stripeCustomerId
+        in: formData
+        required: true
+      - type: string
+        name: amountToCharge
+        in: formData
+        required: true
+      - type: string
+        name: cardId
+        in: formData
+        required: true
+      - type: string
+        name: currency
+        in: formData
+        required: false
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+  /stripe/deleteCard:
+    delete:
+      summary: Delete Card For Customer
+      operationId: deleteStripeDeletecard
+      parameters:
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      - type: string
+        name: stripeCustomerId
+        in: formData
+        required: true
+      - type: string
+        name: cardId
+        in: formData
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - stripePay
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
+definitions:
+  Model 74:
+    type: object
+    properties:
+      stripeCustomerId:
+        type: string
+      amount:
+        type: string
+      currency:
+        type: string
+      userId:
+        type: string
+    required:
+    - stripeCustomerId
+    - amount

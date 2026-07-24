@@ -1,0 +1,38 @@
+swagger: '2.0'
+info:
+  title: Picker Production Documentation accounting cronJobs API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+host: api.pickerexpress.com
+basePath: /
+schemes:
+- http
+tags:
+- name: cronJobs
+paths:
+  /cronJobs/clearAll:
+    post:
+      summary: Clear all active cron jobs
+      operationId: postCronjobsClearall
+      parameters:
+      - type: string
+        description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+      - type: string
+        description: en/ar
+        name: content-language
+        in: header
+        required: true
+      consumes:
+      - application/x-www-form-urlencoded
+      tags:
+      - cronJobs
+      responses:
+        default:
+          schema:
+            type: string
+          description: Successful
