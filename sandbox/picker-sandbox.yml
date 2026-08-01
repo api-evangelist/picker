@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.pickerexpress.com/en/developers/api-delivery-documentation
+description: >-
+  Picker exposes a separate test/development environment for integration testing
+  before going live. Only published host/environment values are captured; no test
+  credentials or magic values are documented publicly (an API key from the
+  dashboard is required for both environments).
+environments:
+- name: production
+  api_base: https://api.pickerexpress.com
+  dashboard: https://dashboard.pickerexpress.com/
+- name: test
+  api_base: https://dev-api.pickerexpress.com
+  dashboard: https://picker-dashboard.vercel.app/
+  status: 200
+  notes: >-
+    Test/development API host; dev-api.pickerexpress.com/swagger.json returns 200.
+    Used for VTEX/Shopify integration testing (e.g. dev-api.pickerexpress.com/api/pushVtexOrder)
+    before switching to the production host.
+test_values:
+  documented: false
+  notes: No public test cards, magic identifiers, or fixture tokens are published; a dashboard-issued API key is required.

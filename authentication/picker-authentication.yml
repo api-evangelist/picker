@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.pickerexpress.com/en/developers/api-delivery-documentation
+docs: https://app.theneo.io/pickerexpress/picker-api-suite/autenticacion
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  api_key_name: authorization
+  notes: >-
+    The published Picker Production Swagger 2.0 declares no securityDefinitions,
+    but every request carries an `authorization` HTTP header. Per the developer
+    documentation, merchants authenticate with a per-store API Key obtained from
+    the Picker Dashboard (Account / Locales section); the Pro Plan must be active
+    to use the API and plugins. The key is passed in the `authorization` request
+    header.
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  key_name: authorization
+  description: >-
+    Per-store API Key issued from the Picker Dashboard (dashboard.pickerexpress.com,
+    Account/Locales). Required on all API and plugin requests; requires the Pro Plan.
+  obtain_key: https://dashboard.pickerexpress.com/
+  sources: [openapi/picker-openapi-original.json]

@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: https://app.theneo.io/pickerexpress/picker-api-suite/api-reference/
+description: >-
+  Picker exposes an outbound webhook surface so merchants receive real-time
+  delivery lifecycle events. Webhooks are managed via the API (subscribe/list/
+  delete) rather than an AsyncAPI document; no AsyncAPI spec is published.
+spec_type: Webhooks
+management:
+  subscribe: postApiWebhooks       # POST /api/webhooks — Add a webhook to subscribe to an event
+  list: getApiWebhooks             # GET /api/webhooks — Return the webhooks the user is subscribed to
+  unsubscribe: deleteApiWebhooks   # DELETE /api/webhooks — Delete a webhook the user is subscribed to
+  source: openapi/picker-openapi-original.json
+events:
+- name: Driver Assigned
+  description: Fired when a driver (picker) is assigned to a booking.
+- name: Update Booking Status
+  description: Fired when a booking's status changes through the delivery lifecycle.
+related_integration_webhooks:
+- name: receipt-issued (Datil)
+  operation: postDatilReceiptissued   # POST /datil/receiptIssued
+- name: payment (Paymentez)
+  operation: postPaymentezWebhookapi  # POST /paymentez/webhookApi
+notes: >-
+  Event catalog captured from the public API reference (Stores / Webhooks /
+  Pre-Booking / Bookings groups). Additional lifecycle statuses may be delivered
+  under the Update Booking Status event.

@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/picker-openapi-original.json
+description: >-
+  Cross-cutting standards conformance for the Picker API, derived from the
+  published Swagger 2.0, parameter usage, and the webhook surface. No published
+  compliance program (SOC 2/ISO/PCI) was found, so no Compliance pointer is emitted.
+standards:
+- id: rest-json
+  conforms: true
+  evidence: Swagger 2.0 REST API over JSON
+- id: openapi
+  conforms: true
+  evidence: Published Swagger 2.0 document (413 operations) at api.pickerexpress.com/swagger.json
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securityScheme; API-key auth via `authorization` header
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Responses declare only `default` with no problem+json media type
+- id: pagination
+  conforms: true
+  evidence: limit/skip/page + sortField/sortOrder query parameters on list operations
+- id: webhooks
+  conforms: true
+  evidence: Merchant webhook subscription API at /api/webhooks (Driver Assigned, Update Booking Status)
+- id: idempotency
+  conforms: false
+  evidence: No Idempotency-Key contract documented or present in spec

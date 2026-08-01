@@ -1,0 +1,49 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/picker-openapi-original.json
+description: >-
+  Candidate MCP server for the Picker delivery API. No official hosted/remote MCP
+  server was found; this is a derived candidate tool list mapping the merchant
+  delivery flow (quote, create, track, cancel, webhooks) to real Picker operations.
+  Tools are grounded in operationIds verified in the published Swagger.
+server:
+  name: picker
+  transport: http
+tools:
+- name: check_region
+  description: Check whether a pickup/drop-off location is within a serviced region.
+  source_operation: openapi/picker-openapi-original.json#postApiCheckregion
+- name: pre_checkout
+  description: Calculate delivery fee and details for an order before booking (pre-checkout quote).
+  source_operation: openapi/picker-openapi-original.json#postBookingPrecheckout
+- name: validate_booking
+  description: Check whether a booking can be created in Picker before committing.
+  source_operation: openapi/picker-openapi-original.json#postBookingValidatebooking
+- name: create_booking
+  description: Create a new delivery booking.
+  source_operation: openapi/picker-openapi-original.json#postBookingCreatebooking
+- name: get_booking_details
+  description: Get all details of a selected booking.
+  source_operation: openapi/picker-openapi-original.json#getApiGetbookingdetails
+- name: get_user_tracking_data
+  description: Get the live tracking path/data for a booking's delivery.
+  source_operation: openapi/picker-openapi-original.json#getTrackingGetusertrackingdata
+- name: cancel_booking
+  description: Request cancellation of an existing booking.
+  source_operation: openapi/picker-openapi-original.json#putBookingCancelbookingrequest
+- name: add_proof_of_delivery
+  description: Attach proof of delivery when a booking is completed.
+  source_operation: openapi/picker-openapi-original.json#putBookingAddproofofdelivery
+- name: list_webhooks
+  description: List the event webhooks the merchant is subscribed to.
+  source_operation: openapi/picker-openapi-original.json#getApiWebhooks
+- name: subscribe_webhook
+  description: Subscribe to a delivery event webhook (e.g. Driver Assigned, Update Booking Status).
+  source_operation: openapi/picker-openapi-original.json#postApiWebhooks
+- name: delete_webhook
+  description: Delete an event webhook subscription.
+  source_operation: openapi/picker-openapi-original.json#deleteApiWebhooks
+- name: get_pricing
+  description: Get the list of fares/pricing for available vehicle types.
+  source_operation: openapi/picker-openapi-original.json#getVehiclesPricing

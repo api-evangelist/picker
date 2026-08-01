@@ -1,0 +1,14 @@
+{
+  "repo": "picker",
+  "feeds": [
+    {
+      "source": "https://www.pickerexpress.com/compania/terminos-y-condiciones/terminos-de-servicio-de-picker",
+      "feed_url": "https://www.pickerexpress.com/compania/terminos-y-condiciones/terminos-de-servicio-de-picker",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-07-25T15:00:33Z"
+}

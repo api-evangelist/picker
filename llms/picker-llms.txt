@@ -1,0 +1,29 @@
+# Picker
+
+> Picker (Picker Express) is a Latin American last-mile delivery orchestration platform connecting e-commerce and retail businesses with 200,000+ couriers across 10+ delivery companies. It exposes a REST API and e-commerce plugins for creating bookings, quoting delivery costs, tracking shipments, and subscribing to delivery lifecycle webhooks. Operates in Mexico, Ecuador, Colombia, Peru, Chile, Uruguay, and Costa Rica. Backed by 500 Global.
+
+## APIs
+- [Picker API (Swagger 2.0, 413 operations)](https://api.pickerexpress.com/swagger.json): Bookings, pre-checkout quoting, tracking, cancellations, drivers, businesses, accounting, and e-commerce integrations (VTEX, Shopify, Spoonity, Datil).
+- Host: https://api.pickerexpress.com (test: https://dev-api.pickerexpress.com)
+- Auth: API Key in the `authorization` header (from the Picker Dashboard; Pro Plan required)
+
+## Specs
+- [OpenAPI (Swagger 2.0)](openapi/picker-openapi-original.json)
+- [Webhooks catalog](asyncapi/picker-webhooks.yml)
+- [Authentication profile](authentication/picker-authentication.yml)
+- [API conventions](conventions/picker-conventions.yml)
+- [Conformance](conformance/picker-conformance.yml)
+- [Data model](data-model/picker-data-model.yml)
+- [MCP server (candidate)](mcp/picker-mcp.yml)
+- [Sandbox / environments](sandbox/picker-sandbox.yml)
+- [OpenAPI overlay (AE enhancements)](overlays/picker-openapi-overlay.yaml)
+- [Agent skill: create and track a delivery](skills/picker-create-and-track-delivery.md)
+
+## Docs
+- [Developer documentation](https://www.pickerexpress.com/en/developers/api-delivery-documentation)
+- [API reference (Theneo)](https://app.theneo.io/pickerexpress/picker-api-suite/api-reference/)
+- [Pricing](https://www.pickerexpress.com/en/pricing/ecuador)
+- [Sign up](https://dashboard-v2.pickerexpress.com/signup/)
+- [Dashboard / login](https://dashboard.pickerexpress.com/)
+- [Blog](https://www.pickerexpress.com/blog)
+- [Terms of service](https://www.pickerexpress.com/compania/terminos-y-condiciones/terminos-de-servicio-de-picker)

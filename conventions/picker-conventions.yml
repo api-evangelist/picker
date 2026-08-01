@@ -1,0 +1,57 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/picker-openapi-original.json
+docs: https://www.pickerexpress.com/en/developers/api-delivery-documentation
+description: >-
+  Cross-cutting request/response conventions for the Picker API, derived from the
+  published Swagger 2.0 and the developer documentation. No idempotency-key
+  contract is documented or present in the spec, so no Idempotency pointer is emitted.
+authentication:
+  style: api-key
+  header: authorization
+  detail: See authentication/picker-authentication.yml
+pagination:
+  style: offset
+  params:
+    limit: limit
+    skip: skip
+    page: page
+  sort:
+    field_param: sortField
+    order_param: sortOrder
+    combined_param: sort
+  notes: >-
+    List operations accept `limit`/`skip` (and in some cases `page`) plus
+    `sortField`/`sortOrder` (or a combined `sort`) query parameters. Derived from
+    parameter usage across the OpenAPI; no cursor pagination observed.
+localization:
+  header: content-language
+  detail: Requests may set `content-language` to localize responses (ES/EN).
+timezone:
+  header: utcoffset
+  detail: >-
+    Several operations accept a `utcoffset` / `utcOffset` header or query param to
+    localize date ranges for reporting and transaction queries.
+idempotency:
+  supported: false
+  detail: No Idempotency-Key header or idempotency contract is documented or present in the spec.
+versioning:
+  scheme: api-version-field
+  current: V1.0.0
+  detail: Single production version; no version segment in the URL path (basePath `/`).
+error_envelope:
+  documented: false
+  detail: >-
+    The published Swagger declares only `default` responses with no schemas, so the
+    error envelope shape is not machine-derivable. No RFC 9457 problem+json usage observed.
+rate_limits:
+  documented: false
+webhooks:
+  supported: true
+  detail: >-
+    Merchants subscribe/unsubscribe to event webhooks via /api/webhooks (see
+    asyncapi/picker-webhooks.yml). Events include Driver Assigned and Update Booking Status.
+cross_links:
+  authentication: authentication/picker-authentication.yml
+  webhooks: asyncapi/picker-webhooks.yml
+  data_model: data-model/picker-data-model.yml

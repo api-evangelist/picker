@@ -1,0 +1,25 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Picker API
+  version: 1.0.0
+extends: openapi/picker-openapi-original.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: picker
+    x-apievangelist-notes: >-
+      Picker Production Swagger 2.0. API-key auth via the `authorization` header
+      (not declared as a securityDefinition). Merchant webhook surface at /api/webhooks.
+    x-authentication: authentication/picker-authentication.yml
+    x-conventions: conventions/picker-conventions.yml
+    x-webhooks: asyncapi/picker-webhooks.yml
+    x-data-model: data-model/picker-data-model.yml
+- target: $.info.contact
+  update:
+    url: https://www.pickerexpress.com/en/developers/api-delivery-documentation
+- target: $
+  update:
+    x-apievangelist-recommendations:
+    - Declare an apiKey securityDefinition for the `authorization` header and apply it globally.
+    - Upgrade responses from `default`-only to typed 2xx/4xx/5xx with schemas and a problem+json error envelope.
+    - Publish a curated merchant-facing spec (Stores/Webhooks/Pre-Booking/Bookings) separate from the 413-operation internal surface.

@@ -1,0 +1,55 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/picker-openapi-original.json
+description: >-
+  Entity-relationship sketch for the Picker delivery domain, derived from the
+  OpenAPI tag/path taxonomy. The published Swagger uses generic `Model N`
+  definition names with no $ref graph between them, so relationships are inferred
+  from resource paths and domain semantics rather than schema $ref links.
+entities:
+- name: booking
+  description: A delivery order; the central entity of the platform.
+  paths: [/booking, /api/getBookingDetails, /admin/bookings]
+  relationships:
+  - {type: belongs_to, target: business, via: businessID}
+  - {type: belongs_to, target: customer, via: userID}
+  - {type: has_one, target: driver, via: driverID}
+  - {type: has_one, target: region, via: regionID}
+  - {type: has_many, target: bookingIssue, via: bookingID}
+  - {type: has_many, target: transaction, via: bookingID}
+- name: business
+  description: A merchant/business account that creates bookings.
+  paths: [/business, /businesses, /admin/getAllBusinesses]
+  relationships:
+  - {type: has_many, target: booking, via: businessID}
+  - {type: has_many, target: user, via: businessID}
+- name: customer
+  description: End customer / recipient of a delivery.
+  paths: [/customer, /users]
+- name: driver
+  description: A courier ("picker") who fulfills a booking.
+  paths: [/driver, /admin/getPickerDetails]
+  relationships:
+  - {type: has_many, target: booking, via: driverID}
+  - {type: has_one, target: vehicle, via: vehicleID}
+- name: vehicle
+  description: A vehicle type / fare class used for delivery pricing.
+  paths: [/vehicles/pricing]
+- name: region
+  description: A geographic service region.
+  paths: [/region, /api/checkRegion]
+- name: fare
+  description: Pricing configuration for a region/vehicle.
+  paths: [/vehicles/pricing, /admin/fares/pricing]
+- name: transaction
+  description: Accounting/payment transaction tied to bookings, drivers, and businesses.
+  paths: [/accounting, /admin/getBookingTransactions]
+- name: bookingIssue
+  description: An issue/ticket raised against a booking.
+  paths: [/bookingIssues/registerBookingIssue]
+- name: webhook
+  description: A merchant event subscription.
+  paths: [/api/webhooks]
+notes: >-
+  Field/id names (businessID, driverID, regionID, userID) are inferred from
+  conventional usage and admin path semantics, not from a declared $ref schema graph.

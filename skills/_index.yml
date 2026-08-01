@@ -1,0 +1,15 @@
+generated: '2026-07-20'
+method: generated
+skills:
+- file: picker-create-and-track-delivery.md
+  name: Create and track a Picker delivery
+  api: openapi/picker-openapi-original.json
+  operations:
+  - postApiCheckregion
+  - postBookingPrecheckout
+  - postBookingValidatebooking
+  - postBookingCreatebooking
+  - getApiGetbookingdetails
+  - getTrackingGetusertrackingdata
+  - putBookingCancelbookingrequest
+  - postApiWebhooks
