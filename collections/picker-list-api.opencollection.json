@@ -1,0 +1,74 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting list API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "list",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "list of cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/list/card",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "list of cards"
+        },
+        {
+          "info": {
+            "name": "Get List Of all service loation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/list/service/location",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addressType",
+                "value": "",
+                "type": "query",
+                "description": "DELIVERY PICKUP "
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": " HOME OFFICE"
+              }
+            ]
+          },
+          "docs": "Get List Of all service loation"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

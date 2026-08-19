@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting cronJobs API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "cronJobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Clear all active cron jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/cronJobs/clearAll",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Clear all active cron jobs"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

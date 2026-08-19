@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting play API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "play",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "start time and pause time",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/play/pause",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "start time and pause time"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

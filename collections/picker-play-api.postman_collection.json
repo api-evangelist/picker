@@ -1,0 +1,142 @@
+{
+  "item": [
+    {
+      "id": "0d591482-a504-48d3-8f4f-92ceb2e1daf7",
+      "name": "play",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ca655de1-b75a-4b83-90cd-5f09827a8097",
+          "name": "start time and pause time",
+          "request": {
+            "name": "start time and pause time",
+            "description": {},
+            "url": {
+              "path": [
+                "booking",
+                "play",
+                "pause"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bookingID\": \"<string>\",\n  \"startTime\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9665d8cf-d7fc-488b-b99d-816200c4f6d5",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "booking",
+                    "play",
+                    "pause"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bookingID\": \"<string>\",\n  \"startTime\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "46fdf055-a3c7-4505-a21b-3be5312484ac",
+    "name": "Picker Production Documentation accounting play API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

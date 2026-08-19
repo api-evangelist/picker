@@ -1,0 +1,182 @@
+{
+  "item": [
+    {
+      "id": "63137d77-3801-4e5d-bc9b-7243e9ff0c47",
+      "name": "Mass Delivery",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f60603e7-37b6-43fb-b58c-c30667cb2652",
+          "name": "Get all mass delivery registers",
+          "request": {
+            "name": "Get all mass delivery registers",
+            "description": {},
+            "url": {
+              "path": [
+                "mass-delivery"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>"
+                },
+                {
+                  "disabled": false,
+                  "key": "currentStatus",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "currentStatus",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "massDeliveryID",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "593cdb62-1d86-4493-9b71-9a7e7b90472e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "mass-delivery"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "currentStatus",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "currentStatus",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "massDeliveryID",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "2171c651-66b1-4506-8aa1-38bfd74ccd82",
+    "name": "Picker Production Documentation accounting Mass Delivery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,933 @@
+{
+  "item": [
+    {
+      "id": "3dc49d10-1c00-4ee6-8cc3-d3d0ad335d6e",
+      "name": "promo",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b20d8594-70fb-472c-8269-65a97c45d2ad",
+          "name": "delete referral scheme by admin",
+          "request": {
+            "name": "delete referral scheme by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "promo",
+                "getAllUserPromo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "role of user order is  customer/driver"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "limit data in response"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<integer>",
+                  "description": "limit data from response"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "016f86be-beb0-41d8-a09a-94ee0cdf8419",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promo",
+                    "getAllUserPromo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dd1a7cd3-e1d0-41f5-acb8-ddee6551c149",
+          "name": "delete referral scheme by admin",
+          "request": {
+            "name": "delete referral scheme by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "promo",
+                "listAllPromo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "role of user order is  customer/driver"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "limit data in response"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<integer>",
+                  "description": "limit data from response"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ac8335d7-50ee-4438-a16d-1adfdfb5e9a7",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promo",
+                    "listAllPromo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "756cdec9-d5ee-469f-af79-3c7600ff83ee",
+          "name": "delete referral scheme by admin",
+          "request": {
+            "name": "delete referral scheme by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "promo",
+                "promoDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "alias",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7ac20372-7d02-4542-8cbf-05e0209df8bd",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promo",
+                    "promoDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "alias",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec991756-4a57-4f37-9c35-efc13b58442d",
+          "name": "set referral scheme",
+          "request": {
+            "name": "set referral scheme",
+            "description": {},
+            "url": {
+              "path": [
+                "promo",
+                "addPromo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "promoSchemeType",
+                  "value": "<string>",
+                  "description": "(Required) type of promo scheme to be used"
+                },
+                {
+                  "disabled": false,
+                  "key": "alias",
+                  "value": "<string>",
+                  "description": "(Required) Promo that should be displayed to user"
+                },
+                {
+                  "disabled": false,
+                  "key": "minimumBookingPrice",
+                  "value": "0",
+                  "description": "(Required) Minimum price of booking on which promo will be applied"
+                },
+                {
+                  "disabled": false,
+                  "key": "regionID",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "regionID",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "availableAllRegions",
+                  "value": "<boolean>",
+                  "description": "(Required) Indicates if the promo is available for all regions"
+                },
+                {
+                  "disabled": false,
+                  "key": "noOfPromoUsers",
+                  "value": "<number>",
+                  "description": "total number of times promo can be used, infinite in case of empty"
+                },
+                {
+                  "disabled": false,
+                  "key": "individualUserPromoAttempt",
+                  "value": "<number>",
+                  "description": "total number of times promo can be used by single user, infinite in case of empty"
+                },
+                {
+                  "disabled": false,
+                  "key": "cashback",
+                  "value": "<number>",
+                  "description": "cashback for user who used promo"
+                },
+                {
+                  "disabled": false,
+                  "key": "percentage",
+                  "value": "<number>",
+                  "description": "% off for user who used promo"
+                },
+                {
+                  "disabled": false,
+                  "key": "expirePromoDate",
+                  "value": "<string>",
+                  "description": "Expiry Date of the promo"
+                },
+                {
+                  "disabled": false,
+                  "key": "hoursToExpire",
+                  "value": "<string>",
+                  "description": "Expiry hours of the promo"
+                },
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "role of user order is  customer/driver"
+                },
+                {
+                  "disabled": false,
+                  "key": "maximumDeliveryFee",
+                  "value": "<number>",
+                  "description": "Maximum price to which this promo is applicable"
+                },
+                {
+                  "disabled": false,
+                  "key": "message",
+                  "value": "<object>",
+                  "description": "Notification to send to customer segment"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "21f627f8-8727-4ab0-9001-cbf4e5f0627b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promo",
+                    "addPromo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) type of promo scheme to be used",
+                        "type": "text/plain"
+                      },
+                      "key": "promoSchemeType",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Promo that should be displayed to user",
+                        "type": "text/plain"
+                      },
+                      "key": "alias",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Minimum price of booking on which promo will be applied",
+                        "type": "text/plain"
+                      },
+                      "key": "minimumBookingPrice",
+                      "value": "0"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "regionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "regionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Indicates if the promo is available for all regions",
+                        "type": "text/plain"
+                      },
+                      "key": "availableAllRegions",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "total number of times promo can be used, infinite in case of empty",
+                        "type": "text/plain"
+                      },
+                      "key": "noOfPromoUsers",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "total number of times promo can be used by single user, infinite in case of empty",
+                        "type": "text/plain"
+                      },
+                      "key": "individualUserPromoAttempt",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "cashback for user who used promo",
+                        "type": "text/plain"
+                      },
+                      "key": "cashback",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "% off for user who used promo",
+                        "type": "text/plain"
+                      },
+                      "key": "percentage",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Expiry Date of the promo",
+                        "type": "text/plain"
+                      },
+                      "key": "expirePromoDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Expiry hours of the promo",
+                        "type": "text/plain"
+                      },
+                      "key": "hoursToExpire",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "role of user order is  customer/driver",
+                        "type": "text/plain"
+                      },
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Maximum price to which this promo is applicable",
+                        "type": "text/plain"
+                      },
+                      "key": "maximumDeliveryFee",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Notification to send to customer segment",
+                        "type": "text/plain"
+                      },
+                      "key": "message",
+                      "value": "<object>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08ac2204-ccdf-4209-8f9a-9da35206b7e4",
+          "name": "check promo availability",
+          "request": {
+            "name": "check promo availability",
+            "description": {},
+            "url": {
+              "path": [
+                "promo",
+                "checkPromo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "alias",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "392552db-beca-424a-aa4e-d60ec20cc71a",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promo",
+                    "checkPromo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "alias",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "799ec8a9-eb72-424f-ad1c-51d248b10760",
+          "name": "delete referral scheme by admin",
+          "request": {
+            "name": "delete referral scheme by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "promo",
+                "deletePromo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "alias",
+                  "value": "<string>",
+                  "description": "(Required) Referral pattern to delete"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "44aa4544-31fb-4b5b-8602-2b5bf14c0db3",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "promo",
+                    "deletePromo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Referral pattern to delete",
+                        "type": "text/plain"
+                      },
+                      "key": "alias",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "686bd87a-8164-4d74-8cec-a5d64470e7f8",
+    "name": "Picker Production Documentation accounting promo API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

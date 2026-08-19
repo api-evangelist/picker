@@ -1,0 +1,256 @@
+{
+  "item": [
+    {
+      "id": "92c4fb6f-823a-48e7-aa36-9d56e086335a",
+      "name": "businesses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4a39202f-cd55-46a2-9ef6-cedf303ed02e",
+          "name": "Get list favorite products and businesses from user.",
+          "request": {
+            "name": "Get list favorite products and businesses from user.",
+            "description": {},
+            "url": {
+              "path": [
+                "customer",
+                "getFavorites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14940301-4c29-4b12-bde7-a68259750f49",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customer",
+                    "getFavorites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "77606715-7578-4481-8593-cf1de22c6dfd",
+          "name": "Search businesses and products by searchText.",
+          "request": {
+            "name": "Search businesses and products by searchText.",
+            "description": {},
+            "url": {
+              "path": [
+                "customer",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "searchText",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "<number>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f91ed3c0-155a-4752-94e0-9739e815fdcd",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "customer",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "searchText",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "longitude",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1538904e-fdfc-40ee-8637-8e3705154f83",
+    "name": "Picker Production Documentation accounting businesses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

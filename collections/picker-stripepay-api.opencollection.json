@@ -1,0 +1,195 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting stripePay API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "stripePay",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Check Unique Card For Customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/stripe/checkUniqueCard",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "cardToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Check Unique Card For Customer"
+        },
+        {
+          "info": {
+            "name": "Refund Full Amount",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/stripe/fullyRefundAmount",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Refund Full Amount"
+        },
+        {
+          "info": {
+            "name": "Make charge for hold payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/stripe/makeChargeForHoldPayment",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Make charge for hold payment"
+        },
+        {
+          "info": {
+            "name": "Make Hold Payment ",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/stripe/makeHoldPayment",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Make Hold Payment "
+        },
+        {
+          "info": {
+            "name": "Refund Partial Amount",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/stripe/partialRefundAmount",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Refund Partial Amount"
+        },
+        {
+          "info": {
+            "name": "Update Default Card For Customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/stripe/updateDefaultCard",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update Default Card For Customer"
+        },
+        {
+          "info": {
+            "name": "Charge Amount From Card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/stripe/chargeCreditCard",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Charge Amount From Card"
+        },
+        {
+          "info": {
+            "name": "Create Customer For Stripe",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/stripe/createStripeCustomer",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Create Customer For Stripe"
+        },
+        {
+          "info": {
+            "name": "Make Payment From Stripe",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/stripe/makePayment",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Make Payment From Stripe"
+        },
+        {
+          "info": {
+            "name": "Delete Card For Customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/stripe/deleteCard",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete Card For Customer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

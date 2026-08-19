@@ -1,0 +1,144 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting location API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "location",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get List Of all service loation",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/list/service/location",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addressType",
+                "value": "",
+                "type": "query",
+                "description": "DELIVERY PICKUP "
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": " HOME OFFICE"
+              }
+            ]
+          },
+          "docs": "Get List Of all service loation"
+        },
+        {
+          "info": {
+            "name": "Customer can update his favourite service location",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/update/customer/service/location",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can update his favourite service location"
+        },
+        {
+          "info": {
+            "name": "Add query to admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/addQueryToAdmin",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add query to admin"
+        },
+        {
+          "info": {
+            "name": "Customer can add his favourite service location",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/service/location",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can add his favourite service location"
+        },
+        {
+          "info": {
+            "name": "delete service  location of customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/customer/remove/service/location",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "delete service  location of customer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

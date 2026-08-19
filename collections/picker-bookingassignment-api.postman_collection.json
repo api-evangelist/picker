@@ -1,0 +1,469 @@
+{
+  "item": [
+    {
+      "id": "e80e78ae-28fc-4cbc-89e3-861054c25d3b",
+      "name": "bookingAssignment",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "43e29716-f2e2-42e1-b341-cfb4ca7d5f6a",
+          "name": "Round settings for booking floating",
+          "request": {
+            "name": "Round settings for booking floating",
+            "description": {},
+            "url": {
+              "path": [
+                "bookingAssignment",
+                "listBookingFloatSetting"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "typeOfAlgo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "forWhom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "serviceProviderID",
+                  "value": "<string>",
+                  "description": "for booking float methods of specific serviceProvider"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>",
+                  "description": "Limit number of records"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<number>",
+                  "description": "Skip number of records"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9db84669-22b5-4564-b6c7-d436352d9e58",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bookingAssignment",
+                    "listBookingFloatSetting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "typeOfAlgo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "forWhom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "serviceProviderID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<number>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4751e4d0-0de8-4de1-b719-315be6983a1a",
+          "name": "Update Round settings for booking floating",
+          "request": {
+            "name": "Update Round settings for booking floating",
+            "description": {},
+            "url": {
+              "path": [
+                "bookingAssignment",
+                "updateBookingFloatSetting"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "typeOfAlgo",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "forWhom",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "distanceRange",
+                  "value": "<number>",
+                  "description": "(Required) should be in meters, will be visible"
+                },
+                {
+                  "disabled": false,
+                  "key": "requestExpiresIn",
+                  "value": "<number>",
+                  "description": "(Required) waiting time for request expires"
+                },
+                {
+                  "disabled": false,
+                  "key": "reAttempt",
+                  "value": "<number>",
+                  "description": "(Required) Total re attempts if not accepted within time expires"
+                },
+                {
+                  "disabled": false,
+                  "key": "serviceProviderID",
+                  "value": "<string>",
+                  "description": "Booking float setting for particular serviceProvider once he accepts bookings and forward booking to drivers"
+                },
+                {
+                  "disabled": false,
+                  "key": "increaseDistanceBy",
+                  "value": "<number>",
+                  "description": "If reattempts are more than 0, for Broadcast, then it is required"
+                },
+                {
+                  "disabled": false,
+                  "key": "percentageHikeInBookingPrice",
+                  "value": "<number>",
+                  "description": "Price hike of booking if failed at first round not for 0th round"
+                },
+                {
+                  "disabled": false,
+                  "key": "adminCutFromBooking",
+                  "value": "<number>",
+                  "description": "Admin percentage cut on booking before floating to service providers"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1f64dde2-6f51-48fc-8adf-bb0325b60343",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bookingAssignment",
+                    "updateBookingFloatSetting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dfa13b0a-ad6a-4c62-a05e-6038c5703930",
+          "name": "Round settings for booking floating",
+          "request": {
+            "name": "Round settings for booking floating",
+            "description": {},
+            "url": {
+              "path": [
+                "bookingAssignment",
+                "bookingFloatSetting"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "typeOfAlgo",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "forWhom",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "distanceRange",
+                  "value": "<number>",
+                  "description": "(Required) should be in meters, will be visible"
+                },
+                {
+                  "disabled": false,
+                  "key": "requestExpiresIn",
+                  "value": "<number>",
+                  "description": "(Required) waiting time for request expires"
+                },
+                {
+                  "disabled": false,
+                  "key": "reAttempt",
+                  "value": "<number>",
+                  "description": "(Required) Total re attempts if not accepted within time expires"
+                },
+                {
+                  "disabled": false,
+                  "key": "serviceProviderID",
+                  "value": "<string>",
+                  "description": "Booking float setting for particular serviceProvider once he accepts bookings and forward booking to drivers"
+                },
+                {
+                  "disabled": false,
+                  "key": "increaseDistanceBy",
+                  "value": "<number>",
+                  "description": "If reattempts are more than 0, for Broadcast, then it is required"
+                },
+                {
+                  "disabled": false,
+                  "key": "percentageHikeInBookingPrice",
+                  "value": "<number>",
+                  "description": "Price hike of booking if failed at first round not for 0th round"
+                },
+                {
+                  "disabled": false,
+                  "key": "adminCutFromBooking",
+                  "value": "<number>",
+                  "description": "Admin percentage cut on booking before floating to service providers"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "12ba7626-0a93-4782-89bf-1605f51acc48",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "bookingAssignment",
+                    "bookingFloatSetting"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "99daca42-40e7-4a02-9d6c-bf75b3951327",
+    "name": "Picker Production Documentation accounting bookingAssignment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

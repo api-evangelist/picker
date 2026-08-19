@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting card API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "card",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Delete card ustomer From paymentez",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/paymentez/card/default",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete card ustomer From paymentez"
+        },
+        {
+          "info": {
+            "name": "Delete card ustomer From paymentez",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/paymentez/delete/card",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete card ustomer From paymentez"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

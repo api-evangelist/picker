@@ -1,0 +1,151 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting paymentez API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "paymentez",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "list of cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/list/card",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "list of cards"
+        },
+        {
+          "info": {
+            "name": "Add card to user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/addCard",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add card to user"
+        },
+        {
+          "info": {
+            "name": "Add card in paymentez",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/paymentez/add/card",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "authorization",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add card in paymentez"
+        },
+        {
+          "info": {
+            "name": "Delete card ustomer From paymentez",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/paymentez/card/default",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete card ustomer From paymentez"
+        },
+        {
+          "info": {
+            "name": "Delete card ustomer From paymentez",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/paymentez/delete/card",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete card ustomer From paymentez"
+        },
+        {
+          "info": {
+            "name": "Webhook Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/paymentez/webhookApi"
+          },
+          "docs": "Webhook Api"
+        },
+        {
+          "info": {
+            "name": "charge card in paymentez",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/paymentez/charge/card",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "authorization",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "charge card in paymentez"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

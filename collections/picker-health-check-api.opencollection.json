@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting health-check API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "health-check",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get health check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/health-check"
+          },
+          "docs": "Get health check"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

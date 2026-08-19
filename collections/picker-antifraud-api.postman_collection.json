@@ -1,0 +1,291 @@
+{
+  "item": [
+    {
+      "id": "c9c3f55c-944c-450a-95a8-198eac890358",
+      "name": "antiFraud",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "abaf2587-0c1b-42a6-835f-6bfbeb0c6a68",
+          "name": "Returns all the booking and customer's information of a transaction",
+          "request": {
+            "name": "Returns all the booking and customer's information of a transaction",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "getTransactionFraudInformation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "transactionID",
+                  "value": "<string>",
+                  "description": "(Required) ID from the paymenteztransactions collection"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "44594908-7795-459a-bd99-e99bc309d027",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "getTransactionFraudInformation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "transactionID",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8942598d-20cc-4d84-8bcc-da10ace34bef",
+          "name": "Saves fraud information for a booking",
+          "request": {
+            "name": "Saves fraud information for a booking",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "setBookingFraud"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "bookingID",
+                  "value": "<string>",
+                  "description": "(Required) ID of the booking to set its fraud information"
+                },
+                {
+                  "disabled": false,
+                  "key": "isFraud",
+                  "value": "<boolean>",
+                  "description": "(Required) If the booking is marked as fraud or not"
+                },
+                {
+                  "disabled": false,
+                  "key": "reason",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "transactions",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "transactions",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1068ad81-39e3-435a-936a-aa7409cee9b2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "setBookingFraud"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ID of the booking to set its fraud information",
+                        "type": "text/plain"
+                      },
+                      "key": "bookingID",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) If the booking is marked as fraud or not",
+                        "type": "text/plain"
+                      },
+                      "key": "isFraud",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "reason",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "transactions",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "transactions",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ae4912d2-f9f2-4712-b316-6a2d91a56f7b",
+    "name": "Picker Production Documentation accounting antiFraud API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

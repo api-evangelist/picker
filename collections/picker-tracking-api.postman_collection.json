@@ -1,0 +1,368 @@
+{
+  "item": [
+    {
+      "id": "e5b31267-e019-4680-86d9-d49796ffa68b",
+      "name": "tracking",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "41281053-e0d9-406f-95fe-9db8a9c19f25",
+          "name": "Get path for specific user",
+          "request": {
+            "name": "Get path for specific user",
+            "description": {},
+            "url": {
+              "path": [
+                "tracking",
+                "getUserTrackingData"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "userID",
+                  "value": "<string>",
+                  "description": "(Required) user ID"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "376a53bc-c9f9-45fc-9920-37b3bc0b7814",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tracking",
+                    "getUserTrackingData"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "userID",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "159bd3cd-9173-4b17-98f5-048d36d8546d",
+          "name": "upload tracking history",
+          "request": {
+            "name": "upload tracking history",
+            "description": {},
+            "url": {
+              "path": [
+                "tracking",
+                "enrouteDriver"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bookingID\": \"<string>\",\n  \"customerID\": \"<string>\",\n  \"driverID\": \"<string>\",\n  \"driverName\": \"<string>\",\n  \"routes\": [\n    {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"accuracy\": \"<number>\"\n    },\n    {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"accuracy\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "94f7729c-a787-4a5e-bdd0-2dee90c8e87e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tracking",
+                    "enrouteDriver"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"bookingID\": \"<string>\",\n  \"customerID\": \"<string>\",\n  \"driverID\": \"<string>\",\n  \"driverName\": \"<string>\",\n  \"routes\": [\n    {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"accuracy\": \"<number>\"\n    },\n    {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"accuracy\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d4235c3c-f213-4970-b1ec-c2d72e4c8ccb",
+          "name": "upload tracking history to S3",
+          "request": {
+            "name": "upload tracking history to S3",
+            "description": {},
+            "url": {
+              "path": [
+                "tracking",
+                "uploadTrackFiletoS3"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "bookingID",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Booking ID to track"
+                },
+                {
+                  "key": "trackHistoryFile",
+                  "type": "file",
+                  "description": "(Required) track history file"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b9a1cdfa-dc68-48d7-ab0b-1303e531065e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tracking",
+                    "uploadTrackFiletoS3"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Booking ID to track",
+                        "type": "text/plain"
+                      },
+                      "key": "bookingID",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) track history file",
+                        "type": "text/plain"
+                      },
+                      "key": "trackHistoryFile",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "391d8fb3-8067-4a8b-be2c-31056675d5ae",
+    "name": "Picker Production Documentation accounting tracking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

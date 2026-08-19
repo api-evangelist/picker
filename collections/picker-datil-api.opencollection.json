@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting datil API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "datil",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Webhook for receipt-issued notification of Datil",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/datil/receiptIssued"
+          },
+          "docs": "Webhook for receipt-issued notification of Datil"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

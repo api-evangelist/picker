@@ -1,0 +1,946 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting business API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "business",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Return the webhooks that the user is subscribed to",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/webhooks",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Return the webhooks that the user is subscribed to"
+        },
+        {
+          "info": {
+            "name": "Add a webhook to subscribe to an event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/webhooks",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add a webhook to subscribe to an event"
+        },
+        {
+          "info": {
+            "name": "Delete a webhook the user is subscribed to",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api/webhooks",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete a webhook the user is subscribed to"
+        },
+        {
+          "info": {
+            "name": "Get General info about specific business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getAccountInfoIntegrationDashboard",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about specific business"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getAssociatedBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "storeType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortField",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBookingsDataByDatesDashboard",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isSemester",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBookingsIntegrationDashboard",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get business info for landing",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessInfoAfterLanding",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get business info for landing"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessesGeneralInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get business info for landing",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/landing",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get business info for landing"
+        },
+        {
+          "info": {
+            "name": "Get business booking reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/reports",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get business booking reports"
+        },
+        {
+          "info": {
+            "name": "Get General info about specific business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/turnOffOnBusinessById",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessUserId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "businessId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about specific business"
+        },
+        {
+          "info": {
+            "name": "Adds a businessCategory to the business",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/addCategoryToBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Adds a businessCategory to the business"
+        },
+        {
+          "info": {
+            "name": "Change product status to active or inactive",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/changeProductStatus",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Change product status to active or inactive"
+        },
+        {
+          "info": {
+            "name": "Fill information of the business after creation.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/confirmInformation",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Fill information of the business after creation."
+        },
+        {
+          "info": {
+            "name": "Edits the information of a product",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/editProduct",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Edits the information of a product"
+        },
+        {
+          "info": {
+            "name": "Edit the details of a product",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/editProductDetail",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Edit the details of a product"
+        },
+        {
+          "info": {
+            "name": "Go on or off duty",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/goOnOffDuty",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Go on or off duty"
+        },
+        {
+          "info": {
+            "name": "Set New Password",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/setNewPassword"
+          },
+          "docs": "Set New Password"
+        },
+        {
+          "info": {
+            "name": "Update a product category",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/updateProductCategory",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update a product category"
+        },
+        {
+          "info": {
+            "name": "Restart driver search of selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/restartSearch",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Restart driver search of selected booking"
+        },
+        {
+          "info": {
+            "name": "postApiValidateapipickup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/validateApiPickup",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Register a new business via Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/addBusiness",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new business via Email"
+        },
+        {
+          "info": {
+            "name": "Add a new detail to a product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/addProductDetail",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add a new detail to a product"
+        },
+        {
+          "info": {
+            "name": "Create a business for a user and assign to it",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/createBusinessForUser",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Create a business for a user and assign to it"
+        },
+        {
+          "info": {
+            "name": "Register a new product of a business",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/createProduct",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new product of a business"
+        },
+        {
+          "info": {
+            "name": "Register a new product of a business",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/createProductByUserId",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessUserId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Register a new product of a business"
+        },
+        {
+          "info": {
+            "name": "Register a new product category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/createProductCategory",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new product category"
+        },
+        {
+          "info": {
+            "name": "Register a new product category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/createProductCategoryByUserId",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessUserId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Register a new product category"
+        },
+        {
+          "info": {
+            "name": "Sets the deleted flag of the product to true",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/forgotPassword",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Sets the deleted flag of the product to true"
+        },
+        {
+          "info": {
+            "name": "Generate a dynamic link for business",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/generateDynamicLink"
+          },
+          "docs": "Generate a dynamic link for business"
+        },
+        {
+          "info": {
+            "name": "Register a new business via Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/registerFromEmail",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new business via Email"
+        },
+        {
+          "info": {
+            "name": "Generate a dynamic link for business",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/setProductAndCategoriesOrder"
+          },
+          "docs": "Generate a dynamic link for business"
+        },
+        {
+          "info": {
+            "name": "Update business data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/updateBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update business data"
+        },
+        {
+          "info": {
+            "name": "Update business data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/updateBusinessByUserId",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessUserId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Update business data"
+        },
+        {
+          "info": {
+            "name": "Update business payment method",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/updatePaymentMethodByUserId",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessUserId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Update business payment method"
+        },
+        {
+          "info": {
+            "name": "Verify OTP for mobile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/verifyOTP"
+          },
+          "docs": "Verify OTP for mobile"
+        },
+        {
+          "info": {
+            "name": "Customer can add or remove his favourite business or product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/addRemoveFavorite",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can add or remove his favourite business or product"
+        },
+        {
+          "info": {
+            "name": "Delete a category and all its products",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/business/deleteCategory",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete a category and all its products"
+        },
+        {
+          "info": {
+            "name": "Sets the deleted flag of the product to true",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/business/deleteProduct",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Sets the deleted flag of the product to true"
+        },
+        {
+          "info": {
+            "name": "Deletes the detail of a product",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/business/deleteProductDetail",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Deletes the detail of a product"
+        },
+        {
+          "info": {
+            "name": "Removes a category from the business businessCategories array",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/business/removeCategoryFromBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Removes a category from the business businessCategories array"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

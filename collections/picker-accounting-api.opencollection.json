@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "accounting",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Registers transaction refund for the selected balance transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/accounting/refundBalanceTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Registers transaction refund for the selected balance transactions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

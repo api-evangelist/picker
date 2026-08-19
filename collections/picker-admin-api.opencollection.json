@@ -1,0 +1,3956 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting Admin API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Send email to user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/sendEmailTo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send email to user"
+        },
+        {
+          "info": {
+            "name": "Send booking's invoice to email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/sendInvoiceEmail",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send booking's invoice to email"
+        },
+        {
+          "info": {
+            "name": "Return the amount to charge all API users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getAPICharges",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return the amount to charge all API users"
+        },
+        {
+          "info": {
+            "name": "Get all the marketplace transactions in a date range",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getAllBusinessesBalanceTransactionDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "download",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all the marketplace transactions in a date range"
+        },
+        {
+          "info": {
+            "name": "Get businesses transactions grouped by business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getAllBusinessesTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Skip data from response"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Name of the business"
+              },
+              {
+                "name": "download",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get businesses transactions grouped by business"
+        },
+        {
+          "info": {
+            "name": "Get summary of all business transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getAllBusinessesTransactionsSummary",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Name of the business"
+              }
+            ]
+          },
+          "docs": "Get summary of all business transactions"
+        },
+        {
+          "info": {
+            "name": "Get the order amount of all pickers CC transactions in the date range requested.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getAllDriversBonusTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Skip data from response"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Name of picker"
+              }
+            ]
+          },
+          "docs": "Get the order amount of all pickers CC transactions in the date range requested."
+        },
+        {
+          "info": {
+            "name": "getAccountingGetalldriversdeliverytransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getAllDriversDeliveryTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "download",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Name of picker"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Get summary of all driver's delivery transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getAllDriversDeliveryTransactionsSummary",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Name of the business"
+              }
+            ]
+          },
+          "docs": "Get summary of all driver's delivery transactions"
+        },
+        {
+          "info": {
+            "name": "Get all company transactions in a date range",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getCompanyTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "download",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all company transactions in a date range"
+        },
+        {
+          "info": {
+            "name": "Get all delivery transactions of the driver selected",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getDriverDeliveryTransactionsDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "pickerID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the driver to filter transactions"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              }
+            ]
+          },
+          "docs": "Get all delivery transactions of the driver selected"
+        },
+        {
+          "info": {
+            "name": "Get the order amount of all pickers CC transactions in the date range requested.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/accounting/getPickerBonusTransactionsDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "pickerID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the driver to filter transactions"
+              }
+            ]
+          },
+          "docs": "Get the order amount of all pickers CC transactions in the date range requested."
+        },
+        {
+          "info": {
+            "name": "Get Business By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/addBusinessAccessToUser",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business"
+              },
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the user"
+              }
+            ]
+          },
+          "docs": "Get Business By ID"
+        },
+        {
+          "info": {
+            "name": "Returns the list of all Cancel Reasons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/assignReasons",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns the list of all Cancel Reasons"
+        },
+        {
+          "info": {
+            "name": "Returns the list of all Cancel Reasons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/cancelBookingReasons",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns the list of all Cancel Reasons"
+        },
+        {
+          "info": {
+            "name": "Get Business By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/deleteBusinessAccessToUser",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business"
+              },
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the user"
+              }
+            ]
+          },
+          "docs": "Get Business By ID"
+        },
+        {
+          "info": {
+            "name": "Get drivers work balance information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/driversWorkBalance",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get drivers work balance information"
+        },
+        {
+          "info": {
+            "name": "Get All Availabe Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllAvailabeBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "skip data from response"
+              }
+            ]
+          },
+          "docs": "Get All Availabe Booking"
+        },
+        {
+          "info": {
+            "name": "Get users registered as business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllBusinesses",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Business' name, email or company name"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Field to order the results"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Order criteria: ASC | DESC"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "Get users registered as business"
+        },
+        {
+          "info": {
+            "name": "getAdminGetallbusinessestransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllBusinessesTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Skip data from response"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Name of the business"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Returns the list of all Cancel Reasons available",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllCancelReasons",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns the list of all Cancel Reasons available"
+        },
+        {
+          "info": {
+            "name": "Returns the list of all Driver Tags available",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllDriverTags",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns the list of all Driver Tags available"
+        },
+        {
+          "info": {
+            "name": "Get total of all balance transactions of the pickers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllPickersBalanceTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Skip data from response"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "user email or name"
+              }
+            ]
+          },
+          "docs": "Get total of all balance transactions of the pickers"
+        },
+        {
+          "info": {
+            "name": "Get the order amount of all pickers CC transactions in the date range requested.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllPickersOrderTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Skip data from response"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "Name of picker"
+              },
+              {
+                "name": "download",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the order amount of all pickers CC transactions in the date range requested."
+        },
+        {
+          "info": {
+            "name": "Get List Of All Customers by Role[serviceProvider, customer, driver, business]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getAllUsers",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "role of user order is  customer/driver/serviceProvider/admin/business"
+              },
+              {
+                "name": "isBlocked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isDeleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isAdminVerified",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdBySelf",
+                "value": "",
+                "type": "query",
+                "description": "list only users created by self if true else all"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "user email or name"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query",
+                "description": "Filter users that belong to this Super Region"
+              }
+            ]
+          },
+          "docs": "Get List Of All Customers by Role[serviceProvider, customer, driver, business]"
+        },
+        {
+          "info": {
+            "name": "Returns the banners that match the query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBanners",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Status of the banners to query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Type of the banners to query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to return"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to skip from the search"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the banners that match the query"
+        },
+        {
+          "info": {
+            "name": "Get All Deatils of a Particular Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBookingDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query",
+                "description": "booking id"
+              }
+            ]
+          },
+          "docs": "Get All Deatils of a Particular Booking"
+        },
+        {
+          "info": {
+            "name": "Get info of Booking & Review",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBookingInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get info of Booking & Review"
+        },
+        {
+          "info": {
+            "name": "Get all the transactions related to the booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBookingTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the booking"
+              }
+            ]
+          },
+          "docs": "Get all the transactions related to the booking"
+        },
+        {
+          "info": {
+            "name": "Get Dashboard Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBookingsStats",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "utcOffset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query",
+                "description": "Filter users that belong to this Super Region"
+              }
+            ]
+          },
+          "docs": "Get Dashboard Count"
+        },
+        {
+          "info": {
+            "name": "Get all the marketplace transactions of a selected business in a date range",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBusinessBalanceTransactionDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessID",
+                "value": "",
+                "type": "query",
+                "description": "User ID of the business"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              }
+            ]
+          },
+          "docs": "Get all the marketplace transactions of a selected business in a date range"
+        },
+        {
+          "info": {
+            "name": "Get Business By Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBusinessByName",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessName",
+                "value": "",
+                "type": "query",
+                "description": "Name of the business"
+              }
+            ]
+          },
+          "docs": "Get Business By Name"
+        },
+        {
+          "info": {
+            "name": "Get all business info by its ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBusinessInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business"
+              }
+            ]
+          },
+          "docs": "Get all business info by its ID"
+        },
+        {
+          "info": {
+            "name": "Get Business By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getBusinessesByIds",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessIDS",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business"
+              }
+            ]
+          },
+          "docs": "Get Business By ID"
+        },
+        {
+          "info": {
+            "name": "Get CSV report data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getCSVDataForAdmin",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "CSVtype",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "unit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "Get CSV report data"
+        },
+        {
+          "info": {
+            "name": "Get Dashboard Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getDashboardCount",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query",
+                "description": "Filter users that belong to this Super Region"
+              }
+            ]
+          },
+          "docs": "Get Dashboard Count"
+        },
+        {
+          "info": {
+            "name": "Returns the banners that match the query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getDriverBanners",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Status of the banners to query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Type of the banners to query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to return"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Amount of results to skip from the search"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns the banners that match the query"
+        },
+        {
+          "info": {
+            "name": "Get Ongoing Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getOngoingBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "skip data from response"
+              }
+            ]
+          },
+          "docs": "Get Ongoing Booking"
+        },
+        {
+          "info": {
+            "name": "Get Past Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getPastBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "skip data from response"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "business",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchBooking",
+                "value": "",
+                "type": "query",
+                "description": "user email or name"
+              },
+              {
+                "name": "typeText",
+                "value": "",
+                "type": "query",
+                "description": "Type of bookings to filter"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query",
+                "description": "0 pending,  1-accepted, 2- Arrived , 3-WAY_TO_DELIVER, 4- arrived at delivery, 7-cancelled, 8 - cancelled by driver, 11- rejected by customer, 12- not foudn 5-completed"
+              },
+              {
+                "name": "bookingType",
+                "value": "",
+                "type": "query",
+                "description": "Numeric type of booking"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query",
+                "description": "Filter bookings that belong to this Super Region"
+              }
+            ]
+          },
+          "docs": "Get Past Booking"
+        },
+        {
+          "info": {
+            "name": "Get total of all balance transactions of the pickers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getPickerBalanceTransactionsDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "pickerID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the picekr to give the bonus/penalty"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get total of all balance transactions of the pickers"
+        },
+        {
+          "info": {
+            "name": "Get Picker details. Average rating, bookings stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getPickerDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "pickerID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Picker details. Average rating, bookings stats"
+        },
+        {
+          "info": {
+            "name": "Get all ITEM transactions from the selected driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getPickerOrderTransactionDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "pickerID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the driver to get his transactions"
+              }
+            ]
+          },
+          "docs": "Get all ITEM transactions from the selected driver"
+        },
+        {
+          "info": {
+            "name": "Get Picker Pay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getPickerPay",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Start date of the search on ISO format"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "End date of the search on ISO format"
+              },
+              {
+                "name": "pickerID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the driver whose transactions are to be shown"
+              }
+            ]
+          },
+          "docs": "Get Picker Pay"
+        },
+        {
+          "info": {
+            "name": "Get all information from service provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getServiceProviderInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "serviceProviderID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all information from service provider"
+        },
+        {
+          "info": {
+            "name": "Returns the transaction and booking information of the matching transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getTransactionsByCode",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "Transaction's authentication code"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Amount of transactions to return"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Amount of transactions to skip from the search"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query",
+                "description": "Search transactions from this date"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query",
+                "description": "Search transactions until this date"
+              }
+            ]
+          },
+          "docs": "Returns the transaction and booking information of the matching transaction"
+        },
+        {
+          "info": {
+            "name": "Get user card info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getUserCardInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get user card info"
+        },
+        {
+          "info": {
+            "name": "Get history of user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getUserHistory",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "user id"
+              }
+            ]
+          },
+          "docs": "Get history of user"
+        },
+        {
+          "info": {
+            "name": "set admin default settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/listDefaultSettings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set admin default settings"
+        },
+        {
+          "info": {
+            "name": "Get Transaction by Authorization Code]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/searchAuthorizationCode",
+            "params": [
+              {
+                "name": "authCode",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Transaction by Authorization Code]"
+        },
+        {
+          "info": {
+            "name": "Get List Of All Customers by Role[serviceProvider, customer, driver]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/userDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get List Of All Customers by Role[serviceProvider, customer, driver]"
+        },
+        {
+          "info": {
+            "name": "Get bills created for drivers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/billing/driversBills",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get bills created for drivers"
+        },
+        {
+          "info": {
+            "name": "Get names of all users in DB",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/billing/getAllUsersName",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "Role of the users for the search"
+              }
+            ]
+          },
+          "docs": "Get names of all users in DB"
+        },
+        {
+          "info": {
+            "name": "Get details related to the bill",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/billing/getBillDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "billID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the bill to check its details"
+              }
+            ]
+          },
+          "docs": "Get details related to the bill"
+        },
+        {
+          "info": {
+            "name": "get all booking issues",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookingIssues/getBookingIssues",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "get all booking issues"
+        },
+        {
+          "info": {
+            "name": "Get Past Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBookings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "skip data from response"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "businessArray",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchBooking",
+                "value": "",
+                "type": "query",
+                "description": "user email or name"
+              },
+              {
+                "name": "typeText",
+                "value": "",
+                "type": "query",
+                "description": "Type of bookings to filter"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query",
+                "description": "0 pending,  1-accepted, 2- Arrived , 3-WAY_TO_DELIVER, 4- arrived at delivery, 7-cancelled, 8 - cancelled by driver, 11- rejected by customer, 12- not foudn 5-completed"
+              },
+              {
+                "name": "bookingType",
+                "value": "",
+                "type": "query",
+                "description": "Numeric type of booking"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query",
+                "description": "Filter bookings that belong to this Super Region"
+              }
+            ]
+          },
+          "docs": "Get Past Booking"
+        },
+        {
+          "info": {
+            "name": "Returns a message for a text banner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/client/getMessage",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "messageId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a message for a text banner"
+        },
+        {
+          "info": {
+            "name": "Get List Of All Customers by Role[serviceProvider, customer, driver, business]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/serviceProvider/getAllDrivers",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "isBlocked",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isDeleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isAdminVerified",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "createdBySelf",
+                "value": "",
+                "type": "query",
+                "description": "list only users created by self if true else all"
+              },
+              {
+                "name": "searchUser",
+                "value": "",
+                "type": "query",
+                "description": "user email or name"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "Get List Of All Customers by Role[serviceProvider, customer, driver, business]"
+        },
+        {
+          "info": {
+            "name": "Get Past Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/serviceProvider/getPastBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "skip data from response"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "business",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchBooking",
+                "value": "",
+                "type": "query",
+                "description": "user email or name"
+              },
+              {
+                "name": "typeText",
+                "value": "",
+                "type": "query",
+                "description": "Type of bookings to filter"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query",
+                "description": "0 pending,  1-accepted, 2- Arrived , 3-WAY_TO_DELIVER, 4- arrived at delivery, 7-cancelled, 8 - cancelled by driver, 11- rejected by customer, 12- not foudn 5-completed"
+              }
+            ]
+          },
+          "docs": "Get Past Booking"
+        },
+        {
+          "info": {
+            "name": "Approve or reject a list of transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/accounting/aproveRejectTransaction",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Approve or reject a list of transactions"
+        },
+        {
+          "info": {
+            "name": "Registers transaction refund for the selected balance transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/accounting/refundBalanceTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Registers transaction refund for the selected balance transactions"
+        },
+        {
+          "info": {
+            "name": "Add driver to business",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/addDriverToBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add driver to business"
+        },
+        {
+          "info": {
+            "name": "Admin approves the edition of a product by the business",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/approveProduct",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Admin approves the edition of a product by the business"
+        },
+        {
+          "info": {
+            "name": "Block Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/assignDriverToServiceProvider",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Block Users"
+        },
+        {
+          "info": {
+            "name": "Block Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/blockOption",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Block Users"
+        },
+        {
+          "info": {
+            "name": "Cancel Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/cancelBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Cancel Booking"
+        },
+        {
+          "info": {
+            "name": "Change the way the drivers are going to get paid for a booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/changeDriverPaymentType",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Change the way the drivers are going to get paid for a booking"
+        },
+        {
+          "info": {
+            "name": "Change the status of the transactions selected",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/changeTransactionStatus",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Change the status of the transactions selected"
+        },
+        {
+          "info": {
+            "name": "Deactivate API usage for the selected user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/deactivateAPI",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Deactivate API usage for the selected user"
+        },
+        {
+          "info": {
+            "name": "Creates a banner in the db",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/editBanner",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Creates a banner in the db"
+        },
+        {
+          "info": {
+            "name": "Add penalty to Work Balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/penaltyToWorkBalance",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add penalty to Work Balance"
+        },
+        {
+          "info": {
+            "name": "Admin rejects the edition or the creation of a product by the business",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/rejectProduct",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Admin rejects the edition or the creation of a product by the business"
+        },
+        {
+          "info": {
+            "name": "Remove driver from business",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/removeDriverFromBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Remove driver from business"
+        },
+        {
+          "info": {
+            "name": "Set delivery provider data to selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/setProviderData",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Set delivery provider data to selected booking"
+        },
+        {
+          "info": {
+            "name": "Business Update profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/updateBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Business Update profile"
+        },
+        {
+          "info": {
+            "name": "Update the status of the business",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/updateBusinessStatus",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update the status of the business"
+        },
+        {
+          "info": {
+            "name": "Customer can Update his/her Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/updateCustomer",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can Update his/her Profile"
+        },
+        {
+          "info": {
+            "name": "Driver Update profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/updateDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Driver Update profile"
+        },
+        {
+          "info": {
+            "name": "Update driver information",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/updatePicker",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update driver information"
+        },
+        {
+          "info": {
+            "name": "Service Provider Update profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/updateServiceProvider",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Service Provider Update profile"
+        },
+        {
+          "info": {
+            "name": "Verify Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/verifyUser",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Verify Users"
+        },
+        {
+          "info": {
+            "name": "Manually reissue a bill to Datil",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/billing/reissueBillToDatil",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Manually reissue a bill to Datil"
+        },
+        {
+          "info": {
+            "name": "Manually send a bill to Datil",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/billing/sendBillToDatil",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Manually send a bill to Datil"
+        },
+        {
+          "info": {
+            "name": "Update the data of a business category",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/business/updateBusinessCategory",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update the data of a business category"
+        },
+        {
+          "info": {
+            "name": "Update driver's payment method",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/updatePaymentMethod",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update driver's payment method"
+        },
+        {
+          "info": {
+            "name": "Add user to service provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/serviceProvider/addToServiceProvider",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add user to service provider"
+        },
+        {
+          "info": {
+            "name": "Add user to service provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/serviceProvider/removeFromServiceProvider",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add user to service provider"
+        },
+        {
+          "info": {
+            "name": "update Contacts support]",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/support/updateContact",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "update Contacts support]"
+        },
+        {
+          "info": {
+            "name": "Return the amount to charge all API users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/accounting/generateBusinessPayment",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Return the amount to charge all API users"
+        },
+        {
+          "info": {
+            "name": "Return the amount to charge all API users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/accounting/generateBusinessPaymentBulk",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Return the amount to charge all API users"
+        },
+        {
+          "info": {
+            "name": "Registers payments and bills for all pickers who worked in the selected date range",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/accounting/generateWeeklyDriverPayment",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Registers payments and bills for all pickers who worked in the selected date range"
+        },
+        {
+          "info": {
+            "name": "Register a balance transaction for a picker",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addBalanceTransaction",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a balance transaction for a picker"
+        },
+        {
+          "info": {
+            "name": "Add a bonus to a booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addBonusToBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add a bonus to a booking"
+        },
+        {
+          "info": {
+            "name": "postAdminAddbusinessestransactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addBusinessesTransactions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Register a new customer via Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addCustomer",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new customer via Email"
+        },
+        {
+          "info": {
+            "name": "Creates a new Danger Point to check bookings positions with",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addDangerPoint",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Creates a new Danger Point to check bookings positions with"
+        },
+        {
+          "info": {
+            "name": "Register new Driver via Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register new Driver via Email"
+        },
+        {
+          "info": {
+            "name": "Adds new driver tag to db",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addDriverTag",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Adds new driver tag to db"
+        },
+        {
+          "info": {
+            "name": "Add a promo to a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addPromoToCustomer",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add a promo to a customer"
+        },
+        {
+          "info": {
+            "name": "Register a new service Provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addServiceProvider",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new service Provider"
+        },
+        {
+          "info": {
+            "name": "Adds the user to the blacklist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addToBlacklist",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Adds the user to the blacklist"
+        },
+        {
+          "info": {
+            "name": "Add to wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addToWallet",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add to wallet"
+        },
+        {
+          "info": {
+            "name": "Add driver's work balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/addWorkBalance",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add driver's work balance"
+        },
+        {
+          "info": {
+            "name": "Create a new business based on another one",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/cloneBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Create a new business based on another one"
+        },
+        {
+          "info": {
+            "name": "Copies the approved products from one business to another",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/cloneBusinessProducts",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Copies the approved products from one business to another"
+        },
+        {
+          "info": {
+            "name": "Creates a banner in the db",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/createBanner",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Creates a banner in the db"
+        },
+        {
+          "info": {
+            "name": "Create a past booking for driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/createBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Create a past booking for driver"
+        },
+        {
+          "info": {
+            "name": "Edit Fare settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/editFare",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Edit Fare settings"
+        },
+        {
+          "info": {
+            "name": "End driver search for corporate bookings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/endSearch",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "End driver search for corporate bookings"
+        },
+        {
+          "info": {
+            "name": "Get Fares by optional filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/getFares",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get Fares by optional filters"
+        },
+        {
+          "info": {
+            "name": "Creates a token so the admin can check the business page",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/getMarketPlaceToken",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Creates a token so the admin can check the business page"
+        },
+        {
+          "info": {
+            "name": "Get the region or the superRegion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/getRegions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get the region or the superRegion"
+        },
+        {
+          "info": {
+            "name": "Make a charge to the customer's card for a booking transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/makeChargesToBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Make a charge to the customer's card for a booking transaction"
+        },
+        {
+          "info": {
+            "name": "Refunds transactions and sends email to customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/makeRefund",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Refunds transactions and sends email to customer"
+        },
+        {
+          "info": {
+            "name": "Reactivates the search of an active booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/reactivateDriverSearch",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Reactivates the search of an active booking"
+        },
+        {
+          "info": {
+            "name": "Restart driver search of selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/restartSearch",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Restart driver search of selected booking"
+        },
+        {
+          "info": {
+            "name": "Send push notification to selected users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/sendPushToUsers",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send push notification to selected users"
+        },
+        {
+          "info": {
+            "name": "Send the weekly payment email to all drivers who were active in the selected week",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/sendWeeklyPaymentEmail",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send the weekly payment email to all drivers who were active in the selected week"
+        },
+        {
+          "info": {
+            "name": "Send Weekly Payment Mail from the selected dates",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/sendWeeklyPaymentMail",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send Weekly Payment Mail from the selected dates"
+        },
+        {
+          "info": {
+            "name": "set admin default settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/setDefaultSettings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set admin default settings"
+        },
+        {
+          "info": {
+            "name": "Mark a booking as hack",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/setHack",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Mark a booking as hack"
+        },
+        {
+          "info": {
+            "name": "Get Orders report data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/totalOrderRequests",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get Orders report data"
+        },
+        {
+          "info": {
+            "name": "Update payment balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/updateAllDriversPaymentBalance",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update payment balance"
+        },
+        {
+          "info": {
+            "name": "add vehicle type and company",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/vehicleTypeAndCompany",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "add vehicle type and company"
+        },
+        {
+          "info": {
+            "name": "Manually reissue all bills to Datil",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/billing/reissueAllBills",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Manually reissue all bills to Datil"
+        },
+        {
+          "info": {
+            "name": "Manually send a bill to Datil",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/billing/sendBillsToDatil",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Manually send a bill to Datil"
+        },
+        {
+          "info": {
+            "name": "Manually update all bills with Datil",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/billing/updateBillsWithDatil",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Manually update all bills with Datil"
+        },
+        {
+          "info": {
+            "name": "add a new booking issue",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bookingIssues/registerBookingIssue",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "add a new booking issue"
+        },
+        {
+          "info": {
+            "name": "Register a new business category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/createBusinessCategory",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new business category"
+        },
+        {
+          "info": {
+            "name": "Add driver's work balance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/driver/addWorkBalance",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add driver's work balance"
+        },
+        {
+          "info": {
+            "name": "Free Busy drivers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/driver/freeBusyDrivers",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Free Busy drivers"
+        },
+        {
+          "info": {
+            "name": "Soft Delete a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/deleteUser",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Soft Delete a user"
+        },
+        {
+          "info": {
+            "name": "soft delete vehicle type and company",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/admin/deleteVehicleTypeAndCompany",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "soft delete vehicle type and company"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

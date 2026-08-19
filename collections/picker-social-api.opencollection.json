@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting social API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "social",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Login via facebook1/google or other social media account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/social/login",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Login via facebook1/google or other social media account"
+        },
+        {
+          "info": {
+            "name": "Add the user's social login credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/social/verify",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add the user's social login credentials"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

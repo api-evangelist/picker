@@ -1,0 +1,1637 @@
+{
+  "item": [
+    {
+      "id": "c494b3f1-e74f-48ef-aa58-86745a6dfb7d",
+      "name": "region",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ecabbd8-1c1c-434d-8a5e-10fb65bf4e84",
+          "name": "get region by admin",
+          "request": {
+            "name": "get region by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "listAllRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isBlocked",
+                  "value": "false",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "isDeleted",
+                  "value": "false",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "superRegionID",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4a4b682-604a-453d-a33f-cc9a066cd258",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "listAllRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "isBlocked",
+                      "value": "false"
+                    },
+                    {
+                      "key": "isDeleted",
+                      "value": "false"
+                    },
+                    {
+                      "key": "superRegionID",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c3c9f29-3228-43bc-9e54-cfe43e93e8f3",
+          "name": "Get all Super Regions available",
+          "request": {
+            "name": "Get all Super Regions available",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "listAllSuperRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isActive",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "296ba64b-8e08-49e5-871c-56fb1bdf4858",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "listAllSuperRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<number>"
+                    },
+                    {
+                      "key": "isActive",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1dfce383-d931-4ddc-8a57-5e46c3de08a4",
+          "name": "get region details",
+          "request": {
+            "name": "get region details",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "regionDetails"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "region_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "acaced3b-c848-42b1-8106-9bb7f291458e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "regionDetails"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "region_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eca0472f-2545-48eb-9836-e9c23bc8c99a",
+          "name": "block region",
+          "request": {
+            "name": "block region",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "blockRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "region_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cc1de801-5df7-4e19-8b2d-8b015cd5d98f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "blockRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bc92c9d-cc80-488c-8b99-96694bf2ba38",
+          "name": "block region",
+          "request": {
+            "name": "block region",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "editRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "region_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "regionName",
+                  "value": "<string>",
+                  "description": "(Required) name of region to be used"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "carType",
+                  "value": "<number>",
+                  "description": "(Required)  1-Bike 0-Lite 3-BOTH"
+                },
+                {
+                  "disabled": false,
+                  "key": "paymentType",
+                  "value": "<number>",
+                  "description": "(Required)  1-CARD 2-CASH 4-BOTH"
+                },
+                {
+                  "disabled": false,
+                  "key": "rideType",
+                  "value": "<number>",
+                  "description": "(Required)  1-NOW 2-LATER 3-BOTH"
+                },
+                {
+                  "disabled": false,
+                  "key": "regionStatus",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "specialFeesActive",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "specialFeesActive",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "highDemandThreshold",
+                  "value": "<number>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d60c166d-d52e-4009-abd8-b9c97c80f234",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "editRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "region_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) name of region to be used",
+                        "type": "text/plain"
+                      },
+                      "key": "regionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required)  1-Bike 0-Lite 3-BOTH",
+                        "type": "text/plain"
+                      },
+                      "key": "carType",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required)  1-CARD 2-CASH 4-BOTH",
+                        "type": "text/plain"
+                      },
+                      "key": "paymentType",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required)  1-NOW 2-LATER 3-BOTH",
+                        "type": "text/plain"
+                      },
+                      "key": "rideType",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "regionStatus",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "specialFeesActive",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "specialFeesActive",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "highDemandThreshold",
+                      "value": "<number>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ad703f9-b9eb-4fdc-9a53-7fc9a78e0c0d",
+          "name": "block region",
+          "request": {
+            "name": "block region",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "unblockRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "region_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3c514a16-fdeb-449b-8dd9-17932d8d8009",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "unblockRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7bc4d3f9-ac61-4196-a865-6b239317c175",
+          "name": "Returns the region data corresponding to the selected location",
+          "request": {
+            "name": "Returns the region data corresponding to the selected location",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "checkRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "pickupLongitude",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "pickupLatitude",
+                  "value": "<number>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "900d3ab3-10e7-4914-bc01-43feacf85cb9",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "checkRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b2425f3-1ead-4094-80fa-21568823604d",
+          "name": "set region ",
+          "request": {
+            "name": "set region ",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "addRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "regionName",
+                  "value": "<string>",
+                  "description": "(Required) name of region to be used"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "(Required) [[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "carType",
+                  "value": "<number>",
+                  "description": "(Required)  1-Bike 0-Lite 3-BOTH"
+                },
+                {
+                  "disabled": false,
+                  "key": "paymentType",
+                  "value": "<number>",
+                  "description": "(Required)  1-CARD 2-CASH 4-BOTH"
+                },
+                {
+                  "disabled": false,
+                  "key": "rideType",
+                  "value": "<number>",
+                  "description": "(Required)  1-NOW 2-LATER 3-BOTH"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e4801bc9-af27-4fe9-8883-365b4eff0719",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "addRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) name of region to be used",
+                        "type": "text/plain"
+                      },
+                      "key": "regionName",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) [[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required)  1-Bike 0-Lite 3-BOTH",
+                        "type": "text/plain"
+                      },
+                      "key": "carType",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required)  1-CARD 2-CASH 4-BOTH",
+                        "type": "text/plain"
+                      },
+                      "key": "paymentType",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required)  1-NOW 2-LATER 3-BOTH",
+                        "type": "text/plain"
+                      },
+                      "key": "rideType",
+                      "value": "<number>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ff124745-a166-4fdb-a556-89559647adf6",
+          "name": "Returns the region data corresponding to the selected location",
+          "request": {
+            "name": "Returns the region data corresponding to the selected location",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "checkRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "pickupLongitude",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "pickupLatitude",
+                  "value": "<number>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a707f1a5-0a11-43b6-8a9d-84321e917b7b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "checkRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d4da382-5e6f-4fdc-a5b1-63a068f45e3f",
+          "name": "block region",
+          "request": {
+            "name": "block region",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "setAllRegionStatusGreen"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2644b525-eeec-467b-a4f0-332e28346499",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "setAllRegionStatusGreen"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86c676c1-f172-4cbe-abe2-8d9036a4fb79",
+          "name": "Update Regions on all businesses",
+          "request": {
+            "name": "Update Regions on all businesses",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "updateRegionsOnAllBusiness"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f640e104-083d-4da8-8666-c315d9819b6d",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "updateRegionsOnAllBusiness"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e5cd6468-08a2-41b9-8a84-034eee0e76a5",
+          "name": "delete region by admin",
+          "request": {
+            "name": "delete region by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "region",
+                "deleteRegion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "region_id",
+                  "value": "<string>",
+                  "description": "(Required) Region id to delete"
+                },
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "192fa2fe-93b8-4248-83e6-9d829c0cc75f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    "deleteRegion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Region id to delete",
+                        "type": "text/plain"
+                      },
+                      "key": "region_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "role",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "89f1f570-bd3f-4782-ab4b-0b559d8ac2cd",
+    "name": "Picker Production Documentation accounting region API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

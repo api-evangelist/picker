@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting appVersion API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "appVersion",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get current versions of app",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/appVersion/getCurrentVersions",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "get current versions of app"
+        },
+        {
+          "info": {
+            "name": "Check criticality of app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/appVersion/checkCriticalAppVersions",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Check criticality of app"
+        },
+        {
+          "info": {
+            "name": "set current and critical versions for apps",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/appVersion/setAppVersions",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set current and critical versions for apps"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

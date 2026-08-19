@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting antiFraud API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "antiFraud",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns all the booking and customer's information of a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getTransactionFraudInformation",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "transactionID",
+                "value": "",
+                "type": "query",
+                "description": "ID from the paymenteztransactions collection"
+              }
+            ]
+          },
+          "docs": "Returns all the booking and customer's information of a transaction"
+        },
+        {
+          "info": {
+            "name": "Saves fraud information for a booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/setBookingFraud",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Saves fraud information for a booking"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

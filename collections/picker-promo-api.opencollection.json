@@ -1,0 +1,196 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting promo API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "promo",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "delete referral scheme by admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/promo/getAllUserPromo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "role of user order is  customer/driver"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "delete referral scheme by admin"
+        },
+        {
+          "info": {
+            "name": "delete referral scheme by admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/promo/listAllPromo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "role of user order is  customer/driver"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "delete referral scheme by admin"
+        },
+        {
+          "info": {
+            "name": "delete referral scheme by admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/promo/promoDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "alias",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "delete referral scheme by admin"
+        },
+        {
+          "info": {
+            "name": "set referral scheme",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/promo/addPromo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set referral scheme"
+        },
+        {
+          "info": {
+            "name": "check promo availability",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/promo/checkPromo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "check promo availability"
+        },
+        {
+          "info": {
+            "name": "delete referral scheme by admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/promo/deletePromo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "delete referral scheme by admin"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

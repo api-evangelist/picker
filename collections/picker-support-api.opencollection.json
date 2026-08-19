@@ -1,0 +1,299 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting support API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "support",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get List Of All Contacts support]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/getContactUsDetails",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get List Of All Contacts support]"
+        },
+        {
+          "info": {
+            "name": "Get List Of All Contacts support]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getQueryByCustomer",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get List Of All Contacts support]"
+        },
+        {
+          "info": {
+            "name": "Get List Of All customer payments]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/bookingPaymentHistory",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get List Of All customer payments]"
+        },
+        {
+          "info": {
+            "name": "Get List Of All customer payments]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/bookingPaymentPending",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get List Of All customer payments]"
+        },
+        {
+          "info": {
+            "name": "Get List Of All customer payments]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/totalPayments",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get List Of All customer payments]"
+        },
+        {
+          "info": {
+            "name": "Get List Of All fares support",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/pricing",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "carType",
+                "value": "",
+                "type": "query",
+                "description": "Type of vehicle for the booking"
+              },
+              {
+                "name": "regionID",
+                "value": "",
+                "type": "query",
+                "description": "region id for the booking"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query",
+                "description": "super region id for the booking"
+              }
+            ]
+          },
+          "docs": "Get List Of All fares support"
+        },
+        {
+          "info": {
+            "name": "Get List Of All fares support]",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/vehicles/userPricing",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "carType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "promoId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "regionID",
+                "value": "",
+                "type": "query",
+                "description": "region ID is optional"
+              },
+              {
+                "name": "billedDistance",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get List Of All fares support]"
+        },
+        {
+          "info": {
+            "name": "update Contacts support]",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/support/updateContact",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "update Contacts support]"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

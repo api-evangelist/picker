@@ -1,0 +1,572 @@
+{
+  "item": [
+    {
+      "id": "acc4b919-f6e6-424e-85b9-8e57bdaa9c2b",
+      "name": "appVersion",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f8e98b7a-5a6a-4e60-950c-57388d8fb444",
+          "name": "get current versions of app",
+          "request": {
+            "name": "get current versions of app",
+            "description": {},
+            "url": {
+              "path": [
+                "appVersion",
+                "getCurrentVersions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "78ffe6c4-ce29-4f67-96b5-1b9df913f84b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appVersion",
+                    "getCurrentVersions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60a689c9-b4c4-4f5a-b9df-501cd7e70187",
+          "name": "Check criticality of app",
+          "request": {
+            "name": "Check criticality of app",
+            "description": {},
+            "url": {
+              "path": [
+                "appVersion",
+                "checkCriticalAppVersions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "currentVersion",
+                  "value": "<string>",
+                  "description": "(Required) Current Version of App"
+                },
+                {
+                  "disabled": false,
+                  "key": "deviceType",
+                  "value": "<string>",
+                  "description": "(Required) Type of the Device"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c498156a-8ef0-4b26-a484-e07f160dbafa",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appVersion",
+                    "checkCriticalAppVersions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Current Version of App",
+                        "type": "text/plain"
+                      },
+                      "key": "currentVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Type of the Device",
+                        "type": "text/plain"
+                      },
+                      "key": "deviceType",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "04cf9398-2ac3-45f7-aa8f-ab8f997702d5",
+          "name": "set current and critical versions for apps",
+          "request": {
+            "name": "set current and critical versions for apps",
+            "description": {},
+            "url": {
+              "path": [
+                "appVersion",
+                "setAppVersions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "latestIOSVersion",
+                  "value": "<number>",
+                  "description": "Latest IOS version"
+                },
+                {
+                  "disabled": false,
+                  "key": "latestAndroidVersion",
+                  "value": "<number>",
+                  "description": "Latest Android Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "latestWebID",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "criticalAndroidVersion",
+                  "value": "<number>",
+                  "description": "Critical Android Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "criticalIOSVersion",
+                  "value": "<number>",
+                  "description": "Critical IOS Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "criticalWebID",
+                  "value": "<number>",
+                  "description": "Critical Web Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "updateMessageAtPopup",
+                  "value": "<string>",
+                  "description": "Update message to be shown in Popup"
+                },
+                {
+                  "disabled": false,
+                  "key": "updateTitleAtPopup",
+                  "value": "<string>",
+                  "description": "Email of the person"
+                },
+                {
+                  "disabled": false,
+                  "key": "latestIOSCPVersion",
+                  "value": "<number>",
+                  "description": "Latest IOS version"
+                },
+                {
+                  "disabled": false,
+                  "key": "latestAndroidCPVersion",
+                  "value": "<number>",
+                  "description": "Latest Android Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "criticalAndroidCPVersion",
+                  "value": "<number>",
+                  "description": "Critical Android Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "criticalIOSCPVersion",
+                  "value": "<number>",
+                  "description": "Critical IOS Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "latestIOSSPVersion",
+                  "value": "<number>",
+                  "description": "Latest IOS version"
+                },
+                {
+                  "disabled": false,
+                  "key": "latestAndroidSPVersion",
+                  "value": "<number>",
+                  "description": "Latest Android Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "criticalAndroidSPVersion",
+                  "value": "<number>",
+                  "description": "Critical Android Version"
+                },
+                {
+                  "disabled": false,
+                  "key": "criticalIOSSPVersion",
+                  "value": "<number>",
+                  "description": "Critical IOS Version"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2374629a-029b-4ba0-9224-f6a9545ec192",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appVersion",
+                    "setAppVersions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Latest IOS version",
+                        "type": "text/plain"
+                      },
+                      "key": "latestIOSVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Latest Android Version",
+                        "type": "text/plain"
+                      },
+                      "key": "latestAndroidVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "latestWebID",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Critical Android Version",
+                        "type": "text/plain"
+                      },
+                      "key": "criticalAndroidVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Critical IOS Version",
+                        "type": "text/plain"
+                      },
+                      "key": "criticalIOSVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Critical Web Id",
+                        "type": "text/plain"
+                      },
+                      "key": "criticalWebID",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Update message to be shown in Popup",
+                        "type": "text/plain"
+                      },
+                      "key": "updateMessageAtPopup",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Email of the person",
+                        "type": "text/plain"
+                      },
+                      "key": "updateTitleAtPopup",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Latest IOS version",
+                        "type": "text/plain"
+                      },
+                      "key": "latestIOSCPVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Latest Android Version",
+                        "type": "text/plain"
+                      },
+                      "key": "latestAndroidCPVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Critical Android Version",
+                        "type": "text/plain"
+                      },
+                      "key": "criticalAndroidCPVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Critical IOS Version",
+                        "type": "text/plain"
+                      },
+                      "key": "criticalIOSCPVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Latest IOS version",
+                        "type": "text/plain"
+                      },
+                      "key": "latestIOSSPVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Latest Android Version",
+                        "type": "text/plain"
+                      },
+                      "key": "latestAndroidSPVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Critical Android Version",
+                        "type": "text/plain"
+                      },
+                      "key": "criticalAndroidSPVersion",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Critical IOS Version",
+                        "type": "text/plain"
+                      },
+                      "key": "criticalIOSSPVersion",
+                      "value": "<number>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8106f0ba-8e5f-4e72-9ab1-1ba29b0ee624",
+    "name": "Picker Production Documentation accounting appVersion API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

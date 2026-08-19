@@ -1,0 +1,394 @@
+{
+  "item": [
+    {
+      "id": "979c9359-be74-45a6-9ad1-00bad6f204f5",
+      "name": "fares",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bb413a3b-2902-476d-a44f-192932b23592",
+          "name": "Update selected fare",
+          "request": {
+            "name": "Update selected fare",
+            "description": {},
+            "url": {
+              "path": [
+                "admin",
+                "fares",
+                "pricing"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "carType",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "carType",
+                  "value": "<number>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "carName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cancellationPolicy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "minimumCancellationFee",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "commissionCharge",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "baseFarebelow3",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "baseFare",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "perKmCharge",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "perMinuteCharge",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "regionID",
+                  "value": "<string>",
+                  "description": "region ID is required"
+                },
+                {
+                  "disabled": false,
+                  "key": "superRegionID",
+                  "value": "<string>",
+                  "description": "super region ID is required"
+                },
+                {
+                  "disabled": false,
+                  "key": "freeTime",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "baseDistance",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "kmRanges",
+                  "value": "{\"min\":\"<number>\",\"max\":\"<number>\",\"amount\":\"<number>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "kmRanges",
+                  "value": "{\"min\":\"<number>\",\"max\":\"<number>\",\"amount\":\"<number>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "notShowTimeLimit",
+                  "value": "<number>",
+                  "description": "Amount to charge to the customer for a NOT SHOW"
+                },
+                {
+                  "disabled": false,
+                  "key": "notShowCustomerCharge",
+                  "value": "<number>",
+                  "description": "Amount to charge to the customer for a NOT SHOW"
+                },
+                {
+                  "disabled": false,
+                  "key": "notShowDriverCommission",
+                  "value": "<number>",
+                  "description": "Amount to pay to the driver for a NOT SHOW"
+                },
+                {
+                  "disabled": false,
+                  "key": "rainCharge",
+                  "value": "<number>",
+                  "description": "Amount to charge when region indicates it is raining"
+                },
+                {
+                  "disabled": false,
+                  "key": "rushHourIncreaseType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "rushHourIncreaseCoefficient",
+                  "value": "<number>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5a9e5076-73a7-4de6-a841-f30c45fd5508",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "fares",
+                    "pricing"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "carType",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "carType",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "carName",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "cancellationPolicy",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "minimumCancellationFee",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "commissionCharge",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "baseFarebelow3",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "baseFare",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "perKmCharge",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "perMinuteCharge",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "region ID is required",
+                        "type": "text/plain"
+                      },
+                      "key": "regionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "super region ID is required",
+                        "type": "text/plain"
+                      },
+                      "key": "superRegionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "freeTime",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "baseDistance",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "kmRanges",
+                      "value": "{\"min\":\"<number>\",\"max\":\"<number>\",\"amount\":\"<number>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "kmRanges",
+                      "value": "{\"min\":\"<number>\",\"max\":\"<number>\",\"amount\":\"<number>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount to charge to the customer for a NOT SHOW",
+                        "type": "text/plain"
+                      },
+                      "key": "notShowTimeLimit",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount to charge to the customer for a NOT SHOW",
+                        "type": "text/plain"
+                      },
+                      "key": "notShowCustomerCharge",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount to pay to the driver for a NOT SHOW",
+                        "type": "text/plain"
+                      },
+                      "key": "notShowDriverCommission",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Amount to charge when region indicates it is raining",
+                        "type": "text/plain"
+                      },
+                      "key": "rainCharge",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "rushHourIncreaseType",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "rushHourIncreaseCoefficient",
+                      "value": "<number>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "44fdfefc-24c9-4864-8525-d1f7e5ad8125",
+    "name": "Picker Production Documentation accounting fares API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

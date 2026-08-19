@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting Share My Ride API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Share My Ride",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get booking for share-my-ride",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/share-my-ride",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get booking for share-my-ride"
+        },
+        {
+          "info": {
+            "name": "Get token to share ride",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/share-my-ride"
+          },
+          "docs": "Get token to share ride"
+        },
+        {
+          "info": {
+            "name": "Login share my ride user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/share-my-ride/login"
+          },
+          "docs": "Login share my ride user"
+        },
+        {
+          "info": {
+            "name": "Register share my ride user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/share-my-ride/register"
+          },
+          "docs": "Register share my ride user"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

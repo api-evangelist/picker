@@ -1,0 +1,1682 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting booking API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "booking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of bookings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/bookings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "typeText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortField",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchBooking",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "business",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get list of bookings"
+        },
+        {
+          "info": {
+            "name": "Get list of bookings from an user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/userBookings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "driver",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "business",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get list of bookings from an user"
+        },
+        {
+          "info": {
+            "name": "Get list of bookings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/warningBookings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortField",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "adminResponsableID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get list of bookings"
+        },
+        {
+          "info": {
+            "name": "Get all details from a selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/getBookingDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "externalID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all details from a selected booking"
+        },
+        {
+          "info": {
+            "name": "Get all details from a selected booking using chatbot",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/getChatbotBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query",
+                "description": "Field bookingNumericId"
+              }
+            ]
+          },
+          "docs": "Get all details from a selected booking using chatbot"
+        },
+        {
+          "info": {
+            "name": "Get drivers registered by the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/getDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get drivers registered by the user"
+        },
+        {
+          "info": {
+            "name": "Get driver by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/getDriverById",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get driver by id"
+        },
+        {
+          "info": {
+            "name": "Get drivers registered by the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/getDrivers",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get drivers registered by the user"
+        },
+        {
+          "info": {
+            "name": "Get Past Booking For User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/getPastBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query",
+                "description": "0-Pending, 1-Accepted, 2-Arrived, 3-WAY_TO_DELIVER, 4-Arrived At Delivery, 5-Completed6-Cancelled By Admin, 7-Cancelled"
+              }
+            ]
+          },
+          "docs": "Get Past Booking For User"
+        },
+        {
+          "info": {
+            "name": "Get All Availabe Booking For serviceProvider and Driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getAllAvailabeBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get All Availabe Booking For serviceProvider and Driver"
+        },
+        {
+          "info": {
+            "name": "Get All Bid Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getAllBids",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query",
+                "description": "Booking id for the bids"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get All Bid Request"
+        },
+        {
+          "info": {
+            "name": "Get All Deatils of Particular Booking For serviceProvider and Driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getAllBookingDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get All Deatils of Particular Booking For serviceProvider and Driver"
+        },
+        {
+          "info": {
+            "name": "Get All Deatils of Particular Booking For serviceProvider and Driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getBookingDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get All Deatils of Particular Booking For serviceProvider and Driver"
+        },
+        {
+          "info": {
+            "name": "Get booking report data for user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getBookingReport",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query",
+                "description": "_id of the booking selected"
+              }
+            ]
+          },
+          "docs": "Get booking report data for user"
+        },
+        {
+          "info": {
+            "name": "Get path for specific booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getBookingRoute",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query",
+                "description": "Booking ID to fetch the track history"
+              },
+              {
+                "name": "objectId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get path for specific booking"
+        },
+        {
+          "info": {
+            "name": "Get Ongoing Booking For User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getOngoingBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Ongoing Booking For User"
+        },
+        {
+          "info": {
+            "name": "Get Past Booking For User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getPastBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query",
+                "description": "0-Pending, 1-Accepted, 2-Arrived, 3-WAY_TO_DELIVER, 4-Arrived At Delivery, 5-Completed, 7-Cancelled, 8-Cancelled By Driver, 10-Cancelled Request, 11-Rejected By Customer, 12-Not Found, 20-On Hold, 21-On Deck, 22-Ready for pickup"
+              },
+              {
+                "name": "typeText",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Past Booking For User"
+        },
+        {
+          "info": {
+            "name": "Get list of products from the booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getProductList",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query",
+                "description": "_id of the booking selected"
+              }
+            ]
+          },
+          "docs": "Get list of products from the booking"
+        },
+        {
+          "info": {
+            "name": "Get deliveryFee and details for checkout screen",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/preCheckout",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "distance",
+                "value": "",
+                "type": "query",
+                "description": "Distance between pickup & delivery location"
+              },
+              {
+                "name": "pickupLongitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pickupLatitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "products",
+                "value": "",
+                "type": "query",
+                "description": "Array of products the customer will buy"
+              }
+            ]
+          },
+          "docs": "Get deliveryFee and details for checkout screen"
+        },
+        {
+          "info": {
+            "name": "Get delivery details for pre checkout view",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/booking/preCheckout",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get delivery details for pre checkout view"
+        },
+        {
+          "info": {
+            "name": "Get Past Booking For Customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/getPastBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Past Booking For Customer"
+        },
+        {
+          "info": {
+            "name": "Get all details from a selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/workspace/getBookingDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "externalID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all details from a selected booking"
+        },
+        {
+          "info": {
+            "name": "Assign user as responsable for a booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/assignResponsable",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Assign user as responsable for a booking"
+        },
+        {
+          "info": {
+            "name": "Change the driver of a selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/changeBookingDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Change the driver of a selected booking"
+        },
+        {
+          "info": {
+            "name": "Rate a booking from chatbot",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api/rateChatbotBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Rate a booking from chatbot"
+        },
+        {
+          "info": {
+            "name": "When a booking it's completed the delivery send a picture that should save in the booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/addProofOfDelivery",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "When a booking it's completed the delivery send a picture that should save in the booking"
+        },
+        {
+          "info": {
+            "name": "Send booking notification manually to sp/driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/assignBookingManually",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send booking notification manually to sp/driver"
+        },
+        {
+          "info": {
+            "name": "Remove driver from booking and start new driver search",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/assignBookingRandomly",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Remove driver from booking and start new driver search"
+        },
+        {
+          "info": {
+            "name": "Send booking notification request manually to driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/assignManualRequest",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send booking notification request manually to driver"
+        },
+        {
+          "info": {
+            "name": "Accept-Reject Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/bookingAcceptReject",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Accept-Reject Booking"
+        },
+        {
+          "info": {
+            "name": "Cancel Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/cancelBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Cancel Booking"
+        },
+        {
+          "info": {
+            "name": "Cancel Booking From Business",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/cancelBookingFromBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Cancel Booking From Business"
+        },
+        {
+          "info": {
+            "name": "Cancel Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/cancelBookingRequest",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Cancel Booking"
+        },
+        {
+          "info": {
+            "name": "Change payment method of the selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/changePaymentMethod",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Change payment method of the selected booking"
+        },
+        {
+          "info": {
+            "name": "Edit the selected order request and send notification to customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/editOrderRequest",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Edit the selected order request and send notification to customer"
+        },
+        {
+          "info": {
+            "name": "Cancel Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/getCancellationChargeInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Cancel Booking"
+        },
+        {
+          "info": {
+            "name": "Make a donation after the booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/makeDonation",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Make a donation after the booking"
+        },
+        {
+          "info": {
+            "name": "Mark a booking as not delivered to the customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/notDelivered",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Mark a booking as not delivered to the customer"
+        },
+        {
+          "info": {
+            "name": "Validate && set booking as a Not Show",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/notShow",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Validate && set booking as a Not Show"
+        },
+        {
+          "info": {
+            "name": "When a booking is in ON HOLD, the business and admin can reject it. All charges made to the customer's card are refunded.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/rejectBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "When a booking is in ON HOLD, the business and admin can reject it. All charges made to the customer's card are refunded."
+        },
+        {
+          "info": {
+            "name": "Restarts the driver search after driver doesnt login in automatic acceptation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/restartSearchAutomaticAccept"
+          },
+          "docs": "Restarts the driver search after driver doesnt login in automatic acceptation"
+        },
+        {
+          "info": {
+            "name": "Restart time of the selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/restartTime",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Restart time of the selected booking"
+        },
+        {
+          "info": {
+            "name": "Select Bid",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/selectBidByCustomer",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Select Bid"
+        },
+        {
+          "info": {
+            "name": "Set issue for a booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/setBookingIssue",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Set issue for a booking"
+        },
+        {
+          "info": {
+            "name": "Set reason of cancellation for a booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/setCancellationReason",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Set reason of cancellation for a booking"
+        },
+        {
+          "info": {
+            "name": "Validate the code that driver send",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/validateCodeOfProof",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Validate the code that driver send"
+        },
+        {
+          "info": {
+            "name": "start time and pause time",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/play/pause",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "start time and pause time"
+        },
+        {
+          "info": {
+            "name": "Get SMR for selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/admin/shareMyRide",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get SMR for selected booking"
+        },
+        {
+          "info": {
+            "name": "Handle shopify integration with push system",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/pushShopifyOrder"
+          },
+          "docs": "Handle shopify integration with push system"
+        },
+        {
+          "info": {
+            "name": "Handle spoonity integration with push system",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/pushSpoonityOrder"
+          },
+          "docs": "Handle spoonity integration with push system"
+        },
+        {
+          "info": {
+            "name": "Handle vtex integration with push system",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/pushVtexOrder"
+          },
+          "docs": "Handle vtex integration with push system"
+        },
+        {
+          "info": {
+            "name": "Handle shopify integration with push system",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/saveShopifyConfig"
+          },
+          "docs": "Handle shopify integration with push system"
+        },
+        {
+          "info": {
+            "name": "Rating a booking from chatbot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/sendChatbotBookingRate",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Rating a booking from chatbot"
+        },
+        {
+          "info": {
+            "name": "Create a new booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/booking/createBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Create a new booking"
+        },
+        {
+          "info": {
+            "name": "Create Booking Request for Market Place",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/booking/createMarketPlaceBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Create Booking Request for Market Place"
+        },
+        {
+          "info": {
+            "name": "Make an order request for a booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/booking/makeBidByDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Make an order request for a booking"
+        },
+        {
+          "info": {
+            "name": "Restarts the driver search for the selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/booking/restartSearch",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Restarts the driver search for the selected booking"
+        },
+        {
+          "info": {
+            "name": "Send the notification of the selected order request from the booking to the customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/booking/sendOrderRequestNotification",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Send the notification of the selected order request from the booking to the customer"
+        },
+        {
+          "info": {
+            "name": "Check if a booking can create in Picker",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/booking/validateBooking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Check if a booking can create in Picker"
+        },
+        {
+          "info": {
+            "name": "Sent Booking Reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/public/sentReportToUser"
+          },
+          "docs": "Sent Booking Reports"
+        },
+        {
+          "info": {
+            "name": "Delete the selected order request from the booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/booking/deleteOrderRequest",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Delete the selected order request from the booking"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting chatbot API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "chatbot",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Rating a booking from chatbot",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api/sendChatbotBookingRate",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Rating a booking from chatbot"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

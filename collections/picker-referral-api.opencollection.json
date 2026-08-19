@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting referral API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "referral",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "delete referral scheme by admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/referral/listAllReferral",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "createdByUser",
+                "value": "",
+                "type": "query",
+                "description": "userID of the user to fetch referral created by that user only"
+              },
+              {
+                "name": "isDeleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "delete referral scheme by admin"
+        },
+        {
+          "info": {
+            "name": "set referral scheme",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/referral/addReferralScheme",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set referral scheme"
+        },
+        {
+          "info": {
+            "name": "set referral scheme type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/referral/addReferralSchemeType",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set referral scheme type"
+        },
+        {
+          "info": {
+            "name": "delete referral scheme by admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/referral/deleteScheme",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "delete referral scheme by admin"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

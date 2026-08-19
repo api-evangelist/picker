@@ -2,11 +2,10 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/picker-openapi-original.json
-description: >-
-  Candidate MCP server for the Picker delivery API. No official hosted/remote MCP
-  server was found; this is a derived candidate tool list mapping the merchant
-  delivery flow (quote, create, track, cancel, webhooks) to real Picker operations.
-  Tools are grounded in operationIds verified in the published Swagger.
+description: Candidate MCP server for the Picker delivery API. No official hosted/remote MCP server was
+  found; this is a derived candidate tool list mapping the merchant delivery flow (quote, create, track,
+  cancel, webhooks) to real Picker operations. Tools are grounded in operationIds verified in the published
+  Swagger.
 server:
   name: picker
   transport: http
@@ -47,3 +46,9 @@ tools:
 - name: get_pricing
   description: Get the list of fares/pricing for available vehicle types.
   source_operation: openapi/picker-openapi-original.json#getVehiclesPricing
+deployment:
+  mode: none
+  verified: derived
+  tools: 12
+  checked: '2026-08-12'
+  source: catalog MCP census

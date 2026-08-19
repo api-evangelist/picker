@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting duty API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "duty",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Driver Update on duty off duty",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/duty",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "onDutyFlag",
+                "value": "",
+                "type": "query",
+                "description": "go online and offline duty"
+              }
+            ]
+          },
+          "docs": "Driver Update on duty off duty"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

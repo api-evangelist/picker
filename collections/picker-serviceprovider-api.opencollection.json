@@ -1,0 +1,175 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting serviceProvider API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "serviceProvider",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all information from service provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/admin/getServiceProviderInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "serviceProviderID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all information from service provider"
+        },
+        {
+          "info": {
+            "name": "Driver get Earnings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/getEarnings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Driver get Earnings"
+        },
+        {
+          "info": {
+            "name": "Get Dashboard Count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/serviceProvider/getDashboardCount",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Dashboard Count"
+        },
+        {
+          "info": {
+            "name": "Driver Update profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/serviceProvider/updateDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Driver Update profile"
+        },
+        {
+          "info": {
+            "name": "Service Provider Update profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/serviceProvider/updateProfile",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Service Provider Update profile"
+        },
+        {
+          "info": {
+            "name": "Register a new service Provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/serviceProvider/register",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new service Provider"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

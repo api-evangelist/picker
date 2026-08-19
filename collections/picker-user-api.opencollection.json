@@ -1,0 +1,1536 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting user API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "user",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "for front end static rendering",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/:param*"
+          },
+          "docs": "for front end static rendering"
+        },
+        {
+          "info": {
+            "name": "for angular 4 docs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/angular4-docs/:param*"
+          },
+          "docs": "for angular 4 docs"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookings/getAllBookingsDashBoard",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "onlyPast",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "onlyActives",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookings/getCoportatesAllBookings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "onlyPast",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "onlyActives",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the selected user to filter its bookings"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get coportates orders by businessId",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookings/getCorporateBookingsByUserId",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get coportates orders by businessId"
+        },
+        {
+          "info": {
+            "name": "Get all the products from a business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/categories",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all the products from a business"
+        },
+        {
+          "info": {
+            "name": "Get all the products from a business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/categoriesByUserId",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "businessUserId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all the products from a business"
+        },
+        {
+          "info": {
+            "name": "Check if the name of the business is available",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/checkAvailableNames",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Check if the name of the business is available"
+        },
+        {
+          "info": {
+            "name": "Get General info about specific business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getAccountInfoIntegrationDashboard",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about specific business"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getAssociatedBusiness",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "storeType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortField",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBookingsDataByDatesDashboard",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fromDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "toDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "isSemester",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBookingsIntegrationDashboard",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get the business categories in order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessCategories",
+            "params": [
+              {
+                "name": "visibility",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of catgeories that will be returned for each page"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "For pagination effect. On first page it is 0, then for each next page is (page x limit) so it can return the next X categories"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the business categories in order"
+        },
+        {
+          "info": {
+            "name": "Get the business info and its products grouped by category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business"
+              }
+            ]
+          },
+          "docs": "Get the business info and its products grouped by category"
+        },
+        {
+          "info": {
+            "name": "Get the business info and its products grouped by category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessInfoByUserId",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "ID of the user"
+              }
+            ]
+          },
+          "docs": "Get the business info and its products grouped by category"
+        },
+        {
+          "info": {
+            "name": "Get the business categories in order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessesByDistance",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business category"
+              }
+            ]
+          },
+          "docs": "Get the business categories in order"
+        },
+        {
+          "info": {
+            "name": "Get the business of the subcategory ordered by distance to user location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessesBySubcategory",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business category"
+              },
+              {
+                "name": "subcategory",
+                "value": "",
+                "type": "query",
+                "description": "Name of the subcategory"
+              }
+            ]
+          },
+          "docs": "Get the business of the subcategory ordered by distance to user location"
+        },
+        {
+          "info": {
+            "name": "Get General info about businesses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getBusinessesGeneralInfo",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about businesses"
+        },
+        {
+          "info": {
+            "name": "Get the business dashboard information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/getStats",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get the business dashboard information"
+        },
+        {
+          "info": {
+            "name": "Get all the products from a business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/products",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "categoryID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the category of the product"
+              },
+              {
+                "name": "businessID",
+                "value": "",
+                "type": "query",
+                "description": "ID of the business"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Status of the products to show"
+              },
+              {
+                "name": "populates",
+                "value": "",
+                "type": "query",
+                "description": "Object path to populate"
+              },
+              {
+                "name": "updatedAt",
+                "value": "",
+                "type": "query",
+                "description": "Order of the products DESC or ASC"
+              }
+            ]
+          },
+          "docs": "Get all the products from a business"
+        },
+        {
+          "info": {
+            "name": "Ping Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/sendSundayReports"
+          },
+          "docs": "Ping Server"
+        },
+        {
+          "info": {
+            "name": "Get General info about specific business",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/business/turnOffOnBusinessById",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "businessUserId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "businessId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "currentStatus",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get General info about specific business"
+        },
+        {
+          "info": {
+            "name": "Sends Reset Password Token To User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/user/forgotPasswordMobile",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "countryCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "mobile",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Sends Reset Password Token To User"
+        },
+        {
+          "info": {
+            "name": "Get referral benifits history",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/user/getReferralBenifitsHistory",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get referral benifits history"
+        },
+        {
+          "info": {
+            "name": "Get referral code for user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/user/getReferralCode",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get referral code for user"
+        },
+        {
+          "info": {
+            "name": "Sends Reset Password Token To User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/user/getResetPasswordToken",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "role",
+                "value": "",
+                "type": "query",
+                "description": "Role of user who forgot password"
+              }
+            ]
+          },
+          "docs": "Sends Reset Password Token To User"
+        },
+        {
+          "info": {
+            "name": "Get User from device token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/user/getUserFromIP",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "remoteIP",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get User from device token"
+        },
+        {
+          "info": {
+            "name": "Get wallet data for user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/user/getWallet",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get wallet data for user"
+        },
+        {
+          "info": {
+            "name": "Ping Server",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/user/pingMe"
+          },
+          "docs": "Ping Server"
+        },
+        {
+          "info": {
+            "name": "Add Phone Number",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/addPhoneNumber",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add Phone Number"
+        },
+        {
+          "info": {
+            "name": "Add money to user wallet",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/addToWallet",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add money to user wallet"
+        },
+        {
+          "info": {
+            "name": "Change Password",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/changePassword",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Change Password"
+        },
+        {
+          "info": {
+            "name": "Contact Us",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/contactUs",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Contact Us"
+        },
+        {
+          "info": {
+            "name": "Add Preference Settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/preferenceSettings",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add Preference Settings"
+        },
+        {
+          "info": {
+            "name": "Resend email verify link",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/resendEmail",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Resend email verify link"
+        },
+        {
+          "info": {
+            "name": "Resend OTP for Driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/resendOTP",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Resend OTP for Driver"
+        },
+        {
+          "info": {
+            "name": "Reset Password",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/resetPassword",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Reset Password"
+        },
+        {
+          "info": {
+            "name": "set Password",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/setPassword",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set Password"
+        },
+        {
+          "info": {
+            "name": "set primary number",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/setPrimaryNumber",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "set primary number"
+        },
+        {
+          "info": {
+            "name": "update device token",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/updateDeviceToken",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "update device token"
+        },
+        {
+          "info": {
+            "name": "Update Phone Number",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/updatePhoneNumber",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update Phone Number"
+        },
+        {
+          "info": {
+            "name": "update UTC offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/updateUTCoffset",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "update UTC offset"
+        },
+        {
+          "info": {
+            "name": "Sends Reset Password Token To User",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/verifyForgotPasswordOTP",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Sends Reset Password Token To User"
+        },
+        {
+          "info": {
+            "name": "Verify registration email for business",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/business/verifyEmail",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Verify registration email for business"
+        },
+        {
+          "info": {
+            "name": "get details with token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/serviceProvider/accessTokenLogin",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "get details with token"
+        },
+        {
+          "info": {
+            "name": "Login Via Email & Password For  User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/serviceProvider/login",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Login Via Email & Password For  User"
+        },
+        {
+          "info": {
+            "name": "Logout user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/serviceProvider/logout",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Logout user"
+        },
+        {
+          "info": {
+            "name": "Get details of the user associated with the token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/user/accessTokenLogin",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Get details of the user associated with the token"
+        },
+        {
+          "info": {
+            "name": "Email/Password login for users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/user/login",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Email/Password login for users"
+        },
+        {
+          "info": {
+            "name": "Logout user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/user/logout",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Logout user"
+        },
+        {
+          "info": {
+            "name": "Login via mobile phone",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/user/mobileLogin",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Login via mobile phone"
+        },
+        {
+          "info": {
+            "name": "Upload File",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/user/uploadFile",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Upload File"
+        },
+        {
+          "info": {
+            "name": "Resend email verify link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/user/verifyEmail",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Resend email verify link"
+        },
+        {
+          "info": {
+            "name": "Verify OTP sent to mobile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/user/verifyMobileOTP",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Verify OTP sent to mobile"
+        },
+        {
+          "info": {
+            "name": "delete Phone Number",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/user/deletePhoneNumber",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "delete Phone Number"
+        },
+        {
+          "info": {
+            "name": "Hard Delete User for tester only",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/user/deleteUser/:lang/:email",
+            "params": [
+              {
+                "name": "lang",
+                "value": "",
+                "type": "path",
+                "description": "en/ar"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Hard Delete User for tester only"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

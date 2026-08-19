@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting product API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "product",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Customer can add or remove his favourite business or product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/addRemoveFavorite",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can add or remove his favourite business or product"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

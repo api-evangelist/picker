@@ -1,0 +1,730 @@
+{
+  "item": [
+    {
+      "id": "1b572121-97c7-442e-9b48-b5859fdc3b2c",
+      "name": "referral",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fc26ec1a-d34e-4498-80e3-71647e54a8b6",
+          "name": "delete referral scheme by admin",
+          "request": {
+            "name": "delete referral scheme by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "referral",
+                "listAllReferral"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "createdByUser",
+                  "value": "<string>",
+                  "description": "userID of the user to fetch referral created by that user only"
+                },
+                {
+                  "disabled": false,
+                  "key": "isDeleted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "limit data in response"
+                },
+                {
+                  "disabled": false,
+                  "key": "skip",
+                  "value": "<integer>",
+                  "description": "limit data from response"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "34c5a2bd-6255-4789-a617-c70970cf9ea2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "referral",
+                    "listAllReferral"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "createdByUser",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "isDeleted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74a86ecc-e1ac-40bd-b91d-cf5059d9c5ea",
+          "name": "set referral scheme",
+          "request": {
+            "name": "set referral scheme",
+            "description": {},
+            "url": {
+              "path": [
+                "referral",
+                "addReferralScheme"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "instant",
+                  "value": "<boolean>",
+                  "description": "(Required) false if wait for certain number of bookings before referral applied, else true"
+                },
+                {
+                  "disabled": false,
+                  "key": "minimumBookingPrice",
+                  "value": "0",
+                  "description": "(Required) Minimum price of booking on which referral will be applied"
+                },
+                {
+                  "disabled": false,
+                  "key": "operatableBookingsForOwner",
+                  "value": "<number>",
+                  "description": "(Required) operatable upto bookings for user who created referral"
+                },
+                {
+                  "disabled": false,
+                  "key": "operatableBookingsForUser",
+                  "value": "<number>",
+                  "description": "(Required) operatable upto bookings for user who used referral"
+                },
+                {
+                  "disabled": false,
+                  "key": "isAfterBooking",
+                  "value": "false",
+                  "description": "true if to be applied after booking is completed, else true "
+                },
+                {
+                  "disabled": false,
+                  "key": "waitBookingNumber",
+                  "value": "0",
+                  "description": "if instant if false, bookings wait, before referral applied"
+                },
+                {
+                  "disabled": false,
+                  "key": "cashbackForOwner",
+                  "value": "<number>",
+                  "description": "cashback for user who created referral"
+                },
+                {
+                  "disabled": false,
+                  "key": "cashbackForUser",
+                  "value": "<number>",
+                  "description": "cashback for user who used referral"
+                },
+                {
+                  "disabled": false,
+                  "key": "percentageForOwner",
+                  "value": "<number>",
+                  "description": "% off for user who created referral"
+                },
+                {
+                  "disabled": false,
+                  "key": "percentageForUser",
+                  "value": "<number>",
+                  "description": "% off for user who used referral"
+                },
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "<string>",
+                  "description": "role of user order is  customer/driver/serviceProvider/admin"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "[[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "[[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "[[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "coordinates",
+                  "value": "[\"<number>\",\"<number>\"]",
+                  "description": "[[0,0],[1,1],[2,2],[0,0]]"
+                },
+                {
+                  "disabled": false,
+                  "key": "regionName",
+                  "value": "<string>",
+                  "description": "name for coordinates"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f815a858-2960-4d85-a761-d134a695140b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "referral",
+                    "addReferralScheme"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) false if wait for certain number of bookings before referral applied, else true",
+                        "type": "text/plain"
+                      },
+                      "key": "instant",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Minimum price of booking on which referral will be applied",
+                        "type": "text/plain"
+                      },
+                      "key": "minimumBookingPrice",
+                      "value": "0"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) operatable upto bookings for user who created referral",
+                        "type": "text/plain"
+                      },
+                      "key": "operatableBookingsForOwner",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) operatable upto bookings for user who used referral",
+                        "type": "text/plain"
+                      },
+                      "key": "operatableBookingsForUser",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "true if to be applied after booking is completed, else true ",
+                        "type": "text/plain"
+                      },
+                      "key": "isAfterBooking",
+                      "value": "false"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "if instant if false, bookings wait, before referral applied",
+                        "type": "text/plain"
+                      },
+                      "key": "waitBookingNumber",
+                      "value": "0"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "cashback for user who created referral",
+                        "type": "text/plain"
+                      },
+                      "key": "cashbackForOwner",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "cashback for user who used referral",
+                        "type": "text/plain"
+                      },
+                      "key": "cashbackForUser",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "% off for user who created referral",
+                        "type": "text/plain"
+                      },
+                      "key": "percentageForOwner",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "% off for user who used referral",
+                        "type": "text/plain"
+                      },
+                      "key": "percentageForUser",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "role of user order is  customer/driver/serviceProvider/admin",
+                        "type": "text/plain"
+                      },
+                      "key": "role",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "[[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "[[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "[[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "[[0,0],[1,1],[2,2],[0,0]]",
+                        "type": "text/plain"
+                      },
+                      "key": "coordinates",
+                      "value": "[\"<number>\",\"<number>\"]"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "name for coordinates",
+                        "type": "text/plain"
+                      },
+                      "key": "regionName",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0cfa4ca7-f525-46fe-b67f-e2260afa52e8",
+          "name": "set referral scheme type",
+          "request": {
+            "name": "set referral scheme type",
+            "description": {},
+            "url": {
+              "path": [
+                "referral",
+                "addReferralSchemeType"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "referralSchemeType",
+                  "value": "<string>",
+                  "description": "(Required) type of referral scheme to be used"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7fe000d8-6a52-48f5-b05b-22536471a49c",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "referral",
+                    "addReferralSchemeType"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) type of referral scheme to be used",
+                        "type": "text/plain"
+                      },
+                      "key": "referralSchemeType",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88ae557f-153c-412f-9286-2a582fbfa57d",
+          "name": "delete referral scheme by admin",
+          "request": {
+            "name": "delete referral scheme by admin",
+            "description": {},
+            "url": {
+              "path": [
+                "referral",
+                "deleteScheme"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "referralPattern",
+                  "value": "<string>",
+                  "description": "(Required) Referral pattern to delete"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b3707b93-f51f-4b5c-a5d5-19161221226d",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "referral",
+                    "deleteScheme"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Referral pattern to delete",
+                        "type": "text/plain"
+                      },
+                      "key": "referralPattern",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "512eaeb2-80b4-4fd9-b1c7-c50eceb3501f",
+    "name": "Picker Production Documentation accounting referral API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

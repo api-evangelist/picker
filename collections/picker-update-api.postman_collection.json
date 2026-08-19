@@ -1,0 +1,1230 @@
+{
+  "item": [
+    {
+      "id": "e57b34b3-6acf-4b33-8f4d-6533c73ab047",
+      "name": "update",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a20ed30d-2e66-4a4f-85c1-a89c7eade822",
+          "name": "Adds a businessCategory to the business",
+          "request": {
+            "name": "Adds a businessCategory to the business",
+            "description": {},
+            "url": {
+              "path": [
+                "business",
+                "addCategoryToBusiness"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "businessCategoryID",
+                  "value": "<string>",
+                  "description": "(Required) ID of the business category"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a26ffbc0-7f98-4199-a8d7-e3b6a4d110c3",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "addCategoryToBusiness"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "075737dd-c9ea-4750-beb4-6d1e1a5fdb78",
+          "name": "Update business data",
+          "request": {
+            "name": "Update business data",
+            "description": {},
+            "url": {
+              "path": [
+                "business",
+                "updateBusiness"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "lastName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "mobile",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "companyName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "imageLogo",
+                  "value": "<object>",
+                  "description": "image url"
+                },
+                {
+                  "disabled": false,
+                  "key": "imageFront",
+                  "value": "<object>",
+                  "description": "image url"
+                },
+                {
+                  "disabled": false,
+                  "key": "productTypes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "productTypes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "schedule",
+                  "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "schedule",
+                  "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "fullAddress",
+                  "value": "<string>",
+                  "description": "Name of the address of the business' location"
+                },
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "businessCategories",
+                  "value": "<string>",
+                  "description": "Categories that the business is part of. Just the ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "businessCategories",
+                  "value": "<string>",
+                  "description": "Categories that the business is part of. Just the ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "Tags to find the business"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "Tags to find the business"
+                },
+                {
+                  "disabled": false,
+                  "key": "role",
+                  "value": "business"
+                },
+                {
+                  "disabled": false,
+                  "key": "paymentMethod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": "<string>",
+                  "description": "Options for business"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": "<string>",
+                  "description": "Options for business"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9b1a3b6e-6124-48cc-acc0-098a0413e518",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "updateBusiness"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "mobile",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "companyName",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "image url",
+                        "type": "text/plain"
+                      },
+                      "key": "imageLogo",
+                      "value": "<object>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "image url",
+                        "type": "text/plain"
+                      },
+                      "key": "imageFront",
+                      "value": "<object>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "productTypes",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "productTypes",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "schedule",
+                      "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "schedule",
+                      "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Name of the address of the business' location",
+                        "type": "text/plain"
+                      },
+                      "key": "fullAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "longitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Categories that the business is part of. Just the ID",
+                        "type": "text/plain"
+                      },
+                      "key": "businessCategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Categories that the business is part of. Just the ID",
+                        "type": "text/plain"
+                      },
+                      "key": "businessCategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tags to find the business",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tags to find the business",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "role",
+                      "value": "business"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "paymentMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Options for business",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Options for business",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "caaad1af-a92f-44d9-b819-cefbdb58dc8c",
+          "name": "Update business data",
+          "request": {
+            "name": "Update business data",
+            "description": {},
+            "url": {
+              "path": [
+                "business",
+                "updateBusinessByUserId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "businessUserId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "lastName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "mobile",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "countryCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "imageLogo",
+                  "value": "<object>",
+                  "description": "image url"
+                },
+                {
+                  "disabled": false,
+                  "key": "frontImage",
+                  "value": "<object>",
+                  "description": "image url"
+                },
+                {
+                  "disabled": false,
+                  "key": "companyName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "Tags to find the business"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "<string>",
+                  "description": "Tags to find the business"
+                },
+                {
+                  "disabled": false,
+                  "key": "schedule",
+                  "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "schedule",
+                  "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "fullAddress",
+                  "value": "<string>",
+                  "description": "Name of the address of the business' location"
+                },
+                {
+                  "disabled": false,
+                  "key": "addressReference",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "exterior",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "interior",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "zipCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "latitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "longitude",
+                  "value": "<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "businessCategories",
+                  "value": "<string>",
+                  "description": "Categories that the business is part of. Just the ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "businessCategories",
+                  "value": "<string>",
+                  "description": "Categories that the business is part of. Just the ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "paymentMethod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": "<string>",
+                  "description": "Options for business"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": "<string>",
+                  "description": "Options for business"
+                },
+                {
+                  "disabled": false,
+                  "key": "billingData",
+                  "value": "<object>",
+                  "description": "Billing data"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0ea6dab7-d075-49f2-8bed-4efc5660bcf8",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "updateBusinessByUserId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "businessUserId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "lastName",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "email",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "mobile",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "countryCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "image url",
+                        "type": "text/plain"
+                      },
+                      "key": "imageLogo",
+                      "value": "<object>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "image url",
+                        "type": "text/plain"
+                      },
+                      "key": "frontImage",
+                      "value": "<object>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "companyName",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tags to find the business",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Tags to find the business",
+                        "type": "text/plain"
+                      },
+                      "key": "tags",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "schedule",
+                      "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "schedule",
+                      "value": "{\"day\":\"<number>\",\"isOpen\":\"<boolean>\",\"open\":\"<string>\",\"close\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Name of the address of the business' location",
+                        "type": "text/plain"
+                      },
+                      "key": "fullAddress",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "addressReference",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "exterior",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "interior",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "zipCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "latitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "longitude",
+                      "value": "<number>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Categories that the business is part of. Just the ID",
+                        "type": "text/plain"
+                      },
+                      "key": "businessCategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Categories that the business is part of. Just the ID",
+                        "type": "text/plain"
+                      },
+                      "key": "businessCategories",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "paymentMethod",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Options for business",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Options for business",
+                        "type": "text/plain"
+                      },
+                      "key": "options",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Billing data",
+                        "type": "text/plain"
+                      },
+                      "key": "billingData",
+                      "value": "<object>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "description",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c06b9e35-71a5-4106-a89d-83696fcc4026",
+          "name": "Update business payment method",
+          "request": {
+            "name": "Update business payment method",
+            "description": {},
+            "url": {
+              "path": [
+                "business",
+                "updatePaymentMethodByUserId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "businessUserId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "paymentMethod",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "884f5922-7f3a-4852-9128-c44444b65cd5",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "updatePaymentMethodByUserId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "businessUserId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "paymentMethod",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9bf6dfd3-0d11-45d5-91cf-6296298a04d2",
+          "name": "Removes a category from the business businessCategories array",
+          "request": {
+            "name": "Removes a category from the business businessCategories array",
+            "description": {},
+            "url": {
+              "path": [
+                "business",
+                "removeCategoryFromBusiness"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) en/ar",
+                "key": "content-language",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "businessCategoryID",
+                  "value": "<string>",
+                  "description": "(Required) ID of the business category"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bdc3c603-7c11-44c6-b1e7-adcef2681de0",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "business",
+                    "removeCategoryFromBusiness"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) Bearer Token",
+                    "key": "authorization",
+                    "value": "string"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) en/ar",
+                    "key": "content-language",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "*/*"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "*/*"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "http://api.pickerexpress.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9b531857-dc74-47ec-ba4c-4b778ba80232",
+    "name": "Picker Production Documentation accounting update API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Contact Support:\n Name: RV\n Email: rachit.verma@nextjuggernaut.com",
+      "type": "text/plain"
+    }
+  }
+}

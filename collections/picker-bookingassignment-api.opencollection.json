@@ -1,0 +1,111 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting bookingAssignment API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "bookingAssignment",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Round settings for booking floating",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/bookingAssignment/listBookingFloatSetting",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "typeOfAlgo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "forWhom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "serviceProviderID",
+                "value": "",
+                "type": "query",
+                "description": "for booking float methods of specific serviceProvider"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit number of records"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Skip number of records"
+              }
+            ]
+          },
+          "docs": "Round settings for booking floating"
+        },
+        {
+          "info": {
+            "name": "Update Round settings for booking floating",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/bookingAssignment/updateBookingFloatSetting",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update Round settings for booking floating"
+        },
+        {
+          "info": {
+            "name": "Round settings for booking floating",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/bookingAssignment/bookingFloatSetting",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Round settings for booking floating"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

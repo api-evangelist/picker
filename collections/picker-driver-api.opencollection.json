@@ -1,0 +1,690 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting driver API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "driver",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a list of drivers that match the criteria selected",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/getAllAvailableDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "regionID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchBooking",
+                "value": "",
+                "type": "query",
+                "description": "User's email or name"
+              },
+              {
+                "name": "searchText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "carType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query",
+                "description": "Search for drivers near this latitude"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query",
+                "description": "Search for drivers near this longitude"
+              },
+              {
+                "name": "minimumDriverCash",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of drivers that match the criteria selected"
+        },
+        {
+          "info": {
+            "name": "Returns a list of drivers that match the criteria selected",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/getAllAvailableDriverMyFleet",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "regionID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchBooking",
+                "value": "",
+                "type": "query",
+                "description": "User's email or name"
+              },
+              {
+                "name": "searchText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "carType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query",
+                "description": "Search for drivers near this latitude"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query",
+                "description": "Search for drivers near this longitude"
+              },
+              {
+                "name": "minimumDriverCash",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns a list of drivers that match the criteria selected"
+        },
+        {
+          "info": {
+            "name": "get all Driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/getAllDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "get all Driver"
+        },
+        {
+          "info": {
+            "name": "Returns the drivers work balance and total pay",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/getDriverBalances",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns the drivers work balance and total pay"
+        },
+        {
+          "info": {
+            "name": "get all Driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/getDriverTracking",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "carType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "superRegionID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get all Driver"
+        },
+        {
+          "info": {
+            "name": "get vehicle details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/getVehicleDetails",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "isDeleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "get vehicle details"
+        },
+        {
+          "info": {
+            "name": "get vehicle type and company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/driver/listVehicleTypeAndCompany",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "isDeleted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "get vehicle type and company"
+        },
+        {
+          "info": {
+            "name": "Returns a list of drivers that match the criteria selected",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/serviceProvider/getAllAvailableDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "regionID",
+                "value": "",
+                "type": "query",
+                "description": "region ID is optional"
+              },
+              {
+                "name": "carType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query",
+                "description": "Search for drivers near this latitude"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query",
+                "description": "Search for drivers near this longitude"
+              }
+            ]
+          },
+          "docs": "Returns a list of drivers that match the criteria selected"
+        },
+        {
+          "info": {
+            "name": "Save notification interaction for booking assign",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/booking/notificationInteraction",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Save notification interaction for booking assign"
+        },
+        {
+          "info": {
+            "name": "Update Booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/amountCollected",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update Booking"
+        },
+        {
+          "info": {
+            "name": "To unstuck driver",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/clearDriver",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "userID",
+                "value": "",
+                "type": "query",
+                "description": "Driver user id"
+              }
+            ]
+          },
+          "docs": "To unstuck driver"
+        },
+        {
+          "info": {
+            "name": "Driver Update on duty off duty",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/duty",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "onDutyFlag",
+                "value": "",
+                "type": "query",
+                "description": "go online and offline duty"
+              }
+            ]
+          },
+          "docs": "Driver Update on duty off duty"
+        },
+        {
+          "info": {
+            "name": "update the driver Automatic acceptation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/updateAutoAcceptation",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "autoAcceptation",
+                "value": "",
+                "type": "query",
+                "description": "Update the driver automatic acceptation"
+              }
+            ]
+          },
+          "docs": "update the driver Automatic acceptation"
+        },
+        {
+          "info": {
+            "name": "Update status of the selected booking",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/updateBookingStatus",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update status of the selected booking"
+        },
+        {
+          "info": {
+            "name": "Driver Location Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/updateLocation",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Driver Location Update"
+        },
+        {
+          "info": {
+            "name": "Driver Update profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/updateProfile",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Driver Update profile"
+        },
+        {
+          "info": {
+            "name": "Update the amount of cash that the driver has with him/her",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/updateWallet",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Update the amount of cash that the driver has with him/her"
+        },
+        {
+          "info": {
+            "name": "Verify driver's OTP",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/driver/validateOTP",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "validated",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Verify driver's OTP"
+        },
+        {
+          "info": {
+            "name": "Driver Update vehicle",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/driver/addVehicle",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Driver Update vehicle"
+        },
+        {
+          "info": {
+            "name": "Register new Driver via Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/driver/registerFromEmail",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              },
+              {
+                "name": "utcoffset",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register new Driver via Email"
+        },
+        {
+          "info": {
+            "name": "soft delete vehicle data",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/driver/deleteVehicle",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "soft delete vehicle data"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

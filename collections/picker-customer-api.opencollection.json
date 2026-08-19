@@ -1,0 +1,547 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Picker Production Documentation accounting customer API",
+    "version": "V1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "customer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get order amount logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/booking/getAmountlogs",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "bookingID",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "get order amount logs"
+        },
+        {
+          "info": {
+            "name": "Round settings for booking floating",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/availableServiceProvider",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "serviceID",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pickupLongitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pickupLatitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query",
+                "description": "distance range to float booking"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Limit number of records"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "Skip number of records"
+              }
+            ]
+          },
+          "docs": "Round settings for booking floating"
+        },
+        {
+          "info": {
+            "name": "Sends Reset Password Token To User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/bookingAddresses",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "addressType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "limit data in response"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query",
+                "description": "limit data from response"
+              }
+            ]
+          },
+          "docs": "Sends Reset Password Token To User"
+        },
+        {
+          "info": {
+            "name": "Get list favorite products and businesses from user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/getFavorites",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get list favorite products and businesses from user."
+        },
+        {
+          "info": {
+            "name": "Get list Of all service location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/listServiceLocation",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "addressType",
+                "value": "",
+                "type": "query",
+                "description": "DELIVERY PICKUP "
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": " HOME OFFICE"
+              }
+            ]
+          },
+          "docs": "Get list Of all service location"
+        },
+        {
+          "info": {
+            "name": "Search businesses and products by searchText.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/customer/search",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "skip",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "searchText",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "latitude",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "longitude",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search businesses and products by searchText."
+        },
+        {
+          "info": {
+            "name": "Returns the list of all User Marketing Questions available",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/userMarketingData/getAllUserMarketingData",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns the list of all User Marketing Questions available"
+        },
+        {
+          "info": {
+            "name": "Add favorite pickers of a customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/admin/addFavoritePicker",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add favorite pickers of a customer"
+        },
+        {
+          "info": {
+            "name": "Add usage of referral code by customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/customer/addReferralCode",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add usage of referral code by customer"
+        },
+        {
+          "info": {
+            "name": "Search Driver Near Address",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/customer/driverSearch",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Search Driver Near Address"
+        },
+        {
+          "info": {
+            "name": "orderReceived key update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/customer/orderReceived",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "orderReceived key update"
+        },
+        {
+          "info": {
+            "name": "Customer can Update his/her Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/customer/updateProfile",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can Update his/her Profile"
+        },
+        {
+          "info": {
+            "name": "Customer can Update his/her Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/user/confirmInformation",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can Update his/her Profile"
+        },
+        {
+          "info": {
+            "name": "Customer can update his favourite service location",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/update/customer/service/location",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can update his favourite service location"
+        },
+        {
+          "info": {
+            "name": "Add query to admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/addQueryToAdmin",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Add query to admin"
+        },
+        {
+          "info": {
+            "name": "Customer can add or remove his favourite business or product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/addRemoveFavorite",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can add or remove his favourite business or product"
+        },
+        {
+          "info": {
+            "name": "Register a new customer via Email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/registerFromEmail",
+            "headers": [
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Register a new customer via Email"
+        },
+        {
+          "info": {
+            "name": "create User Marketing Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/userMarketingData/registerUserMarketingData",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "create User Marketing Data"
+        },
+        {
+          "info": {
+            "name": "Customer can add his favourite service location",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/customer/service/location",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Customer can add his favourite service location"
+        },
+        {
+          "info": {
+            "name": "delete service  location of customer",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/customer/remove/service/location",
+            "headers": [
+              {
+                "name": "authorization",
+                "value": ""
+              },
+              {
+                "name": "content-language",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "delete service  location of customer"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
