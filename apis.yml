@@ -39,6 +39,17 @@ tags:
 - Logistics
 - Delivery
 - Last Mile
+- Couriers
+- E-Commerce
+- Shipping
+- Tracking
+- Latin America
+- Fleet Management
+tags_raw:
+- Company
+- Logistics
+- Delivery
+- Last Mile
 - Courier
 - E-commerce
 - Shipping
@@ -57,6 +68,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Accounting
+  tags_raw:
   - accounting
   properties:
   - type: OpenAPI
@@ -77,6 +90,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Anti-Fraud
+  tags_raw:
   - antiFraud
   properties:
   - type: OpenAPI
@@ -86,7 +101,8 @@ apis:
   description: The appVersion API from Picker — 3 operation(s) for appversion.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - appVersion
   properties:
   - type: OpenAPI
@@ -97,6 +113,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Banner
+  tags_raw:
   - banner
   properties:
   - type: OpenAPI
@@ -107,6 +125,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Bill
+  tags_raw:
   - bill
   properties:
   - type: OpenAPI
@@ -117,6 +137,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Booking
+  tags_raw:
   - booking
   properties:
   - type: OpenAPI
@@ -126,7 +148,8 @@ apis:
   description: The bookingAssignment API from Picker — 3 operation(s) for bookingassignment.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - bookingAssignment
   properties:
   - type: OpenAPI
@@ -136,7 +159,8 @@ apis:
   description: The bookingIssue API from Picker — 1 operation(s) for bookingissue.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - bookingIssue
   properties:
   - type: OpenAPI
@@ -157,6 +181,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Bookings
+  tags_raw:
   - bookings
   properties:
   - type: OpenAPI
@@ -167,6 +193,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Business
+  tags_raw:
   - business
   properties:
   - type: OpenAPI
@@ -177,6 +205,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Businesses
+  tags_raw:
   - businesses
   properties:
   - type: OpenAPI
@@ -197,6 +227,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Cancel
+  tags_raw:
   - cancel
   properties:
   - type: OpenAPI
@@ -206,7 +238,8 @@ apis:
   description: The cancelReason API from Picker — 1 operation(s) for cancelreason.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - cancelReason
   properties:
   - type: OpenAPI
@@ -217,6 +250,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Card
+  tags_raw:
   - card
   properties:
   - type: OpenAPI
@@ -227,6 +262,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Cards
+  tags_raw:
   - cards
   properties:
   - type: OpenAPI
@@ -237,6 +274,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Chat
+  tags_raw:
   - chat
   properties:
   - type: OpenAPI
@@ -247,6 +286,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Chatbots
+  tags_raw:
   - chatbot
   properties:
   - type: OpenAPI
@@ -257,6 +298,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Cron Jobs
+  tags_raw:
   - cronJobs
   properties:
   - type: OpenAPI
@@ -267,6 +310,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Customers
+  tags_raw:
   - customer
   properties:
   - type: OpenAPI
@@ -277,6 +322,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Dashboard
+  tags_raw:
   - dashboard
   properties:
   - type: OpenAPI
@@ -296,7 +343,8 @@ apis:
   description: The deliveryPartner API from Picker — 1 operation(s) for deliverypartner.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - deliveryPartner
   properties:
   - type: OpenAPI
@@ -318,6 +366,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Driver
+  tags_raw:
   - driver
   properties:
   - type: OpenAPI
@@ -327,7 +377,8 @@ apis:
   description: The driverTag API from Picker — 2 operation(s) for drivertag.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - driverTag
   properties:
   - type: OpenAPI
@@ -338,6 +389,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Duty
+  tags_raw:
   - duty
   properties:
   - type: OpenAPI
@@ -348,6 +401,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Fares
+  tags_raw:
   - fares
   properties:
   - type: OpenAPI
@@ -368,6 +423,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Health Check
+  tags_raw:
   - health-check
   properties:
   - type: OpenAPI
@@ -378,6 +435,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Integration
+  tags_raw:
   - integrations
   properties:
   - type: OpenAPI
@@ -388,6 +447,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - List
+  tags_raw:
   - list
   properties:
   - type: OpenAPI
@@ -398,6 +459,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Location
+  tags_raw:
   - location
   properties:
   - type: OpenAPI
@@ -418,6 +481,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Notification
+  tags_raw:
   - notification
   properties:
   - type: OpenAPI
@@ -428,6 +493,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Pause
+  tags_raw:
   - pause
   properties:
   - type: OpenAPI
@@ -448,6 +515,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Play
+  tags_raw:
   - play
   properties:
   - type: OpenAPI
@@ -458,6 +527,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Product
+  tags_raw:
   - product
   properties:
   - type: OpenAPI
@@ -468,6 +539,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Product
+  tags_raw:
   - products
   properties:
   - type: OpenAPI
@@ -478,6 +551,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Promo
+  tags_raw:
   - promo
   properties:
   - type: OpenAPI
@@ -488,6 +563,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Public
+  tags_raw:
   - public
   properties:
   - type: OpenAPI
@@ -498,6 +575,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Referral
+  tags_raw:
   - referral
   properties:
   - type: OpenAPI
@@ -508,6 +587,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Region
+  tags_raw:
   - region
   properties:
   - type: OpenAPI
@@ -518,6 +599,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Reports
+  tags_raw:
   - reports
   properties:
   - type: OpenAPI
@@ -528,6 +611,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Review
+  tags_raw:
   - review
   properties:
   - type: OpenAPI
@@ -538,6 +623,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Service
+  tags_raw:
   - service
   properties:
   - type: OpenAPI
@@ -548,6 +635,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Service Provider
+  tags_raw:
   - serviceProvider
   properties:
   - type: OpenAPI
@@ -568,6 +657,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Shopify
+  tags_raw:
   - shopify
   properties:
   - type: OpenAPI
@@ -578,6 +669,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Social
+  tags_raw:
   - social
   properties:
   - type: OpenAPI
@@ -597,7 +690,8 @@ apis:
   description: The stripePay API from Picker — 10 operation(s) for stripepay.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - stripePay
   properties:
   - type: OpenAPI
@@ -608,6 +702,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Support
+  tags_raw:
   - support
   properties:
   - type: OpenAPI
@@ -618,6 +714,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Ticket
+  tags_raw:
   - ticket
   properties:
   - type: OpenAPI
@@ -628,6 +726,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Tracking
+  tags_raw:
   - tracking
   properties:
   - type: OpenAPI
@@ -637,7 +737,8 @@ apis:
   description: The update API from Picker — 5 operation(s) for update.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
+  tags: []
+  tags_raw:
   - update
   properties:
   - type: OpenAPI
@@ -648,6 +749,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - User
+  tags_raw:
   - user
   properties:
   - type: OpenAPI
@@ -668,6 +771,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - User
+  tags_raw:
   - users
   properties:
   - type: OpenAPI
@@ -678,6 +783,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Vehicles
+  tags_raw:
   - vehicles
   properties:
   - type: OpenAPI
