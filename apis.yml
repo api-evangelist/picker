@@ -11,6 +11,18 @@ description: >-
   Nube, Ordatic) so merchants can create bookings, calculate delivery costs, and
   track orders programmatically. The company operates across Mexico, Ecuador,
   Colombia, Peru, Chile, Uruguay, and Costa Rica and is backed by 500 Global.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -800,6 +812,9 @@ apis:
   - type: OpenAPI
     url: openapi/picker-vtex-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/picker-capability-edges.yml
+  name: Picker Business Capability Map
 - type: DomainSecurity
   url: security/picker-domain-security.yml
 - type: AgenticAccess
