@@ -51,7 +51,7 @@ tags:
 - Logistics
 - Delivery
 - Last Mile
-- Couriers
+- Courier
 - E-Commerce
 - Shipping
 - Tracking
@@ -80,7 +80,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Accounting
+  - accounting
   tags_raw:
   - accounting
   properties:
@@ -101,8 +101,7 @@ apis:
   description: The antiFraud API from Picker — 2 operation(s) for antifraud.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
-  - Anti-Fraud
+  tags: []
   tags_raw:
   - antiFraud
   properties:
@@ -125,7 +124,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Banner
+  - banner
   tags_raw:
   - banner
   properties:
@@ -137,7 +136,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Bill
+  - bill
   tags_raw:
   - bill
   properties:
@@ -193,7 +192,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Bookings
+  - bookings
   tags_raw:
   - bookings
   properties:
@@ -205,7 +204,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Business
+  - business
   tags_raw:
   - business
   properties:
@@ -217,7 +216,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Businesses
+  - businesses
   tags_raw:
   - businesses
   properties:
@@ -239,7 +238,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Cancel
+  - cancel
   tags_raw:
   - cancel
   properties:
@@ -262,7 +261,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Card
+  - card
   tags_raw:
   - card
   properties:
@@ -274,7 +273,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Cards
+  - cards
   tags_raw:
   - cards
   properties:
@@ -309,8 +308,7 @@ apis:
   description: The cronJobs API from Picker — 1 operation(s) for cronjobs.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
-  - Cron Jobs
+  tags: []
   tags_raw:
   - cronJobs
   properties:
@@ -322,7 +320,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Customers
+  - customer
   tags_raw:
   - customer
   properties:
@@ -378,7 +376,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Driver
+  - driver
   tags_raw:
   - driver
   properties:
@@ -401,7 +399,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Duty
+  - duty
   tags_raw:
   - duty
   properties:
@@ -413,7 +411,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Fares
+  - fares
   tags_raw:
   - fares
   properties:
@@ -505,7 +503,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Pause
+  - pause
   tags_raw:
   - pause
   properties:
@@ -527,7 +525,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Play
+  - play
   tags_raw:
   - play
   properties:
@@ -563,7 +561,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Promo
+  - promo
   tags_raw:
   - promo
   properties:
@@ -599,7 +597,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Region
+  - region
   tags_raw:
   - region
   properties:
@@ -646,8 +644,7 @@ apis:
   description: The serviceProvider API from Picker — 6 operation(s) for serviceprovider.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
-  tags:
-  - Service Provider
+  tags: []
   tags_raw:
   - serviceProvider
   properties:
@@ -669,7 +666,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Shopify
+  - shopify
   tags_raw:
   - shopify
   properties:
@@ -681,7 +678,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Social
+  - social
   tags_raw:
   - social
   properties:
@@ -726,7 +723,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Ticket
+  - ticket
   tags_raw:
   - ticket
   properties:
@@ -738,7 +735,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Tracking
+  - tracking
   tags_raw:
   - tracking
   properties:
@@ -795,7 +792,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Vehicles
+  - vehicles
   tags_raw:
   - vehicles
   properties:
