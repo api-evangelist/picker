@@ -98,18 +98,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/picker-admin-api-openapi.yml
-- aid: picker:picker-antifraud-api
-  name: Picker antiFraud API
-  description: The antiFraud API from Picker — 2 operation(s) for antifraud.
-  humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
-  baseURL: https://api.pickerexpress.com
-  tags:
-  - Anti-Fraud
-  tags_raw:
-  - antiFraud
-  properties:
-  - type: OpenAPI
-    url: openapi/picker-antifraud-api-openapi.yml
 - aid: picker:picker-appversion-api
   name: Picker appVersion API
   description: The appVersion API from Picker — 3 operation(s) for appversion.
@@ -306,18 +294,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/picker-chatbot-api-openapi.yml
-- aid: picker:picker-cronjobs-api
-  name: Picker cronJobs API
-  description: The cronJobs API from Picker — 1 operation(s) for cronjobs.
-  humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
-  baseURL: https://api.pickerexpress.com
-  tags:
-  - Cron Jobs
-  tags_raw:
-  - cronJobs
-  properties:
-  - type: OpenAPI
-    url: openapi/picker-cronjobs-api-openapi.yml
 - aid: picker:picker-customer-api
   name: Picker customer API
   description: The customer API from Picker — 20 operation(s) for customer.
@@ -645,18 +621,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/picker-service-api-openapi.yml
-- aid: picker:picker-serviceprovider-api
-  name: Picker serviceProvider API
-  description: The serviceProvider API from Picker — 6 operation(s) for serviceprovider.
-  humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
-  baseURL: https://api.pickerexpress.com
-  tags:
-  - Service Provider
-  tags_raw:
-  - serviceProvider
-  properties:
-  - type: OpenAPI
-    url: openapi/picker-serviceprovider-api-openapi.yml
 - aid: picker:picker-share-my-ride-api
   name: Picker Share My Ride API
   description: The Share My Ride API from Picker — 3 operation(s) for share my ride.
@@ -815,6 +779,36 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/picker-vtex-api-openapi.yml
+- aid: picker:picker-anti-fraud-api
+  name: Picker anti Fraud API
+  description: The anti Fraud API from Picker — 2 operation(s) for anti fraud.
+  humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
+  baseURL: https://api.pickerexpress.com
+  tags:
+  - anti Fraud
+  properties:
+  - type: OpenAPI
+    url: openapi/picker-anti-fraud-api-openapi.yml
+- aid: picker:picker-cron-jobs-api
+  name: Picker Cron Jobs API
+  description: The Cron Jobs API from Picker — 1 operation(s) for cron jobs.
+  humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
+  baseURL: https://api.pickerexpress.com
+  tags:
+  - Cron Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/picker-cron-jobs-api-openapi.yml
+- aid: picker:picker-service-provider-api
+  name: Picker Service Provider API
+  description: The Service Provider API from Picker — 6 operation(s) for service provider.
+  humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
+  baseURL: https://api.pickerexpress.com
+  tags:
+  - Service Provider
+  properties:
+  - type: OpenAPI
+    url: openapi/picker-service-provider-api-openapi.yml
 common:
 - type: CapabilityMap
   url: capabilities/picker-capability-edges.yml
