@@ -127,7 +127,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Bill
+  - Bills
   tags_raw:
   - bill
   properties:
@@ -183,7 +183,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Bookings
+  - Booking
   tags_raw:
   - bookings
   properties:
@@ -207,7 +207,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Businesses
+  - Business
   tags_raw:
   - businesses
   properties:
@@ -252,7 +252,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Card
+  - Cards
   tags_raw:
   - card
   properties:
@@ -312,7 +312,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Dashboard
+  - Dashboards
   tags_raw:
   - dashboard
   properties:
@@ -567,7 +567,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Referral
+  - Referrals
   tags_raw:
   - referral
   properties:
@@ -615,7 +615,7 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Service
+  - Services
   tags_raw:
   - service
   properties:
@@ -785,6 +785,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Anti-Fraud
+  tags_raw:
   - anti Fraud
   properties:
   - type: OpenAPI
@@ -805,6 +807,8 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
+  - Service Providers
+  tags_raw:
   - Service Provider
   properties:
   - type: OpenAPI
