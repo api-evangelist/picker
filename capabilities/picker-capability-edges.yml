@@ -11,8 +11,21 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 6
+edge_count: 10
 edges:
+- tag: serviceProvider
+  spec_file: picker-service-provider-api-openapi.yml
+  capability_id: BC-3490.40
+  capability_id_l1: BC-3490
+  capability_name: Driver and Provider Operations
+  confidence: 0.78
+  evidence: POST /serviceProvider/register — "Register a new service Provider", PUT /serviceProvider/updateDriver
+    — "Driver Update profile", GET /driver/getEarnings — "Driver get Earnings"
+  reason: Operations onboard service providers, maintain driver profiles and expose driver earnings and
+    dashboards — squarely Driver and Provider Operations (onboarding, settlement, performance) for a courier/mobility
+    network.
+  recovered_from: vertical-automotive-mobility-edges.json
+  reanchored_from: picker-serviceprovider-api-openapi.yml
 - tag: driver
   spec_file: picker-driver-api-openapi.yml
   capability_id: BC-2440
@@ -63,6 +76,43 @@ edges:
   evidence: PUT /driver/duty  Driver Update on duty off duty
   reason: Records a courier going on or off duty — driver availability/duty-status control within driver
     and crew operations. Single endpoint, so no L2 asserted.
+- tag: paymentez
+  spec_file: picker-paymentez-api-openapi.yml
+  capability_id: BC-4250.40
+  capability_id_l1: BC-4250
+  capability_name: Payment Collection & Dunning
+  confidence: 0.7
+  evidence: PUT /paymentez/add/card — 'Add card in paymentez'; POST /paymentez/charge/card — 'charge card
+    in paymentez'; PUT /paymentez/card/default
+  reason: Payment-method (card) vault management and card charging via a PSP — payment-method management
+    and payment authorisation/collection. Not subscription-specific, so confidence moderated.
+  recovered_from: vertical-automotive-mobility-edges.json
+- tag: stripePay
+  spec_file: picker-stripepay-api-openapi.yml
+  capability_id: BC-4250.40
+  capability_id_l1: BC-4250
+  capability_name: Payment Collection & Dunning
+  confidence: 0.7
+  evidence: POST /stripe/chargeCreditCard 'Charge Amount From Card'; PUT /stripe/makeHoldPayment; PUT
+    /stripe/fullyRefundAmount 'Refund Full Amount'; POST /stripe/createStripeCustomer; DELETE /stripe/deleteCard
+    'Delete Card For Customer'
+  reason: Operations are card-on-file management, authorisation holds, charges and refunds via Stripe
+    — i.e. payment-method management and payment collection. BC-4250.40 explicitly covers 'Payment-method
+    management, payment authorisation'. Some ambiguity as it could also be read as accounts-receivable
+    cash collection, hence 0.7.
+  recovered_from: vertical-automotive-mobility-edges.json
+- tag: ticket
+  spec_file: picker-ticket-api-openapi.yml
+  capability_id: BC-430
+  capability_id_l1: BC-430
+  capability_name: Customer Service Management
+  confidence: 0.7
+  evidence: POST /api/createTicketChatbot 'Create a ticket from chatbot'; POST /api/cancelBookingChatbot
+    'Cancel a booking from chatbot'
+  reason: Creates support tickets and handles booking cancellation through a chatbot channel — customer
+    service intake. Ambiguous between inbound inquiry handling (BC-430.10) and chatbot self-service (BC-430.40),
+    so only the L1 is asserted.
+  recovered_from: vertical-automotive-mobility-edges.json
 - tag: tracking
   spec_file: picker-tracking-api-openapi.yml
   capability_id: BC-2510
