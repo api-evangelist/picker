@@ -1,0 +1,76 @@
+slug: picker
+provider: Picker
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Transportation & Logistics
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 6
+edges:
+- tag: driver
+  spec_file: picker-driver-api-openapi.yml
+  capability_id: BC-2440
+  capability_id_l1: BC-2440
+  capability_name: Driver & Crew Operations Management
+  confidence: 0.75
+  evidence: GET /driver/getAllAvailableDriver  Returns a list of drivers that match the criteria selected;
+    PUT /driver/duty  Driver Update on duty off duty
+  reason: Surface manages courier/driver availability, duty status, vehicle details, tracking and work
+    balances — driver and crew operations for a last-mile delivery network. Spans availability, duty and
+    pay so no single L2 dominates.
+- tag: promo
+  spec_file: picker-promo-api-openapi.yml
+  capability_id: BC-440.30
+  capability_id_l1: BC-440
+  capability_name: Discount & Promotion Management
+  confidence: 0.75
+  evidence: POST /promo/addPromo; POST /promo/checkPromo  check promo availability; DELETE /promo/deletePromo
+  reason: Create, list, inspect, validate and delete promotional codes for users — promotion definition
+    and application, matching Discount & Promotion Management; summaries are noisy (copy-pasted 'referral
+    scheme') so confidence is not maximal.
+- tag: booking
+  spec_file: picker-booking-api-openapi.yml
+  capability_id: BC-2420
+  capability_id_l1: BC-2420
+  capability_name: Transport Operations Management
+  confidence: 0.7
+  evidence: '"Get All Availabe Booking For serviceProvider and Driver"; "Get drivers registered by the
+    user"'
+  reason: Bookings here are delivery jobs offered to couriers/drivers with bids and driver lookups — i.e.
+    execution of last-mile transport moves rather than capacity reservation; L2 left open between dispatch
+    and last-mile delivery.
+- tag: bookingAssignment
+  spec_file: picker-bookingassignment-api-openapi.yml
+  capability_id: BC-2420.10
+  capability_id_l1: BC-2420
+  capability_name: Dispatch Management
+  confidence: 0.7
+  evidence: '"Round settings for booking floating" / PUT /bookingAssignment/updateBookingFloatSetting'
+  reason: Configures the rounds by which delivery bookings are floated to couriers, which is assignment
+    of loads to drivers, i.e. dispatch management.
+- tag: duty
+  spec_file: picker-duty-api-openapi.yml
+  capability_id: BC-2440
+  capability_id_l1: BC-2440
+  capability_name: Driver & Crew Operations Management
+  confidence: 0.7
+  evidence: PUT /driver/duty  Driver Update on duty off duty
+  reason: Records a courier going on or off duty — driver availability/duty-status control within driver
+    and crew operations. Single endpoint, so no L2 asserted.
+- tag: tracking
+  spec_file: picker-tracking-api-openapi.yml
+  capability_id: BC-2510
+  capability_id_l1: BC-2510
+  capability_name: Shipment Visibility & Tracking Management
+  confidence: 0.7
+  evidence: POST /tracking/enrouteDriver — "upload tracking history"; GET /tracking/getUserTrackingData
+    — "Get path for specific user"
+  reason: Operations capture and retrieve courier/shipment tracking traces for a last-mile delivery platform
+    whose product suite includes "live shipment Tracking". Maps to shipment visibility & tracking; ambiguous
+    between raw event capture and tracking resolution, so L1 only.
