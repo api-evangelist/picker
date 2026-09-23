@@ -1,14 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting Share My Ride API
+  title: Picker Production Documentation Share My Ride API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
 - name: Share My Ride
 paths:
@@ -17,119 +15,129 @@ paths:
       summary: Get booking for share-my-ride
       operationId: getSharemyride
       parameters:
-      - type: string
-        name: token
+      - name: token
         in: query
         required: true
+        schema:
+          type: string
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
       tags:
       - Share My Ride
     post:
       summary: Get token to share ride
       operationId: postSharemyride
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/Model 19'
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_19'
       tags:
       - Share My Ride
   /share-my-ride/login:
     post:
       summary: Login share my ride user
       operationId: postSharemyrideLogin
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/Model 72'
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_72'
       tags:
       - Share My Ride
   /share-my-ride/register:
     post:
       summary: Register share my ride user
       operationId: postSharemyrideRegister
-      parameters:
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/Model 73'
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_73'
       tags:
       - Share My Ride
-definitions:
-  Model 73:
-    type: object
-    properties:
-      name:
-        type: string
-        minLength: 3
-        pattern: /^[a-zA-Z ]+$/
-        x-convert:
-          trim: true
-      lastName:
-        type: string
-        minLength: 3
-        pattern: /^[a-zA-Z ]+$/
-        x-convert:
-          trim: true
-      email:
-        type: string
-        x-format:
-          email: true
-    required:
-    - name
-    - lastName
-    - email
-  Model 19:
-    type: object
-    properties:
-      bookingID:
-        type: string
-    required:
-    - bookingID
-  Model 72:
-    type: object
-    properties:
-      email:
-        type: string
-        x-format:
-          email: true
-      password:
-        type: string
-        description: password must contains minimum 6 character
-        minLength: 6
-      deviceType:
-        type: string
-        enum:
-        - WEB
-        - ANDROID
-        - IOS
-      role:
-        type: string
-        description: role of user
-        enum:
-        - smrUser
-    required:
-    - email
-    - password
-    - deviceType
-    - role
+components:
+  schemas:
+    Model_73:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 3
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        lastName:
+          type: string
+          minLength: 3
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        email:
+          type: string
+          x-format:
+            email: true
+      required:
+      - name
+      - lastName
+      - email
+    Model_19:
+      type: object
+      properties:
+        bookingID:
+          type: string
+      required:
+      - bookingID
+    Model_72:
+      type: object
+      properties:
+        email:
+          type: string
+          x-format:
+            email: true
+        password:
+          type: string
+          description: password must contains minimum 6 character
+          minLength: 6
+        deviceType:
+          type: string
+          enum:
+          - WEB
+          - ANDROID
+          - IOS
+        role:
+          type: string
+          description: role of user
+          enum:
+          - smrUser
+      required:
+      - email
+      - password
+      - deviceType
+      - role

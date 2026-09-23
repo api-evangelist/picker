@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Picker Production Documentation Driver Tag API
+  title: Picker Production Documentation Anti Fraud API
   version: V1.0.0
   contact:
     name: RV
@@ -8,12 +8,12 @@ info:
 servers:
 - url: http://api.pickerexpress.com/
 tags:
-- name: driverTag
+- name: anti Fraud
 paths:
-  /admin/getAllDriverTags:
+  /admin/getTransactionFraudInformation:
     get:
-      summary: Returns the list of all Driver Tags available
-      operationId: getAdminGetalldrivertags
+      summary: Returns all the booking and customer's information of a transaction
+      operationId: getAdminGettransactionfraudinformation
       parameters:
       - description: Bearer Token
         name: authorization
@@ -27,8 +27,14 @@ paths:
         required: true
         schema:
           type: string
+      - description: ID from the paymenteztransactions collection
+        name: transactionID
+        in: query
+        required: true
+        schema:
+          type: string
       tags:
-      - driverTag
+      - anti Fraud
       responses:
         default:
           description: Successful
@@ -36,10 +42,10 @@ paths:
             application/json:
               schema:
                 type: string
-  /admin/addDriverTag:
-    post:
-      summary: Adds new driver tag to db
-      operationId: postAdminAdddrivertag
+  /admin/setBookingFraud:
+    put:
+      summary: Saves fraud information for a booking
+      operationId: putAdminSetbookingfraud
       parameters:
       - description: Bearer Token
         name: authorization
@@ -54,7 +60,7 @@ paths:
         schema:
           type: string
       tags:
-      - driverTag
+      - anti Fraud
       responses:
         default:
           description: Successful
@@ -68,7 +74,18 @@ paths:
             schema:
               type: object
               properties:
-                text:
+                bookingID:
                   type: string
+                  description: ID of the booking to set its fraud information
+                isFraud:
+                  type: boolean
+                  description: If the booking is marked as fraud or not
+                reason:
+                  type: string
+                transactions:
+                  type: array
+                  items:
+                    type: string
               required:
-              - text
+              - bookingID
+              - isFraud

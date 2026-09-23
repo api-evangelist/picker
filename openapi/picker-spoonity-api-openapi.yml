@@ -1,14 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting spoonity API
+  title: Picker Production Documentation Spoonity API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
 - name: spoonity
 paths:
@@ -20,6 +18,8 @@ paths:
       - spoonity
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string

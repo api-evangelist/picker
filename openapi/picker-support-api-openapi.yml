@@ -1,331 +1,384 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting support API
+  title: Picker Production Documentation Support API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
-- name: support
+- name: Support
 paths:
   /getContactUsDetails:
     get:
       summary: Get List Of All Contacts support]
       operationId: getGetcontactusdetails
       parameters:
-      - type: number
-        name: limit
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
         required: false
+        schema:
+          type: number
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /admin/getQueryByCustomer:
     get:
       summary: Get List Of All Contacts support]
       operationId: getAdminGetquerybycustomer
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: number
-        name: limit
+        schema:
+          type: string
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
         required: false
+        schema:
+          type: number
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /customer/bookingPaymentHistory:
     get:
       summary: Get List Of All customer payments]
       operationId: getCustomerBookingpaymenthistory
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        minLength: 24
-        maxLength: 24
-        name: userID
+        schema:
+          type: string
+      - name: userID
         in: query
         required: true
-      - type: number
-        name: limit
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
         required: false
+        schema:
+          type: number
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /customer/bookingPaymentPending:
     get:
       summary: Get List Of All customer payments]
       operationId: getCustomerBookingpaymentpending
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        minLength: 24
-        maxLength: 24
-        name: userID
+        schema:
+          type: string
+      - name: userID
         in: query
         required: true
-      - type: number
-        name: limit
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
         required: false
+        schema:
+          type: number
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /customer/totalPayments:
     get:
       summary: Get List Of All customer payments]
       operationId: getCustomerTotalpayments
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: number
-        name: limit
+        schema:
+          type: string
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
         required: false
+        schema:
+          type: number
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /vehicles/pricing:
     get:
       summary: Get List Of All fares support
       operationId: getVehiclesPricing
       parameters:
-      - type: number
-        name: limit
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
-        in: query
-        required: false
-      - type: array
-        description: Type of vehicle for the booking
-        items:
+        schema:
           type: number
-        collectionFormat: multi
+      - name: skip
+        in: query
+        required: false
+        schema:
+          type: number
+      - description: Type of vehicle for the booking
         name: carType
         in: query
-      - type: string
-        description: region id for the booking
-        minLength: 24
-        maxLength: 24
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      - description: region id for the booking
         name: regionID
         in: query
         required: false
-      - type: string
-        description: super region id for the booking
-        minLength: 24
-        maxLength: 24
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      - description: super region id for the booking
         name: superRegionID
         in: query
         required: false
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /vehicles/userPricing:
     get:
       summary: Get List Of All fares support]
       operationId: getVehiclesUserpricing
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: number
-        name: limit
+        schema:
+          type: string
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
-        in: query
-        required: false
-      - type: array
-        items:
+        schema:
           type: number
-        collectionFormat: multi
-        name: carType
+      - name: skip
         in: query
         required: false
-      - type: string
-        minLength: 24
-        maxLength: 24
-        name: promoId
+        schema:
+          type: number
+      - name: carType
         in: query
-      - type: string
-        description: region ID is optional
-        minLength: 24
-        maxLength: 24
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: number
+      - name: promoId
+        in: query
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      - description: region ID is optional
         name: regionID
         in: query
         required: false
-      - type: number
-        name: billedDistance
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      - name: billedDistance
         in: query
         required: false
+        schema:
+          type: number
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /admin/support/updateContact:
     put:
       summary: update Contacts support]
       operationId: putAdminSupportUpdatecontact
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - in: body
-        name: body
         schema:
-          $ref: '#/definitions/Model 43'
+          type: string
       tags:
-      - support
+      - Support
       responses:
         default:
-          schema:
-            type: string
           description: Successful
-definitions:
-  webAddress:
-    type: object
-    properties:
-      address:
-        type: string
-      isAvailable:
-        type: boolean
-  contactMail:
-    type: object
-    properties:
-      email:
-        type: string
-      isAvailable:
-        type: boolean
-  Model 43:
-    type: object
-    properties:
-      _id:
-        type: string
-        minLength: 24
-        maxLength: 24
-        x-convert:
-          trim: true
-      phone:
-        $ref: '#/definitions/phone'
-      contactMail:
-        $ref: '#/definitions/contactMail'
-      webAddress:
-        $ref: '#/definitions/webAddress'
-      reachUs:
-        $ref: '#/definitions/webAddress'
-      isAvailable:
-        type: boolean
-    required:
-    - _id
-  phone:
-    type: object
-    properties:
-      countryCode:
-        type: string
-      phoneNumber:
-        type: string
-      isAvailable:
-        type: boolean
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_43'
+components:
+  schemas:
+    phone:
+      type: object
+      properties:
+        countryCode:
+          type: string
+        phoneNumber:
+          type: string
+        isAvailable:
+          type: boolean
+    Model_43:
+      type: object
+      properties:
+        _id:
+          type: string
+          minLength: 24
+          maxLength: 24
+          x-convert:
+            trim: true
+        phone:
+          $ref: '#/components/schemas/phone'
+        contactMail:
+          $ref: '#/components/schemas/contactMail'
+        webAddress:
+          $ref: '#/components/schemas/webAddress'
+        reachUs:
+          $ref: '#/components/schemas/webAddress'
+        isAvailable:
+          type: boolean
+      required:
+      - _id
+    webAddress:
+      type: object
+      properties:
+        address:
+          type: string
+        isAvailable:
+          type: boolean
+    contactMail:
+      type: object
+      properties:
+        email:
+          type: string
+        isAvailable:
+          type: boolean

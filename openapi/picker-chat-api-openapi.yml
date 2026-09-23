@@ -1,80 +1,92 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting chat API
+  title: Picker Production Documentation Chat API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
-- name: chat
+- name: Chat
 paths:
   /chat/getChatForBooking:
     get:
       summary: get all chat for booking
       operationId: getChatGetchatforbooking
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        minLength: 24
-        maxLength: 24
-        name: bookingID
+        schema:
+          type: string
+      - name: bookingID
         in: query
-      - type: number
-        name: limit
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      - name: limit
         in: query
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
+        schema:
+          type: number
       tags:
-      - chat
+      - Chat
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /chat/getChatForBookingByComeChat:
     get:
       summary: get all chat for booking
       operationId: getChatGetchatforbookingbycomechat
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        minLength: 24
-        maxLength: 24
-        name: bookingID
+        schema:
+          type: string
+      - name: bookingID
         in: query
-      - type: number
-        name: limit
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      - name: limit
         in: query
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
+        schema:
+          type: number
       tags:
-      - chat
+      - Chat
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string

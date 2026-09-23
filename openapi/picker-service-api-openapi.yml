@@ -1,306 +1,304 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting service API
+  title: Picker Production Documentation Service API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
-- name: service
+- name: Service
 paths:
   /customer/list/service/location:
     get:
       summary: Get List Of all service loation
       operationId: getCustomerListServiceLocation
       parameters:
-      - type: number
-        name: limit
+      - name: limit
         in: query
         required: false
-      - type: number
-        name: skip
+        schema:
+          type: number
+      - name: skip
         in: query
         required: false
-      - type: array
-        description: 'DELIVERY PICKUP '
-        items:
-          type: string
-          enum:
-          - DELIVERY
-          - PICKUP
-        collectionFormat: multi
+        schema:
+          type: number
+      - description: 'DELIVERY PICKUP '
         name: addressType
         in: query
         required: false
-      - type: string
-        description: ' HOME OFFICE'
-        enum:
-        - HOME
-        - OFFICE
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - DELIVERY
+            - PICKUP
+      - description: ' HOME OFFICE'
         name: type
         in: query
         required: false
+        schema:
+          type: string
+          enum:
+          - HOME
+          - OFFICE
       tags:
-      - service
+      - Service
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /update/customer/service/location:
     put:
       summary: Customer can update his favourite service location
       operationId: putUpdateCustomerServiceLocation
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - in: body
-        name: body
         schema:
-          $ref: '#/definitions/Model 46'
+          type: string
       tags:
-      - service
+      - Service
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_46'
   /customer/addQueryToAdmin:
     post:
       summary: Add query to admin
       operationId: postCustomerAddquerytoadmin
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - in: body
-        name: body
         schema:
-          $ref: '#/definitions/Model 71'
+          type: string
       tags:
-      - service
+      - Service
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_71'
   /customer/service/location:
     post:
       summary: Customer can add his favourite service location
       operationId: postCustomerServiceLocation
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        x-convert:
-          trim: true
-        name: placeID
-        in: formData
-      - type: string
-        x-convert:
-          trim: true
-        name: title
-        in: formData
-      - type: string
-        x-convert:
-          trim: true
-        name: fullAddress
-        in: formData
-      - type: string
-        minLength: 2
-        pattern: /^[a-zA-Z ]+$/
-        x-convert:
-          trim: true
-        name: companyName
-        in: formData
-      - type: string
-        minLength: 2
-        x-convert:
-          trim: true
-        name: companyAddress
-        in: formData
-      - type: string
-        minLength: 2
-        x-convert:
-          trim: true
-        name: city
-        in: formData
-      - type: string
-        minLength: 2
-        x-convert:
-          trim: true
-        name: state
-        in: formData
-      - type: string
-        minLength: 2
-        x-convert:
-          trim: true
-        name: zipCode
-        in: formData
-      - type: string
-        description: ' DELIVERY PICKUP '
-        enum:
-        - DELIVERY
-        - PICKUP
-        name: addressType
-        in: formData
-        required: true
-      - type: string
-        description: ' HOME OFFICE OTHERS'
-        enum:
-        - HOME
-        - OFFICE
-        - OTHERS
-        name: type
-        in: formData
-        required: false
-      - type: number
-        name: latitude
-        in: formData
-        required: false
-      - type: number
-        name: longitude
-        in: formData
-        required: false
-      consumes:
-      - application/x-www-form-urlencoded
+        schema:
+          type: string
       tags:
-      - service
+      - Service
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                placeID:
+                  type: string
+                title:
+                  type: string
+                fullAddress:
+                  type: string
+                companyName:
+                  type: string
+                  minLength: 2
+                  pattern: /^[a-zA-Z ]+$/
+                companyAddress:
+                  type: string
+                  minLength: 2
+                city:
+                  type: string
+                  minLength: 2
+                state:
+                  type: string
+                  minLength: 2
+                zipCode:
+                  type: string
+                  minLength: 2
+                addressType:
+                  type: string
+                  enum:
+                  - DELIVERY
+                  - PICKUP
+                  description: ' DELIVERY PICKUP '
+                type:
+                  type: string
+                  enum:
+                  - HOME
+                  - OFFICE
+                  - OTHERS
+                  description: ' HOME OFFICE OTHERS'
+                latitude:
+                  type: number
+                longitude:
+                  type: number
+              required:
+              - addressType
   /customer/remove/service/location:
     delete:
-      summary: delete service  location of customer
+      summary: delete service location of customer
       operationId: deleteCustomerRemoveServiceLocation
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: array
-        x-constraint:
+        schema:
+          type: string
+      - x-constraint:
           single: true
-        items:
+        name: locationId
+        in: query
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            minLength: 24
+            maxLength: 24
+      tags:
+      - Service
+      responses:
+        default:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+components:
+  schemas:
+    Model_71:
+      type: object
+      properties:
+        bookingID:
           type: string
           minLength: 24
           maxLength: 24
-        collectionFormat: multi
-        name: locationId
-        in: query
-      consumes:
-      - application/x-www-form-urlencoded
-      tags:
-      - service
-      responses:
-        default:
-          schema:
-            type: string
-          description: Successful
-definitions:
-  Model 71:
-    type: object
-    properties:
-      bookingID:
-        type: string
-        minLength: 24
-        maxLength: 24
-      query:
-        type: string
-      role:
-        type: string
-        description: role of user
-        enum:
-        - customer
-        - driver
-    required:
-    - role
-  Model 46:
-    type: object
-    properties:
-      locationId:
-        type: string
-        description: required if location id update
-        minLength: 24
-        maxLength: 24
-      companyName:
-        type: string
-        minLength: 2
-        pattern: /^[a-zA-Z ]+$/
-        x-convert:
-          trim: true
-      companyAddress:
-        type: string
-        minLength: 2
-        x-convert:
-          trim: true
-      city:
-        type: string
-        minLength: 2
-        x-convert:
-          trim: true
-      state:
-        type: string
-        minLength: 2
-        x-convert:
-          trim: true
-      zipCode:
-        type: string
-        minLength: 2
-        x-convert:
-          trim: true
-      addressType:
-        type: string
-        description: '  DELIVERY PICKUP'
-        enum:
-        - DELIVERY
-        - PICKUP
-      type:
-        type: string
-        description: ' HOME OFFICE'
-        enum:
-        - HOME
-        - OFFICE
-      latitude:
-        type: number
-      longitude:
-        type: number
-    required:
-    - addressType
-    - latitude
-    - longitude
+        query:
+          type: string
+        role:
+          type: string
+          description: role of user
+          enum:
+          - customer
+          - driver
+      required:
+      - role
+    Model_46:
+      type: object
+      properties:
+        locationId:
+          type: string
+          description: required if location id update
+          minLength: 24
+          maxLength: 24
+        companyName:
+          type: string
+          minLength: 2
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        companyAddress:
+          type: string
+          minLength: 2
+          x-convert:
+            trim: true
+        city:
+          type: string
+          minLength: 2
+          x-convert:
+            trim: true
+        state:
+          type: string
+          minLength: 2
+          x-convert:
+            trim: true
+        zipCode:
+          type: string
+          minLength: 2
+          x-convert:
+            trim: true
+        addressType:
+          type: string
+          description: '  DELIVERY PICKUP'
+          enum:
+          - DELIVERY
+          - PICKUP
+        type:
+          type: string
+          description: ' HOME OFFICE'
+          enum:
+          - HOME
+          - OFFICE
+        latitude:
+          type: number
+        longitude:
+          type: number
+      required:
+      - addressType
+      - latitude
+      - longitude

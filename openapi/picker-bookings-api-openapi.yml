@@ -1,161 +1,191 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting bookings API
+  title: Picker Production Documentation Bookings API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
-- name: bookings
+- name: Bookings
 paths:
   /bookings/getAllBookingsDashBoard:
     get:
       summary: Get General info about businesses
       operationId: getBookingsGetallbookingsdashboard
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: integer
-        name: limit
+        schema:
+          type: string
+      - name: limit
         in: query
         required: false
-      - type: integer
-        name: page
+        schema:
+          type: integer
+      - name: page
         in: query
         required: false
-      - type: string
-        name: status
+        schema:
+          type: integer
+      - name: status
         in: query
         required: false
-      - type: string
-        name: from
+        schema:
+          type: string
+      - name: from
         in: query
         required: false
-      - type: string
-        name: to
+        schema:
+          type: string
+      - name: to
         in: query
         required: false
-      - type: string
-        name: orderBy
+        schema:
+          type: string
+      - name: orderBy
         in: query
         required: false
-      - type: boolean
-        name: onlyPast
+        schema:
+          type: string
+      - name: onlyPast
         in: query
         required: false
-      - type: boolean
-        name: onlyActives
+        schema:
+          type: boolean
+      - name: onlyActives
         in: query
         required: false
+        schema:
+          type: boolean
       tags:
-      - bookings
+      - Bookings
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /bookings/getCoportatesAllBookings:
     get:
       summary: Get General info about businesses
       operationId: getBookingsGetcoportatesallbookings
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: integer
-        name: limit
+        schema:
+          type: string
+      - name: limit
         in: query
         required: false
-      - type: integer
-        name: page
+        schema:
+          type: integer
+      - name: page
         in: query
         required: false
-      - type: string
-        name: status
+        schema:
+          type: integer
+      - name: status
         in: query
         required: false
-      - type: string
-        name: from
+        schema:
+          type: string
+      - name: from
         in: query
         required: false
-      - type: string
-        name: to
+        schema:
+          type: string
+      - name: to
         in: query
         required: false
-      - type: string
-        name: orderBy
+        schema:
+          type: string
+      - name: orderBy
         in: query
         required: false
-      - type: boolean
-        name: onlyPast
+        schema:
+          type: string
+      - name: onlyPast
         in: query
         required: false
-      - type: boolean
-        name: onlyActives
+        schema:
+          type: boolean
+      - name: onlyActives
         in: query
         required: false
-      - type: string
-        description: ID of the selected user to filter its bookings
+        schema:
+          type: boolean
+      - description: ID of the selected user to filter its bookings
         name: userID
         in: query
         required: false
+        schema:
+          type: string
       tags:
-      - bookings
+      - Bookings
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /bookings/getCorporateBookingsByUserId:
     get:
       summary: Get coportates orders by businessId
       operationId: getBookingsGetcorporatebookingsbyuserid
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: integer
-        name: limit
+        schema:
+          type: string
+      - name: limit
         in: query
         required: false
-      - type: integer
-        name: page
+        schema:
+          type: integer
+      - name: page
         in: query
         required: false
-      - type: string
-        name: userId
+        schema:
+          type: integer
+      - name: userId
         in: query
         required: true
+        schema:
+          type: string
       tags:
-      - bookings
+      - Bookings
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string

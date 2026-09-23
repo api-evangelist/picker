@@ -1,0 +1,352 @@
+openapi: 3.2.0
+info:
+  title: Picker Production Documentation Service Provider API
+  version: V1.0.0
+  contact:
+    name: RV
+    email: rachit.verma@nextjuggernaut.com
+servers:
+- url: http://api.pickerexpress.com/
+tags:
+- name: Service Provider
+paths:
+  /admin/getServiceProviderInfo:
+    get:
+      summary: Get all information from service provider
+      operationId: getAdminGetserviceproviderinfo
+      parameters:
+      - description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      - description: en/ar
+        name: content-language
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: serviceProviderID
+        in: query
+        required: true
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
+      tags:
+      - Service Provider
+      responses:
+        default:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+  /driver/getEarnings:
+    get:
+      summary: Driver get Earnings
+      operationId: getDriverGetearnings
+      parameters:
+      - description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      - description: en/ar
+        name: content-language
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: startDate
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: endDate
+        in: query
+        required: true
+        schema:
+          type: string
+      tags:
+      - Service Provider
+      responses:
+        default:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+  /serviceProvider/getDashboardCount:
+    get:
+      summary: Get Dashboard Count
+      operationId: getServiceproviderGetdashboardcount
+      parameters:
+      - description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      - description: en/ar
+        name: content-language
+        in: header
+        required: true
+        schema:
+          type: string
+      - name: startDate
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: endDate
+        in: query
+        required: true
+        schema:
+          type: string
+      tags:
+      - Service Provider
+      responses:
+        default:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+  /serviceProvider/updateDriver:
+    put:
+      summary: Driver Update profile
+      operationId: putServiceproviderUpdatedriver
+      parameters:
+      - description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      - description: en/ar
+        name: content-language
+        in: header
+        required: true
+        schema:
+          type: string
+      tags:
+      - Service Provider
+      responses:
+        default:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                _id:
+                  type: string
+                  description: Customer userID to be updated
+                name:
+                  type: string
+                  minLength: 2
+                  pattern: /^[a-zA-Z ]+$/
+                lastName:
+                  type: string
+                companyName:
+                  type: string
+                  minLength: 2
+                  pattern: /^[a-zA-Z ]+$/
+                companyAddress:
+                  type: string
+                  minLength: 2
+                city:
+                  type: string
+                  description: user address city
+                state:
+                  type: string
+                  description: user address state
+                zipCode:
+                  type: string
+                  description: zipcode of user address
+                image:
+                  type: string
+                  description: image url
+              required:
+              - _id
+  /serviceProvider/updateProfile:
+    put:
+      summary: Service Provider Update profile
+      operationId: putServiceproviderUpdateprofile
+      parameters:
+      - description: Bearer Token
+        name: authorization
+        in: header
+        required: true
+        schema:
+          type: string
+      - description: en/ar
+        name: content-language
+        in: header
+        required: true
+        schema:
+          type: string
+      tags:
+      - Service Provider
+      responses:
+        default:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                registrationType:
+                  type: string
+                  description: Individual or Company
+                name:
+                  type: string
+                  minLength: 2
+                  pattern: /^[a-zA-Z ]+$/
+                lastName:
+                  type: string
+                  minLength: 2
+                  pattern: /^[a-zA-Z ]+$/
+                companyName:
+                  type: string
+                  minLength: 2
+                  pattern: /^[a-zA-Z ]+$/
+                companyAddress:
+                  type: string
+                  minLength: 2
+                city:
+                  type: string
+                  description: user address city
+                state:
+                  type: string
+                  description: user address state
+                zipCode:
+                  type: string
+                  description: zipcode of user address
+                image:
+                  type: string
+                  description: image url
+  /serviceProvider/register:
+    post:
+      summary: Register a new service Provider
+      operationId: postServiceproviderRegister
+      parameters:
+      - description: en/ar
+        name: content-language
+        in: header
+        required: true
+        schema:
+          type: string
+      - description: utc offset
+        name: utcoffset
+        in: header
+        required: true
+        schema:
+          type: number
+      tags:
+      - Service Provider
+      responses:
+        default:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                registrationType:
+                  type: string
+                  description: Individual or Company
+                companyName:
+                  type: string
+                  minLength: 3
+                  pattern: /^[a-zA-Z0-9 ]+$/
+                email:
+                  type: string
+                countryCode:
+                  type: string
+                  minLength: 2
+                mobile:
+                  type: string
+                  minLength: 5
+                  pattern: /^[0-9]+$/
+                password:
+                  type: string
+                  minLength: 6
+                  description: password must contains minimum 6 character
+                name:
+                  type: string
+                  minLength: 3
+                  pattern: /^[a-zA-Z ]+$/
+                lastName:
+                  type: string
+                  minLength: 3
+                  pattern: /^[a-zA-Z ]+$/
+                vehicleNumber:
+                  type: string
+                  description: vehicle number
+                companyAddress:
+                  type: string
+                  minLength: 3
+                latitude:
+                  type: number
+                  maximum: 90
+                  minimum: -90
+                  description: range from -90 to 90
+                longitude:
+                  type: number
+                  maximum: 180
+                  minimum: -180
+                  description: range from -180 to 180
+                city:
+                  type: string
+                  description: user address city
+                state:
+                  type: string
+                  description: user address state
+                zipCode:
+                  type: string
+                  description: zipcode of user address
+                referralCode:
+                  type: string
+                  maxLength: 14
+                  minLength: 7
+                deviceToken:
+                  type: string
+                  description: android/ios device token
+                deviceType:
+                  type: string
+                  enum:
+                  - WEB
+                  - ANDROID
+                  - IOS
+                image:
+                  type: string
+                  description: image url
+              required:
+              - registrationType
+              - countryCode
+              - mobile
+              - password
+              - name
+              - companyAddress
+              - latitude
+              - longitude
+              - deviceType

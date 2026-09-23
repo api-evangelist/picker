@@ -1,151 +1,172 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting notification API
+  title: Picker Production Documentation Notification API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
-- name: notification
+- name: Notification
 paths:
   /notification/getAllNotification:
     get:
       summary: Get All Notification Of Admin
       operationId: getNotificationGetallnotification
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: boolean
-        description: Required only if markAllAsRead is true
+        schema:
+          type: string
+      - description: Required only if markAllAsRead is true
         name: isAdminNotification
         in: query
         required: false
-      - type: integer
-        name: limit
+        schema:
+          type: boolean
+      - name: limit
         in: query
         required: false
-      - type: integer
-        name: skip
+        schema:
+          type: integer
+      - name: skip
         in: query
         required: false
-      consumes:
-      - application/x-www-form-urlencoded
+        schema:
+          type: integer
       tags:
-      - notification
+      - Notification
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /notification/clearNotification:
     put:
       summary: Clear Admin Notification
       operationId: putNotificationClearnotification
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: boolean
-        description: True if notifications are for admin
-        name: isAdminNotification
-        in: formData
-        required: false
-      consumes:
-      - application/x-www-form-urlencoded
+        schema:
+          type: string
       tags:
-      - notification
+      - Notification
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                isAdminNotification:
+                  type: boolean
+                  description: True if notifications are for admin
   /notification/readNotification:
     put:
       summary: Read Admin Notification
       operationId: putNotificationReadnotification
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: array
-        description: Array of notification IDs
-        items:
+        schema:
           type: string
-        collectionFormat: multi
-        name: notificationID
-        in: formData
-      - type: boolean
-        default: false
-        name: markAllAsRead
-        in: formData
-        required: true
-      - type: boolean
-        description: Required only if markAllAsRead is true
-        name: isAdminNotification
-        in: formData
-        required: false
-      consumes:
-      - application/x-www-form-urlencoded
       tags:
-      - notification
+      - Notification
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                notificationID:
+                  type: array
+                  items:
+                    type: string
+                  description: Array of notification IDs
+                markAllAsRead:
+                  type: boolean
+                  default: false
+                isAdminNotification:
+                  type: boolean
+                  description: Required only if markAllAsRead is true
+              required:
+              - markAllAsRead
   /notification/receivedNotification:
     put:
       summary: Mark booking notification as received
       operationId: putNotificationReceivednotification
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        minLength: 24
-        maxLength: 24
-        name: bookingID
-        in: formData
-        required: true
-      consumes:
-      - application/x-www-form-urlencoded
+        schema:
+          type: string
       tags:
-      - notification
+      - Notification
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                bookingID:
+                  type: string
+                  maxLength: 24
+                  minLength: 24
+              required:
+              - bookingID

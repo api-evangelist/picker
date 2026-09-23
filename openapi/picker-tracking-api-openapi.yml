@@ -1,164 +1,179 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting tracking API
+  title: Picker Production Documentation Tracking API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
-- name: tracking
+- name: Tracking
 paths:
   /tracking/getUserTrackingData:
     get:
       summary: Get path for specific user
       operationId: getTrackingGetusertrackingdata
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        description: user ID
-        minLength: 24
-        maxLength: 24
+        schema:
+          type: string
+      - description: user ID
         name: userID
         in: query
         required: true
+        schema:
+          type: string
+          maxLength: 24
+          minLength: 24
       tags:
-      - tracking
+      - Tracking
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /tracking/enrouteDriver:
     post:
       summary: upload tracking history
       operationId: postTrackingEnroutedriver
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - in: body
-        name: body
         schema:
-          $ref: '#/definitions/Model 76'
+          type: string
       tags:
-      - tracking
+      - Tracking
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_76'
   /tracking/uploadTrackFiletoS3:
     post:
       summary: upload tracking history to S3
       operationId: postTrackingUploadtrackfiletos3
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        description: Booking ID to track
-        minLength: 24
-        maxLength: 24
-        name: bookingID
-        in: formData
-        required: true
-      - type: file
-        description: track history file
-        x-meta:
-          swaggerType: file
-        in: formData
-        name: trackHistoryFile
-        required: true
-      consumes:
-      - multipart/form-data
+        schema:
+          type: string
       tags:
-      - tracking
+      - Tracking
       responses:
         default:
-          schema:
-            type: string
           description: Successful
-definitions:
-  routes:
-    type: array
-    items:
-      $ref: '#/definitions/Model 75'
-  Model 76:
-    type: object
-    properties:
-      bookingID:
-        type: string
-        description: Booking ID to track
-        minLength: 24
-        maxLength: 24
-      customerID:
-        type: string
-        description: Customer ID that belongs to booking
-        minLength: 24
-        maxLength: 24
-      driverID:
-        type: string
-        description: driver to be tracked
-        minLength: 24
-        maxLength: 24
-      driverName:
-        type: string
-        description: Name of the driver
-      routes:
-        $ref: '#/definitions/routes'
-        type: array
-    required:
-    - bookingID
-    - customerID
-    - driverID
-    - driverName
-  Model 75:
-    type: object
-    properties:
-      latitude:
-        type: number
-        minimum: -180
-        maximum: 180
-        x-constraint:
-          precision: 8
-      longitude:
-        type: number
-        minimum: -90
-        maximum: 90
-        x-constraint:
-          precision: 8
-      accuracy:
-        type: number
-        x-constraint:
-          precision: 8
-    required:
-    - latitude
-    - longitude
-    - accuracy
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                bookingID:
+                  type: string
+                  maxLength: 24
+                  minLength: 24
+                  description: Booking ID to track
+                trackHistoryFile:
+                  type: string
+                  description: track history file
+                  format: binary
+              required:
+              - bookingID
+              - trackHistoryFile
+components:
+  schemas:
+    routes:
+      type: array
+      items:
+        $ref: '#/components/schemas/Model_75'
+    Model_75:
+      type: object
+      properties:
+        latitude:
+          type: number
+          minimum: -180
+          maximum: 180
+          x-constraint:
+            precision: 8
+        longitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          x-constraint:
+            precision: 8
+        accuracy:
+          type: number
+          x-constraint:
+            precision: 8
+      required:
+      - latitude
+      - longitude
+      - accuracy
+    Model_76:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: Booking ID to track
+          minLength: 24
+          maxLength: 24
+        customerID:
+          type: string
+          description: Customer ID that belongs to booking
+          minLength: 24
+          maxLength: 24
+        driverID:
+          type: string
+          description: driver to be tracked
+          minLength: 24
+          maxLength: 24
+        driverName:
+          type: string
+          description: Name of the driver
+        routes:
+          $ref: '#/components/schemas/routes'
+          type: array
+      required:
+      - bookingID
+      - customerID
+      - driverID
+      - driverName

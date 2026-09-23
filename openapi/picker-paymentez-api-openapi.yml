@@ -1,14 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Picker Production Documentation accounting paymentez API
+  title: Picker Production Documentation Paymentez API
   version: V1.0.0
   contact:
     name: RV
     email: rachit.verma@nextjuggernaut.com
-host: api.pickerexpress.com
-basePath: /
-schemes:
-- http
+servers:
+- url: http://api.pickerexpress.com/
 tags:
 - name: paymentez
 paths:
@@ -17,128 +15,155 @@ paths:
       summary: list of cards
       operationId: getCustomerListCard
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      consumes:
-      - application/x-www-form-urlencoded
+        schema:
+          type: string
       tags:
       - paymentez
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /api/addCard:
     put:
       summary: Add card to user
       operationId: putApiAddcard
       parameters:
-      - type: string
-        description: en/es
+      - description: en/es
         name: content-language
         in: header
         required: true
-      - in: body
-        name: body
         schema:
-          $ref: '#/definitions/Model 12'
+          type: string
       tags:
       - paymentez
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_12'
   /paymentez/add/card:
     put:
       summary: Add card in paymentez
       operationId: putPaymentezAddCard
       parameters:
-      - type: string
-        description: en/ar
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        description: Bearer Token
+        schema:
+          type: string
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - in: body
-        name: body
         schema:
-          $ref: '#/definitions/Model 45'
+          type: string
       tags:
       - paymentez
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_45'
   /paymentez/card/default:
     put:
       summary: Delete card ustomer From paymentez
       operationId: putPaymentezCardDefault
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        name: cardToken
-        in: formData
-        required: true
-      consumes:
-      - application/x-www-form-urlencoded
+        schema:
+          type: string
       tags:
       - paymentez
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                cardToken:
+                  type: string
+              required:
+              - cardToken
   /paymentez/delete/card:
     put:
       summary: Delete card ustomer From paymentez
       operationId: putPaymentezDeleteCard
       parameters:
-      - type: string
-        description: Bearer Token
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - type: string
-        description: en/ar
+        schema:
+          type: string
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        name: cardToken
-        in: formData
-        required: true
-      consumes:
-      - application/x-www-form-urlencoded
+        schema:
+          type: string
       tags:
       - paymentez
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                cardToken:
+                  type: string
+              required:
+              - cardToken
   /paymentez/webhookApi:
     post:
       summary: Webhook Api
@@ -147,108 +172,116 @@ paths:
       - paymentez
       responses:
         default:
-          schema:
-            type: string
           description: Successful
+          content:
+            application/json:
+              schema:
+                type: string
   /paymentez/charge/card:
     post:
       summary: charge card in paymentez
       operationId: postPaymentezChargeCard
       parameters:
-      - type: string
-        description: en/ar
+      - description: en/ar
         name: content-language
         in: header
         required: true
-      - type: string
-        description: Bearer Token
+        schema:
+          type: string
+      - description: Bearer Token
         name: authorization
         in: header
         required: true
-      - in: body
-        name: body
         schema:
-          $ref: '#/definitions/Model 80'
+          type: string
       tags:
       - paymentez
       responses:
         default:
-          schema:
-            type: string
           description: Successful
-definitions:
-  order:
-    type: object
-    description: It is an object having order details
-    properties:
-      amount:
-        type: number
-      description:
-        type: string
-      dev_reference:
-        type: string
-      vat:
-        type: number
-      bookingID:
-        type: string
-        description: Mongo Id of booking Model
-    required:
-    - bookingID
-  Model 12:
-    type: object
-    properties:
-      token:
-        type: string
-      isDefault:
-        type: boolean
-    required:
-    - token
-    - isDefault
-  card:
-    type: object
-    description: It is an object having card details
-    properties:
-      number:
-        type: string
-      holder_name:
-        type: string
-      expiry_month:
-        type: number
-      expiry_year:
-        type: number
-      cvc:
-        type: string
-      type:
-        type: string
-  Model 45:
-    type: object
-    properties:
-      token:
-        type: string
-      transaction_reference:
-        type: string
-      isDefault:
-        type: boolean
-      platform:
-        type: string
-      cardType:
-        type: string
-      bin:
-        type: string
-      card:
-        $ref: '#/definitions/card'
-    required:
-    - isDefault
-  Model 80:
-    type: object
-    properties:
-      order:
-        $ref: '#/definitions/order'
-      card:
-        $ref: '#/definitions/Model 79'
-  Model 79:
-    type: object
-    description: It is an object having card details
-    properties:
-      token:
-        type: string
+          content:
+            application/json:
+              schema:
+                type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Model_80'
+components:
+  schemas:
+    card:
+      type: object
+      description: It is an object having card details
+      properties:
+        number:
+          type: string
+        holder_name:
+          type: string
+        expiry_month:
+          type: number
+        expiry_year:
+          type: number
+        cvc:
+          type: string
+        type:
+          type: string
+    Model_79:
+      type: object
+      description: It is an object having card details
+      properties:
+        token:
+          type: string
+    Model_12:
+      type: object
+      properties:
+        token:
+          type: string
+        isDefault:
+          type: boolean
+      required:
+      - token
+      - isDefault
+    order:
+      type: object
+      description: It is an object having order details
+      properties:
+        amount:
+          type: number
+        description:
+          type: string
+        dev_reference:
+          type: string
+        vat:
+          type: number
+        bookingID:
+          type: string
+          description: Mongo Id of booking Model
+      required:
+      - bookingID
+    Model_45:
+      type: object
+      properties:
+        token:
+          type: string
+        transaction_reference:
+          type: string
+        isDefault:
+          type: boolean
+        platform:
+          type: string
+        cardType:
+          type: string
+        bin:
+          type: string
+        card:
+          $ref: '#/components/schemas/card'
+      required:
+      - isDefault
+    Model_80:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/order'
+        card:
+          $ref: '#/components/schemas/Model_79'
