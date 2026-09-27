@@ -226,6 +226,13 @@ components:
           type: string
         type:
           type: string
+    Model_80:
+      type: object
+      properties:
+        order:
+          $ref: '#/components/schemas/order'
+        card:
+          $ref: '#/components/schemas/Model_79'
     Model_79:
       type: object
       description: It is an object having card details
@@ -278,10 +285,3 @@ components:
           $ref: '#/components/schemas/card'
       required:
       - isDefault
-    Model_80:
-      type: object
-      properties:
-        order:
-          $ref: '#/components/schemas/order'
-        card:
-          $ref: '#/components/schemas/Model_79'

@@ -338,15 +338,6 @@ paths:
               $ref: '#/components/schemas/Model_43'
 components:
   schemas:
-    phone:
-      type: object
-      properties:
-        countryCode:
-          type: string
-        phoneNumber:
-          type: string
-        isAvailable:
-          type: boolean
     Model_43:
       type: object
       properties:
@@ -368,6 +359,13 @@ components:
           type: boolean
       required:
       - _id
+    contactMail:
+      type: object
+      properties:
+        email:
+          type: string
+        isAvailable:
+          type: boolean
     webAddress:
       type: object
       properties:
@@ -375,10 +373,12 @@ components:
           type: string
         isAvailable:
           type: boolean
-    contactMail:
+    phone:
       type: object
       properties:
-        email:
+        countryCode:
+          type: string
+        phoneNumber:
           type: string
         isAvailable:
           type: boolean

@@ -104,6 +104,16 @@ paths:
               $ref: '#/components/schemas/Model_68'
 components:
   schemas:
+    Model_67:
+      type: object
+      properties:
+        id:
+          type: string
+        order:
+          type: number
+      required:
+      - id
+      - order
     Model_68:
       type: object
       properties:
@@ -120,13 +130,3 @@ components:
       type: array
       items:
         $ref: '#/components/schemas/Model_67'
-    Model_67:
-      type: object
-      properties:
-        id:
-          type: string
-        order:
-          type: number
-      required:
-      - id
-      - order

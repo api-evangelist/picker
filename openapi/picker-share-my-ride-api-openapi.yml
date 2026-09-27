@@ -107,13 +107,6 @@ components:
       - name
       - lastName
       - email
-    Model_19:
-      type: object
-      properties:
-        bookingID:
-          type: string
-      required:
-      - bookingID
     Model_72:
       type: object
       properties:
@@ -141,3 +134,10 @@ components:
       - password
       - deviceType
       - role
+    Model_19:
+      type: object
+      properties:
+        bookingID:
+          type: string
+      required:
+      - bookingID

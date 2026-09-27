@@ -43,10 +43,6 @@ paths:
               $ref: '#/components/schemas/Model_2'
 components:
   schemas:
-    transactions:
-      type: array
-      items:
-        type: string
     Model_2:
       type: object
       properties:
@@ -55,3 +51,7 @@ components:
           type: array
       required:
       - transactions
+    transactions:
+      type: array
+      items:
+        type: string

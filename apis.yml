@@ -52,7 +52,7 @@ tags:
 - Company
 - Logistics
 - Delivery
-- Last Mile
+- Last Mile Delivery
 - Couriers
 - E-Commerce
 - Shipping
@@ -77,7 +77,7 @@ maintainers:
   email: info@apis.io
 apis:
 - aid: picker:picker-accounting-api
-  name: Picker accounting API
+  name: Picker Accounting API
   description: The accounting API from Picker — 1 operation(s) for accounting.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -99,7 +99,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-admin-api-openapi.yml
 - aid: picker:picker-appversion-api
-  name: Picker appVersion API
+  name: Picker App Version API
   description: The appVersion API from Picker — 3 operation(s) for appversion.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -110,7 +110,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-appversion-api-openapi.yml
 - aid: picker:picker-banner-api
-  name: Picker banner API
+  name: Picker Banner API
   description: The banner API from Picker — 5 operation(s) for banner.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -122,7 +122,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-banner-api-openapi.yml
 - aid: picker:picker-bill-api
-  name: Picker bill API
+  name: Picker Bill API
   description: The bill API from Picker — 1 operation(s) for bill.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -134,7 +134,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-bill-api-openapi.yml
 - aid: picker:picker-booking-api
-  name: Picker booking API
+  name: Picker Booking API
   description: The booking API from Picker — 60 operation(s) for booking.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -146,7 +146,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-booking-api-openapi.yml
 - aid: picker:picker-bookingassignment-api
-  name: Picker bookingAssignment API
+  name: Picker Booking Assignment API
   description: The bookingAssignment API from Picker — 3 operation(s) for bookingassignment.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -157,7 +157,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-bookingassignment-api-openapi.yml
 - aid: picker:picker-bookingissue-api
-  name: Picker bookingIssue API
+  name: Picker Booking Issue API
   description: The bookingIssue API from Picker — 1 operation(s) for bookingissue.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -178,7 +178,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-bookingissues-api-openapi.yml
 - aid: picker:picker-bookings-api
-  name: Picker bookings API
+  name: Picker Bookings API
   description: The bookings API from Picker — 3 operation(s) for bookings.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -190,7 +190,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-bookings-api-openapi.yml
 - aid: picker:picker-business-api
-  name: Picker business API
+  name: Picker Business API
   description: The business API from Picker — 40 operation(s) for business.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -202,7 +202,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-business-api-openapi.yml
 - aid: picker:picker-businesses-api
-  name: Picker businesses API
+  name: Picker Businesses API
   description: The businesses API from Picker — 2 operation(s) for businesses.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -214,7 +214,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-businesses-api-openapi.yml
 - aid: picker:picker-busy-api
-  name: Picker busy API
+  name: Picker Busy API
   description: The busy API from Picker — 1 operation(s) for busy.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -224,7 +224,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-busy-api-openapi.yml
 - aid: picker:picker-cancel-api
-  name: Picker cancel API
+  name: Picker Cancel API
   description: The cancel API from Picker — 1 operation(s) for cancel.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -236,7 +236,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-cancel-api-openapi.yml
 - aid: picker:picker-cancelreason-api
-  name: Picker cancelReason API
+  name: Picker Cancel Reason API
   description: The cancelReason API from Picker — 1 operation(s) for cancelreason.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -247,7 +247,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-cancelreason-api-openapi.yml
 - aid: picker:picker-card-api
-  name: Picker card API
+  name: Picker Card API
   description: The card API from Picker — 2 operation(s) for card.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -259,7 +259,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-card-api-openapi.yml
 - aid: picker:picker-cards-api
-  name: Picker cards API
+  name: Picker Cards API
   description: The cards API from Picker — 1 operation(s) for cards.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -271,7 +271,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-cards-api-openapi.yml
 - aid: picker:picker-chat-api
-  name: Picker chat API
+  name: Picker Chat API
   description: The chat API from Picker — 2 operation(s) for chat.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -283,7 +283,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-chat-api-openapi.yml
 - aid: picker:picker-chatbot-api
-  name: Picker chatbot API
+  name: Picker Chatbot API
   description: The chatbot API from Picker — 1 operation(s) for chatbot.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -295,7 +295,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-chatbot-api-openapi.yml
 - aid: picker:picker-customer-api
-  name: Picker customer API
+  name: Picker Customer API
   description: The customer API from Picker — 20 operation(s) for customer.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -307,7 +307,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-customer-api-openapi.yml
 - aid: picker:picker-dashboard-api
-  name: Picker dashboard API
+  name: Picker Dashboard API
   description: The dashboard API from Picker — 9 operation(s) for dashboard.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -319,7 +319,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-dashboard-api-openapi.yml
 - aid: picker:picker-datil-api
-  name: Picker datil API
+  name: Picker Datil API
   description: The datil API from Picker — 1 operation(s) for datil.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -329,7 +329,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-datil-api-openapi.yml
 - aid: picker:picker-deliverypartner-api
-  name: Picker deliveryPartner API
+  name: Picker Delivery Partner API
   description: The deliveryPartner API from Picker — 1 operation(s) for deliverypartner.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -351,7 +351,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-deliverypartnermarketingdata-api-openapi.yml
 - aid: picker:picker-driver-api
-  name: Picker driver API
+  name: Picker Driver API
   description: The driver API from Picker — 21 operation(s) for driver.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -363,7 +363,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-driver-api-openapi.yml
 - aid: picker:picker-drivertag-api
-  name: Picker driverTag API
+  name: Picker Driver Tag API
   description: The driverTag API from Picker — 2 operation(s) for drivertag.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -374,7 +374,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-drivertag-api-openapi.yml
 - aid: picker:picker-duty-api
-  name: Picker duty API
+  name: Picker Duty API
   description: The duty API from Picker — 1 operation(s) for duty.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -386,7 +386,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-duty-api-openapi.yml
 - aid: picker:picker-fares-api
-  name: Picker fares API
+  name: Picker Fares API
   description: The fares API from Picker — 1 operation(s) for fares.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -398,7 +398,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-fares-api-openapi.yml
 - aid: picker:picker-favorite-api
-  name: Picker favorite API
+  name: Picker Favorite API
   description: The favorite API from Picker — 2 operation(s) for favorite.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -410,7 +410,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-favorite-api-openapi.yml
 - aid: picker:picker-health-check-api
-  name: Picker health-check API
+  name: Picker Health Check API
   description: The health-check API from Picker — 1 operation(s) for health-check.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -422,7 +422,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-health-check-api-openapi.yml
 - aid: picker:picker-integrations-api
-  name: Picker integrations API
+  name: Picker Integrations API
   description: The integrations API from Picker — 1 operation(s) for integrations.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -434,7 +434,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-integrations-api-openapi.yml
 - aid: picker:picker-list-api
-  name: Picker list API
+  name: Picker List API
   description: The list API from Picker — 2 operation(s) for list.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -446,7 +446,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-list-api-openapi.yml
 - aid: picker:picker-location-api
-  name: Picker location API
+  name: Picker Location API
   description: The location API from Picker — 5 operation(s) for location.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -468,7 +468,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-mass-delivery-api-openapi.yml
 - aid: picker:picker-notification-api
-  name: Picker notification API
+  name: Picker Notification API
   description: The notification API from Picker — 4 operation(s) for notification.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -480,7 +480,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-notification-api-openapi.yml
 - aid: picker:picker-pause-api
-  name: Picker pause API
+  name: Picker Pause API
   description: The pause API from Picker — 1 operation(s) for pause.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -492,7 +492,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-pause-api-openapi.yml
 - aid: picker:picker-paymentez-api
-  name: Picker paymentez API
+  name: Picker Paymentez API
   description: The paymentez API from Picker — 7 operation(s) for paymentez.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -502,7 +502,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-paymentez-api-openapi.yml
 - aid: picker:picker-play-api
-  name: Picker play API
+  name: Picker Play API
   description: The play API from Picker — 1 operation(s) for play.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -514,7 +514,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-play-api-openapi.yml
 - aid: picker:picker-product-api
-  name: Picker product API
+  name: Picker Product API
   description: The product API from Picker — 1 operation(s) for product.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -526,7 +526,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-product-api-openapi.yml
 - aid: picker:picker-products-api
-  name: Picker products API
+  name: Picker Products API
   description: The products API from Picker — 3 operation(s) for products.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -538,7 +538,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-products-api-openapi.yml
 - aid: picker:picker-promo-api
-  name: Picker promo API
+  name: Picker Promo API
   description: The promo API from Picker — 6 operation(s) for promo.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -550,7 +550,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-promo-api-openapi.yml
 - aid: picker:picker-public-api
-  name: Picker public API
+  name: Picker Public API
   description: The public API from Picker — 1 operation(s) for public.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -562,7 +562,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-public-api-openapi.yml
 - aid: picker:picker-referral-api
-  name: Picker referral API
+  name: Picker Referral API
   description: The referral API from Picker — 4 operation(s) for referral.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -574,7 +574,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-referral-api-openapi.yml
 - aid: picker:picker-region-api
-  name: Picker region API
+  name: Picker Region API
   description: The region API from Picker — 12 operation(s) for region.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -586,7 +586,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-region-api-openapi.yml
 - aid: picker:picker-reports-api
-  name: Picker reports API
+  name: Picker Reports API
   description: The reports API from Picker — 1 operation(s) for reports.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -598,7 +598,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-reports-api-openapi.yml
 - aid: picker:picker-review-api
-  name: Picker review API
+  name: Picker Review API
   description: The review API from Picker — 3 operation(s) for review.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -610,7 +610,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-review-api-openapi.yml
 - aid: picker:picker-service-api
-  name: Picker service API
+  name: Picker Service API
   description: The service API from Picker — 5 operation(s) for service.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -632,7 +632,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-share-my-ride-api-openapi.yml
 - aid: picker:picker-shopify-api
-  name: Picker shopify API
+  name: Picker Shopify API
   description: The shopify API from Picker — 2 operation(s) for shopify.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -644,7 +644,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-shopify-api-openapi.yml
 - aid: picker:picker-social-api
-  name: Picker social API
+  name: Picker Social API
   description: The social API from Picker — 2 operation(s) for social.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -656,7 +656,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-social-api-openapi.yml
 - aid: picker:picker-spoonity-api
-  name: Picker spoonity API
+  name: Picker Spoonity API
   description: The spoonity API from Picker — 1 operation(s) for spoonity.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -666,7 +666,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-spoonity-api-openapi.yml
 - aid: picker:picker-stripepay-api
-  name: Picker stripePay API
+  name: Picker Stripe Pay API
   description: The stripePay API from Picker — 10 operation(s) for stripepay.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -677,7 +677,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-stripepay-api-openapi.yml
 - aid: picker:picker-support-api
-  name: Picker support API
+  name: Picker Support API
   description: The support API from Picker — 8 operation(s) for support.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -689,7 +689,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-support-api-openapi.yml
 - aid: picker:picker-ticket-api
-  name: Picker ticket API
+  name: Picker Ticket API
   description: The ticket API from Picker — 2 operation(s) for ticket.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -701,7 +701,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-ticket-api-openapi.yml
 - aid: picker:picker-tracking-api
-  name: Picker tracking API
+  name: Picker Tracking API
   description: The tracking API from Picker — 3 operation(s) for tracking.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -713,7 +713,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-tracking-api-openapi.yml
 - aid: picker:picker-update-api
-  name: Picker update API
+  name: Picker Update API
   description: The update API from Picker — 5 operation(s) for update.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -724,7 +724,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-update-api-openapi.yml
 - aid: picker:picker-user-api
-  name: Picker user API
+  name: Picker User API
   description: The user API from Picker — 56 operation(s) for user.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -746,7 +746,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-usermarketingdata-api-openapi.yml
 - aid: picker:picker-users-api
-  name: Picker users API
+  name: Picker Users API
   description: The users API from Picker — 1 operation(s) for users.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -758,7 +758,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-users-api-openapi.yml
 - aid: picker:picker-vehicles-api
-  name: Picker vehicles API
+  name: Picker Vehicles API
   description: The vehicles API from Picker — 1 operation(s) for vehicles.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -770,7 +770,7 @@ apis:
   - type: OpenAPI
     url: openapi/picker-vehicles-api-openapi.yml
 - aid: picker:picker-vtex-api
-  name: Picker vtex API
+  name: Picker Vtex API
   description: The vtex API from Picker — 1 operation(s) for vtex.
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
@@ -785,8 +785,6 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Anti-Fraud
-  tags_raw:
   - anti Fraud
   properties:
   - type: OpenAPI
@@ -807,8 +805,6 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Service Providers
-  tags_raw:
   - Service Provider
   properties:
   - type: OpenAPI

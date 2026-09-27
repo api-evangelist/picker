@@ -2117,6 +2117,94 @@ paths:
                 type: string
 components:
   schemas:
+    Model_40:
+      type: object
+      properties:
+        countryCode:
+          type: string
+          maxLength: 4
+          x-convert:
+            trim: true
+        mobile:
+          type: string
+          minLength: 5
+          pattern: /^[0-9]+$/
+      required:
+      - countryCode
+      - mobile
+    Model_77:
+      type: object
+      properties:
+        emailVerificationToken:
+          type: number
+          minimum: 100000
+          maximum: 999999
+      required:
+      - emailVerificationToken
+    Model_41:
+      type: object
+      properties:
+        deviceToken:
+          type: string
+          description: android/ios device token
+          x-convert:
+            trim: true
+        role:
+          type: string
+          description: role of user
+          enum:
+          - customer
+          - driver
+          - serviceProvider
+      required:
+      - deviceToken
+      - role
+    Model_42:
+      type: object
+      properties:
+        oldMobile:
+          type: string
+          minLength: 5
+          pattern: /^[0-9]+$/
+        countryCode:
+          type: string
+          description: '+91'
+          maxLength: 4
+          x-convert:
+            trim: true
+        newMobile:
+          type: string
+          minLength: 5
+          pattern: /^[0-9]+$/
+      required:
+      - oldMobile
+      - countryCode
+      - newMobile
+    Model_38:
+      type: object
+      properties:
+        countryCode:
+          type: string
+          description: '+91'
+          maxLength: 4
+          x-convert:
+            trim: true
+        mobile:
+          type: string
+          minLength: 5
+          pattern: /^[0-9]+$/
+      required:
+      - countryCode
+      - mobile
+    Model_69:
+      type: object
+      properties:
+        emailVerificationToken:
+          type: number
+          minimum: 1000
+          maximum: 9999
+      required:
+      - emailVerificationToken
     Model_78:
       type: object
       properties:
@@ -2151,46 +2239,6 @@ components:
       - isDevice
       - deviceType
       - role
-    Model_77:
-      type: object
-      properties:
-        emailVerificationToken:
-          type: number
-          minimum: 100000
-          maximum: 999999
-      required:
-      - emailVerificationToken
-    Model_40:
-      type: object
-      properties:
-        countryCode:
-          type: string
-          maxLength: 4
-          x-convert:
-            trim: true
-        mobile:
-          type: string
-          minLength: 5
-          pattern: /^[0-9]+$/
-      required:
-      - countryCode
-      - mobile
-    Model_38:
-      type: object
-      properties:
-        countryCode:
-          type: string
-          description: '+91'
-          maxLength: 4
-          x-convert:
-            trim: true
-        mobile:
-          type: string
-          minLength: 5
-          pattern: /^[0-9]+$/
-      required:
-      - countryCode
-      - mobile
     Model_39:
       type: object
       properties:
@@ -2200,51 +2248,3 @@ components:
           pattern: /^[0-9]+$/
       required:
       - mobile
-    Model_69:
-      type: object
-      properties:
-        emailVerificationToken:
-          type: number
-          minimum: 1000
-          maximum: 9999
-      required:
-      - emailVerificationToken
-    Model_42:
-      type: object
-      properties:
-        oldMobile:
-          type: string
-          minLength: 5
-          pattern: /^[0-9]+$/
-        countryCode:
-          type: string
-          description: '+91'
-          maxLength: 4
-          x-convert:
-            trim: true
-        newMobile:
-          type: string
-          minLength: 5
-          pattern: /^[0-9]+$/
-      required:
-      - oldMobile
-      - countryCode
-      - newMobile
-    Model_41:
-      type: object
-      properties:
-        deviceToken:
-          type: string
-          description: android/ios device token
-          x-convert:
-            trim: true
-        role:
-          type: string
-          description: role of user
-          enum:
-          - customer
-          - driver
-          - serviceProvider
-      required:
-      - deviceToken
-      - role

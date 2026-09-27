@@ -974,52 +974,6 @@ paths:
                 type: string
 components:
   schemas:
-    locationDetails:
-      type: object
-      description: It is an object having different keys
-      properties:
-        latitude:
-          type: number
-          minimum: -90
-          maximum: 90
-        longitude:
-          type: number
-          minimum: -180
-          maximum: 180
-        addressLine1:
-          type: string
-          x-convert:
-            trim: true
-        addressLine2:
-          type: string
-          x-convert:
-            trim: true
-        city:
-          type: string
-          x-convert:
-            uppercase: true
-            trim: true
-        state:
-          type: string
-          x-convert:
-            uppercase: true
-            trim: true
-        country:
-          type: string
-          x-convert:
-            uppercase: true
-            trim: true
-        zipCode:
-          type: string
-          x-convert:
-            trim: true
-      required:
-      - latitude
-      - longitude
-      - addressLine1
-      - city
-      - state
-      - zipCode
     Model_46:
       type: object
       properties:
@@ -1091,6 +1045,59 @@ components:
           - driver
       required:
       - role
+    Model_34:
+      type: object
+      properties:
+        locationDetails:
+          $ref: '#/components/schemas/locationDetails'
+      required:
+      - locationDetails
+    locationDetails:
+      type: object
+      description: It is an object having different keys
+      properties:
+        latitude:
+          type: number
+          minimum: -90
+          maximum: 90
+        longitude:
+          type: number
+          minimum: -180
+          maximum: 180
+        addressLine1:
+          type: string
+          x-convert:
+            trim: true
+        addressLine2:
+          type: string
+          x-convert:
+            trim: true
+        city:
+          type: string
+          x-convert:
+            uppercase: true
+            trim: true
+        state:
+          type: string
+          x-convert:
+            uppercase: true
+            trim: true
+        country:
+          type: string
+          x-convert:
+            uppercase: true
+            trim: true
+        zipCode:
+          type: string
+          x-convert:
+            trim: true
+      required:
+      - latitude
+      - longitude
+      - addressLine1
+      - city
+      - state
+      - zipCode
     Model_35:
       type: object
       properties:
@@ -1104,10 +1111,3 @@ components:
       required:
       - bookingID
       - orderReceived
-    Model_34:
-      type: object
-      properties:
-        locationDetails:
-          $ref: '#/components/schemas/locationDetails'
-      required:
-      - locationDetails

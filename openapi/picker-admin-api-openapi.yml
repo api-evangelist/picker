@@ -6351,18 +6351,6 @@ paths:
               - vehicleCompany
 components:
   schemas:
-    Model_52:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Type of email to send
-        email:
-          type: string
-          description: Email to send the invoice
-      required:
-      - type
-      - email
     Model_53:
       type: object
       properties:
@@ -6375,41 +6363,18 @@ components:
       required:
       - bookingID
       - email
-    Model_48:
+    Model_52:
       type: object
       properties:
-        startDate:
+        type:
           type: string
-        endDate:
+          description: Type of email to send
+        email:
           type: string
+          description: Email to send the invoice
       required:
-      - startDate
-      - endDate
-    Model_9:
-      type: object
-      properties:
-        transactions:
-          $ref: '#/components/schemas/Model_8'
-          type: array
-        newStatus:
-          type: string
-      required:
-      - transactions
-      - newStatus
-    Model_1:
-      type: object
-      properties:
-        transactions:
-          $ref: '#/components/schemas/transactions'
-          type: array
-        status:
-          type: string
-          enum:
-          - APPROVED
-          - REJECTED
-      required:
-      - transactions
-      - status
+      - type
+      - email
     Model_49:
       type: object
       properties:
@@ -6428,23 +6393,18 @@ components:
           type: array
       required:
       - _id
-    Model_31:
-      type: array
-      description: Array of the productTypes of the category
-      items:
-        type: string
-    names:
-      type: array
-      items:
-        $ref: '#/components/schemas/Model_32'
-    tags:
-      type: array
-      items:
-        type: string
-        minLength: 3
-        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚ0-9 ]+$/
-        x-convert:
-          trim: true
+    Model_47:
+      type: object
+      properties:
+        startDate:
+          type: string
+          description: Date range start date
+        endDate:
+          type: string
+          description: Date range end date
+      required:
+      - startDate
+      - endDate
     Model_14:
       type: object
       properties:
@@ -6453,10 +6413,198 @@ components:
           description: ID of the bill to reissue to Datil
           minLength: 24
           maxLength: 24
-    transactions:
+    Model_6:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          minLength: 24
+          maxLength: 24
+      required:
+      - bookingID
+    tags:
       type: array
       items:
         type: string
+        minLength: 3
+        pattern: /^[a-zA-ZáéíóúÁÉÍÓÚ0-9 ]+$/
+        x-convert:
+          trim: true
+    Model_1:
+      type: object
+      properties:
+        transactions:
+          $ref: '#/components/schemas/transactions'
+          type: array
+        status:
+          type: string
+          enum:
+          - APPROVED
+          - REJECTED
+      required:
+      - transactions
+      - status
+    Model_8:
+      type: array
+      description: Array of the transaction ids
+      items:
+        type: string
+    settings:
+      type: object
+    Model_10:
+      type: object
+      properties:
+        userID:
+          type: string
+          description: ID of the driver to add the penalty
+          minLength: 24
+          maxLength: 24
+        amount:
+          type: number
+          description: Amount of penalty
+      required:
+      - userID
+      - amount
+    Model_56:
+      type: object
+      properties:
+        startDate:
+          type: string
+        endDate:
+          type: string
+        status:
+          type: string
+        providerName:
+          type: string
+        bookingNumericId:
+          type: string
+    contactMail:
+      type: object
+      properties:
+        email:
+          type: string
+        isAvailable:
+          type: boolean
+    Model_51:
+      type: object
+      properties:
+        superRegion:
+          type: boolean
+    phone:
+      type: object
+      properties:
+        countryCode:
+          type: string
+        phoneNumber:
+          type: string
+        isAvailable:
+          type: boolean
+    Model_48:
+      type: object
+      properties:
+        startDate:
+          type: string
+        endDate:
+          type: string
+      required:
+      - startDate
+      - endDate
+    Model_31:
+      type: array
+      description: Array of the productTypes of the category
+      items:
+        type: string
+    Model_43:
+      type: object
+      properties:
+        _id:
+          type: string
+          minLength: 24
+          maxLength: 24
+          x-convert:
+            trim: true
+        phone:
+          $ref: '#/components/schemas/phone'
+        contactMail:
+          $ref: '#/components/schemas/contactMail'
+        webAddress:
+          $ref: '#/components/schemas/webAddress'
+        reachUs:
+          $ref: '#/components/schemas/webAddress'
+        isAvailable:
+          type: boolean
+      required:
+      - _id
+    Model_3:
+      type: object
+      properties:
+        userID:
+          type: string
+          description: ID of the business
+          minLength: 24
+          maxLength: 24
+        driverID:
+          type: string
+      required:
+      - userID
+      - driverID
+    Model_50:
+      type: object
+      properties:
+        currency:
+          type: string
+        country:
+          type: string
+        regionID:
+          type: string
+        superRegionID:
+          type: string
+    productTypes:
+      type: array
+      items:
+        type: string
+        description: add sub category business
+    Model_54:
+      type: object
+      properties:
+        startDate:
+          type: string
+        endDate:
+          type: string
+        pickerID:
+          type: string
+        pickerEmail:
+          type: string
+      required:
+      - startDate
+      - endDate
+      - pickerID
+      - pickerEmail
+    Model_32:
+      type: object
+      properties:
+        text:
+          type: string
+        lang:
+          type: string
+      required:
+      - text
+      - lang
+    webAddress:
+      type: object
+      properties:
+        address:
+          type: string
+        isAvailable:
+          type: boolean
+    Model_15:
+      type: object
+      properties:
+        billID:
+          type: string
+          description: ID of the bill to send to Datil
+          minLength: 24
+          maxLength: 24
     Model_33:
       type: object
       properties:
@@ -6492,44 +6640,6 @@ components:
       - tag
       - commission
       - names
-    Model_2:
-      type: object
-      properties:
-        transactions:
-          $ref: '#/components/schemas/transactions'
-          type: array
-      required:
-      - transactions
-    phone:
-      type: object
-      properties:
-        countryCode:
-          type: string
-        phoneNumber:
-          type: string
-        isAvailable:
-          type: boolean
-    Model_3:
-      type: object
-      properties:
-        userID:
-          type: string
-          description: ID of the business
-          minLength: 24
-          maxLength: 24
-        driverID:
-          type: string
-      required:
-      - userID
-      - driverID
-    Model_15:
-      type: object
-      properties:
-        billID:
-          type: string
-          description: ID of the bill to send to Datil
-          minLength: 24
-          maxLength: 24
     Model_11:
       type: object
       properties:
@@ -6605,34 +6715,17 @@ components:
           type: string
       required:
       - _id
-    image:
+    Model_9:
       type: object
-      description: image url
       properties:
-        thumbnail:
-          type: string
-        original:
+        transactions:
+          $ref: '#/components/schemas/Model_8'
+          type: array
+        newStatus:
           type: string
       required:
-      - thumbnail
-      - original
-    Model_51:
-      type: object
-      properties:
-        superRegion:
-          type: boolean
-    Model_47:
-      type: object
-      properties:
-        startDate:
-          type: string
-          description: Date range start date
-        endDate:
-          type: string
-          description: Date range end date
-      required:
-      - startDate
-      - endDate
+      - transactions
+      - newStatus
     Model_55:
       type: object
       properties:
@@ -6651,80 +6744,10 @@ components:
       - endDate
       - pickerID
       - pickerEmail
-    Model_43:
-      type: object
-      properties:
-        _id:
-          type: string
-          minLength: 24
-          maxLength: 24
-          x-convert:
-            trim: true
-        phone:
-          $ref: '#/components/schemas/phone'
-        contactMail:
-          $ref: '#/components/schemas/contactMail'
-        webAddress:
-          $ref: '#/components/schemas/webAddress'
-        reachUs:
-          $ref: '#/components/schemas/webAddress'
-        isAvailable:
-          type: boolean
-      required:
-      - _id
-    Model_6:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          minLength: 24
-          maxLength: 24
-      required:
-      - bookingID
-    settings:
-      type: object
-    productTypes:
+    transactions:
       type: array
       items:
         type: string
-        description: add sub category business
-    Model_54:
-      type: object
-      properties:
-        startDate:
-          type: string
-        endDate:
-          type: string
-        pickerID:
-          type: string
-        pickerEmail:
-          type: string
-      required:
-      - startDate
-      - endDate
-      - pickerID
-      - pickerEmail
-    Model_10:
-      type: object
-      properties:
-        userID:
-          type: string
-          description: ID of the driver to add the penalty
-          minLength: 24
-          maxLength: 24
-        amount:
-          type: number
-          description: Amount of penalty
-      required:
-      - userID
-      - amount
-    contactMail:
-      type: object
-      properties:
-        email:
-          type: string
-        isAvailable:
-          type: boolean
     businessCategories:
       type: array
       items:
@@ -6732,53 +6755,21 @@ components:
         description: ID of the new category
         minLength: 24
         maxLength: 24
-    Model_56:
-      type: object
-      properties:
-        startDate:
-          type: string
-        endDate:
-          type: string
-        status:
-          type: string
-        providerName:
-          type: string
-        bookingNumericId:
-          type: string
-    Model_50:
-      type: object
-      properties:
-        currency:
-          type: string
-        country:
-          type: string
-        regionID:
-          type: string
-        superRegionID:
-          type: string
-    Model_8:
+    names:
       type: array
-      description: Array of the transaction ids
       items:
-        type: string
-    Model_4:
+        $ref: '#/components/schemas/Model_32'
+    image:
       type: object
+      description: image url
       properties:
-        productID:
+        thumbnail:
           type: string
-          description: ID of the product edited
-      required:
-      - productID
-    Model_32:
-      type: object
-      properties:
-        text:
-          type: string
-        lang:
+        original:
           type: string
       required:
-      - text
-      - lang
+      - thumbnail
+      - original
     Model_65:
       type: object
       properties:
@@ -6808,10 +6799,19 @@ components:
       - tag
       - commission
       - names
-    webAddress:
+    Model_2:
       type: object
       properties:
-        address:
+        transactions:
+          $ref: '#/components/schemas/transactions'
+          type: array
+      required:
+      - transactions
+    Model_4:
+      type: object
+      properties:
+        productID:
           type: string
-        isAvailable:
-          type: boolean
+          description: ID of the product edited
+      required:
+      - productID

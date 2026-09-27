@@ -121,10 +121,6 @@ paths:
               - trackHistoryFile
 components:
   schemas:
-    routes:
-      type: array
-      items:
-        $ref: '#/components/schemas/Model_75'
     Model_75:
       type: object
       properties:
@@ -177,3 +173,7 @@ components:
       - customerID
       - driverID
       - driverName
+    routes:
+      type: array
+      items:
+        $ref: '#/components/schemas/Model_75'
