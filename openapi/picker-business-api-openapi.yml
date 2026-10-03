@@ -2109,18 +2109,14 @@ components:
       required:
       - mobile
       - OTPCode
-    Model_68:
+    Model_81:
       type: object
       properties:
-        products:
-          $ref: '#/components/schemas/products'
-          type: array
-        categories:
-          $ref: '#/components/schemas/products'
-          type: array
+        type:
+          type: string
+          description: Type of event to delete
       required:
-      - products
-      - categories
+      - type
     Model_61:
       type: object
       properties:
@@ -2134,18 +2130,22 @@ components:
       required:
       - type
       - url
+    Model_68:
+      type: object
+      properties:
+        products:
+          $ref: '#/components/schemas/products'
+          type: array
+        categories:
+          $ref: '#/components/schemas/products'
+          type: array
+      required:
+      - products
+      - categories
     products:
       type: array
       items:
         $ref: '#/components/schemas/Model_67'
-    Model_66:
-      type: object
-      properties:
-        businessID:
-          type: string
-          description: UserID of the business
-      required:
-      - businessID
     Model_60:
       type: object
       properties:
@@ -2156,11 +2156,11 @@ components:
           - DELIVERY
       required:
       - type
-    Model_81:
+    Model_66:
       type: object
       properties:
-        type:
+        businessID:
           type: string
-          description: Type of event to delete
+          description: UserID of the business
       required:
-      - type
+      - businessID

@@ -84,29 +84,13 @@ paths:
       - Share My Ride
 components:
   schemas:
-    Model_73:
+    Model_19:
       type: object
       properties:
-        name:
+        bookingID:
           type: string
-          minLength: 3
-          pattern: /^[a-zA-Z ]+$/
-          x-convert:
-            trim: true
-        lastName:
-          type: string
-          minLength: 3
-          pattern: /^[a-zA-Z ]+$/
-          x-convert:
-            trim: true
-        email:
-          type: string
-          x-format:
-            email: true
       required:
-      - name
-      - lastName
-      - email
+      - bookingID
     Model_72:
       type: object
       properties:
@@ -134,10 +118,26 @@ components:
       - password
       - deviceType
       - role
-    Model_19:
+    Model_73:
       type: object
       properties:
-        bookingID:
+        name:
           type: string
+          minLength: 3
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        lastName:
+          type: string
+          minLength: 3
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        email:
+          type: string
+          x-format:
+            email: true
       required:
-      - bookingID
+      - name
+      - lastName
+      - email

@@ -231,23 +231,6 @@ paths:
                 type: string
 components:
   schemas:
-    Model_71:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          minLength: 24
-          maxLength: 24
-        query:
-          type: string
-        role:
-          type: string
-          description: role of user
-          enum:
-          - customer
-          - driver
-      required:
-      - role
     Model_46:
       type: object
       properties:
@@ -302,3 +285,20 @@ components:
       - addressType
       - latitude
       - longitude
+    Model_71:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          minLength: 24
+          maxLength: 24
+        query:
+          type: string
+        role:
+          type: string
+          description: role of user
+          enum:
+          - customer
+          - driver
+      required:
+      - role

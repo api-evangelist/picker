@@ -1116,19 +1116,18 @@ paths:
               - vehicleNumber
 components:
   schemas:
-    Model_36:
+    Model_37:
       type: object
       properties:
-        moneyAccepted:
-          type: boolean
-          default: true
-        bookingID:
+        isTrackingOn:
           type: string
-          minLength: 24
-          maxLength: 24
+          enum:
+          - true
+          - false
+        currentLocation:
+          $ref: '#/components/schemas/currentLocation'
       required:
-      - moneyAccepted
-      - bookingID
+      - isTrackingOn
     currentLocation:
       type: object
       properties:
@@ -1152,15 +1151,16 @@ components:
       - type
       - longitude
       - latitude
-    Model_37:
+    Model_36:
       type: object
       properties:
-        isTrackingOn:
+        moneyAccepted:
+          type: boolean
+          default: true
+        bookingID:
           type: string
-          enum:
-          - true
-          - false
-        currentLocation:
-          $ref: '#/components/schemas/currentLocation'
+          minLength: 24
+          maxLength: 24
       required:
-      - isTrackingOn
+      - moneyAccepted
+      - bookingID

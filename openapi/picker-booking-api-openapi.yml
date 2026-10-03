@@ -2689,22 +2689,36 @@ paths:
               $ref: '#/components/schemas/Model_82'
 components:
   schemas:
-    Model_23:
+    Model_30:
       type: object
       properties:
         bookingID:
           type: string
-          description: ID of the booking to update.
-        notDeliveredReason:
+          description: ID of the booking to add.
+        proofOfDelivery:
           type: string
-          enum:
-          - LOCATION_NOT_FOUND
-          - PICKUP_NOT_RECEIVED
-          - NOT_ANSWER
-          - WRONG_LOCATION
+          description: Code of proof
       required:
       - bookingID
-      - notDeliveredReason
+      - proofOfDelivery
+    Model_26:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: ID of the booking to restart the search
+          x-constraint:
+            length: 24
+      required:
+      - bookingID
+    Model_25:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: ID of the booking to reject.
+      required:
+      - bookingID
     Model_44:
       type: object
       properties:
@@ -2728,252 +2742,6 @@ components:
       required:
       - bookingID
       - orderID
-    Model_21:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking the order request belongs to
-        amount:
-          type: number
-          description: New order amount
-          minimum: 0
-      required:
-      - bookingID
-      - amount
-    Model_25:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking to reject.
-      required:
-      - bookingID
-    Model_29:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking to set the cancel reason
-        reasonForRejection:
-          type: string
-          description: Cancel reason
-      required:
-      - bookingID
-    Model_59:
-      type: object
-      properties:
-        title:
-          type: string
-        bookingID:
-          type: string
-        rating:
-          type: string
-        comment:
-          type: string
-        workspaceName:
-          type: string
-        businessName:
-          type: string
-        customerName:
-          type: string
-      required:
-      - bookingID
-      - rating
-      - comment
-    Model_22:
-      type: object
-      properties:
-        amount:
-          type: number
-          description: Amount to donate
-          enum:
-          - 1
-          - 2
-          - 3
-        bookingID:
-          type: string
-          description: Booking ID
-          x-constraint:
-            length: 24
-      required:
-      - amount
-      - bookingID
-    bookingIssuesIds:
-      type: array
-      description: Array of booking issue ids
-      items:
-        type: string
-        minLength: 24
-        maxLength: 24
-    Model_20:
-      type: object
-      properties:
-        paymentMethod:
-          type: string
-          enum:
-          - CARD
-          - CASH
-        bookingID:
-          type: string
-          description: Booking ID
-          x-constraint:
-            length: 24
-      required:
-      - paymentMethod
-      - bookingID
-    Model_16:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking to add.
-        proofOfDelivery:
-          type: string
-          description: URL or code of the photo
-      required:
-      - bookingID
-      - proofOfDelivery
-    Model_26:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking to restart the search
-          x-constraint:
-            length: 24
-      required:
-      - bookingID
-    Model_7:
-      type: object
-      properties:
-        bookingID:
-          type: string
-        driverID:
-          type: string
-      required:
-      - bookingID
-      - driverID
-    Model_62:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking this order request belongs to
-        bidValue:
-          type: number
-        latitude:
-          type: number
-          description: Driver's current location
-        longitude:
-          type: number
-          description: Driver's current location
-      required:
-      - bookingID
-      - bidValue
-    Model_27:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking this order request belongs to
-        status:
-          type: number
-          enum:
-          - 1
-          - 2
-      required:
-      - bookingID
-      - status
-    rating:
-      type: object
-      properties:
-        driver:
-          type: number
-        business:
-          type: number
-      required:
-      - driver
-      - business
-    Model_19:
-      type: object
-      properties:
-        bookingID:
-          type: string
-      required:
-      - bookingID
-    Model_63:
-      type: object
-      properties:
-        distance:
-          type: number
-          description: Distance between pickup & delivery location
-          minimum: 0
-        pickupLongitude:
-          type: number
-          minimum: -180
-          maximum: 180
-          x-constraint:
-            precision: 6
-        pickupLatitude:
-          type: number
-          minimum: -90
-          maximum: 90
-          x-constraint:
-            precision: 6
-      required:
-      - distance
-      - pickupLongitude
-      - pickupLatitude
-    Model_28:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: _id of the booking selected
-          minLength: 24
-          maxLength: 24
-        bookingIssuesIds:
-          $ref: '#/components/schemas/bookingIssuesIds'
-          type: array
-      required:
-      - bookingID
-      - bookingIssuesIds
-    Model_13:
-      type: object
-      properties:
-        bookingID:
-          type: string
-        rating:
-          $ref: '#/components/schemas/rating'
-      required:
-      - bookingID
-      - rating
-    Model_24:
-      type: object
-      properties:
-        bookingID:
-          type: string
-        latitude:
-          type: number
-          description: Driver's current location
-        longitude:
-          type: number
-          description: Driver's current location
-      required:
-      - bookingID
-    Model_30:
-      type: object
-      properties:
-        bookingID:
-          type: string
-          description: ID of the booking to add.
-        proofOfDelivery:
-          type: string
-          description: Code of proof
-      required:
-      - bookingID
-      - proofOfDelivery
     Model_18:
       type: object
       properties:
@@ -2997,28 +2765,49 @@ components:
           type: string
       required:
       - bookingID
-    Model_5:
+    Model_23:
       type: object
       properties:
         bookingID:
           type: string
-        userID:
+          description: ID of the booking to update.
+        notDeliveredReason:
           type: string
+          enum:
+          - LOCATION_NOT_FOUND
+          - PICKUP_NOT_RECEIVED
+          - NOT_ANSWER
+          - WRONG_LOCATION
       required:
       - bookingID
-      - userID
-    Model_64:
+      - notDeliveredReason
+    Model_62:
       type: object
       properties:
         bookingID:
           type: string
-          description: ID of the booking the order request belongs to
-        orderID:
-          type: string
-          description: ID of the order request to send the notification
+          description: ID of the booking this order request belongs to
+        bidValue:
+          type: number
+        latitude:
+          type: number
+          description: Driver's current location
+        longitude:
+          type: number
+          description: Driver's current location
       required:
       - bookingID
-      - orderID
+      - bidValue
+    rating:
+      type: object
+      properties:
+        driver:
+          type: number
+        business:
+          type: number
+      required:
+      - driver
+      - business
     Model_17:
       type: object
       properties:
@@ -3043,4 +2832,215 @@ components:
         isAdmin:
           type: boolean
       required:
+      - bookingID
+    Model_29:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: ID of the booking to set the cancel reason
+        reasonForRejection:
+          type: string
+          description: Cancel reason
+      required:
+      - bookingID
+    Model_7:
+      type: object
+      properties:
+        bookingID:
+          type: string
+        driverID:
+          type: string
+      required:
+      - bookingID
+      - driverID
+    Model_27:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: ID of the booking this order request belongs to
+        status:
+          type: number
+          enum:
+          - 1
+          - 2
+      required:
+      - bookingID
+      - status
+    Model_13:
+      type: object
+      properties:
+        bookingID:
+          type: string
+        rating:
+          $ref: '#/components/schemas/rating'
+      required:
+      - bookingID
+      - rating
+    Model_19:
+      type: object
+      properties:
+        bookingID:
+          type: string
+      required:
+      - bookingID
+    Model_22:
+      type: object
+      properties:
+        amount:
+          type: number
+          description: Amount to donate
+          enum:
+          - 1
+          - 2
+          - 3
+        bookingID:
+          type: string
+          description: Booking ID
+          x-constraint:
+            length: 24
+      required:
+      - amount
+      - bookingID
+    Model_63:
+      type: object
+      properties:
+        distance:
+          type: number
+          description: Distance between pickup & delivery location
+          minimum: 0
+        pickupLongitude:
+          type: number
+          minimum: -180
+          maximum: 180
+          x-constraint:
+            precision: 6
+        pickupLatitude:
+          type: number
+          minimum: -90
+          maximum: 90
+          x-constraint:
+            precision: 6
+      required:
+      - distance
+      - pickupLongitude
+      - pickupLatitude
+    Model_24:
+      type: object
+      properties:
+        bookingID:
+          type: string
+        latitude:
+          type: number
+          description: Driver's current location
+        longitude:
+          type: number
+          description: Driver's current location
+      required:
+      - bookingID
+    Model_59:
+      type: object
+      properties:
+        title:
+          type: string
+        bookingID:
+          type: string
+        rating:
+          type: string
+        comment:
+          type: string
+        workspaceName:
+          type: string
+        businessName:
+          type: string
+        customerName:
+          type: string
+      required:
+      - bookingID
+      - rating
+      - comment
+    Model_16:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: ID of the booking to add.
+        proofOfDelivery:
+          type: string
+          description: URL or code of the photo
+      required:
+      - bookingID
+      - proofOfDelivery
+    Model_5:
+      type: object
+      properties:
+        bookingID:
+          type: string
+        userID:
+          type: string
+      required:
+      - bookingID
+      - userID
+    Model_21:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: ID of the booking the order request belongs to
+        amount:
+          type: number
+          description: New order amount
+          minimum: 0
+      required:
+      - bookingID
+      - amount
+    Model_64:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: ID of the booking the order request belongs to
+        orderID:
+          type: string
+          description: ID of the order request to send the notification
+      required:
+      - bookingID
+      - orderID
+    bookingIssuesIds:
+      type: array
+      description: Array of booking issue ids
+      items:
+        type: string
+        minLength: 24
+        maxLength: 24
+    Model_28:
+      type: object
+      properties:
+        bookingID:
+          type: string
+          description: _id of the booking selected
+          minLength: 24
+          maxLength: 24
+        bookingIssuesIds:
+          $ref: '#/components/schemas/bookingIssuesIds'
+          type: array
+      required:
+      - bookingID
+      - bookingIssuesIds
+    Model_20:
+      type: object
+      properties:
+        paymentMethod:
+          type: string
+          enum:
+          - CARD
+          - CASH
+        bookingID:
+          type: string
+          description: Booking ID
+          x-constraint:
+            length: 24
+      required:
+      - paymentMethod
       - bookingID
