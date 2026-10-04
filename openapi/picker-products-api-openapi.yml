@@ -104,10 +104,6 @@ paths:
               $ref: '#/components/schemas/Model_68'
 components:
   schemas:
-    products:
-      type: array
-      items:
-        $ref: '#/components/schemas/Model_67'
     Model_67:
       type: object
       properties:
@@ -118,6 +114,10 @@ components:
       required:
       - id
       - order
+    products:
+      type: array
+      items:
+        $ref: '#/components/schemas/Model_67'
     Model_68:
       type: object
       properties:

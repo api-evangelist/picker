@@ -43,6 +43,13 @@ paths:
               $ref: '#/components/schemas/Model_28'
 components:
   schemas:
+    bookingIssuesIds:
+      type: array
+      description: Array of booking issue ids
+      items:
+        type: string
+        minLength: 24
+        maxLength: 24
     Model_28:
       type: object
       properties:
@@ -57,10 +64,3 @@ components:
       required:
       - bookingID
       - bookingIssuesIds
-    bookingIssuesIds:
-      type: array
-      description: Array of booking issue ids
-      items:
-        type: string
-        minLength: 24
-        maxLength: 24

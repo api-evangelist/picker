@@ -1116,6 +1116,19 @@ paths:
               - vehicleNumber
 components:
   schemas:
+    Model_36:
+      type: object
+      properties:
+        moneyAccepted:
+          type: boolean
+          default: true
+        bookingID:
+          type: string
+          minLength: 24
+          maxLength: 24
+      required:
+      - moneyAccepted
+      - bookingID
     Model_37:
       type: object
       properties:
@@ -1151,16 +1164,3 @@ components:
       - type
       - longitude
       - latitude
-    Model_36:
-      type: object
-      properties:
-        moneyAccepted:
-          type: boolean
-          default: true
-        bookingID:
-          type: string
-          minLength: 24
-          maxLength: 24
-      required:
-      - moneyAccepted
-      - bookingID

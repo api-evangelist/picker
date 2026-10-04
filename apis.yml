@@ -785,8 +785,6 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Fraud Prevention
-  tags_raw:
   - anti Fraud
   properties:
   - type: OpenAPI
@@ -807,8 +805,6 @@ apis:
   humanURL: https://www.pickerexpress.com/en/developers/api-delivery-documentation
   baseURL: https://api.pickerexpress.com
   tags:
-  - Service Providers
-  tags_raw:
   - Service Provider
   properties:
   - type: OpenAPI

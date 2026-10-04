@@ -74,6 +74,13 @@ paths:
               $ref: '#/components/schemas/Model_58'
 components:
   schemas:
+    Model_57:
+      type: object
+      properties:
+        bookingID:
+          type: string
+        phone:
+          type: string
     Model_58:
       type: object
       properties:
@@ -86,11 +93,4 @@ components:
         proof:
           type: string
         title:
-          type: string
-    Model_57:
-      type: object
-      properties:
-        bookingID:
-          type: string
-        phone:
           type: string

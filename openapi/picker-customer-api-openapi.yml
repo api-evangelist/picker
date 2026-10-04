@@ -974,30 +974,60 @@ paths:
                 type: string
 components:
   schemas:
-    Model_34:
+    Model_46:
       type: object
       properties:
-        locationDetails:
-          $ref: '#/components/schemas/locationDetails'
-      required:
-      - locationDetails
-    Model_71:
-      type: object
-      properties:
-        bookingID:
+        locationId:
           type: string
+          description: required if location id update
           minLength: 24
           maxLength: 24
-        query:
+        companyName:
           type: string
-        role:
+          minLength: 2
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        companyAddress:
           type: string
-          description: role of user
+          minLength: 2
+          x-convert:
+            trim: true
+        city:
+          type: string
+          minLength: 2
+          x-convert:
+            trim: true
+        state:
+          type: string
+          minLength: 2
+          x-convert:
+            trim: true
+        zipCode:
+          type: string
+          minLength: 2
+          x-convert:
+            trim: true
+        addressType:
+          type: string
+          description: '  DELIVERY PICKUP'
           enum:
-          - customer
-          - driver
+          - DELIVERY
+          - PICKUP
+        type:
+          type: string
+          description: ' HOME OFFICE'
+          enum:
+          - HOME
+          - OFFICE
+        latitude:
+          type: number
+        longitude:
+          type: number
       required:
-      - role
+      - addressType
+      - latitude
+      - longitude
     locationDetails:
       type: object
       description: It is an object having different keys
@@ -1057,57 +1087,27 @@ components:
       required:
       - bookingID
       - orderReceived
-    Model_46:
+    Model_71:
       type: object
       properties:
-        locationId:
+        bookingID:
           type: string
-          description: required if location id update
           minLength: 24
           maxLength: 24
-        companyName:
+        query:
           type: string
-          minLength: 2
-          pattern: /^[a-zA-Z ]+$/
-          x-convert:
-            trim: true
-        companyAddress:
+        role:
           type: string
-          minLength: 2
-          x-convert:
-            trim: true
-        city:
-          type: string
-          minLength: 2
-          x-convert:
-            trim: true
-        state:
-          type: string
-          minLength: 2
-          x-convert:
-            trim: true
-        zipCode:
-          type: string
-          minLength: 2
-          x-convert:
-            trim: true
-        addressType:
-          type: string
-          description: '  DELIVERY PICKUP'
+          description: role of user
           enum:
-          - DELIVERY
-          - PICKUP
-        type:
-          type: string
-          description: ' HOME OFFICE'
-          enum:
-          - HOME
-          - OFFICE
-        latitude:
-          type: number
-        longitude:
-          type: number
+          - customer
+          - driver
       required:
-      - addressType
-      - latitude
-      - longitude
+      - role
+    Model_34:
+      type: object
+      properties:
+        locationDetails:
+          $ref: '#/components/schemas/locationDetails'
+      required:
+      - locationDetails

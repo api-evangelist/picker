@@ -345,22 +345,6 @@ components:
           type: string
         isAvailable:
           type: boolean
-    phone:
-      type: object
-      properties:
-        countryCode:
-          type: string
-        phoneNumber:
-          type: string
-        isAvailable:
-          type: boolean
-    contactMail:
-      type: object
-      properties:
-        email:
-          type: string
-        isAvailable:
-          type: boolean
     Model_43:
       type: object
       properties:
@@ -382,3 +366,19 @@ components:
           type: boolean
       required:
       - _id
+    phone:
+      type: object
+      properties:
+        countryCode:
+          type: string
+        phoneNumber:
+          type: string
+        isAvailable:
+          type: boolean
+    contactMail:
+      type: object
+      properties:
+        email:
+          type: string
+        isAvailable:
+          type: boolean

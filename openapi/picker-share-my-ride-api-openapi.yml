@@ -91,6 +91,29 @@ components:
           type: string
       required:
       - bookingID
+    Model_73:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 3
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        lastName:
+          type: string
+          minLength: 3
+          pattern: /^[a-zA-Z ]+$/
+          x-convert:
+            trim: true
+        email:
+          type: string
+          x-format:
+            email: true
+      required:
+      - name
+      - lastName
+      - email
     Model_72:
       type: object
       properties:
@@ -118,26 +141,3 @@ components:
       - password
       - deviceType
       - role
-    Model_73:
-      type: object
-      properties:
-        name:
-          type: string
-          minLength: 3
-          pattern: /^[a-zA-Z ]+$/
-          x-convert:
-            trim: true
-        lastName:
-          type: string
-          minLength: 3
-          pattern: /^[a-zA-Z ]+$/
-          x-convert:
-            trim: true
-        email:
-          type: string
-          x-format:
-            email: true
-      required:
-      - name
-      - lastName
-      - email
