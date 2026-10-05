@@ -1,0 +1,12 @@
+{
+ "url": "https://api.pickerexpress.com/swagger.json",
+ "requested_url": "https://api.pickerexpress.com/swagger.json",
+ "status": 200,
+ "content_type": "application/json; charset=utf-8",
+ "bytes": 366174,
+ "sha256": "19106fd18680ede0d8c653f03e0443dd3af118e3940defc476a2e9f2d0ed3ad2",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
