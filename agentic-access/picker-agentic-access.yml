@@ -1,97 +1,97 @@
-generated: '2026-07-20'
+generated: '2026-09-23'
 method: generated
-source: openapi/picker-openapi-original.json
+source: openapi/picker-accounting-api-openapi.yml, openapi/picker-admin-api-openapi.yml, openapi/picker-anti-fraud-api-openapi.yml,
+  openapi/picker-appversion-api-openapi.yml, openapi/picker-banner-api-openapi.yml, openapi/picker-bill-api-openapi.yml,
+  openapi/picker-booking-api-openapi.yml, openapi/picker-bookingassignment-api-openapi.yml,
+  openapi/picker-bookingissue-api-openapi.yml, openapi/picker-bookingissues-api-openapi.yml,
+  openapi/picker-bookings-api-openapi.yml, openapi/picker-business-api-openapi.yml, openapi/picker-businesses-api-openapi.yml,
+  openapi/picker-busy-api-openapi.yml, openapi/picker-cancel-api-openapi.yml, openapi/picker-cancelreason-api-openapi.yml,
+  openapi/picker-card-api-openapi.yml, openapi/picker-cards-api-openapi.yml, openapi/picker-chat-api-openapi.yml,
+  openapi/picker-chatbot-api-openapi.yml, openapi/picker-cron-jobs-api-openapi.yml, openapi/picker-customer-api-openapi.yml,
+  openapi/picker-dashboard-api-openapi.yml, openapi/picker-datil-api-openapi.yml, openapi/picker-deliverypartner-api-openapi.yml,
+  openapi/picker-deliverypartnermarketingdata-api-openapi.yml, openapi/picker-driver-api-openapi.yml,
+  openapi/picker-drivertag-api-openapi.yml, openapi/picker-duty-api-openapi.yml, openapi/picker-fares-api-openapi.yml,
+  openapi/picker-favorite-api-openapi.yml, openapi/picker-health-check-api-openapi.yml, openapi/picker-integrations-api-openapi.yml,
+  openapi/picker-list-api-openapi.yml, openapi/picker-location-api-openapi.yml, openapi/picker-mass-delivery-api-openapi.yml,
+  openapi/picker-notification-api-openapi.yml, openapi/picker-pause-api-openapi.yml, openapi/picker-paymentez-api-openapi.yml,
+  openapi/picker-play-api-openapi.yml, openapi/picker-product-api-openapi.yml, openapi/picker-products-api-openapi.yml,
+  openapi/picker-promo-api-openapi.yml, openapi/picker-public-api-openapi.yml, openapi/picker-referral-api-openapi.yml,
+  openapi/picker-region-api-openapi.yml, openapi/picker-reports-api-openapi.yml, openapi/picker-review-api-openapi.yml,
+  openapi/picker-service-api-openapi.yml, openapi/picker-service-provider-api-openapi.yml, openapi/picker-share-my-ride-api-openapi.yml,
+  openapi/picker-shopify-api-openapi.yml, openapi/picker-social-api-openapi.yml, openapi/picker-spoonity-api-openapi.yml,
+  openapi/picker-stripepay-api-openapi.yml, openapi/picker-support-api-openapi.yml, openapi/picker-ticket-api-openapi.yml,
+  openapi/picker-tracking-api-openapi.yml, openapi/picker-update-api-openapi.yml, openapi/picker-user-api-openapi.yml,
+  openapi/picker-usermarketingdata-api-openapi.yml, openapi/picker-users-api-openapi.yml, openapi/picker-vehicles-api-openapi.yml,
+  openapi/picker-vtex-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
-  operations: 413
+  operations: 490
   by_action_class:
-    connected: 159
-    acting: 254
+    acting: 289
+    connected: 201
   by_consequence:
-    read: 159
-    write: 201
-    physical: 51
+    physical: 58
+    read: 201
+    write: 229
     safety-critical: 2
   human_in_the_loop_required: 2
 operations:
-- path: /cancel
-  method: get
-  operationId: getCancel
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /getContactUsDetails
-  method: get
-  operationId: getGetcontactusdetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /health-check
-  method: get
-  operationId: getHealthcheck
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /mass-delivery
-  method: get
-  operationId: getMassdelivery
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /share-my-ride
-  method: get
-  operationId: getSharemyride
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /share-my-ride
-  method: post
-  operationId: postSharemyride
+- path: /accounting/refundBalanceTransactions
+  method: put
+  operationId: putAccountingRefundbalancetransactions
   x-agentic-access:
     action-class: acting
-    consequence: write
+    consequence: physical
     subject: required
     audience: null
     token:
-      max-ttl: 900
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
     escalation:
       human-in-the-loop: conditional
       triggers:
       - abnormal
       - high-value
     audit: required
-- path: /{param*}
-  method: get
-  operationId: getParam
+- path: /admin/sendEmailTo
+  method: post
+  operationId: postAdminSendemailto
   x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
     token:
-      max-ttl: 3600
-    audit: none
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/sendInvoiceEmail
+  method: post
+  operationId: postAdminSendinvoiceemail
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /accounting/getAPICharges
   method: get
   operationId: getAccountingGetapicharges
@@ -205,16 +205,6 @@ operations:
 - path: /admin/assignReasons
   method: get
   operationId: getAdminAssignreasons
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /admin/bookings
-  method: get
-  operationId: getAdminBookings
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -512,29 +502,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /admin/getQueryByCustomer
-  method: get
-  operationId: getAdminGetquerybycustomer
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /admin/getServiceProviderInfo
   method: get
   operationId: getAdminGetserviceproviderinfo
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /admin/getTransactionFraudInformation
-  method: get
-  operationId: getAdminGettransactionfraudinformation
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -592,151 +562,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /admin/userBookings
-  method: get
-  operationId: getAdminUserbookings
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /admin/userDetails
   method: get
   operationId: getAdminUserdetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /admin/warningBookings
-  method: get
-  operationId: getAdminWarningbookings
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /angular4-docs/{param*}
-  method: get
-  operationId: getAngular4docsParam
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/getBookingDetails
-  method: get
-  operationId: getApiGetbookingdetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/getChatbotBooking
-  method: get
-  operationId: getApiGetchatbotbooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/getDriver
-  method: get
-  operationId: getApiGetdriver
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/getDriverById
-  method: get
-  operationId: getApiGetdriverbyid
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/getDrivers
-  method: get
-  operationId: getApiGetdrivers
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/getPastBooking
-  method: get
-  operationId: getApiGetpastbooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/webhooks
-  method: get
-  operationId: getApiWebhooks
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/webhooks
-  method: post
-  operationId: postApiWebhooks
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/webhooks
-  method: delete
-  operationId: deleteApiWebhooks
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /appVersion/getCurrentVersions
-  method: get
-  operationId: getAppversionGetcurrentversions
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -774,227 +602,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /booking/getAllAvailabeBooking
-  method: get
-  operationId: getBookingGetallavailabebooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getAllBids
-  method: get
-  operationId: getBookingGetallbids
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getAllBookingDetails
-  method: get
-  operationId: getBookingGetallbookingdetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getAmountlogs
-  method: get
-  operationId: getBookingGetamountlogs
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getBookingDetails
-  method: get
-  operationId: getBookingGetbookingdetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getBookingReport
-  method: get
-  operationId: getBookingGetbookingreport
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getBookingRoute
-  method: get
-  operationId: getBookingGetbookingroute
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getOngoingBooking
-  method: get
-  operationId: getBookingGetongoingbooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getPastBooking
-  method: get
-  operationId: getBookingGetpastbooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/getProductList
-  method: get
-  operationId: getBookingGetproductlist
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/preCheckout
-  method: get
-  operationId: getBookingPrecheckout
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /booking/preCheckout
-  method: post
-  operationId: postBookingPrecheckout
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /bookingAssignment/listBookingFloatSetting
-  method: get
-  operationId: getBookingassignmentListbookingfloatsetting
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /bookingIssues/getBookingIssues
   method: get
   operationId: getBookingissuesGetbookingissues
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /bookings/getAllBookingsDashBoard
-  method: get
-  operationId: getBookingsGetallbookingsdashboard
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /bookings/getCoportatesAllBookings
-  method: get
-  operationId: getBookingsGetcoportatesallbookings
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /bookings/getCorporateBookingsByUserId
-  method: get
-  operationId: getBookingsGetcorporatebookingsbyuserid
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/categories
-  method: get
-  operationId: getBusinessCategories
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/categoriesByUserId
-  method: get
-  operationId: getBusinessCategoriesbyuserid
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/checkAvailableNames
-  method: get
-  operationId: getBusinessCheckavailablenames
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getAccountInfoIntegrationDashboard
-  method: get
-  operationId: getBusinessGetaccountinfointegrationdashboard
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getAssociatedBusiness
-  method: get
-  operationId: getBusinessGetassociatedbusiness
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1012,469 +622,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /business/getBookingsDataByDatesDashboard
-  method: get
-  operationId: getBusinessGetbookingsdatabydatesdashboard
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBookingsIntegrationDashboard
-  method: get
-  operationId: getBusinessGetbookingsintegrationdashboard
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBusinessCategories
-  method: get
-  operationId: getBusinessGetbusinesscategories
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBusinessInfo
-  method: get
-  operationId: getBusinessGetbusinessinfo
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBusinessInfoAfterLanding
-  method: get
-  operationId: getBusinessGetbusinessinfoafterlanding
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBusinessInfoByUserId
-  method: get
-  operationId: getBusinessGetbusinessinfobyuserid
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBusinessesByDistance
-  method: get
-  operationId: getBusinessGetbusinessesbydistance
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBusinessesBySubcategory
-  method: get
-  operationId: getBusinessGetbusinessesbysubcategory
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getBusinessesGeneralInfo
-  method: get
-  operationId: getBusinessGetbusinessesgeneralinfo
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/getStats
-  method: get
-  operationId: getBusinessGetstats
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/landing
-  method: get
-  operationId: getBusinessLanding
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/products
-  method: get
-  operationId: getBusinessProducts
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/reports
-  method: get
-  operationId: getBusinessReports
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/sendSundayReports
-  method: get
-  operationId: getBusinessSendsundayreports
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /business/turnOffOnBusinessById
-  method: get
-  operationId: getBusinessTurnoffonbusinessbyid
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /chat/getChatForBooking
-  method: get
-  operationId: getChatGetchatforbooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /chat/getChatForBookingByComeChat
-  method: get
-  operationId: getChatGetchatforbookingbycomechat
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /client/getMessage
   method: get
   operationId: getClientGetmessage
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/availableServiceProvider
-  method: get
-  operationId: getCustomerAvailableserviceprovider
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/bookingAddresses
-  method: get
-  operationId: getCustomerBookingaddresses
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/bookingPaymentHistory
-  method: get
-  operationId: getCustomerBookingpaymenthistory
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/bookingPaymentPending
-  method: get
-  operationId: getCustomerBookingpaymentpending
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/getFavorites
-  method: get
-  operationId: getCustomerGetfavorites
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/getPastBooking
-  method: get
-  operationId: getCustomerGetpastbooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/listServiceLocation
-  method: get
-  operationId: getCustomerListservicelocation
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/search
-  method: get
-  operationId: getCustomerSearch
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/totalPayments
-  method: get
-  operationId: getCustomerTotalpayments
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/getAllAvailableDriver
-  method: get
-  operationId: getDriverGetallavailabledriver
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/getAllAvailableDriverMyFleet
-  method: get
-  operationId: getDriverGetallavailabledrivermyfleet
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/getAllDriver
-  method: get
-  operationId: getDriverGetalldriver
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/getDriverBalances
-  method: get
-  operationId: getDriverGetdriverbalances
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/getDriverTracking
-  method: get
-  operationId: getDriverGetdrivertracking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/getEarnings
-  method: get
-  operationId: getDriverGetearnings
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/getVehicleDetails
-  method: get
-  operationId: getDriverGetvehicledetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /driver/listVehicleTypeAndCompany
-  method: get
-  operationId: getDriverListvehicletypeandcompany
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /notification/getAllNotification
-  method: get
-  operationId: getNotificationGetallnotification
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /promo/getAllUserPromo
-  method: get
-  operationId: getPromoGetalluserpromo
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /promo/listAllPromo
-  method: get
-  operationId: getPromoListallpromo
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /promo/promoDetails
-  method: get
-  operationId: getPromoPromodetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /public/reports
-  method: get
-  operationId: getPublicReports
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /referral/listAllReferral
-  method: get
-  operationId: getReferralListallreferral
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /region/listAllRegion
-  method: get
-  operationId: getRegionListallregion
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /region/listAllSuperRegion
-  method: get
-  operationId: getRegionListallsuperregion
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /region/regionDetails
-  method: get
-  operationId: getRegionRegiondetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /review/listAverageRating
-  method: get
-  operationId: getReviewListaveragerating
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /review/listDetailedReview
-  method: get
-  operationId: getReviewListdetailedreview
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /serviceProvider/getAllAvailableDriver
-  method: get
-  operationId: getServiceproviderGetallavailabledriver
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1492,179 +642,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /serviceProvider/getDashboardCount
-  method: get
-  operationId: getServiceproviderGetdashboardcount
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /serviceProvider/getPastBooking
   method: get
   operationId: getServiceproviderGetpastbooking
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /stripe/checkUniqueCard
-  method: get
-  operationId: getStripeCheckuniquecard
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /tracking/getUserTrackingData
-  method: get
-  operationId: getTrackingGetusertrackingdata
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/forgotPasswordMobile
-  method: get
-  operationId: getUserForgotpasswordmobile
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/getReferralBenifitsHistory
-  method: get
-  operationId: getUserGetreferralbenifitshistory
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/getReferralCode
-  method: get
-  operationId: getUserGetreferralcode
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/getResetPasswordToken
-  method: get
-  operationId: getUserGetresetpasswordtoken
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/getUserFromIP
-  method: get
-  operationId: getUserGetuserfromip
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/getWallet
-  method: get
-  operationId: getUserGetwallet
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/integrationUsers
-  method: get
-  operationId: getUserIntegrationusers
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /user/pingMe
-  method: get
-  operationId: getUserPingme
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /userMarketingData/getAllUserMarketingData
-  method: get
-  operationId: getUsermarketingdataGetallusermarketingdata
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /vehicles/pricing
-  method: get
-  operationId: getVehiclesPricing
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /vehicles/userPricing
-  method: get
-  operationId: getVehiclesUserpricing
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/workspace/getBookingDetails
-  method: get
-  operationId: getApiWorkspaceGetbookingdetails
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/list/card
-  method: get
-  operationId: getCustomerListCard
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /customer/list/service/location
-  method: get
-  operationId: getCustomerListServiceLocation
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1722,22 +702,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/addFavoritePicker
-  method: put
-  operationId: putAdminAddfavoritepicker
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /admin/approveProduct
   method: put
   operationId: putAdminApproveproduct
@@ -1770,22 +734,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/assignResponsable
-  method: put
-  operationId: putAdminAssignresponsable
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /admin/blockOption
   method: put
   operationId: putAdminBlockoption
@@ -1805,22 +753,6 @@ operations:
 - path: /admin/cancelBooking
   method: put
   operationId: putAdminCancelbooking
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/changeBookingDriver
-  method: put
-  operationId: putAdminChangebookingdriver
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1935,22 +867,6 @@ operations:
 - path: /admin/removeDriverFromBusiness
   method: put
   operationId: putAdminRemovedriverfrombusiness
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/setBookingFraud
-  method: put
-  operationId: putAdminSetbookingfraud
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2092,40 +1008,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/addCard
-  method: put
-  operationId: putApiAddcard
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/rateChatbotBooking
-  method: put
-  operationId: putApiRatechatbotbooking
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /billing/reissueBillToDatil
   method: put
   operationId: putBillingReissuebilltodatil
@@ -2160,683 +1042,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /booking/addProofOfDelivery
-  method: put
-  operationId: putBookingAddproofofdelivery
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/assignBookingManually
-  method: put
-  operationId: putBookingAssignbookingmanually
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/assignBookingRandomly
-  method: put
-  operationId: putBookingAssignbookingrandomly
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/assignManualRequest
-  method: put
-  operationId: putBookingAssignmanualrequest
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/bookingAcceptReject
-  method: put
-  operationId: putBookingBookingacceptreject
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/cancelBooking
-  method: put
-  operationId: putBookingCancelbooking
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/cancelBookingFromBusiness
-  method: put
-  operationId: putBookingCancelbookingfrombusiness
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/cancelBookingRequest
-  method: put
-  operationId: putBookingCancelbookingrequest
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/changePaymentMethod
-  method: put
-  operationId: putBookingChangepaymentmethod
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/editOrderRequest
-  method: put
-  operationId: putBookingEditorderrequest
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/getCancellationChargeInfo
-  method: put
-  operationId: putBookingGetcancellationchargeinfo
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/makeDonation
-  method: put
-  operationId: putBookingMakedonation
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/notDelivered
-  method: put
-  operationId: putBookingNotdelivered
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/notShow
-  method: put
-  operationId: putBookingNotshow
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/notificationInteraction
-  method: put
-  operationId: putBookingNotificationinteraction
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/rejectBooking
-  method: put
-  operationId: putBookingRejectbooking
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/restartSearchAutomaticAccept
-  method: put
-  operationId: putBookingRestartsearchautomaticaccept
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/restartTime
-  method: put
-  operationId: putBookingRestarttime
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/selectBidByCustomer
-  method: put
-  operationId: putBookingSelectbidbycustomer
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/setBookingIssue
-  method: put
-  operationId: putBookingSetbookingissue
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/setCancellationReason
-  method: put
-  operationId: putBookingSetcancellationreason
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/validateCodeOfProof
-  method: put
-  operationId: putBookingValidatecodeofproof
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /bookingAssignment/updateBookingFloatSetting
-  method: put
-  operationId: putBookingassignmentUpdatebookingfloatsetting
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/addCategoryToBusiness
-  method: put
-  operationId: putBusinessAddcategorytobusiness
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/changeProductStatus
-  method: put
-  operationId: putBusinessChangeproductstatus
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/confirmInformation
-  method: put
-  operationId: putBusinessConfirminformation
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/editProduct
-  method: put
-  operationId: putBusinessEditproduct
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/editProductDetail
-  method: put
-  operationId: putBusinessEditproductdetail
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/goOnOffDuty
-  method: put
-  operationId: putBusinessGoonoffduty
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/setNewPassword
-  method: put
-  operationId: putBusinessSetnewpassword
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /business/updateBusinessCategory
   method: put
   operationId: putBusinessUpdatebusinesscategory
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/updateProductCategory
-  method: put
-  operationId: putBusinessUpdateproductcategory
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /customer/addReferralCode
-  method: put
-  operationId: putCustomerAddreferralcode
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /customer/driverSearch
-  method: put
-  operationId: putCustomerDriversearch
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /customer/orderReceived
-  method: put
-  operationId: putCustomerOrderreceived
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /customer/updateProfile
-  method: put
-  operationId: putCustomerUpdateprofile
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/amountCollected
-  method: put
-  operationId: putDriverAmountcollected
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/clearDriver
-  method: put
-  operationId: putDriverCleardriver
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/duty
-  method: put
-  operationId: putDriverDuty
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/updateAutoAcceptation
-  method: put
-  operationId: putDriverUpdateautoacceptation
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/updateBookingStatus
-  method: put
-  operationId: putDriverUpdatebookingstatus
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/updateLocation
-  method: put
-  operationId: putDriverUpdatelocation
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2862,150 +1070,6 @@ operations:
       max-ttl: 300
       exchange: true
       purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/updateProfile
-  method: put
-  operationId: putDriverUpdateprofile
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/updateWallet
-  method: put
-  operationId: putDriverUpdatewallet
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/validateOTP
-  method: put
-  operationId: putDriverValidateotp
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /notification/clearNotification
-  method: put
-  operationId: putNotificationClearnotification
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /notification/readNotification
-  method: put
-  operationId: putNotificationReadnotification
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /notification/receivedNotification
-  method: put
-  operationId: putNotificationReceivednotification
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /region/blockRegion
-  method: put
-  operationId: putRegionBlockregion
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /region/editRegion
-  method: put
-  operationId: putRegionEditregion
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /region/unblockRegion
-  method: put
-  operationId: putRegionUnblockregion
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
     escalation:
       human-in-the-loop: conditional
       triggers:
@@ -3044,475 +1108,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /serviceProvider/updateDriver
-  method: put
-  operationId: putServiceproviderUpdatedriver
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /serviceProvider/updateProfile
-  method: put
-  operationId: putServiceproviderUpdateprofile
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /stripe/fullyRefundAmount
-  method: put
-  operationId: putStripeFullyrefundamount
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /stripe/makeChargeForHoldPayment
-  method: put
-  operationId: putStripeMakechargeforholdpayment
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /stripe/makeHoldPayment
-  method: put
-  operationId: putStripeMakeholdpayment
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /stripe/partialRefundAmount
-  method: put
-  operationId: putStripePartialrefundamount
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /stripe/updateDefaultCard
-  method: put
-  operationId: putStripeUpdatedefaultcard
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/addPhoneNumber
-  method: put
-  operationId: putUserAddphonenumber
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/addToWallet
-  method: put
-  operationId: putUserAddtowallet
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/changePassword
-  method: put
-  operationId: putUserChangepassword
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/confirmInformation
-  method: put
-  operationId: putUserConfirminformation
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/contactUs
-  method: put
-  operationId: putUserContactus
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/preferenceSettings
-  method: put
-  operationId: putUserPreferencesettings
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/resendEmail
-  method: put
-  operationId: putUserResendemail
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/resendOTP
-  method: put
-  operationId: putUserResendotp
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/resetPassword
-  method: put
-  operationId: putUserResetpassword
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /user/setPassword
-  method: put
-  operationId: putUserSetpassword
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/setPrimaryNumber
-  method: put
-  operationId: putUserSetprimarynumber
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/updateDeviceToken
-  method: put
-  operationId: putUserUpdatedevicetoken
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/updatePhoneNumber
-  method: put
-  operationId: putUserUpdatephonenumber
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/updateUTCoffset
-  method: put
-  operationId: putUserUpdateutcoffset
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /user/verifyForgotPasswordOTP
-  method: put
-  operationId: putUserVerifyforgotpasswordotp
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /admin/fares/pricing
-  method: put
-  operationId: putAdminFaresPricing
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /admin/support/updateContact
   method: put
   operationId: putAdminSupportUpdatecontact
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/play/pause
-  method: put
-  operationId: putBookingPlayPause
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /paymentez/add/card
-  method: put
-  operationId: putPaymentezAddCard
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /paymentez/card/default
-  method: put
-  operationId: putPaymentezCardDefault
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /paymentez/delete/card
-  method: put
-  operationId: putPaymentezDeleteCard
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /update/customer/service/location
-  method: put
-  operationId: putUpdateCustomerServiceLocation
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -3872,18 +1470,12 @@ operations:
   method: post
   operationId: postAdminGetfares
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /admin/getMarketPlaceToken
   method: post
   operationId: postAdminGetmarketplacetoken
@@ -3984,42 +1576,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/sendEmailTo
-  method: post
-  operationId: postAdminSendemailto
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/sendInvoiceEmail
-  method: post
-  operationId: postAdminSendinvoiceemail
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /admin/sendPushToUsers
   method: post
   operationId: postAdminSendpushtousers
@@ -4106,40 +1662,16 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /admin/shareMyRide
-  method: post
-  operationId: postAdminSharemyride
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /admin/totalOrderRequests
   method: post
   operationId: postAdminTotalorderrequests
   x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /admin/updateAllDriversPaymentBalance
   method: post
   operationId: postAdminUpdatealldriverspaymentbalance
@@ -4174,9 +1706,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/cancelBookingChatbot
+- path: /billing/reissueAllBills
   method: post
-  operationId: postApiCancelbookingchatbot
+  operationId: postBillingReissueallbills
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4190,9 +1722,27 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/checkRegion
+- path: /billing/sendBillsToDatil
   method: post
-  operationId: postApiCheckregion
+  operationId: postBillingSendbillstodatil
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /billing/updateBillsWithDatil
+  method: post
+  operationId: postBillingUpdatebillswithdatil
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4206,9 +1756,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/createTicketChatbot
+- path: /bookingIssues/registerBookingIssue
   method: post
-  operationId: postApiCreateticketchatbot
+  operationId: postBookingissuesRegisterbookingissue
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4222,6 +1772,878 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /business/createBusinessCategory
+  method: post
+  operationId: postBusinessCreatebusinesscategory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/addWorkBalance
+  method: post
+  operationId: postDriverAddworkbalance
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/freeBusyDrivers
+  method: post
+  operationId: postDriverFreebusydrivers
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/deleteUser
+  method: delete
+  operationId: deleteAdminDeleteuser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/deleteVehicleTypeAndCompany
+  method: delete
+  operationId: deleteAdminDeletevehicletypeandcompany
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/getTransactionFraudInformation
+  method: get
+  operationId: getAdminGettransactionfraudinformation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/setBookingFraud
+  method: put
+  operationId: putAdminSetbookingfraud
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /appVersion/getCurrentVersions
+  method: get
+  operationId: getAppversionGetcurrentversions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /appVersion/checkCriticalAppVersions
+  method: post
+  operationId: postAppversionCheckcriticalappversions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /appVersion/setAppVersions
+  method: post
+  operationId: postAppversionSetappversions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/getBanners
+  method: get
+  operationId: getAdminGetbanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/getDriverBanners
+  method: get
+  operationId: getAdminGetdriverbanners
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /client/getMessage
+  method: get
+  operationId: getClientGetmessage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/editBanner
+  method: put
+  operationId: putAdminEditbanner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/createBanner
+  method: post
+  operationId: postAdminCreatebanner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /billing/getBillDetails
+  method: get
+  operationId: getBillingGetbilldetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/bookings
+  method: get
+  operationId: getAdminBookings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/userBookings
+  method: get
+  operationId: getAdminUserbookings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/warningBookings
+  method: get
+  operationId: getAdminWarningbookings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/getBookingDetails
+  method: get
+  operationId: getApiGetbookingdetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/getChatbotBooking
+  method: get
+  operationId: getApiGetchatbotbooking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/getDriver
+  method: get
+  operationId: getApiGetdriver
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/getDriverById
+  method: get
+  operationId: getApiGetdriverbyid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/getDrivers
+  method: get
+  operationId: getApiGetdrivers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/getPastBooking
+  method: get
+  operationId: getApiGetpastbooking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getAllAvailabeBooking
+  method: get
+  operationId: getBookingGetallavailabebooking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getAllBids
+  method: get
+  operationId: getBookingGetallbids
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getAllBookingDetails
+  method: get
+  operationId: getBookingGetallbookingdetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getBookingDetails
+  method: get
+  operationId: getBookingGetbookingdetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getBookingReport
+  method: get
+  operationId: getBookingGetbookingreport
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getBookingRoute
+  method: get
+  operationId: getBookingGetbookingroute
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getOngoingBooking
+  method: get
+  operationId: getBookingGetongoingbooking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getPastBooking
+  method: get
+  operationId: getBookingGetpastbooking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/getProductList
+  method: get
+  operationId: getBookingGetproductlist
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/preCheckout
+  method: get
+  operationId: getBookingPrecheckout
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/preCheckout
+  method: post
+  operationId: postBookingPrecheckout
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/getPastBooking
+  method: get
+  operationId: getCustomerGetpastbooking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/workspace/getBookingDetails
+  method: get
+  operationId: getApiWorkspaceGetbookingdetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/assignResponsable
+  method: put
+  operationId: putAdminAssignresponsable
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/changeBookingDriver
+  method: put
+  operationId: putAdminChangebookingdriver
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/rateChatbotBooking
+  method: put
+  operationId: putApiRatechatbotbooking
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/addProofOfDelivery
+  method: put
+  operationId: putBookingAddproofofdelivery
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/assignBookingManually
+  method: put
+  operationId: putBookingAssignbookingmanually
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/assignBookingRandomly
+  method: put
+  operationId: putBookingAssignbookingrandomly
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/assignManualRequest
+  method: put
+  operationId: putBookingAssignmanualrequest
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/bookingAcceptReject
+  method: put
+  operationId: putBookingBookingacceptreject
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/cancelBooking
+  method: put
+  operationId: putBookingCancelbooking
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/cancelBookingFromBusiness
+  method: put
+  operationId: putBookingCancelbookingfrombusiness
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/cancelBookingRequest
+  method: put
+  operationId: putBookingCancelbookingrequest
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/changePaymentMethod
+  method: put
+  operationId: putBookingChangepaymentmethod
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/editOrderRequest
+  method: put
+  operationId: putBookingEditorderrequest
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/getCancellationChargeInfo
+  method: put
+  operationId: putBookingGetcancellationchargeinfo
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/makeDonation
+  method: put
+  operationId: putBookingMakedonation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/notDelivered
+  method: put
+  operationId: putBookingNotdelivered
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/notShow
+  method: put
+  operationId: putBookingNotshow
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/rejectBooking
+  method: put
+  operationId: putBookingRejectbooking
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/restartSearchAutomaticAccept
+  method: put
+  operationId: putBookingRestartsearchautomaticaccept
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/restartTime
+  method: put
+  operationId: putBookingRestarttime
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/selectBidByCustomer
+  method: put
+  operationId: putBookingSelectbidbycustomer
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/setBookingIssue
+  method: put
+  operationId: putBookingSetbookingissue
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/setCancellationReason
+  method: put
+  operationId: putBookingSetcancellationreason
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/validateCodeOfProof
+  method: put
+  operationId: putBookingValidatecodeofproof
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/play/pause
+  method: put
+  operationId: putBookingPlayPause
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/shareMyRide
+  method: post
+  operationId: postAdminSharemyride
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/pushShopifyOrder
   method: post
   operationId: postApiPushshopifyorder
@@ -4304,104 +2726,6 @@ operations:
       max-ttl: 300
       exchange: true
       purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/validateApiPickup
-  method: post
-  operationId: postApiValidateapipickup
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /appVersion/checkCriticalAppVersions
-  method: post
-  operationId: postAppversionCheckcriticalappversions
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /appVersion/setAppVersions
-  method: post
-  operationId: postAppversionSetappversions
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /billing/reissueAllBills
-  method: post
-  operationId: postBillingReissueallbills
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /billing/sendBillsToDatil
-  method: post
-  operationId: postBillingSendbillstodatil
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /billing/updateBillsWithDatil
-  method: post
-  operationId: postBillingUpdatebillswithdatil
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
     escalation:
       human-in-the-loop: conditional
       triggers:
@@ -4508,6 +2832,66 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /public/sentReportToUser
+  method: post
+  operationId: postPublicSentreporttouser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/deleteOrderRequest
+  method: delete
+  operationId: deleteBookingDeleteorderrequest
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /bookingAssignment/listBookingFloatSetting
+  method: get
+  operationId: getBookingassignmentListbookingfloatsetting
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookingAssignment/updateBookingFloatSetting
+  method: put
+  operationId: putBookingassignmentUpdatebookingfloatsetting
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /bookingAssignment/bookingFloatSetting
   method: post
   operationId: postBookingassignmentBookingfloatsetting
@@ -4524,9 +2908,357 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /booking/setBookingIssue
+  method: put
+  operationId: putBookingSetbookingissue
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /bookingIssues/getBookingIssues
+  method: get
+  operationId: getBookingissuesGetbookingissues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /bookingIssues/registerBookingIssue
   method: post
   operationId: postBookingissuesRegisterbookingissue
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /bookings/getAllBookingsDashBoard
+  method: get
+  operationId: getBookingsGetallbookingsdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookings/getCoportatesAllBookings
+  method: get
+  operationId: getBookingsGetcoportatesallbookings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookings/getCorporateBookingsByUserId
+  method: get
+  operationId: getBookingsGetcorporatebookingsbyuserid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/webhooks
+  method: get
+  operationId: getApiWebhooks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/webhooks
+  method: post
+  operationId: postApiWebhooks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/webhooks
+  method: delete
+  operationId: deleteApiWebhooks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/getAccountInfoIntegrationDashboard
+  method: get
+  operationId: getBusinessGetaccountinfointegrationdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getAssociatedBusiness
+  method: get
+  operationId: getBusinessGetassociatedbusiness
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBookingsDataByDatesDashboard
+  method: get
+  operationId: getBusinessGetbookingsdatabydatesdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBookingsIntegrationDashboard
+  method: get
+  operationId: getBusinessGetbookingsintegrationdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessInfoAfterLanding
+  method: get
+  operationId: getBusinessGetbusinessinfoafterlanding
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessesGeneralInfo
+  method: get
+  operationId: getBusinessGetbusinessesgeneralinfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/landing
+  method: get
+  operationId: getBusinessLanding
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/reports
+  method: get
+  operationId: getBusinessReports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/turnOffOnBusinessById
+  method: get
+  operationId: getBusinessTurnoffonbusinessbyid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/addCategoryToBusiness
+  method: put
+  operationId: putBusinessAddcategorytobusiness
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/changeProductStatus
+  method: put
+  operationId: putBusinessChangeproductstatus
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/confirmInformation
+  method: put
+  operationId: putBusinessConfirminformation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/editProduct
+  method: put
+  operationId: putBusinessEditproduct
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/editProductDetail
+  method: put
+  operationId: putBusinessEditproductdetail
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/goOnOffDuty
+  method: put
+  operationId: putBusinessGoonoffduty
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/setNewPassword
+  method: put
+  operationId: putBusinessSetnewpassword
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/updateProductCategory
+  method: put
+  operationId: putBusinessUpdateproductcategory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/restartSearch
+  method: post
+  operationId: postAdminRestartsearch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/validateApiPickup
+  method: post
+  operationId: postApiValidateapipickup
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4559,22 +3291,6 @@ operations:
 - path: /business/addProductDetail
   method: post
   operationId: postBusinessAddproductdetail
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/createBusinessCategory
-  method: post
-  operationId: postBusinessCreatebusinesscategory
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4784,22 +3500,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /business/verifyEmail
-  method: post
-  operationId: postBusinessVerifyemail
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /business/verifyOTP
   method: post
   operationId: postBusinessVerifyotp
@@ -4816,9 +3516,413 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /customer/addRemoveFavorite
+  method: post
+  operationId: postCustomerAddremovefavorite
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/deleteCategory
+  method: delete
+  operationId: deleteBusinessDeletecategory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/deleteProduct
+  method: delete
+  operationId: deleteBusinessDeleteproduct
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/deleteProductDetail
+  method: delete
+  operationId: deleteBusinessDeleteproductdetail
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/removeCategoryFromBusiness
+  method: delete
+  operationId: deleteBusinessRemovecategoryfrombusiness
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/getFavorites
+  method: get
+  operationId: getCustomerGetfavorites
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/search
+  method: get
+  operationId: getCustomerSearch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/clearDriver
+  method: put
+  operationId: putDriverCleardriver
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /cancel
+  method: get
+  operationId: getCancel
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/getAllCancelReasons
+  method: get
+  operationId: getAdminGetallcancelreasons
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /paymentez/card/default
+  method: put
+  operationId: putPaymentezCardDefault
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /paymentez/delete/card
+  method: put
+  operationId: putPaymentezDeleteCard
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/list/card
+  method: get
+  operationId: getCustomerListCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /chat/getChatForBooking
+  method: get
+  operationId: getChatGetchatforbooking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /chat/getChatForBookingByComeChat
+  method: get
+  operationId: getChatGetchatforbookingbycomechat
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/sendChatbotBookingRate
+  method: post
+  operationId: postApiSendchatbotbookingrate
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /cronJobs/clearAll
   method: post
   operationId: postCronjobsClearall
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/getAmountlogs
+  method: get
+  operationId: getBookingGetamountlogs
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/availableServiceProvider
+  method: get
+  operationId: getCustomerAvailableserviceprovider
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/bookingAddresses
+  method: get
+  operationId: getCustomerBookingaddresses
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/getFavorites
+  method: get
+  operationId: getCustomerGetfavorites
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/listServiceLocation
+  method: get
+  operationId: getCustomerListservicelocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/search
+  method: get
+  operationId: getCustomerSearch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /userMarketingData/getAllUserMarketingData
+  method: get
+  operationId: getUsermarketingdataGetallusermarketingdata
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/addFavoritePicker
+  method: put
+  operationId: putAdminAddfavoritepicker
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/addReferralCode
+  method: put
+  operationId: putCustomerAddreferralcode
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/driverSearch
+  method: put
+  operationId: putCustomerDriversearch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/orderReceived
+  method: put
+  operationId: putCustomerOrderreceived
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/updateProfile
+  method: put
+  operationId: putCustomerUpdateprofile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/confirmInformation
+  method: put
+  operationId: putUserConfirminformation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /update/customer/service/location
+  method: put
+  operationId: putUpdateCustomerServiceLocation
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4880,6 +3984,144 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /userMarketingData/registerUserMarketingData
+  method: post
+  operationId: postUsermarketingdataRegisterusermarketingdata
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/service/location
+  method: post
+  operationId: postCustomerServiceLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/remove/service/location
+  method: delete
+  operationId: deleteCustomerRemoveServiceLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /bookings/getAllBookingsDashBoard
+  method: get
+  operationId: getBookingsGetallbookingsdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookings/getCoportatesAllBookings
+  method: get
+  operationId: getBookingsGetcoportatesallbookings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookings/getCorporateBookingsByUserId
+  method: get
+  operationId: getBookingsGetcorporatebookingsbyuserid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getAccountInfoIntegrationDashboard
+  method: get
+  operationId: getBusinessGetaccountinfointegrationdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getAssociatedBusiness
+  method: get
+  operationId: getBusinessGetassociatedbusiness
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBookingsDataByDatesDashboard
+  method: get
+  operationId: getBusinessGetbookingsdatabydatesdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBookingsIntegrationDashboard
+  method: get
+  operationId: getBusinessGetbookingsintegrationdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessesGeneralInfo
+  method: get
+  operationId: getBusinessGetbusinessesgeneralinfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/turnOffOnBusinessById
+  method: get
+  operationId: getBusinessTurnoffonbusinessbyid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /datil/receiptIssued
   method: post
   operationId: postDatilReceiptissued
@@ -4912,41 +4154,265 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /deliveryPartnerMarketingData/registerMarketingData
+  method: post
+  operationId: postDeliverypartnermarketingdataRegistermarketingdata
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/getAllAvailableDriver
+  method: get
+  operationId: getDriverGetallavailabledriver
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/getAllAvailableDriverMyFleet
+  method: get
+  operationId: getDriverGetallavailabledrivermyfleet
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/getAllDriver
+  method: get
+  operationId: getDriverGetalldriver
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/getDriverBalances
+  method: get
+  operationId: getDriverGetdriverbalances
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/getDriverTracking
+  method: get
+  operationId: getDriverGetdrivertracking
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/getVehicleDetails
+  method: get
+  operationId: getDriverGetvehicledetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/listVehicleTypeAndCompany
+  method: get
+  operationId: getDriverListvehicletypeandcompany
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /serviceProvider/getAllAvailableDriver
+  method: get
+  operationId: getServiceproviderGetallavailabledriver
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /booking/notificationInteraction
+  method: put
+  operationId: putBookingNotificationinteraction
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/amountCollected
+  method: put
+  operationId: putDriverAmountcollected
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/clearDriver
+  method: put
+  operationId: putDriverCleardriver
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/duty
+  method: put
+  operationId: putDriverDuty
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/updateAutoAcceptation
+  method: put
+  operationId: putDriverUpdateautoacceptation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/updateBookingStatus
+  method: put
+  operationId: putDriverUpdatebookingstatus
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/updateLocation
+  method: put
+  operationId: putDriverUpdatelocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/updateProfile
+  method: put
+  operationId: putDriverUpdateprofile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/updateWallet
+  method: put
+  operationId: putDriverUpdatewallet
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/validateOTP
+  method: put
+  operationId: putDriverValidateotp
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /driver/addVehicle
   method: post
   operationId: postDriverAddvehicle
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/addWorkBalance
-  method: post
-  operationId: postDriverAddworkbalance
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/freeBusyDrivers
-  method: post
-  operationId: postDriverFreebusydrivers
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -4976,6 +4442,380 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /driver/deleteVehicle
+  method: delete
+  operationId: deleteDriverDeletevehicle
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/getAllDriverTags
+  method: get
+  operationId: getAdminGetalldrivertags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/addDriverTag
+  method: post
+  operationId: postAdminAdddrivertag
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /driver/duty
+  method: put
+  operationId: putDriverDuty
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/fares/pricing
+  method: put
+  operationId: putAdminFaresPricing
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/getFavorites
+  method: get
+  operationId: getCustomerGetfavorites
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/search
+  method: get
+  operationId: getCustomerSearch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /health-check
+  method: get
+  operationId: getHealthcheck
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/integrationUsers
+  method: get
+  operationId: getUserIntegrationusers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/list/card
+  method: get
+  operationId: getCustomerListCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/list/service/location
+  method: get
+  operationId: getCustomerListServiceLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/list/service/location
+  method: get
+  operationId: getCustomerListServiceLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /update/customer/service/location
+  method: put
+  operationId: putUpdateCustomerServiceLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/addQueryToAdmin
+  method: post
+  operationId: postCustomerAddquerytoadmin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/service/location
+  method: post
+  operationId: postCustomerServiceLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/remove/service/location
+  method: delete
+  operationId: deleteCustomerRemoveServiceLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /mass-delivery
+  method: get
+  operationId: getMassdelivery
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /notification/getAllNotification
+  method: get
+  operationId: getNotificationGetallnotification
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /notification/clearNotification
+  method: put
+  operationId: putNotificationClearnotification
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /notification/readNotification
+  method: put
+  operationId: putNotificationReadnotification
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /notification/receivedNotification
+  method: put
+  operationId: putNotificationReceivednotification
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/play/pause
+  method: put
+  operationId: putBookingPlayPause
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/list/card
+  method: get
+  operationId: getCustomerListCard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/addCard
+  method: put
+  operationId: putApiAddcard
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /paymentez/add/card
+  method: put
+  operationId: putPaymentezAddCard
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /paymentez/card/default
+  method: put
+  operationId: putPaymentezCardDefault
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /paymentez/delete/card
+  method: put
+  operationId: putPaymentezDeleteCard
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /paymentez/webhookApi
   method: post
   operationId: postPaymentezWebhookapi
@@ -4994,6 +4834,124 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /paymentez/charge/card
+  method: post
+  operationId: postPaymentezChargeCard
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /booking/play/pause
+  method: put
+  operationId: putBookingPlayPause
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/addRemoveFavorite
+  method: post
+  operationId: postCustomerAddremovefavorite
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/getFavorites
+  method: get
+  operationId: getCustomerGetfavorites
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/search
+  method: get
+  operationId: getCustomerSearch
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/setProductAndCategoriesOrder
+  method: post
+  operationId: postBusinessSetproductandcategoriesorder
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /promo/getAllUserPromo
+  method: get
+  operationId: getPromoGetalluserpromo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /promo/listAllPromo
+  method: get
+  operationId: getPromoListallpromo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /promo/promoDetails
+  method: get
+  operationId: getPromoPromodetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /promo/addPromo
   method: post
   operationId: postPromoAddpromo
@@ -5026,9 +4984,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /public/sentReportToUser
-  method: post
-  operationId: postPublicSentreporttouser
+- path: /promo/deletePromo
+  method: delete
+  operationId: deletePromoDeletepromo
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5042,6 +5000,26 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /public/reports
+  method: get
+  operationId: getPublicReports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /referral/listAllReferral
+  method: get
+  operationId: getReferralListallreferral
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /referral/addReferralScheme
   method: post
   operationId: postReferralAddreferralscheme
@@ -5061,6 +5039,116 @@ operations:
 - path: /referral/addReferralSchemeType
   method: post
   operationId: postReferralAddreferralschemetype
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /referral/deleteScheme
+  method: delete
+  operationId: deleteReferralDeletescheme
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /region/listAllRegion
+  method: get
+  operationId: getRegionListallregion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /region/listAllSuperRegion
+  method: get
+  operationId: getRegionListallsuperregion
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /region/regionDetails
+  method: get
+  operationId: getRegionRegiondetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /region/blockRegion
+  method: put
+  operationId: putRegionBlockregion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /region/editRegion
+  method: put
+  operationId: putRegionEditregion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /region/unblockRegion
+  method: put
+  operationId: putRegionUnblockregion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/checkRegion
+  method: post
+  operationId: postApiCheckregion
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5138,6 +5226,52 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /region/deleteRegion
+  method: delete
+  operationId: deleteRegionDeleteregion
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /public/reports
+  method: get
+  operationId: getPublicReports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /review/listAverageRating
+  method: get
+  operationId: getReviewListaveragerating
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /review/listDetailedReview
+  method: get
+  operationId: getReviewListdetailedreview
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /review/giveReviewAndRating
   method: post
   operationId: postReviewGivereviewandrating
@@ -5154,9 +5288,19 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /serviceProvider/accessTokenLogin
-  method: post
-  operationId: postServiceproviderAccesstokenlogin
+- path: /customer/list/service/location
+  method: get
+  operationId: getCustomerListServiceLocation
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /update/customer/service/location
+  method: put
+  operationId: putUpdateCustomerServiceLocation
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5170,9 +5314,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /serviceProvider/login
+- path: /customer/addQueryToAdmin
   method: post
-  operationId: postServiceproviderLogin
+  operationId: postCustomerAddquerytoadmin
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5186,9 +5330,87 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /serviceProvider/logout
+- path: /customer/service/location
   method: post
-  operationId: postServiceproviderLogout
+  operationId: postCustomerServiceLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /customer/remove/service/location
+  method: delete
+  operationId: deleteCustomerRemoveServiceLocation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /admin/getServiceProviderInfo
+  method: get
+  operationId: getAdminGetserviceproviderinfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /driver/getEarnings
+  method: get
+  operationId: getDriverGetearnings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /serviceProvider/getDashboardCount
+  method: get
+  operationId: getServiceproviderGetdashboardcount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /serviceProvider/updateDriver
+  method: put
+  operationId: putServiceproviderUpdatedriver
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /serviceProvider/updateProfile
+  method: put
+  operationId: putServiceproviderUpdateprofile
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5205,6 +5427,32 @@ operations:
 - path: /serviceProvider/register
   method: post
   operationId: postServiceproviderRegister
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /share-my-ride
+  method: get
+  operationId: getSharemyride
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /share-my-ride
+  method: post
+  operationId: postSharemyride
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5250,6 +5498,40 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /api/pushShopifyOrder
+  method: post
+  operationId: postApiPushshopifyorder
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/saveShopifyConfig
+  method: post
+  operationId: postApiSaveshopifyconfig
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /social/login
   method: post
   operationId: postSocialLogin
@@ -5269,6 +5551,122 @@ operations:
 - path: /social/verify
   method: post
   operationId: postSocialVerify
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/pushSpoonityOrder
+  method: post
+  operationId: postApiPushspoonityorder
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /stripe/checkUniqueCard
+  method: get
+  operationId: getStripeCheckuniquecard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /stripe/fullyRefundAmount
+  method: put
+  operationId: putStripeFullyrefundamount
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /stripe/makeChargeForHoldPayment
+  method: put
+  operationId: putStripeMakechargeforholdpayment
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /stripe/makeHoldPayment
+  method: put
+  operationId: putStripeMakeholdpayment
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /stripe/partialRefundAmount
+  method: put
+  operationId: putStripePartialrefundamount
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /stripe/updateDefaultCard
+  method: put
+  operationId: putStripeUpdatedefaultcard
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5334,6 +5732,150 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /stripe/deleteCard
+  method: delete
+  operationId: deleteStripeDeletecard
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /getContactUsDetails
+  method: get
+  operationId: getGetcontactusdetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/getQueryByCustomer
+  method: get
+  operationId: getAdminGetquerybycustomer
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/bookingPaymentHistory
+  method: get
+  operationId: getCustomerBookingpaymenthistory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/bookingPaymentPending
+  method: get
+  operationId: getCustomerBookingpaymentpending
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /customer/totalPayments
+  method: get
+  operationId: getCustomerTotalpayments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /vehicles/pricing
+  method: get
+  operationId: getVehiclesPricing
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /vehicles/userPricing
+  method: get
+  operationId: getVehiclesUserpricing
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/support/updateContact
+  method: put
+  operationId: putAdminSupportUpdatecontact
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/cancelBookingChatbot
+  method: post
+  operationId: postApiCancelbookingchatbot
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/createTicketChatbot
+  method: post
+  operationId: postApiCreateticketchatbot
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /tracking/getUserTrackingData
+  method: get
+  operationId: getTrackingGetusertrackingdata
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /tracking/enrouteDriver
   method: post
   operationId: postTrackingEnroutedriver
@@ -5353,6 +5895,670 @@ operations:
 - path: /tracking/uploadTrackFiletoS3
   method: post
   operationId: postTrackingUploadtrackfiletos3
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/addCategoryToBusiness
+  method: put
+  operationId: putBusinessAddcategorytobusiness
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/updateBusiness
+  method: post
+  operationId: postBusinessUpdatebusiness
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/updateBusinessByUserId
+  method: post
+  operationId: postBusinessUpdatebusinessbyuserid
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/updatePaymentMethodByUserId
+  method: post
+  operationId: postBusinessUpdatepaymentmethodbyuserid
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /business/removeCategoryFromBusiness
+  method: delete
+  operationId: deleteBusinessRemovecategoryfrombusiness
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{param*}
+  method: get
+  operationId: getParam
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /angular4-docs/{param*}
+  method: get
+  operationId: getAngular4docsParam
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookings/getAllBookingsDashBoard
+  method: get
+  operationId: getBookingsGetallbookingsdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookings/getCoportatesAllBookings
+  method: get
+  operationId: getBookingsGetcoportatesallbookings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /bookings/getCorporateBookingsByUserId
+  method: get
+  operationId: getBookingsGetcorporatebookingsbyuserid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/categories
+  method: get
+  operationId: getBusinessCategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/categoriesByUserId
+  method: get
+  operationId: getBusinessCategoriesbyuserid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/checkAvailableNames
+  method: get
+  operationId: getBusinessCheckavailablenames
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getAccountInfoIntegrationDashboard
+  method: get
+  operationId: getBusinessGetaccountinfointegrationdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getAssociatedBusiness
+  method: get
+  operationId: getBusinessGetassociatedbusiness
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBookingsDataByDatesDashboard
+  method: get
+  operationId: getBusinessGetbookingsdatabydatesdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBookingsIntegrationDashboard
+  method: get
+  operationId: getBusinessGetbookingsintegrationdashboard
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessCategories
+  method: get
+  operationId: getBusinessGetbusinesscategories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessInfo
+  method: get
+  operationId: getBusinessGetbusinessinfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessInfoByUserId
+  method: get
+  operationId: getBusinessGetbusinessinfobyuserid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessesByDistance
+  method: get
+  operationId: getBusinessGetbusinessesbydistance
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessesBySubcategory
+  method: get
+  operationId: getBusinessGetbusinessesbysubcategory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getBusinessesGeneralInfo
+  method: get
+  operationId: getBusinessGetbusinessesgeneralinfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/getStats
+  method: get
+  operationId: getBusinessGetstats
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/products
+  method: get
+  operationId: getBusinessProducts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/sendSundayReports
+  method: get
+  operationId: getBusinessSendsundayreports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /business/turnOffOnBusinessById
+  method: get
+  operationId: getBusinessTurnoffonbusinessbyid
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/forgotPasswordMobile
+  method: get
+  operationId: getUserForgotpasswordmobile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/getReferralBenifitsHistory
+  method: get
+  operationId: getUserGetreferralbenifitshistory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/getReferralCode
+  method: get
+  operationId: getUserGetreferralcode
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/getResetPasswordToken
+  method: get
+  operationId: getUserGetresetpasswordtoken
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/getUserFromIP
+  method: get
+  operationId: getUserGetuserfromip
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/getWallet
+  method: get
+  operationId: getUserGetwallet
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/pingMe
+  method: get
+  operationId: getUserPingme
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /user/addPhoneNumber
+  method: put
+  operationId: putUserAddphonenumber
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/addToWallet
+  method: put
+  operationId: putUserAddtowallet
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/changePassword
+  method: put
+  operationId: putUserChangepassword
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/contactUs
+  method: put
+  operationId: putUserContactus
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/preferenceSettings
+  method: put
+  operationId: putUserPreferencesettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/resendEmail
+  method: put
+  operationId: putUserResendemail
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/resendOTP
+  method: put
+  operationId: putUserResendotp
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/resetPassword
+  method: put
+  operationId: putUserResetpassword
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /user/setPassword
+  method: put
+  operationId: putUserSetpassword
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/setPrimaryNumber
+  method: put
+  operationId: putUserSetprimarynumber
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/updateDeviceToken
+  method: put
+  operationId: putUserUpdatedevicetoken
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/updatePhoneNumber
+  method: put
+  operationId: putUserUpdatephonenumber
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/updateUTCoffset
+  method: put
+  operationId: putUserUpdateutcoffset
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/verifyForgotPasswordOTP
+  method: put
+  operationId: putUserVerifyforgotpasswordotp
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /business/verifyEmail
+  method: post
+  operationId: postBusinessVerifyemail
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /serviceProvider/accessTokenLogin
+  method: post
+  operationId: postServiceproviderAccesstokenlogin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /serviceProvider/login
+  method: post
+  operationId: postServiceproviderLogin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /serviceProvider/logout
+  method: post
+  operationId: postServiceproviderLogout
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5480,269 +6686,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /userMarketingData/registerUserMarketingData
-  method: post
-  operationId: postUsermarketingdataRegisterusermarketingdata
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /customer/service/location
-  method: post
-  operationId: postCustomerServiceLocation
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /paymentez/charge/card
-  method: post
-  operationId: postPaymentezChargeCard
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/deleteUser
-  method: delete
-  operationId: deleteAdminDeleteuser
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /admin/deleteVehicleTypeAndCompany
-  method: delete
-  operationId: deleteAdminDeletevehicletypeandcompany
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /booking/deleteOrderRequest
-  method: delete
-  operationId: deleteBookingDeleteorderrequest
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/deleteCategory
-  method: delete
-  operationId: deleteBusinessDeletecategory
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/deleteProduct
-  method: delete
-  operationId: deleteBusinessDeleteproduct
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/deleteProductDetail
-  method: delete
-  operationId: deleteBusinessDeleteproductdetail
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /business/removeCategoryFromBusiness
-  method: delete
-  operationId: deleteBusinessRemovecategoryfrombusiness
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /driver/deleteVehicle
-  method: delete
-  operationId: deleteDriverDeletevehicle
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /promo/deletePromo
-  method: delete
-  operationId: deletePromoDeletepromo
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /referral/deleteScheme
-  method: delete
-  operationId: deleteReferralDeletescheme
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /region/deleteRegion
-  method: delete
-  operationId: deleteRegionDeleteregion
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /stripe/deleteCard
-  method: delete
-  operationId: deleteStripeDeletecard
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /user/deletePhoneNumber
   method: delete
   operationId: deleteUserDeletephonenumber
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /customer/remove/service/location
-  method: delete
-  operationId: deleteCustomerRemoveServiceLocation
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -5766,6 +6712,76 @@ operations:
     audience: null
     token:
       max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /userMarketingData/getAllUserMarketingData
+  method: get
+  operationId: getUsermarketingdataGetallusermarketingdata
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /userMarketingData/registerUserMarketingData
+  method: post
+  operationId: postUsermarketingdataRegisterusermarketingdata
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /user/integrationUsers
+  method: get
+  operationId: getUserIntegrationusers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /admin/fares/pricing
+  method: put
+  operationId: putAdminFaresPricing
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/pushVtexOrder
+  method: post
+  operationId: postApiPushvtexorder
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
     escalation:
       human-in-the-loop: conditional
       triggers:
